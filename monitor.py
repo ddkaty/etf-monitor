@@ -55,9 +55,9 @@ CONFIG = {
     "email": {
         "smtp_server": "smtp.gmail.com",
         "smtp_port": 587,
-        "sender": "your_email@gmail.com",       # ⚠️ 改成你的 Gmail
+        "sender": "qixin202401@gmail.com",       # ⚠️ 改成你的 Gmail
         "password": os.environ.get("SMTP_PASSWORD", ""),
-        "recipient": "your_email@gmail.com",    # ⚠️ 改成你的 Gmail
+        "recipient": "qixin202401@gmail.com",    # ⚠️ 改成你的 Gmail
     },
 
     "cooldown_hours": 24,
