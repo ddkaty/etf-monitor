@@ -70,9 +70,9 @@ CONFIG = {
     "email": {
         "smtp_server": "smtp.gmail.com",
         "smtp_port": 587,
-        "sender": "your_email@gmail.com",      # ⚠️ 改成你的 Gmail
+        "sender": "qixin202401@gmail.com",      # ⚠️ 改成你的 Gmail
         "password": os.environ.get("SMTP_PASSWORD", ""),
-        "recipient": "your_email@gmail.com",   # ⚠️ 改成你的 Gmail
+        "recipient": "qixin202401@gmail.com",   # ⚠️ 改成你的 Gmail
     },
 
     # 防止重复发邮件：同一档位多少小时内不重发
