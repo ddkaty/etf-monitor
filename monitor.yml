@@ -1,0 +1,46 @@
+name: ETF 回调监控 v2
+
+on:
+  # 每个工作日美东收盘后运行（UTC 22:30 = 美东 17:30 夏令时）
+  schedule:
+    - cron: '30 22 * * 1-5'
+
+  # 手动触发（用于测试）
+  workflow_dispatch:
+
+# 需要写权限来保存状态文件
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: |
+          pip install yfinance
+
+      - name: 运行监控脚本
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: python monitor.py
+
+      - name: 提交状态文件（如有变化）
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          if [ -f alert_state.json ]; then
+            git add alert_state.json
+            git diff --staged --quiet || git commit -m "Update alert state [skip ci]"
+            git push || echo "无需推送"
+          fi
