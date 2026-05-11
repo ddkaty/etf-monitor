@@ -1,0 +1,7 @@
+name: ETF 回调监控 v2
+
+on:
+  schedule:
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch:
+...
