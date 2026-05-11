@@ -1,4 +1,4 @@
-name: ETF 回调监控 v2
+name: ETF 回调监控 v3
 
 on:
   schedule:
@@ -23,7 +23,7 @@ jobs:
 
       - name: 安装依赖
         run: |
-          pip install yfinance
+          pip install yfinance pandas numpy
 
       - name: 运行监控脚本
         env:
