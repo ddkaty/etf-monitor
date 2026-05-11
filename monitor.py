@@ -1,509 +1,855 @@
 """
-ETF 回调监控脚本 v2.0
-监控目标：SOXX, SMH, AMD, AVGO, TSM, MU
-功能：
-  1. 每个交易日检测回调，触发时发警报
-  2. 每周一发送周报（全部状态总览）
-  3. 6个月没触发任何警报时，提醒强制建仓
+ETF 回调监控脚本 v3.0 - 量化数据丰富版
+风格：现代清爽蓝绿商务风
+特色：VIX/Sparkline/RSI/距下一档/事件日历/资金流向
 
-使用方法:
-  1. 修改 CONFIG["email"] 中的邮箱
-  2. 在 GitHub Secret 中设置 SMTP_PASSWORD
-  3. 自动通过 GitHub Actions 运行
+监控标的：SOXX, SMH, AMD, AVGO, TSM, MU
+触发阈值：-8% / -15% / -25%
 """
 
 import os
 import smtplib
 import json
-import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 import yfinance as yf
+import pandas as pd
+import numpy as np
 
 # ============ 配置区 ============
 CONFIG = {
-    # 监控的标的
     "tickers": {
-        # ETF
-        "SOXX": {
-            "name": "iShares 半导体 ETF",
-            "type": "ETF",
-            "lookback_days": 60,
-            "alert_levels": [0.08, 0.15, 0.25],
-        },
-        "SMH": {
-            "name": "VanEck 半导体 ETF",
-            "type": "ETF",
-            "lookback_days": 60,
-            "alert_levels": [0.08, 0.15, 0.25],
-        },
-        # 个股
-        "AMD": {
-            "name": "超威半导体",
-            "type": "STOCK",
-            "lookback_days": 60,
-            "alert_levels": [0.08, 0.15, 0.25],
-        },
-        "AVGO": {
-            "name": "博通",
-            "type": "STOCK",
-            "lookback_days": 60,
-            "alert_levels": [0.08, 0.15, 0.25],
-        },
-        "TSM": {
-            "name": "台积电",
-            "type": "STOCK",
-            "lookback_days": 60,
-            "alert_levels": [0.08, 0.15, 0.25],
-        },
-        "MU": {
-            "name": "美光科技",
-            "type": "STOCK",
-            "lookback_days": 60,
-            "alert_levels": [0.08, 0.15, 0.25],
-        },
+        "SOXX": {"name": "iShares 半导体 ETF", "type": "ETF", "lookback_days": 60, "alert_levels": [0.08, 0.15, 0.25]},
+        "SMH":  {"name": "VanEck 半导体 ETF", "type": "ETF", "lookback_days": 60, "alert_levels": [0.08, 0.15, 0.25]},
+        "AMD":  {"name": "超威半导体", "type": "STOCK", "lookback_days": 60, "alert_levels": [0.08, 0.15, 0.25]},
+        "AVGO": {"name": "博通", "type": "STOCK", "lookback_days": 60, "alert_levels": [0.08, 0.15, 0.25]},
+        "TSM":  {"name": "台积电", "type": "STOCK", "lookback_days": 60, "alert_levels": [0.08, 0.15, 0.25]},
+        "MU":   {"name": "美光科技", "type": "STOCK", "lookback_days": 60, "alert_levels": [0.08, 0.15, 0.25]},
     },
 
-    # 邮件配置
+    # 市场基准指标
+    "benchmarks": {
+        "^VIX":  {"name": "VIX 恐慌指数", "label": "VIX"},
+        "^GSPC": {"name": "S&P 500", "label": "SP500"},
+        "QQQ":   {"name": "纳指 100 ETF", "label": "QQQ"},
+        "^SOX":  {"name": "费城半导体指数", "label": "SOX"},
+    },
+
+    # 关键事件日历（手动维护，每月可更新）
+    # 格式: 日期, 类型, 描述
+    "events": [
+        ("2026-05-13", "数据", "美国 4月CPI 数据"),
+        ("2026-05-15", "数据", "美国 4月零售销售"),
+        ("2026-05-21", "财报", "NVDA 英伟达 Q1 财报（盘后）"),
+        ("2026-05-22", "会议", "FOMC 会议纪要发布"),
+        ("2026-05-28", "财报", "MRVL Marvell 财报（盘后）"),
+        ("2026-06-04", "财报", "AVGO 博通 Q2 财报"),
+        ("2026-06-11", "数据", "美国 5月CPI 数据"),
+        ("2026-06-12", "会议", "FOMC 利率决议"),
+        ("2026-06-19", "财报", "MU 美光 财报（盘后）"),
+        ("2026-07-17", "财报", "TSM 台积电 Q2 财报"),
+    ],
+
     "email": {
         "smtp_server": "smtp.gmail.com",
         "smtp_port": 587,
-        "sender": "qixin202401@gmail.com",      # ⚠️ 改成你的 Gmail
+        "sender": "your_email@gmail.com",       # ⚠️ 改成你的 Gmail
         "password": os.environ.get("SMTP_PASSWORD", ""),
-        "recipient": "qixin202401@gmail.com",   # ⚠️ 改成你的 Gmail
+        "recipient": "your_email@gmail.com",    # ⚠️ 改成你的 Gmail
     },
 
-    # 防止重复发邮件：同一档位多少小时内不重发
     "cooldown_hours": 24,
-
-    # 周报：每周哪一天发送（0=周一, 6=周日）
-    # 注意：GitHub Actions 用 UTC，美东周一对应 UTC 周一上午
     "weekly_report_day": 0,  # 周一
-
-    # 6个月强制建仓提醒
     "force_buy_reminder_days": 180,
-
-    # 状态文件路径
     "state_file": "alert_state.json",
 }
 
+# ============ 数据工具函数 ============
 
-def load_state():
-    """读取状态文件"""
-    if os.path.exists(CONFIG["state_file"]):
-        with open(CONFIG["state_file"], "r") as f:
-            return json.load(f)
-    return {
-        "last_alerts": {},          # 最近一次警报时间（按 ticker_level）
-        "last_weekly_report": None, # 最近一次周报时间
-        "first_run_date": datetime.now().isoformat(),  # 首次运行时间
-    }
-
-
-def save_state(state):
-    """保存状态"""
-    with open(CONFIG["state_file"], "w") as f:
-        json.dump(state, f, indent=2)
-
-
-def get_ticker_data(ticker, lookback_days):
-    """获取标的数据"""
+def get_history(ticker, days=90):
+    """获取历史数据"""
     try:
-        period_days = lookback_days + 30
         end = datetime.now()
-        start = end - timedelta(days=period_days)
-
+        start = end - timedelta(days=days + 30)
         stock = yf.Ticker(ticker)
         hist = stock.history(start=start, end=end, interval="1d")
-
-        if hist.empty:
-            return None
-
-        current_price = hist["Close"].iloc[-1]
-        prev_price = hist["Close"].iloc[-2] if len(hist) > 1 else current_price
-        day_change_pct = (current_price - prev_price) / prev_price * 100
-
-        recent = hist.tail(lookback_days)
-        peak_price = recent["High"].max()
-        peak_date = recent["High"].idxmax().strftime("%Y-%m-%d")
-        low_price = recent["Low"].min()
-
-        return {
-            "current": current_price,
-            "prev": prev_price,
-            "day_change_pct": day_change_pct,
-            "peak": peak_price,
-            "peak_date": peak_date,
-            "low": low_price,
-        }
+        return hist if not hist.empty else None
     except Exception as e:
-        print(f"❌ 获取 {ticker} 数据失败: {e}")
+        print(f"  ⚠️ {ticker} 数据获取失败: {e}")
         return None
 
 
-def check_pullback(ticker, config):
-    """检测回调"""
-    data = get_ticker_data(ticker, config["lookback_days"])
-    if data is None:
+def calc_rsi(prices, period=14):
+    """计算 RSI"""
+    if len(prices) < period + 1:
+        return None
+    deltas = np.diff(prices)
+    gains = np.where(deltas > 0, deltas, 0)
+    losses = np.where(deltas < 0, -deltas, 0)
+    avg_gain = np.mean(gains[-period:])
+    avg_loss = np.mean(losses[-period:])
+    if avg_loss == 0:
+        return 100.0
+    rs = avg_gain / avg_loss
+    return 100 - (100 / (1 + rs))
+
+
+def make_sparkline(prices, width=20):
+    """生成 sparkline 字符串（Unicode 块字符）"""
+    if prices is None or len(prices) < 2:
+        return "─" * width
+    blocks = "▁▂▃▄▅▆▇█"
+    prices = np.array(prices)
+    # 重采样到 width 个点
+    if len(prices) > width:
+        idx = np.linspace(0, len(prices) - 1, width).astype(int)
+        prices = prices[idx]
+    lo, hi = prices.min(), prices.max()
+    if hi == lo:
+        return blocks[3] * len(prices)
+    norm = (prices - lo) / (hi - lo)
+    chars = [blocks[min(int(v * 8), 7)] for v in norm]
+    return "".join(chars)
+
+
+def detect_trend(prices):
+    """简单趋势检测"""
+    if prices is None or len(prices) < 10:
+        return "─", "未知"
+    recent = prices[-10:]
+    older = prices[-30:-10] if len(prices) >= 30 else prices[:-10]
+    if older.mean() == 0:
+        return "─", "未知"
+    change = (recent.mean() - older.mean()) / older.mean()
+    if change > 0.03:
+        return "↗", "上升"
+    elif change < -0.03:
+        return "↘", "下降"
+    else:
+        return "→", "盘整"
+
+
+def calc_volume_anomaly(hist):
+    """计算成交量异常度"""
+    if hist is None or len(hist) < 30 or "Volume" not in hist.columns:
+        return None
+    recent_5 = hist["Volume"].tail(5).mean()
+    avg_30 = hist["Volume"].tail(30).mean()
+    if avg_30 == 0:
+        return None
+    return (recent_5 - avg_30) / avg_30 * 100
+
+
+# ============ 主要分析函数 ============
+
+def analyze_ticker(ticker, config):
+    """分析单个标的，返回完整指标"""
+    hist = get_history(ticker, days=90)
+    if hist is None or hist.empty:
         return None
 
-    pullback_pct = (data["peak"] - data["current"]) / data["peak"]
+    prices = hist["Close"].values
+    current = prices[-1]
+    prev = prices[-2] if len(prices) > 1 else current
+    day_change_pct = (current - prev) / prev * 100
 
+    # 60日回调
+    recent = hist.tail(config["lookback_days"])
+    peak = recent["High"].max()
+    peak_date = recent["High"].idxmax().strftime("%Y-%m-%d")
+    pullback_pct = (peak - current) / peak
+
+    # 触发档位
     triggered_level = None
     for level in sorted(config["alert_levels"], reverse=True):
         if pullback_pct >= level:
             triggered_level = level
             break
 
+    # 计算到各档位的距离
+    distance_to_levels = []
+    for level in config["alert_levels"]:
+        if pullback_pct >= level:
+            distance_to_levels.append({"level": level, "triggered": True, "distance_pct": 0, "trigger_price": peak * (1 - level)})
+        else:
+            target_price = peak * (1 - level)
+            distance_pct = (current - target_price) / current
+            distance_to_levels.append({
+                "level": level, "triggered": False,
+                "distance_pct": distance_pct,
+                "trigger_price": target_price,
+            })
+
+    # 技术指标
+    rsi = calc_rsi(prices, period=14)
+    sparkline = make_sparkline(prices[-60:], width=24)
+    trend_arrow, trend_label = detect_trend(prices)
+    volume_anomaly = calc_volume_anomaly(hist)
+
+    # 30日累计涨幅
+    if len(prices) >= 30:
+        return_30d = (current - prices[-30]) / prices[-30] * 100
+    else:
+        return_30d = None
+
     return {
         "ticker": ticker,
         "name": config["name"],
         "type": config["type"],
-        "current": data["current"],
-        "day_change_pct": data["day_change_pct"],
-        "peak": data["peak"],
-        "peak_date": data["peak_date"],
-        "low": data["low"],
+        "current": current,
+        "day_change_pct": day_change_pct,
+        "peak": peak,
+        "peak_date": peak_date,
         "pullback_pct": pullback_pct,
         "triggered_level": triggered_level,
+        "distance_to_levels": distance_to_levels,
         "alert_levels": config["alert_levels"],
+        "rsi": rsi,
+        "sparkline": sparkline,
+        "trend_arrow": trend_arrow,
+        "trend_label": trend_label,
+        "volume_anomaly": volume_anomaly,
+        "return_30d": return_30d,
     }
 
 
+def analyze_benchmarks():
+    """分析市场基准指标"""
+    results = {}
+    for symbol, info in CONFIG["benchmarks"].items():
+        hist = get_history(symbol, days=30)
+        if hist is None or hist.empty:
+            results[info["label"]] = None
+            continue
+        prices = hist["Close"].values
+        current = prices[-1]
+        prev = prices[-2] if len(prices) > 1 else current
+        day_chg = (current - prev) / prev * 100
+        return_5d = (current - prices[-5]) / prices[-5] * 100 if len(prices) >= 5 else None
+        results[info["label"]] = {
+            "name": info["name"],
+            "current": current,
+            "day_change_pct": day_chg,
+            "return_5d": return_5d,
+            "sparkline": make_sparkline(prices[-20:], width=15),
+        }
+    return results
+
+
+def get_upcoming_events(days_ahead=14):
+    """获取未来 N 天内的事件"""
+    today = date.today()
+    end_date = today + timedelta(days=days_ahead)
+    upcoming = []
+    for event_str, event_type, desc in CONFIG["events"]:
+        try:
+            event_date = datetime.strptime(event_str, "%Y-%m-%d").date()
+            if today <= event_date <= end_date:
+                weekday = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"][event_date.weekday()]
+                upcoming.append({
+                    "date": event_date,
+                    "date_str": event_date.strftime("%m-%d"),
+                    "weekday": weekday,
+                    "type": event_type,
+                    "desc": desc,
+                })
+        except ValueError:
+            continue
+    return sorted(upcoming, key=lambda x: x["date"])
+
+
+# ============ 状态管理 ============
+
+def load_state():
+    if os.path.exists(CONFIG["state_file"]):
+        with open(CONFIG["state_file"], "r") as f:
+            return json.load(f)
+    return {"last_alerts": {}, "last_weekly_report": None, "first_run_date": datetime.now().isoformat()}
+
+
+def save_state(state):
+    with open(CONFIG["state_file"], "w") as f:
+        json.dump(state, f, indent=2)
+
+
 def should_send_alert(state, ticker, triggered_level):
-    """判断是否应发警报（24小时冷却）"""
     if triggered_level is None:
         return False
-
     key = f"{ticker}_{triggered_level}"
     last_sent = state["last_alerts"].get(key)
-
     if not last_sent:
         return True
-
     last_time = datetime.fromisoformat(last_sent)
     return datetime.now() - last_time > timedelta(hours=CONFIG["cooldown_hours"])
 
 
 def is_weekly_report_day(state):
-    """判断今天是否该发周报"""
     today = datetime.now()
     if today.weekday() != CONFIG["weekly_report_day"]:
         return False
-
     last_report = state.get("last_weekly_report")
     if not last_report:
         return True
-
     last_time = datetime.fromisoformat(last_report)
-    # 距上次周报超过 6 天才发（防止同一天重复）
     return (today - last_time).days >= 6
 
 
 def check_force_buy_reminder(state):
-    """检查是否需要发 6 个月强制建仓提醒"""
     last_alerts = state.get("last_alerts", {})
-
     if not last_alerts:
-        # 从首次运行算起
         first_run = state.get("first_run_date")
         if not first_run:
             return False
         last_time = datetime.fromisoformat(first_run)
     else:
-        # 取最近一次任何警报的时间
         last_times = [datetime.fromisoformat(t) for t in last_alerts.values()]
         last_time = max(last_times)
-
-    days_since = (datetime.now() - last_time).days
-    return days_since >= CONFIG["force_buy_reminder_days"]
+    return (datetime.now() - last_time).days >= CONFIG["force_buy_reminder_days"]
 
 
-def render_status_table(results):
-    """生成状态表 HTML"""
-    html = """
-    <table style="width: 100%; border-collapse: collapse; margin: 12px 0;">
-        <tr style="background: #f3f4f6;">
-            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">标的</th>
-            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">名称</th>
-            <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">当前价</th>
-            <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">日变化</th>
-            <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">60日高点</th>
-            <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">回调幅度</th>
-            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">状态</th>
-        </tr>
+# ============ 邮件渲染 ============
+
+# 配色 - 现代清爽蓝绿风
+COLORS = {
+    "primary": "#0891b2",      # 主色 - 青蓝
+    "primary_dark": "#0e7490",
+    "accent": "#10b981",       # 强调 - 翠绿
+    "danger": "#dc2626",
+    "warning": "#f59e0b",
+    "success": "#10b981",
+    "neutral": "#64748b",
+    "bg_card": "#f8fafc",
+    "bg_hover": "#f1f5f9",
+    "border": "#e2e8f0",
+    "text": "#1e293b",
+    "text_muted": "#64748b",
+}
+
+
+def render_market_pulse(benchmarks):
+    """市场温度卡片"""
+    if not benchmarks:
+        return ""
+
+    vix = benchmarks.get("VIX")
+    sp500 = benchmarks.get("SP500")
+    qqq = benchmarks.get("QQQ")
+    sox = benchmarks.get("SOX")
+
+    # VIX 情绪判断
+    vix_status = "—"
+    vix_color = COLORS["neutral"]
+    vix_value_text = "—"
+    if vix:
+        v = vix["current"]
+        vix_value_text = f"{v:.1f}"
+        if v < 15:
+            vix_status, vix_color = "极度平静", "#3b82f6"
+        elif v < 20:
+            vix_status, vix_color = "平静", COLORS["success"]
+        elif v < 25:
+            vix_status, vix_color = "警觉", COLORS["warning"]
+        elif v < 35:
+            vix_status, vix_color = "紧张", "#f97316"
+        else:
+            vix_status, vix_color = "恐慌", COLORS["danger"]
+
+    def fmt_bench(b, show_value=True):
+        if not b:
+            return "—", COLORS["neutral"]
+        chg = b["day_change_pct"]
+        color = COLORS["success"] if chg >= 0 else COLORS["danger"]
+        sign = "+" if chg >= 0 else ""
+        text = f"{sign}{chg:.2f}%"
+        return text, color
+
+    sp_text, sp_color = fmt_bench(sp500)
+    qqq_text, qqq_color = fmt_bench(qqq)
+    sox_text, sox_color = fmt_bench(sox)
+
+    return f"""
+    <div style="background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); padding: 24px; border-radius: 12px; margin-bottom: 24px; color: white;">
+        <div style="font-size: 11px; letter-spacing: 2px; opacity: 0.8; margin-bottom: 4px;">MARKET PULSE · 市场温度</div>
+        <div style="display: table; width: 100%; margin-top: 16px;">
+            <div style="display: table-row;">
+                <div style="display: table-cell; padding-right: 16px;">
+                    <div style="font-size: 11px; opacity: 0.7; letter-spacing: 1px;">VIX 恐慌指数</div>
+                    <div style="font-size: 26px; font-weight: 700; margin-top: 4px;">{vix_value_text}</div>
+                    <div style="font-size: 12px; background: {vix_color}; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-top: 4px;">{vix_status}</div>
+                </div>
+                <div style="display: table-cell; padding-right: 16px;">
+                    <div style="font-size: 11px; opacity: 0.7; letter-spacing: 1px;">S&P 500</div>
+                    <div style="font-size: 22px; font-weight: 700; margin-top: 4px; color: {sp_color};">{sp_text}</div>
+                    <div style="font-size: 11px; opacity: 0.7; margin-top: 4px;">{sp500["sparkline"] if sp500 else ""}</div>
+                </div>
+                <div style="display: table-cell; padding-right: 16px;">
+                    <div style="font-size: 11px; opacity: 0.7; letter-spacing: 1px;">QQQ 纳指</div>
+                    <div style="font-size: 22px; font-weight: 700; margin-top: 4px; color: {qqq_color};">{qqq_text}</div>
+                    <div style="font-size: 11px; opacity: 0.7; margin-top: 4px;">{qqq["sparkline"] if qqq else ""}</div>
+                </div>
+                <div style="display: table-cell;">
+                    <div style="font-size: 11px; opacity: 0.7; letter-spacing: 1px;">SOX 半导体</div>
+                    <div style="font-size: 22px; font-weight: 700; margin-top: 4px; color: {sox_color};">{sox_text}</div>
+                    <div style="font-size: 11px; opacity: 0.7; margin-top: 4px;">{sox["sparkline"] if sox else ""}</div>
+                </div>
+            </div>
+        </div>
+    </div>
     """
 
+
+def render_watchlist_table(results):
+    """主标的清单表格"""
+    rows = ""
     for r in results:
         if r is None:
             continue
 
+        # 回调颜色
         pct = r["pullback_pct"] * 100
-        day_pct = r["day_change_pct"]
-
-        # 颜色逻辑
         if pct >= 25:
-            pct_color = "#16a34a"  # 绿（深度回调=机会）
-            status = "🟢 深度回调"
+            pb_color = COLORS["success"]
+            status = '<span style="background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:4px; font-size:11px;">深度回调</span>'
         elif pct >= 15:
-            pct_color = "#eab308"
-            status = "🟡 明显回调"
+            pb_color = COLORS["warning"]
+            status = '<span style="background:#fef3c7; color:#a16207; padding:2px 8px; border-radius:4px; font-size:11px;">明显回调</span>'
         elif pct >= 8:
-            pct_color = "#f97316"
-            status = "🟠 健康回调"
+            pb_color = "#f97316"
+            status = '<span style="background:#ffedd5; color:#c2410c; padding:2px 8px; border-radius:4px; font-size:11px;">健康回调</span>'
         else:
-            pct_color = "#6b7280"
-            status = "⚪ 未达档位"
+            pb_color = COLORS["text_muted"]
+            status = '<span style="background:#f1f5f9; color:#475569; padding:2px 8px; border-radius:4px; font-size:11px;">未达档位</span>'
 
-        day_color = "#16a34a" if day_pct >= 0 else "#dc2626"
-        day_sign = "+" if day_pct >= 0 else ""
+        # 日变化
+        day_chg = r["day_change_pct"]
+        day_color = COLORS["success"] if day_chg >= 0 else COLORS["danger"]
+        day_sign = "+" if day_chg >= 0 else ""
 
-        html += f"""
-        <tr>
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>{r['ticker']}</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd; color: #6b7280;">{r['name']}</td>
-            <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">${r['current']:.2f}</td>
-            <td style="padding: 10px; text-align: right; border: 1px solid #ddd; color: {day_color};">
-                {day_sign}{day_pct:.2f}%
+        # RSI
+        rsi = r["rsi"]
+        if rsi:
+            if rsi > 70:
+                rsi_color = COLORS["danger"]
+                rsi_label = "🔥超买"
+            elif rsi < 30:
+                rsi_color = COLORS["success"]
+                rsi_label = "❄️超卖"
+            else:
+                rsi_color = COLORS["neutral"]
+                rsi_label = "中性"
+            rsi_text = f'<span style="color:{rsi_color}; font-weight:600;">{rsi:.0f}</span> <span style="color:{COLORS["text_muted"]}; font-size:11px;">{rsi_label}</span>'
+        else:
+            rsi_text = "—"
+
+        # 30日回报
+        ret30 = r["return_30d"]
+        if ret30 is not None:
+            ret30_color = COLORS["success"] if ret30 >= 0 else COLORS["danger"]
+            ret30_sign = "+" if ret30 >= 0 else ""
+            ret30_text = f'<span style="color:{ret30_color};">{ret30_sign}{ret30:.1f}%</span>'
+        else:
+            ret30_text = "—"
+
+        rows += f"""
+        <tr style="border-bottom: 1px solid {COLORS['border']};">
+            <td style="padding: 12px 8px;">
+                <div style="font-weight: 700; color: {COLORS['text']}; font-size: 14px;">{r['ticker']}</div>
+                <div style="font-size: 11px; color: {COLORS['text_muted']};">{r['name']}</div>
             </td>
-            <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">${r['peak']:.2f}</td>
-            <td style="padding: 10px; text-align: right; border: 1px solid #ddd; color: {pct_color}; font-weight: bold;">
-                -{pct:.2f}%
+            <td style="padding: 12px 8px; text-align: right;">
+                <div style="font-weight: 600; font-size: 14px;">${r['current']:.2f}</div>
+                <div style="font-size: 11px; color: {day_color};">{day_sign}{day_chg:.2f}%</div>
             </td>
-            <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">{status}</td>
+            <td style="padding: 12px 8px; font-family: monospace; font-size: 13px; color: {COLORS['primary']}; letter-spacing: -1px;">
+                {r['sparkline']}
+                <div style="font-size: 10px; color: {COLORS['text_muted']}; margin-top: 2px;">{r['trend_arrow']} {r['trend_label']}</div>
+            </td>
+            <td style="padding: 12px 8px; text-align: right;">
+                <span style="color: {pb_color}; font-weight: 700; font-size: 15px;">-{pct:.1f}%</span>
+                <div style="margin-top: 4px;">{status}</div>
+            </td>
+            <td style="padding: 12px 8px; text-align: center;">{rsi_text}</td>
+            <td style="padding: 12px 8px; text-align: right;">{ret30_text}</td>
         </tr>
         """
 
-    html += "</table>"
-    return html
-
-
-def format_alert_email(alerts_to_send, all_results):
-    """触发警报邮件"""
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
-    tickers = [a["ticker"] for a in alerts_to_send]
-    subject = f"🔔 ETF/个股 回调警报: {', '.join(tickers)}"
-
-    html = f"""
-    <html>
-    <body style="font-family: -apple-system, 'Segoe UI', sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #d97706; border-bottom: 2px solid #fbbf24; padding-bottom: 8px;">
-            🔔 回调触发警报
-        </h2>
-        <p style="color: #6b7280; font-size: 13px;">检测时间: {now}</p>
-
-        <h3 style="color: #dc2626;">⚡ 触发的警报</h3>
+    return f"""
+    <div style="margin: 24px 0;">
+        <div style="font-size: 11px; letter-spacing: 2px; color: {COLORS['primary']}; margin-bottom: 8px; font-weight: 600;">WATCHLIST · 观察清单</div>
+        <table style="width: 100%; border-collapse: collapse; background: white; border: 1px solid {COLORS['border']}; border-radius: 8px; overflow: hidden;">
+            <thead>
+                <tr style="background: {COLORS['bg_card']}; border-bottom: 2px solid {COLORS['border']};">
+                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">标的</th>
+                    <th style="padding: 10px 8px; text-align: right; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">现价/日变</th>
+                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">60日走势</th>
+                    <th style="padding: 10px 8px; text-align: right; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">回调幅度</th>
+                    <th style="padding: 10px 8px; text-align: center; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">RSI</th>
+                    <th style="padding: 10px 8px; text-align: right; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">30日回报</th>
+                </tr>
+            </thead>
+            <tbody>
+                {rows}
+            </tbody>
+        </table>
+    </div>
     """
 
-    for alert in alerts_to_send:
-        level_pct = alert["triggered_level"] * 100
-        pullback_pct = alert["pullback_pct"] * 100
 
-        if level_pct >= 25:
-            action = "🟢 第三档买入（30% 仓位）— 深度回调，罕见机会"
-            color = "#16a34a"
-            bg = "#dcfce7"
-        elif level_pct >= 15:
-            action = "🟡 第二档买入（40% 仓位）— 明显回调"
-            color = "#ca8a04"
-            bg = "#fef9c3"
+def render_next_targets(results):
+    """距下一档位差多少"""
+    # 找出最接近触发的（按距第一档的距离排序）
+    candidates = []
+    for r in results:
+        if r is None or r["triggered_level"]:
+            continue
+        for d in r["distance_to_levels"]:
+            if not d["triggered"]:
+                candidates.append({
+                    "ticker": r["ticker"],
+                    "name": r["name"],
+                    "current": r["current"],
+                    "level": d["level"],
+                    "trigger_price": d["trigger_price"],
+                    "distance_pct": d["distance_pct"],
+                    "pullback_pct": r["pullback_pct"],
+                })
+                break
+
+    if not candidates:
+        return ""
+
+    # 按距离排序
+    candidates.sort(key=lambda x: x["distance_pct"])
+    top3 = candidates[:3]
+
+    rows = ""
+    for c in top3:
+        level_pct = c["level"] * 100
+        dist_pct = c["distance_pct"] * 100
+        price_drop = c["current"] - c["trigger_price"]
+
+        # 进度条
+        progress = (c["pullback_pct"] / c["level"]) * 100
+        progress = min(progress, 100)
+
+        rows += f"""
+        <div style="background: white; padding: 16px; margin: 8px 0; border-radius: 8px; border: 1px solid {COLORS['border']};">
+            <div style="display: table; width: 100%;">
+                <div style="display: table-cell; vertical-align: middle;">
+                    <div style="font-weight: 700; font-size: 14px; color: {COLORS['text']};">{c['ticker']}</div>
+                    <div style="font-size: 11px; color: {COLORS['text_muted']};">{c['name']}</div>
+                </div>
+                <div style="display: table-cell; vertical-align: middle; text-align: right;">
+                    <div style="font-size: 12px; color: {COLORS['text_muted']};">距第一档 -{level_pct:.0f}%</div>
+                    <div style="font-size: 16px; font-weight: 700; color: {COLORS['primary']};">还需跌 {dist_pct:.1f}%</div>
+                    <div style="font-size: 11px; color: {COLORS['text_muted']};">即 ${price_drop:.2f}（触发价 ${c['trigger_price']:.2f}）</div>
+                </div>
+            </div>
+            <div style="margin-top: 12px; background: {COLORS['bg_hover']}; height: 6px; border-radius: 3px; overflow: hidden;">
+                <div style="width: {progress:.1f}%; height: 100%; background: linear-gradient(90deg, {COLORS['accent']}, {COLORS['warning']});"></div>
+            </div>
+            <div style="margin-top: 4px; font-size: 10px; color: {COLORS['text_muted']};">当前回调 {c['pullback_pct']*100:.1f}% / 触发档 {level_pct:.0f}%</div>
+        </div>
+        """
+
+    return f"""
+    <div style="margin: 24px 0;">
+        <div style="font-size: 11px; letter-spacing: 2px; color: {COLORS['primary']}; margin-bottom: 8px; font-weight: 600;">NEXT TARGETS · 最接近触发</div>
+        {rows}
+    </div>
+    """
+
+
+def render_events(events):
+    """关键事件日历"""
+    if not events:
+        return ""
+
+    rows = ""
+    for e in events:
+        type_colors = {
+            "财报": ("#ddd6fe", "#6d28d9"),
+            "数据": ("#fef3c7", "#a16207"),
+            "会议": ("#fee2e2", "#b91c1c"),
+        }
+        bg, fg = type_colors.get(e["type"], ("#f1f5f9", "#475569"))
+
+        rows += f"""
+        <tr style="border-bottom: 1px solid {COLORS['border']};">
+            <td style="padding: 10px 8px; font-weight: 600; color: {COLORS['text']};">{e['date_str']}</td>
+            <td style="padding: 10px 8px; color: {COLORS['text_muted']}; font-size: 12px;">{e['weekday']}</td>
+            <td style="padding: 10px 8px;">
+                <span style="background: {bg}; color: {fg}; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600;">{e['type']}</span>
+            </td>
+            <td style="padding: 10px 8px; font-size: 13px; color: {COLORS['text']};">{e['desc']}</td>
+        </tr>
+        """
+
+    return f"""
+    <div style="margin: 24px 0;">
+        <div style="font-size: 11px; letter-spacing: 2px; color: {COLORS['primary']}; margin-bottom: 8px; font-weight: 600;">UPCOMING CATALYSTS · 未来 14 天事件</div>
+        <table style="width: 100%; border-collapse: collapse; background: white; border: 1px solid {COLORS['border']}; border-radius: 8px; overflow: hidden;">
+            <thead>
+                <tr style="background: {COLORS['bg_card']};">
+                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">日期</th>
+                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">星期</th>
+                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">类型</th>
+                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: {COLORS['text_muted']}; letter-spacing: 1px;">事件</th>
+                </tr>
+            </thead>
+            <tbody>{rows}</tbody>
+        </table>
+    </div>
+    """
+
+
+def render_volume_anomaly(results):
+    """资金流向异常"""
+    anomalies = []
+    for r in results:
+        if r is None or r["volume_anomaly"] is None:
+            continue
+        if abs(r["volume_anomaly"]) > 30:  # 超过 30% 算异常
+            anomalies.append(r)
+
+    if not anomalies:
+        return ""
+
+    anomalies.sort(key=lambda x: abs(x["volume_anomaly"]), reverse=True)
+
+    rows = ""
+    for r in anomalies[:5]:
+        vol = r["volume_anomaly"]
+        if vol > 0:
+            color = COLORS["success"]
+            arrow = "↑"
+            label = "资金流入"
         else:
-            action = "🟠 第一档买入（30% 仓位）— 健康回调"
+            color = COLORS["danger"]
+            arrow = "↓"
+            label = "资金流出"
+
+        rows += f"""
+        <div style="display: inline-block; background: white; padding: 12px 16px; margin: 4px; border-radius: 8px; border: 1px solid {COLORS['border']};">
+            <div style="font-weight: 700; color: {COLORS['text']};">{r['ticker']}</div>
+            <div style="font-size: 18px; font-weight: 700; color: {color};">{arrow} {abs(vol):.0f}%</div>
+            <div style="font-size: 11px; color: {COLORS['text_muted']};">{label}</div>
+        </div>
+        """
+
+    return f"""
+    <div style="margin: 24px 0;">
+        <div style="font-size: 11px; letter-spacing: 2px; color: {COLORS['primary']}; margin-bottom: 8px; font-weight: 600;">VOLUME ANOMALY · 资金流向异常</div>
+        <div style="font-size: 11px; color: {COLORS['text_muted']}; margin-bottom: 8px;">近5日成交量 vs 近30日均量偏离 > 30%</div>
+        <div>{rows}</div>
+    </div>
+    """
+
+
+def render_summary_banner(results, alerts_to_send=None):
+    """顶部今日指令横幅"""
+    if alerts_to_send:
+        count = len(alerts_to_send)
+        max_level = max(a["triggered_level"] for a in alerts_to_send)
+        if max_level >= 0.25:
+            color, bg = COLORS["danger"], "#fee2e2"
+            action = "AGGRESSIVE BUY · 进攻建仓"
+            sub = f"{count} 个标的触发深度回调，执行第三档买入"
+        elif max_level >= 0.15:
+            color, bg = "#ea580c", "#ffedd5"
+            action = "PARTIAL BUY · 部分建仓"
+            sub = f"{count} 个标的触发明显回调，执行第二档买入"
+        else:
+            color, bg = COLORS["warning"], "#fef3c7"
+            action = "FIRST ENTRY · 首档建仓"
+            sub = f"{count} 个标的触发健康回调，执行第一档买入"
+    else:
+        # 看接近度
+        min_dist = float('inf')
+        for r in results:
+            if r and not r["triggered_level"]:
+                for d in r["distance_to_levels"]:
+                    if not d["triggered"]:
+                        min_dist = min(min_dist, d["distance_pct"])
+                        break
+
+        if min_dist < 0.02:
+            color, bg = "#0891b2", "#cffafe"
+            action = "WATCH CLOSELY · 密切关注"
+            sub = "有标的接近触发档位，建议手动盯盘"
+        else:
+            color, bg = COLORS["success"], "#d1fae5"
+            action = "HOLD · 继续等待"
+            sub = "市场强势，所有标的未触发，保持观望"
+
+    return f"""
+    <div style="background: {bg}; border-left: 4px solid {color}; padding: 20px; border-radius: 8px; margin-bottom: 24px;">
+        <div style="font-size: 11px; letter-spacing: 2px; color: {color}; font-weight: 600;">TODAY'S ACTION · 今日指令</div>
+        <div style="font-size: 20px; font-weight: 700; color: {color}; margin-top: 4px;">{action}</div>
+        <div style="font-size: 13px; color: {COLORS['text']}; margin-top: 4px;">{sub}</div>
+    </div>
+    """
+
+
+def render_email_shell(title, subtitle, content):
+    """邮件外壳"""
+    now = datetime.now().strftime("%Y-%m-%d %H:%M UTC")
+    return f"""
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif; background: #f1f5f9; color: {COLORS['text']};">
+        <div style="max-width: 720px; margin: 0 auto; padding: 24px 16px;">
+            <!-- Header -->
+            <div style="padding: 16px 0 24px 0; border-bottom: 2px solid {COLORS['primary']};">
+                <div style="font-size: 11px; letter-spacing: 3px; color: {COLORS['primary']}; font-weight: 700;">ETF MONITOR</div>
+                <div style="display: table; width: 100%; margin-top: 8px;">
+                    <div style="display: table-cell; vertical-align: bottom;">
+                        <div style="font-size: 24px; font-weight: 700; color: {COLORS['text']};">{title}</div>
+                        <div style="font-size: 13px; color: {COLORS['text_muted']}; margin-top: 4px;">{subtitle}</div>
+                    </div>
+                    <div style="display: table-cell; vertical-align: bottom; text-align: right;">
+                        <div style="font-size: 11px; color: {COLORS['text_muted']};">{now}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            {content}
+
+            <!-- Footer -->
+            <div style="margin-top: 32px; padding: 16px 0; border-top: 1px solid {COLORS['border']}; text-align: center;">
+                <div style="font-size: 11px; color: {COLORS['text_muted']};">
+                    自动监控系统 · 每个工作日运行 · 基于 yfinance 数据
+                </div>
+                <div style="font-size: 10px; color: {COLORS['text_muted']}; margin-top: 4px;">
+                    本报表仅供参考，不构成投资建议
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+
+
+def format_alert_email(alerts, all_results, benchmarks, events):
+    """触发警报邮件"""
+    tickers = [a["ticker"] for a in alerts]
+    subject = f"🔔 回调触发 · {', '.join(tickers)}"
+
+    # 触发详情卡片
+    alert_cards = ""
+    for a in alerts:
+        level_pct = a["triggered_level"] * 100
+        pullback_pct = a["pullback_pct"] * 100
+        if level_pct >= 25:
+            tier, advice = "第三档", "买入 30% 仓位（深度回调机会）"
+            color = COLORS["success"]
+        elif level_pct >= 15:
+            tier, advice = "第二档", "买入 40% 仓位（明显回调）"
+            color = COLORS["warning"]
+        else:
+            tier, advice = "第一档", "买入 30% 仓位（健康回调）"
             color = "#ea580c"
-            bg = "#ffedd5"
 
-        type_emoji = "📊" if alert["type"] == "ETF" else "📈"
-
-        html += f"""
-        <div style="border-left: 4px solid {color}; padding: 14px; margin: 14px 0; background: {bg}; border-radius: 4px;">
-            <h4 style="margin: 0 0 10px 0; font-size: 16px;">
-                {type_emoji} {alert['ticker']} - {alert['name']}
-            </h4>
-            <table style="width: 100%; font-size: 14px;">
-                <tr>
-                    <td style="padding: 3px 0; color: #4b5563;">当前价:</td>
-                    <td style="padding: 3px 0; text-align: right;"><b>${alert['current']:.2f}</b></td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px 0; color: #4b5563;">60 日高点:</td>
-                    <td style="padding: 3px 0; text-align: right;">${alert['peak']:.2f} ({alert['peak_date']})</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px 0; color: #4b5563;">回调幅度:</td>
-                    <td style="padding: 3px 0; text-align: right; color: #dc2626;">
-                        <b>-{pullback_pct:.2f}%</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px 0; color: #4b5563;">触发档位:</td>
-                    <td style="padding: 3px 0; text-align: right;"><b>-{level_pct:.0f}%</b></td>
-                </tr>
-            </table>
-            <div style="margin-top: 10px; padding: 10px; background: white; border-radius: 4px;">
-                <b>📋 建仓建议:</b> {action}
+        alert_cards += f"""
+        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid {color}; margin: 12px 0;">
+            <div style="display: table; width: 100%;">
+                <div style="display: table-cell;">
+                    <div style="font-size: 18px; font-weight: 700;">{a['ticker']} <span style="font-size: 13px; color: {COLORS['text_muted']}; font-weight: 400;">{a['name']}</span></div>
+                    <div style="margin-top: 8px; font-size: 13px;">
+                        <span style="color: {COLORS['text_muted']};">当前价</span> <b>${a['current']:.2f}</b> &nbsp;|&nbsp;
+                        <span style="color: {COLORS['text_muted']};">60日高</span> ${a['peak']:.2f}
+                    </div>
+                </div>
+                <div style="display: table-cell; text-align: right; vertical-align: top;">
+                    <div style="font-size: 28px; font-weight: 700; color: {color};">-{pullback_pct:.1f}%</div>
+                    <div style="font-size: 12px; color: {COLORS['text_muted']};">触发 -{level_pct:.0f}% 档位</div>
+                </div>
+            </div>
+            <div style="margin-top: 12px; padding: 12px; background: {COLORS['bg_card']}; border-radius: 6px;">
+                <span style="font-weight: 600; color: {color};">{tier} 建议</span> <span style="color: {COLORS['text']};">· {advice}</span>
             </div>
         </div>
         """
 
-    html += "<h3>📊 全部标的当前状态</h3>"
-    html += render_status_table(all_results)
+    content = (
+        render_summary_banner(all_results, alerts) +
+        render_market_pulse(benchmarks) +
+        f'<div style="font-size: 11px; letter-spacing: 2px; color: {COLORS["primary"]}; margin-bottom: 8px; font-weight: 600;">ALERTS · 触发详情</div>' +
+        alert_cards +
+        render_watchlist_table(all_results) +
+        render_volume_anomaly(all_results) +
+        render_events(events)
+    )
 
-    html += """
-        <div style="margin-top: 30px; padding: 15px; background: #fffbeb; border-left: 4px solid #f59e0b;">
-            <p style="margin: 0 0 8px 0;"><b>💡 提醒：</b></p>
-            <ul style="margin: 0; padding-left: 20px; color: #78350f;">
-                <li>建仓建议基于"方案A 保守派"分批策略</li>
-                <li>触发警报不等于必须买入，仍需自己判断</li>
-                <li>同一档位 24 小时内不重复发送警报</li>
-            </ul>
-        </div>
-
-        <p style="margin-top: 24px; color: #9ca3af; font-size: 11px; text-align: center;">
-            本邮件由 ETF 自动监控脚本发送 | 不构成投资建议
-        </p>
-    </body>
-    </html>
-    """
-
-    return subject, html
+    return subject, render_email_shell(
+        title=f"⚡ 回调警报",
+        subtitle=f"{len(alerts)} 个标的触发买入信号",
+        content=content,
+    )
 
 
-def format_weekly_report(all_results):
+def format_weekly_report(all_results, benchmarks, events):
     """周报邮件"""
-    now = datetime.now().strftime("%Y-%m-%d")
-    subject = f"📊 ETF/个股 周报 - {now}"
+    today = datetime.now()
+    subject = f"📊 周报 · {today.strftime('%Y-%m-%d')}"
 
-    # 统计触发情况
-    triggered_count = sum(1 for r in all_results if r and r["triggered_level"])
-    total_count = sum(1 for r in all_results if r)
+    triggered = sum(1 for r in all_results if r and r["triggered_level"])
 
-    if triggered_count == 0:
-        summary = "✅ 本周所有标的均未触发回调警报，整体处于强势状态。"
-        summary_color = "#16a34a"
-    elif triggered_count <= 2:
-        summary = f"⚠️ 本周有 {triggered_count}/{total_count} 个标的触发回调警报，建议关注。"
-        summary_color = "#f97316"
-    else:
-        summary = f"🚨 本周有 {triggered_count}/{total_count} 个标的触发回调警报，板块普遍调整中。"
-        summary_color = "#dc2626"
+    content = (
+        render_summary_banner(all_results, None) +
+        render_market_pulse(benchmarks) +
+        render_watchlist_table(all_results) +
+        render_next_targets(all_results) +
+        render_volume_anomaly(all_results) +
+        render_events(events)
+    )
 
-    html = f"""
-    <html>
-    <body style="font-family: -apple-system, 'Segoe UI', sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #2563eb; border-bottom: 2px solid #93c5fd; padding-bottom: 8px;">
-            📊 ETF/个股 周报
-        </h2>
-        <p style="color: #6b7280; font-size: 13px;">报告日期: {now}</p>
+    return subject, render_email_shell(
+        title="📊 每周量化报表",
+        subtitle=f"AI 硬件赛道全景扫描 · 第 {today.isocalendar()[1]} 周",
+        content=content,
+    )
 
-        <div style="padding: 14px; background: #eff6ff; border-left: 4px solid {summary_color}; border-radius: 4px; margin: 16px 0;">
-            <p style="margin: 0; font-size: 15px; color: {summary_color};"><b>{summary}</b></p>
-        </div>
 
-        <h3>📈 全部标的状态总览</h3>
-    """
-    html += render_status_table(all_results)
+def format_force_buy_reminder(all_results, benchmarks, events, days_since):
+    """6个月强制建仓提醒"""
+    subject = f"⏰ 强制建仓提醒 · 已等待 {days_since} 天"
 
-    # 找出最接近触发的标的
-    near_trigger = []
-    for r in all_results:
-        if r and not r["triggered_level"]:
-            min_level = min(r["alert_levels"])
-            gap = min_level - r["pullback_pct"]
-            if gap < 0.05:  # 距第一档不到 5%
-                near_trigger.append((r, gap))
-
-    if near_trigger:
-        near_trigger.sort(key=lambda x: x[1])
-        html += "<h3>🎯 接近触发的标的（距第一档警报 &lt; 5%）</h3><ul>"
-        for r, gap in near_trigger:
-            html += f"<li><b>{r['ticker']}</b>: 当前回调 {r['pullback_pct']*100:.2f}%，再跌 {gap*100:.2f}% 即触发</li>"
-        html += "</ul>"
-
-    html += """
-        <div style="margin-top: 30px; padding: 15px; background: #f0fdf4; border-left: 4px solid #16a34a;">
-            <p style="margin: 0 0 8px 0;"><b>📋 操作提醒（方案A 保守派）：</b></p>
-            <ul style="margin: 0; padding-left: 20px; color: #166534;">
-                <li><b>未触发档位</b>: 继续等待，资金放短债赚利息</li>
-                <li><b>触发 -8%</b>: 买入第一档 30%</li>
-                <li><b>触发 -15%</b>: 买入第二档 40%</li>
-                <li><b>触发 -25%</b>: 买入第三档 30%</li>
-                <li><b>6 个月未触发</b>: 强制建仓 15% 防止踏空</li>
-            </ul>
-        </div>
-
-        <p style="margin-top: 24px; color: #9ca3af; font-size: 11px; text-align: center;">
-            周报每周一发送 | 触发警报时会即时单独发送 | 不构成投资建议
-        </p>
-    </body>
-    </html>
+    banner = f"""
+    <div style="background: linear-gradient(135deg, #7c3aed, #6d28d9); padding: 24px; border-radius: 12px; margin-bottom: 24px; color: white;">
+        <div style="font-size: 11px; letter-spacing: 2px; opacity: 0.9; font-weight: 600;">FORCE BUY REMINDER · 强制建仓提醒</div>
+        <div style="font-size: 24px; font-weight: 700; margin-top: 8px;">已 {days_since} 天无警报</div>
+        <div style="font-size: 14px; opacity: 0.9; margin-top: 8px;">按方案 A 纪律，建议建仓 15% 仓位防止踏空</div>
+    </div>
     """
 
-    return subject, html
+    content = (
+        banner +
+        render_market_pulse(benchmarks) +
+        render_watchlist_table(all_results) +
+        render_next_targets(all_results) +
+        render_events(events)
+    )
+
+    return subject, render_email_shell(
+        title="⏰ 防踏空保险",
+        subtitle="6 个月未触发，启动强制建仓机制",
+        content=content,
+    )
 
 
-def format_force_buy_reminder(all_results, days_since):
-    """6 个月强制建仓提醒邮件"""
-    subject = f"⏰ 6个月强制建仓提醒 - 已等待 {days_since} 天"
-
-    html = f"""
-    <html>
-    <body style="font-family: -apple-system, 'Segoe UI', sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #7c3aed; border-bottom: 2px solid #c4b5fd; padding-bottom: 8px;">
-            ⏰ 强制建仓纪律提醒
-        </h2>
-
-        <div style="padding: 16px; background: #faf5ff; border-left: 4px solid #7c3aed; border-radius: 4px; margin: 16px 0;">
-            <p style="margin: 0 0 8px 0; font-size: 15px;">
-                <b>已经 {days_since} 天没有触发任何回调警报。</b>
-            </p>
-            <p style="margin: 0; color: #6b21a8;">
-                按照方案A 的纪律，当 6 个月（180天）一直没等到回调时，应该<b>强制建仓 15% 仓位</b>，以避免完全踏空 AI 硬件赛道。
-            </p>
-        </div>
-
-        <h3>🎯 当前建议执行的操作</h3>
-        <div style="padding: 14px; background: #fef3c7; border-radius: 6px;">
-            <p style="margin: 0 0 10px 0;"><b>立即买入第一档的一半（总仓位 15%）</b></p>
-            <p style="margin: 0; color: #78350f; font-size: 14px;">
-                理由：
-                <br>① 牛市中等不到回调是常态
-                <br>② 6 个月没动说明趋势比预期更强
-                <br>③ 部分建仓总比完全错过好
-                <br>④ 剩余 85% 资金继续按原计划等回调
-            </p>
-        </div>
-
-        <h3>📊 当前所有标的状态</h3>
-    """
-    html += render_status_table(all_results)
-
-    html += """
-        <div style="margin-top: 24px; padding: 12px; background: #e0e7ff; border-radius: 6px;">
-            <p style="margin: 0; color: #3730a3; font-size: 14px;">
-                💭 <b>心态提醒</b>: 不要因为价格已经很高而拒绝建仓。
-                如果你这 6 个月里的纪律是"等回调才买"，现在的强制建仓就是这个纪律的一部分。
-                这不是追高，是<b>反踏空保险</b>。
-            </p>
-        </div>
-
-        <p style="margin-top: 24px; color: #9ca3af; font-size: 11px; text-align: center;">
-            6 个月强制建仓提醒 | 触发后会重置计时 | 不构成投资建议
-        </p>
-    </body>
-    </html>
-    """
-
-    return subject, html
-
+# ============ 邮件发送 ============
 
 def send_email(subject, html_content):
-    """发送邮件"""
     cfg = CONFIG["email"]
-
     if not cfg["password"]:
-        print("❌ 错误: 未设置 SMTP_PASSWORD 环境变量")
+        print("❌ 未设置 SMTP_PASSWORD")
         return False
 
     msg = MIMEMultipart("alternative")
@@ -518,7 +864,6 @@ def send_email(subject, html_content):
         else:
             server = smtplib.SMTP(cfg["smtp_server"], cfg["smtp_port"])
             server.starttls()
-
         server.login(cfg["sender"], cfg["password"])
         server.send_message(msg)
         server.quit()
@@ -529,81 +874,69 @@ def send_email(subject, html_content):
         return False
 
 
+# ============ 主流程 ============
+
 def main():
     print(f"\n{'='*60}")
-    print(f"🚀 ETF/个股 回调监控运行: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"🚀 ETF 量化监控运行: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*60}\n")
 
     state = load_state()
+
+    # 1. 拉取所有数据
+    print("📊 分析市场基准...")
+    benchmarks = analyze_benchmarks()
+    for label, b in benchmarks.items():
+        if b:
+            print(f"   {label}: {b['current']:.2f} ({b['day_change_pct']:+.2f}%)")
+
+    print("\n📈 分析持仓标的...")
     all_results = []
     alerts_to_send = []
-
-    # 1. 检测所有标的
     for ticker, config in CONFIG["tickers"].items():
-        print(f"📈 检测 {ticker} ({config['name']})...")
-        result = check_pullback(ticker, config)
-        all_results.append(result)
-
-        if result is None:
-            print(f"   ⚠️  数据获取失败\n")
+        print(f"   {ticker} ({config['name']})...")
+        r = analyze_ticker(ticker, config)
+        all_results.append(r)
+        if r is None:
             continue
+        print(f"      ${r['current']:.2f}  回调:{r['pullback_pct']*100:.2f}%  RSI:{r['rsi']:.0f}" if r['rsi'] else "")
+        if r["triggered_level"] and should_send_alert(state, ticker, r["triggered_level"]):
+            alerts_to_send.append(r)
+            state["last_alerts"][f"{ticker}_{r['triggered_level']}"] = datetime.now().isoformat()
 
-        pullback_pct = result["pullback_pct"] * 100
-        print(f"   当前价: ${result['current']:.2f} (日变化 {result['day_change_pct']:+.2f}%)")
-        print(f"   60日高点: ${result['peak']:.2f} | 回调: -{pullback_pct:.2f}%")
+    events = get_upcoming_events(days_ahead=14)
+    print(f"\n📅 未来 14 天事件: {len(events)} 个")
 
-        if result["triggered_level"]:
-            level_pct = result["triggered_level"] * 100
-            print(f"   ⚡ 触发档位: -{level_pct:.0f}%")
-
-            if should_send_alert(state, ticker, result["triggered_level"]):
-                alerts_to_send.append(result)
-                state["last_alerts"][f"{ticker}_{result['triggered_level']}"] = datetime.now().isoformat()
-            else:
-                print(f"   ⏸️  24小时冷却期内，跳过")
-        else:
-            print(f"   ✅ 未触发")
-        print()
-
-    # 2. 优先级最高：发送触发警报
-    sent_alert = False
+    # 2. 优先发警报
+    sent = False
     if alerts_to_send:
-        subject, html = format_alert_email(alerts_to_send, all_results)
+        subject, html = format_alert_email(alerts_to_send, all_results, benchmarks, events)
         if send_email(subject, html):
-            sent_alert = True
+            sent = True
 
-    # 3. 检查 6 个月强制建仓提醒（仅在没有触发警报时发）
-    if not sent_alert and check_force_buy_reminder(state):
-        # 算实际天数
+    # 3. 强制建仓提醒
+    if not sent and check_force_buy_reminder(state):
         last_alerts = state.get("last_alerts", {})
         if last_alerts:
-            last_times = [datetime.fromisoformat(t) for t in last_alerts.values()]
-            last_time = max(last_times)
+            last_time = max(datetime.fromisoformat(t) for t in last_alerts.values())
         else:
             last_time = datetime.fromisoformat(state["first_run_date"])
         days_since = (datetime.now() - last_time).days
-
-        print(f"⏰ 已 {days_since} 天无警报，发送强制建仓提醒")
-        subject, html = format_force_buy_reminder(all_results, days_since)
+        subject, html = format_force_buy_reminder(all_results, benchmarks, events, days_since)
         if send_email(subject, html):
-            # 重置计时（避免每天都发）
             state["last_alerts"]["__force_reminder__"] = datetime.now().isoformat()
-            sent_alert = True
+            sent = True
 
-    # 4. 周报（仅在没发其他邮件时发，避免轰炸）
-    if not sent_alert and is_weekly_report_day(state):
-        print("📅 周一，发送周报")
-        subject, html = format_weekly_report(all_results)
+    # 4. 周报
+    if not sent and is_weekly_report_day(state):
+        subject, html = format_weekly_report(all_results, benchmarks, events)
         if send_email(subject, html):
             state["last_weekly_report"] = datetime.now().isoformat()
-    elif not sent_alert:
-        print("📭 本次无邮件需要发送")
+    elif not sent:
+        print("\n📭 本次无邮件需要发送")
 
-    # 5. 保存状态
     save_state(state)
-    print(f"\n{'='*60}")
-    print(f"✅ 运行结束")
-    print(f"{'='*60}\n")
+    print(f"\n{'='*60}\n✅ 运行结束\n{'='*60}\n")
 
 
 if __name__ == "__main__":
