@@ -1,0 +1,40 @@
+name: 大师持仓监控
+
+on:
+  schedule:
+    # 13F 公布期(2/5/8/11月的10-20号)每天检查
+    - cron: '0 23 10-20 2,5,8,11 *'
+    # 其他时间每周一检查
+    - cron: '0 23 * * 1'
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 运行监控脚本
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: python superinvestors_monitor.py
+
+      - name: 提交状态文件
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          if [ -f superinvestor_state.json ]; then
+            git add superinvestor_state.json
+            git diff --staged --quiet || git commit -m "Update superinvestor state [skip ci]"
+            git push || echo "无需推送"
+          fi
