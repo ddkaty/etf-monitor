@@ -67,8 +67,8 @@ CONFIG = {
         "Pabrai": {
             "name": "Mohnish Pabrai",
             "name_cn": "莫尼什·帕伯莱",
-            "fund": "Dalal Street",
-            "cik": "0001173334",
+            "fund": "Dalal Street, LLC",
+            "cik": "0001549575",
             "color": "#ec4899",
             "note": "自称克隆者,极致集中,全球视野",
         },
@@ -78,9 +78,9 @@ CONFIG = {
     "email": {
         "smtp_server": "smtp.gmail.com",
         "smtp_port": 587,
-        "sender": "qixin202401@gmail.com",       # ⚠️ 改成你的 Gmail
+        "sender": "your_email@gmail.com",       # ⚠️ 改成你的 Gmail
         "password": os.environ.get("SMTP_PASSWORD", ""),
-        "recipient": "qixin202401@gmail.com",    # ⚠️ 改成你的 Gmail
+        "recipient": "your_email@gmail.com",    # ⚠️ 改成你的 Gmail
     },
 
     # 状态文件
@@ -196,48 +196,51 @@ def fetch_13f_holdings(cik, filing):
     """获取 13F 持仓数据"""
     cik_no_zero = cik.lstrip("0")
     accession_clean = filing["accession"].replace("-", "")
-
-    # 13F 持仓数据通常在 XML 信息表中
-    # 先尝试获取 filing index
-    index_url = f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&type=13F&dateb=&owner=include&count=40&action=getcompany"
-
-    # 直接尝试常见的 informationtable 文件名
     base_url = f"https://www.sec.gov/Archives/edgar/data/{cik_no_zero}/{accession_clean}"
 
-    # SEC 上常见的 13F 信息表文件名
-    candidates = [
-        f"{base_url}/informationtable.xml",
-        f"{base_url}/form13fInfoTable.xml",
-        f"{base_url}/infotable.xml",
-    ]
-
-    # 先尝试获取目录列表 (JSON 格式)
+    # 先获取该 filing 的文件目录
     index_json_url = f"{base_url}/index.json"
     index_data = sec_request(index_json_url)
 
     info_table_url = None
+    candidate_xmls = []
+
     if index_data:
         try:
             idx = json.loads(index_data)
             items = idx.get("directory", {}).get("item", [])
+            # 先找明显是 infotable 的
             for item in items:
                 name = item.get("name", "")
-                if name.endswith(".xml") and ("infotable" in name.lower() or "informationtable" in name.lower()):
-                    info_table_url = f"{base_url}/{name}"
-                    break
+                name_lower = name.lower()
+                if name_lower.endswith(".xml"):
+                    # 排除 primary_doc.xml (那是封面文件,不含持仓)
+                    if "primary_doc" in name_lower:
+                        continue
+                    candidate_xmls.append(name)
+                    if "infotable" in name_lower or "informationtable" in name_lower:
+                        info_table_url = f"{base_url}/{name}"
+                        break
+            # 如果没找到明显的,尝试所有 xml(排除 primary_doc)
+            if not info_table_url and candidate_xmls:
+                # 探测每个 xml,看哪个含 <infoTable>
+                for name in candidate_xmls:
+                    test_url = f"{base_url}/{name}"
+                    test_data = sec_request(test_url)
+                    if test_data and b"infoTable" in test_data:
+                        info_table_url = test_url
+                        print(f"   🔍 通过探测找到信息表: {name}")
+                        break
+                    time.sleep(0.3)
         except Exception as e:
             print(f"   ⚠️ 解析索引失败: {e}")
 
-    # 如果索引找不到,尝试候选 URL
     if not info_table_url:
-        for url in candidates:
-            data = sec_request(url)
-            if data and b"<infoTable" in data:
-                info_table_url = url
-                break
-
-    if not info_table_url:
-        print(f"   ⚠️ 找不到 13F 信息表")
+        # 最后兜底:列出目录内容辅助调试
+        if candidate_xmls:
+            print(f"   ⚠️ 找不到 13F 信息表,目录中的 XML: {candidate_xmls[:5]}")
+        else:
+            print(f"   ⚠️ 找不到 13F 信息表 (目录为空)")
         return []
 
     xml_data = sec_request(info_table_url)
@@ -251,31 +254,35 @@ def parse_13f_xml(xml_bytes):
     """解析 13F XML 信息表"""
     holdings = []
     try:
-        # SEC 的 XML 通常带命名空间
-        text = xml_bytes.decode("utf-8", errors="ignore")
-        # 移除命名空间简化解析
         import re
-        text = re.sub(r'\sxmlns[^=]*="[^"]+"', "", text)
-        text = re.sub(r"</?ns\d*:", lambda m: m.group(0).replace("ns", "").split(":")[0] + (":" if False else ""), text)
-        text = re.sub(r"<(/?)\w+:", r"<\1", text)
+        text = xml_bytes.decode("utf-8", errors="ignore")
+
+        # 关键清理步骤(按顺序):
+        # 1. 移除所有 xmlns 声明 (xmlns="..." 和 xmlns:xxx="...")
+        text = re.sub(r'\sxmlns(:\w+)?="[^"]*"', '', text)
+        # 2. 移除带命名空间前缀的属性 (xsi:schemaLocation="..." 等)
+        text = re.sub(r'\s\w+:\w+="[^"]*"', '', text)
+        # 3. 移除标签上的命名空间前缀 (<ns1:infoTable> -> <infoTable>)
+        text = re.sub(r'<(/?)\w+:', r'<\1', text)
 
         root = ET.fromstring(text)
 
         for entry in root.findall(".//infoTable"):
-            issuer = entry.findtext("nameOfIssuer", "").strip()
-            cusip = entry.findtext("cusip", "").strip()
-            value_str = entry.findtext("value", "0").strip()
-            sh_prn_amount = entry.findtext(".//sshPrnamt", "0").strip()
-            sh_prn_type = entry.findtext(".//sshPrnamtType", "SH").strip()
-            put_call = entry.findtext("putCall", "").strip()
-            title_class = entry.findtext("titleOfClass", "").strip()
+            issuer = (entry.findtext("nameOfIssuer") or "").strip()
+            cusip = (entry.findtext("cusip") or "").strip()
+            value_str = (entry.findtext("value") or "0").strip()
+            sh_prn_amount = (entry.findtext(".//sshPrnamt") or "0").strip()
+            sh_prn_type = (entry.findtext(".//sshPrnamtType") or "SH").strip()
+            put_call = (entry.findtext("putCall") or "").strip()
+            title_class = (entry.findtext("titleOfClass") or "").strip()
 
             try:
                 value = int(float(value_str))
-                # SEC 在 2022 年后用美元为单位,2022 之前用 千美元
-                # 我们简单判断:如果是 13F 在 2022 后,直接用 USD
                 shares = int(float(sh_prn_amount))
-            except ValueError:
+            except (ValueError, TypeError):
+                continue
+
+            if not issuer or not cusip:
                 continue
 
             holdings.append({
