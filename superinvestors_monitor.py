@@ -86,6 +86,9 @@ CONFIG = {
     # 状态文件
     "state_file": "superinvestor_state.json",
 
+    # 历史持仓归档目录(供静态站点 build_site.py 与季度对比使用)
+    "history_dir": "history",
+
     # 周报: 每周哪一天 (0=周一)
     "weekly_report_day": 0,
 
@@ -169,27 +172,8 @@ def get_recent_filings(cik):
 
 def find_latest_13f(submissions_data):
     """从 submissions 数据中找到最新的 13F-HR"""
-    if not submissions_data:
-        return None
-    recent = submissions_data.get("filings", {}).get("recent", {})
-    if not recent:
-        return None
-
-    forms = recent.get("form", [])
-    accession_numbers = recent.get("accessionNumber", [])
-    filing_dates = recent.get("filingDate", [])
-    report_dates = recent.get("reportDate", [])
-    primary_docs = recent.get("primaryDocument", [])
-
-    for i, form in enumerate(forms):
-        if form == "13F-HR":
-            return {
-                "accession": accession_numbers[i],
-                "filing_date": filing_dates[i],
-                "report_date": report_dates[i],
-                "primary_doc": primary_docs[i] if i < len(primary_docs) else "",
-            }
-    return None
+    all_filings = find_all_13f(submissions_data, max_count=1)
+    return all_filings[0] if all_filings else None
 
 
 def fetch_13f_holdings(cik, filing):
@@ -312,6 +296,101 @@ def normalize_value(value, report_date):
         return value
     else:
         return value * 1000
+
+
+def find_all_13f(submissions_data, max_count=None):
+    """从 submissions 数据中找出所有 13F-HR 提交,按提交时间倒序返回"""
+    if not submissions_data:
+        return []
+    recent = submissions_data.get("filings", {}).get("recent", {})
+    if not recent:
+        return []
+
+    forms = recent.get("form", [])
+    accession_numbers = recent.get("accessionNumber", [])
+    filing_dates = recent.get("filingDate", [])
+    report_dates = recent.get("reportDate", [])
+    primary_docs = recent.get("primaryDocument", [])
+
+    results = []
+    for i, form in enumerate(forms):
+        if form == "13F-HR":
+            results.append({
+                "accession": accession_numbers[i],
+                "filing_date": filing_dates[i],
+                "report_date": report_dates[i],
+                "primary_doc": primary_docs[i] if i < len(primary_docs) else "",
+            })
+            if max_count and len(results) >= max_count:
+                break
+    return results
+
+
+# ============ 历史归档 ============
+
+def quarter_label(report_date_str):
+    """2024-12-31 -> '2024Q4'"""
+    try:
+        d = datetime.strptime(report_date_str, "%Y-%m-%d").date()
+    except Exception:
+        return report_date_str
+    q = (d.month - 1) // 3 + 1
+    return f"{d.year}Q{q}"
+
+
+def history_path(key, quarter):
+    return os.path.join(CONFIG["history_dir"], f"{key}_{quarter}.json")
+
+
+def save_quarter_to_history(key, info, filing, holdings, total_value):
+    """把单季持仓归档为 JSON,文件名 {key}_{quarter}.json.同 accession 直接覆盖,幂等"""
+    os.makedirs(CONFIG["history_dir"], exist_ok=True)
+    quarter = quarter_label(filing["report_date"])
+    path = history_path(key, quarter)
+    payload = {
+        "investor_key": key,
+        "investor_name_cn": info["name_cn"],
+        "investor_name": info["name"],
+        "fund": info["fund"],
+        "cik": info["cik"],
+        "color": info.get("color", "#0891b2"),
+        "report_date": filing["report_date"],
+        "filing_date": filing["filing_date"],
+        "accession": filing["accession"],
+        "quarter": quarter,
+        "total_value": total_value,
+        "holdings": holdings,
+    }
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+    return path
+
+
+def load_history_for_investor(key):
+    """返回单位大师的所有归档季度(按 report_date 升序)"""
+    hd = CONFIG["history_dir"]
+    if not os.path.isdir(hd):
+        return []
+    quarters = []
+    for name in os.listdir(hd):
+        if not (name.startswith(f"{key}_") and name.endswith(".json")):
+            continue
+        try:
+            with open(os.path.join(hd, name), "r", encoding="utf-8") as f:
+                quarters.append(json.load(f))
+        except Exception as e:
+            print(f"   ⚠️ 读取 {name} 失败: {e}")
+    return sorted(quarters, key=lambda x: x.get("report_date", ""))
+
+
+def previous_quarter_holdings(key, exclude_quarter=None):
+    """从历史归档中获取上一季持仓(用于 diff).排除指定季度(通常是当前季)"""
+    quarters = load_history_for_investor(key)
+    if exclude_quarter:
+        quarters = [q for q in quarters if q.get("quarter") != exclude_quarter]
+    if not quarters:
+        return None
+    return quarters[-1]["holdings"]
 
 
 # ============ 数据获取主流程 ============
@@ -458,7 +537,6 @@ def default_state():
     return {
         "first_run": datetime.now().isoformat(),
         "last_seen_filings": {},   # {investor_key: accession_number}
-        "previous_holdings": {},   # {investor_key: [holdings...]}
         "last_weekly_report": None,
     }
 
@@ -781,10 +859,11 @@ def build_full_report_email(all_data, state, new_filings):
     for key, data in all_data.items():
         if not data:
             continue
-        # 取上次持仓
-        prev = state["previous_holdings"].get(key)
+        # 从历史归档取上一季,做季度对比
+        current_q = quarter_label(data["filing"]["report_date"])
+        prev = previous_quarter_holdings(key, exclude_quarter=current_q)
         changes = compare_holdings(prev, data["holdings"]) if prev else None
-        # 只有当本季是新 13F 时才显示变化
+        # 只有当本季是新 13F 时才在邮件里展示变化
         if key not in new_filings:
             changes = None
         content += render_investor_card(key, data, changes)
@@ -849,6 +928,14 @@ def main():
         data = fetch_investor_data(key, info)
         if data:
             all_data[key] = data
+
+            # 归档到 history/ (幂等;同一 accession 直接覆盖)
+            try:
+                hp = save_quarter_to_history(key, info, data["filing"], data["holdings"], data["total_value"])
+                print(f"   💾 归档 -> {hp}")
+            except Exception as e:
+                print(f"   ⚠️ 归档失败: {e}")
+
             # 检查是否是新的 13F
             last_acc = state["last_seen_filings"].get(key)
             current_acc = data["filing"]["accession"]
@@ -881,9 +968,8 @@ def main():
             if not new_filings:
                 state["last_weekly_report"] = datetime.now().isoformat()
 
-    # 4. 更新前次持仓 (用于下次对比)
-    for key, data in all_data.items():
-        state["previous_holdings"][key] = data["holdings"]
+    # 4. 兼容旧 state: 移除已废弃的 previous_holdings 字段(改由 history/ 归档承载)
+    state.pop("previous_holdings", None)
 
     save_state(state)
     print(f"\n{'='*60}\n✅ 运行结束\n{'='*60}\n")

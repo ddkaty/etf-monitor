@@ -1,0 +1,105 @@
+{
+  "investor_key": "LiLu",
+  "investor_name_cn": "李录",
+  "investor_name": "Li Lu",
+  "fund": "Himalaya Capital Management",
+  "cik": "0001709323",
+  "color": "#8b5cf6",
+  "report_date": "2025-06-30",
+  "filing_date": "2025-08-14",
+  "accession": "0002043585-25-000010",
+  "quarter": "2025Q2",
+  "total_value": 2689202442,
+  "holdings": [
+    {
+      "issuer": "BK OF AMERICA CORP",
+      "cusip": "060505104",
+      "value_usd": 493613233,
+      "shares": 10431387,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 18.355376497162943
+    },
+    {
+      "issuer": "PDD HOLDINGS INC",
+      "cusip": "722304102",
+      "value_usd": 482273280,
+      "shares": 4608000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPONSORED ADS",
+      "weight_pct": 17.933691880828658
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 448205759,
+      "shares": 2543300,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 16.666865684781346
+    },
+    {
+      "issuer": "BERKSHIRE HATHAWAY INC DEL",
+      "cusip": "084670702",
+      "value_usd": 436099532,
+      "shares": 897749,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL B NEW",
+      "weight_pct": 16.216686597817688
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value_usd": 434836107,
+      "shares": 2451300,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL C",
+      "weight_pct": 16.169705196184704
+    },
+    {
+      "issuer": "EAST WEST BANCORP INC",
+      "cusip": "27579R104",
+      "value_usd": 280355924,
+      "shares": 2776351,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 10.425244288841828
+    },
+    {
+      "issuer": "OCCIDENTAL PETE CORP",
+      "cusip": "674599105",
+      "value_usd": 61607665,
+      "shares": 1466500,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.2909270063796856
+    },
+    {
+      "issuer": "SABLE OFFSHORE CORP",
+      "cusip": "78574H104",
+      "value_usd": 29519140,
+      "shares": 1343000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.0976912536955075
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 22691802,
+      "shares": 110600,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.843811594307633
+    }
+  ]
+}
