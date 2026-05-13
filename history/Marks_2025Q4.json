@@ -1,0 +1,1735 @@
+{
+  "investor_key": "Marks",
+  "investor_name_cn": "霍华德·马克斯",
+  "investor_name": "Howard Marks",
+  "fund": "Oaktree Capital Management",
+  "cik": "0000949509",
+  "color": "#f59e0b",
+  "report_date": "2025-12-31",
+  "filing_date": "2026-02-17",
+  "accession": "0000949509-26-000001",
+  "quarter": "2025Q4",
+  "total_value": 7027767837,
+  "holdings": [
+    {
+      "issuer": "EXPAND ENERGY CORP",
+      "cusip": "165167735",
+      "value_usd": 558682380,
+      "shares": 5062363,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 7.949641948310138
+    },
+    {
+      "issuer": "TORM PLC",
+      "cusip": "G89479102",
+      "value_usd": 527287877,
+      "shares": 26425059,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 7.502921115633889
+    },
+    {
+      "issuer": "ANGLOGOLD ASHANTI PLC",
+      "cusip": "G0378L100",
+      "value_usd": 328156672,
+      "shares": 3847991,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 4.669429605689463
+    },
+    {
+      "issuer": "VANECK SEMICONDUCTOR ETF",
+      "cusip": "92189F676",
+      "value_usd": 311512450,
+      "shares": 865000,
+      "share_type": "SH",
+      "put_call": "Put",
+      "title_class": "ETF",
+      "weight_pct": 4.432594491240021
+    },
+    {
+      "issuer": "GARRETT MOTION INC",
+      "cusip": "366505105",
+      "value_usd": 297962642,
+      "shares": 17094816,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 4.239790626424473
+    },
+    {
+      "issuer": "STATE STREET CORP",
+      "cusip": "78462F103",
+      "value_usd": 262539200,
+      "shares": 385000,
+      "share_type": "SH",
+      "put_call": "Put",
+      "title_class": "ETF",
+      "weight_pct": 3.7357409363720846
+    },
+    {
+      "issuer": "Indivior Pharmaceuticals Inc",
+      "cusip": "G4766E116",
+      "value_usd": 255058964,
+      "shares": 7108644,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 3.62930264510387
+    },
+    {
+      "issuer": "VIPER ENERGY INC",
+      "cusip": "64361Q101",
+      "value_usd": 242791949,
+      "shares": 6285062,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 3.454751987135115
+    },
+    {
+      "issuer": "TELEPHONE AND DATA SYSTEMS INC",
+      "cusip": "879433829",
+      "value_usd": 151223826,
+      "shares": 3688386,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 2.1518045204030836
+    },
+    {
+      "issuer": "BARRICK MINING CORP",
+      "cusip": "06849F108",
+      "value_usd": 129566388,
+      "shares": 2975118,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.843635006237045
+    },
+    {
+      "issuer": "TALEN ENERGY CORP",
+      "cusip": "87422Q109",
+      "value_usd": 124115896,
+      "shares": 331117,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.766078488628366
+    },
+    {
+      "issuer": "CORE SCIENTIFIC INC",
+      "cusip": "21874A106",
+      "value_usd": 121586308,
+      "shares": 8350708,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.7300843001652504
+    },
+    {
+      "issuer": "NOKIA OYJ",
+      "cusip": "654902204",
+      "value_usd": 121326921,
+      "shares": 18752229,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.7263934127310587
+    },
+    {
+      "issuer": "TALEN ENERGY CORP",
+      "cusip": "87422Q109",
+      "value_usd": 112452000,
+      "shares": 300000,
+      "share_type": "SH",
+      "put_call": "Call",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.6001097732335348
+    },
+    {
+      "issuer": "FTAI AVIATION LTD",
+      "cusip": "G3730V105",
+      "value_usd": 101836016,
+      "shares": 517328,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.4490520797208286
+    },
+    {
+      "issuer": "ITAU UNIBANCO HOLDING SA",
+      "cusip": "465562106",
+      "value_usd": 98970875,
+      "shares": 13822747,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.4082832173102704
+    },
+    {
+      "issuer": "ORACLE CORP",
+      "cusip": "68389X105",
+      "value_usd": 97455000,
+      "shares": 500000,
+      "share_type": "SH",
+      "put_call": "Put",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.3867134239539904
+    },
+    {
+      "issuer": "LIBERTY GLOBAL LTD",
+      "cusip": "G61188101",
+      "value_usd": 95260267,
+      "shares": 8551191,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.3554839774084586
+    },
+    {
+      "issuer": "CBL & ASSOCIATES PROPERTIES INC",
+      "cusip": "124830878",
+      "value_usd": 93150348,
+      "shares": 2517576,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.325461372095693
+    },
+    {
+      "issuer": "RIOT PLATFORMS INC",
+      "cusip": "767292AB1",
+      "value_usd": 92922150,
+      "shares": 81960000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 1.3222142813366815
+    },
+    {
+      "issuer": "JETBLUE AIRWAYS CORP",
+      "cusip": "477143AP6",
+      "value_usd": 89036255,
+      "shares": 90530000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 1.266920835535279
+    },
+    {
+      "issuer": "GRUPO AEROMEXICO SAB DE CV",
+      "cusip": "40054J109",
+      "value_usd": 82942612,
+      "shares": 3776986,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.1802127492504986
+    },
+    {
+      "issuer": "TRANSALTA CORP",
+      "cusip": "89346D107",
+      "value_usd": 81246611,
+      "shares": 6415253,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.1560798945612638
+    },
+    {
+      "issuer": "SUNOPTA INC",
+      "cusip": "8676EP108",
+      "value_usd": 78883383,
+      "shares": 20726126,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.1224528873121338
+    },
+    {
+      "issuer": "NU HOLDINGS LTD/CAYMAN ISLANDS",
+      "cusip": "G6683N103",
+      "value_usd": 74981389,
+      "shares": 4479175,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.0669303645068604
+    },
+    {
+      "issuer": "FREEPORT-MCMORAN INC",
+      "cusip": "35671D857",
+      "value_usd": 70600791,
+      "shares": 1390053,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.0045976565745223
+    },
+    {
+      "issuer": "KILROY REALTY CORP",
+      "cusip": "49427F108",
+      "value_usd": 69134911,
+      "shares": 1850011,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.9837392555288534
+    },
+    {
+      "issuer": "CEMEX SAB DE CV",
+      "cusip": "151290889",
+      "value_usd": 66059732,
+      "shares": 5749324,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.9399817058868504
+    },
+    {
+      "issuer": "RUNWAY GROWTH FINANCE CORP",
+      "cusip": "78163D100",
+      "value_usd": 62774936,
+      "shares": 7029667,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.89324145953571
+    },
+    {
+      "issuer": "ECHOSTAR CORP",
+      "cusip": "278768AB2",
+      "value_usd": 60165000,
+      "shares": 18000000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.8561039777558036
+    },
+    {
+      "issuer": "CABLE ONE INC",
+      "cusip": "12685JAE5",
+      "value_usd": 58138075,
+      "shares": 58874000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.827262316405971
+    },
+    {
+      "issuer": "BAUSCH LOMB CORP",
+      "cusip": "071705107",
+      "value_usd": 57777182,
+      "shares": 3382739,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.8221270727785427
+    },
+    {
+      "issuer": "GRAB HOLDINGS LTD",
+      "cusip": "G4124C109",
+      "value_usd": 55926418,
+      "shares": 11207699,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.7957920537095283
+    },
+    {
+      "issuer": "XP INC",
+      "cusip": "G98239109",
+      "value_usd": 54351002,
+      "shares": 3320159,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.7733750354394355
+    },
+    {
+      "issuer": "AIRBNB INC",
+      "cusip": "009066AB7",
+      "value_usd": 50227936,
+      "shares": 50633000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.7147068196470361
+    },
+    {
+      "issuer": "MARRIOTT INTERNATIONAL INC/MD",
+      "cusip": "571903202",
+      "value_usd": 46536000,
+      "shares": 150000,
+      "share_type": "SH",
+      "put_call": "Put",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.6621732686585902
+    },
+    {
+      "issuer": "ETSY INC",
+      "cusip": "29786AAN6",
+      "value_usd": 44935298,
+      "shares": 50165000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.6393964490890452
+    },
+    {
+      "issuer": "LIBERTY LATIN AMERICA LTD",
+      "cusip": "G9001E128",
+      "value_usd": 42885898,
+      "shares": 5748780,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.6102349849153106
+    },
+    {
+      "issuer": "ECOVYST INC",
+      "cusip": "27923Q109",
+      "value_usd": 41396314,
+      "shares": 4254503,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.5890392932739675
+    },
+    {
+      "issuer": "BIOMARIN PHARMACEUTICAL INC",
+      "cusip": "09061GAK7",
+      "value_usd": 40450127,
+      "shares": 42118000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5755757437950209
+    },
+    {
+      "issuer": "AMPHASTAR PHARMACEUTICALS INC",
+      "cusip": "03209RAB9",
+      "value_usd": 40401163,
+      "shares": 43578000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5748790218608925
+    },
+    {
+      "issuer": "ARRAY DIGITAL INFRASTRUCTURE INC",
+      "cusip": "911684108",
+      "value_usd": 38844687,
+      "shares": 724444,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.5527315059482948
+    },
+    {
+      "issuer": "CONMED CORP",
+      "cusip": "207410AH4",
+      "value_usd": 38711039,
+      "shares": 40324000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5508297925863882
+    },
+    {
+      "issuer": "MARRIOTT VACATIONS WORLDWIDE CORP",
+      "cusip": "57164YAF4",
+      "value_usd": 38452425,
+      "shares": 40370000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5471499043772411
+    },
+    {
+      "issuer": "PEBBLEBROOK HOTEL TRUST",
+      "cusip": "70509VAA8",
+      "value_usd": 38415555,
+      "shares": 39706000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5466252712240813
+    },
+    {
+      "issuer": "VISTA ENERGY SAB DE CV",
+      "cusip": "92837L109",
+      "value_usd": 38064285,
+      "shares": 782250,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.5416269558535789
+    },
+    {
+      "issuer": "FULL TRUCK ALLIANCE CO LTD",
+      "cusip": "35969L108",
+      "value_usd": 37767067,
+      "shares": 3519764,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.5373977609385847
+    },
+    {
+      "issuer": "SEA LTD",
+      "cusip": "81141RAG5",
+      "value_usd": 37767060,
+      "shares": 38855000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5373976613337007
+    },
+    {
+      "issuer": "STAR BULK CARRIERS CORP",
+      "cusip": "Y8162K204",
+      "value_usd": 37726784,
+      "shares": 1962892,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.5368245632898531
+    },
+    {
+      "issuer": "TELADOC HEALTH INC",
+      "cusip": "87918AAF2",
+      "value_usd": 36747445,
+      "shares": 38479000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.5228892850804058
+    },
+    {
+      "issuer": "ENPHASE ENERGY INC",
+      "cusip": "29355AAK3",
+      "value_usd": 33358027,
+      "shares": 38178000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.4746603441333914
+    },
+    {
+      "issuer": "CRACKER BARREL OLD COUNTRY STORE INC",
+      "cusip": "22410JAB2",
+      "value_usd": 32192377,
+      "shares": 33101000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.4580739965613636
+    },
+    {
+      "issuer": "CALIFORNIA RESOURCES CORP",
+      "cusip": "13057Q305",
+      "value_usd": 31051184,
+      "shares": 694502,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.4418356542246715
+    },
+    {
+      "issuer": "KANZHUN LTD",
+      "cusip": "48553T106",
+      "value_usd": 31043447,
+      "shares": 1523231,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.4417255623693421
+    },
+    {
+      "issuer": "ARRAY TECHNOLOGIES INC",
+      "cusip": "04271TAB6",
+      "value_usd": 30263093,
+      "shares": 33284000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.43062169527954486
+    },
+    {
+      "issuer": "ENVISTA HOLDINGS CORP",
+      "cusip": "29415FAD6",
+      "value_usd": 29631525,
+      "shares": 30786000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.42163494422788234
+    },
+    {
+      "issuer": "CORE SCIENTIFIC INC",
+      "cusip": "21874A106",
+      "value_usd": 29120000,
+      "shares": 2000000,
+      "share_type": "SH",
+      "put_call": "Call",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.4143563173314884
+    },
+    {
+      "issuer": "OKTA INC",
+      "cusip": "679295AF2",
+      "value_usd": 27773091,
+      "shares": 28311000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.3951907866645709
+    },
+    {
+      "issuer": "FIVE9 INC",
+      "cusip": "338307AF8",
+      "value_usd": 27393582,
+      "shares": 30353000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.38979065096284854
+    },
+    {
+      "issuer": "ALARM.COM HOLDINGS INC",
+      "cusip": "011642AB1",
+      "value_usd": 27265995,
+      "shares": 27198000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.38797518120119423
+    },
+    {
+      "issuer": "TELECOM ARGENTINA SA",
+      "cusip": "879273209",
+      "value_usd": 27254567,
+      "shares": 2347508,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.3878125691134723
+    },
+    {
+      "issuer": "VALE SA",
+      "cusip": "91912E105",
+      "value_usd": 26368889,
+      "shares": 2023706,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.37521001848086516
+    },
+    {
+      "issuer": "SPECTRUM BRANDS HOLDINGS INC",
+      "cusip": "84762LAZ8",
+      "value_usd": 26073082,
+      "shares": 27496000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.3710009010646263
+    },
+    {
+      "issuer": "DEXCOM INC",
+      "cusip": "252131AM9",
+      "value_usd": 25776396,
+      "shares": 27995000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.3667792761208142
+    },
+    {
+      "issuer": "TERNIUM SA",
+      "cusip": "880890108",
+      "value_usd": 25150597,
+      "shares": 658565,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.35787461372281526
+    },
+    {
+      "issuer": "RICE ACQUISITION CORP 3",
+      "cusip": "G7553X106",
+      "value_usd": 24660000,
+      "shares": 2400000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.35089377697096513
+    },
+    {
+      "issuer": "OAKTREE SPECIALTY LENDING CORP",
+      "cusip": "67401P405",
+      "value_usd": 23600289,
+      "shares": 1852456,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.3358148639422677
+    },
+    {
+      "issuer": "DRAFTKINGS INC",
+      "cusip": "26142RAB0",
+      "value_usd": 23090965,
+      "shares": 25225000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.32856755566724904
+    },
+    {
+      "issuer": "MGP INGREDIENTS INC",
+      "cusip": "55303JAB2",
+      "value_usd": 22528250,
+      "shares": 23225000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.32056053248362304
+    },
+    {
+      "issuer": "SUMMIT HOTEL PROPERTIES INC",
+      "cusip": "866082AA8",
+      "value_usd": 21495320,
+      "shares": 21560000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.3058626935117407
+    },
+    {
+      "issuer": "BLOCK INC",
+      "cusip": "852234AJ2",
+      "value_usd": 19940367,
+      "shares": 20243000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.2837368487760419
+    },
+    {
+      "issuer": "NABORS INDUSTRIES LTD",
+      "cusip": "62957HAL9",
+      "value_usd": 19604126,
+      "shares": 24063000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.27895238509143144
+    },
+    {
+      "issuer": "INFOSYS LTD",
+      "cusip": "456788108",
+      "value_usd": 19508480,
+      "shares": 1094752,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.2775914124153501
+    },
+    {
+      "issuer": "JD.COM INC",
+      "cusip": "47215PAJ5",
+      "value_usd": 19319548,
+      "shares": 19233000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.27490304813835587
+    },
+    {
+      "issuer": "DAYFORCE INC",
+      "cusip": "15677JAD0",
+      "value_usd": 19205867,
+      "shares": 19351000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.2732854505933503
+    },
+    {
+      "issuer": "WINNEBAGO INDUSTRIES INC",
+      "cusip": "974637AF7",
+      "value_usd": 19057349,
+      "shares": 20220000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.2711721479993449
+    },
+    {
+      "issuer": "SNAP INC",
+      "cusip": "83304AAF3",
+      "value_usd": 18254620,
+      "shares": 19576000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.25974990101255957
+    },
+    {
+      "issuer": "SYNAPTICS INC",
+      "cusip": "87157DAJ8",
+      "value_usd": 18250500,
+      "shares": 17250000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.2596912764237064
+    },
+    {
+      "issuer": "ONITY GROUP INC",
+      "cusip": "675746606",
+      "value_usd": 17896380,
+      "shares": 390835,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.2546524076361574
+    },
+    {
+      "issuer": "LIVANOVA PLC",
+      "cusip": "53802LAB8",
+      "value_usd": 17730600,
+      "shares": 15285000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.25229347939827224
+    },
+    {
+      "issuer": "PPL CORP",
+      "cusip": "69352PAS2",
+      "value_usd": 17219610,
+      "shares": 15672000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.24502246516086784
+    },
+    {
+      "issuer": "AEROVIRONMENT INC",
+      "cusip": "008073AA6",
+      "value_usd": 17142262,
+      "shares": 15763000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.24392185965149432
+    },
+    {
+      "issuer": "TETRA TECH INC",
+      "cusip": "88162GAB9",
+      "value_usd": 16626023,
+      "shares": 15289000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.23657615598037862
+    },
+    {
+      "issuer": "CMS ENERGY CORP",
+      "cusip": "125896BX7",
+      "value_usd": 16293328,
+      "shares": 15199000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.23184214928413546
+    },
+    {
+      "issuer": "SMARTRENT INC",
+      "cusip": "83193G107",
+      "value_usd": 15160695,
+      "shares": 7505294,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.21572560949127437
+    },
+    {
+      "issuer": "HAEMONETICS CORP",
+      "cusip": "405024AB6",
+      "value_usd": 14917275,
+      "shares": 15030000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.21226192079742714
+    },
+    {
+      "issuer": "JAZZ PHARMACEUTICALS PLC",
+      "cusip": "472145AH4",
+      "value_usd": 14135100,
+      "shares": 10600000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.20113214220852754
+    },
+    {
+      "issuer": "WEC ENERGY GROUP INC",
+      "cusip": "92939UAR7",
+      "value_usd": 13977733,
+      "shares": 11957000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.19889292481190995
+    },
+    {
+      "issuer": "LANTHEUS HOLDINGS INC",
+      "cusip": "516544AB9",
+      "value_usd": 13233581,
+      "shares": 11525000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.18830418572348748
+    },
+    {
+      "issuer": "OPTIMUM COMMUNICATIONS INC",
+      "cusip": "02156K103",
+      "value_usd": 12375000,
+      "shares": 7500000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.17608720559674343
+    },
+    {
+      "issuer": "SNAP INC",
+      "cusip": "83304AAH9",
+      "value_usd": 12184491,
+      "shares": 13422000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.17337640176231678
+    },
+    {
+      "issuer": "BANDWIDTH INC",
+      "cusip": "05988JAD5",
+      "value_usd": 11923275,
+      "shares": 13650000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.1696594889948696
+    },
+    {
+      "issuer": "BLACKSTONE MORTGAGE TRUST INC",
+      "cusip": "09257WAE0",
+      "value_usd": 11885009,
+      "shares": 11999000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.1691149917819916
+    },
+    {
+      "issuer": "REDFIN CORP",
+      "cusip": "75737FAE8",
+      "value_usd": 11142381,
+      "shares": 11841000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.1585479380997372
+    },
+    {
+      "issuer": "PENNYMAC MORTGAGE INVESTMENT TRUST",
+      "cusip": "70932AAF0",
+      "value_usd": 10951402,
+      "shares": 10935000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.15583044650881514
+    },
+    {
+      "issuer": "ENPHASE ENERGY INC",
+      "cusip": "29355AAH0",
+      "value_usd": 10801890,
+      "shares": 10911000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.15370300002128542
+    },
+    {
+      "issuer": "COINBASE GLOBAL INC",
+      "cusip": "19260QAF4",
+      "value_usd": 10791142,
+      "shares": 10510000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.15355006383657804
+    },
+    {
+      "issuer": "REPLIGEN CORP",
+      "cusip": "759916AD1",
+      "value_usd": 10788425,
+      "shares": 9830000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.153511402912327
+    },
+    {
+      "issuer": "FLUOR CORP",
+      "cusip": "343412AJ1",
+      "value_usd": 10698870,
+      "shares": 9371000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.15223710071457217
+    },
+    {
+      "issuer": "MAGNITE INC",
+      "cusip": "55955DAB6",
+      "value_usd": 10221529,
+      "shares": 10305000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.14544488715443035
+    },
+    {
+      "issuer": "LIVE NATION ENTERTAINMENT INC",
+      "cusip": "538034BC2",
+      "value_usd": 10182510,
+      "shares": 9670000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.1448896753018906
+    },
+    {
+      "issuer": "ZIFF DAVIS INC",
+      "cusip": "48123VAE2",
+      "value_usd": 9889180,
+      "shares": 10091000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.14071580378530937
+    },
+    {
+      "issuer": "LCI INDUSTRIES",
+      "cusip": "501812AB7",
+      "value_usd": 9797949,
+      "shares": 9927000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.13941765333247733
+    },
+    {
+      "issuer": "TOPGOLF CALLAWAY BRANDS CORP",
+      "cusip": "131193AE4",
+      "value_usd": 9584484,
+      "shares": 9596000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.13638020239569276
+    },
+    {
+      "issuer": "EXPAND ENERGY CORP",
+      "cusip": "165167180",
+      "value_usd": 9496047,
+      "shares": 95294,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "WARRANT",
+      "weight_pct": 0.13512180852083547
+    },
+    {
+      "issuer": "COGENT BIOSCIENCES INC",
+      "cusip": "19240QAA0",
+      "value_usd": 8994870,
+      "shares": 7650000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.1279904261014933
+    },
+    {
+      "issuer": "BAUSCH HEALTH COS INC",
+      "cusip": "071734107",
+      "value_usd": 8826500,
+      "shares": 1270000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.12559464405653786
+    },
+    {
+      "issuer": "ITRON INC",
+      "cusip": "465741AQ9",
+      "value_usd": 8814187,
+      "shares": 8700000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.12541943906562775
+    },
+    {
+      "issuer": "UNITY SOFTWARE INC",
+      "cusip": "91332UAB7",
+      "value_usd": 8792374,
+      "shares": 9076000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.12510905601789588
+    },
+    {
+      "issuer": "FRESHPET INC",
+      "cusip": "358039AB1",
+      "value_usd": 8551950,
+      "shares": 7300000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.1216879982143895
+    },
+    {
+      "issuer": "MKS INC",
+      "cusip": "55306NAB0",
+      "value_usd": 7993890,
+      "shares": 6255000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.11374721227860618
+    },
+    {
+      "issuer": "DATADOG INC",
+      "cusip": "23804LAD5",
+      "value_usd": 7508373,
+      "shares": 7499000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.10683866021398282
+    },
+    {
+      "issuer": "REDWOOD TRUST INC",
+      "cusip": "758075AF2",
+      "value_usd": 7437360,
+      "shares": 7456000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.10582819712460573
+    },
+    {
+      "issuer": "GREEN PLAINS INC",
+      "cusip": "393222AK0",
+      "value_usd": 7389112,
+      "shares": 7677000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.10514166334718095
+    },
+    {
+      "issuer": "MAGNACHIP SEMICONDUCTOR CORP",
+      "cusip": "55933J203",
+      "value_usd": 7267137,
+      "shares": 2849858,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.10340604824393546
+    },
+    {
+      "issuer": "UPSTART HOLDINGS INC",
+      "cusip": "91680MAB3",
+      "value_usd": 6965032,
+      "shares": 7199000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.09910731489065835
+    },
+    {
+      "issuer": "UPWORK INC",
+      "cusip": "91688FAB0",
+      "value_usd": 6884923,
+      "shares": 7038000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.09796742236919173
+    },
+    {
+      "issuer": "BENTLEY SYSTEMS INC",
+      "cusip": "08265TAD1",
+      "value_usd": 6346390,
+      "shares": 6730000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.09030449137188822
+    },
+    {
+      "issuer": "NEOGENOMICS INC",
+      "cusip": "64049MAB6",
+      "value_usd": 6343837,
+      "shares": 7098000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.09026816404777602
+    },
+    {
+      "issuer": "LIBERTY LATIN AMERICA LTD",
+      "cusip": "G9001E102",
+      "value_usd": 6200357,
+      "shares": 839020,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.08822654851169352
+    },
+    {
+      "issuer": "VERTEX INC",
+      "cusip": "92538JAB2",
+      "value_usd": 6181162,
+      "shares": 6507000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.08795341769056791
+    },
+    {
+      "issuer": "CERENCE INC",
+      "cusip": "156727AD1",
+      "value_usd": 5964314,
+      "shares": 6605000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.08486782913628568
+    },
+    {
+      "issuer": "BLOCK INC",
+      "cusip": "852234AK9",
+      "value_usd": 5509163,
+      "shares": 5935000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.07839136305834117
+    },
+    {
+      "issuer": "SHAKE SHACK INC",
+      "cusip": "819047AB7",
+      "value_usd": 5387485,
+      "shares": 5686000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.07665997404803002
+    },
+    {
+      "issuer": "MITEK SYSTEMS INC",
+      "cusip": "606710AA9",
+      "value_usd": 5325634,
+      "shares": 5374000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.07577987952250563
+    },
+    {
+      "issuer": "NUTANIX INC",
+      "cusip": "67059NAK4",
+      "value_usd": 5256611,
+      "shares": 5436000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.07479773267871541
+    },
+    {
+      "issuer": "AFFIRM HOLDINGS INC",
+      "cusip": "00827BAB2",
+      "value_usd": 5042125,
+      "shares": 5225000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.0717457536581398
+    },
+    {
+      "issuer": "PENN ENTERTAINMENT INC",
+      "cusip": "707569AU3",
+      "value_usd": 4911146,
+      "shares": 4952000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.0698820182155656
+    },
+    {
+      "issuer": "SOUTHERN CO/THE",
+      "cusip": "842587DZ7",
+      "value_usd": 4873711,
+      "shares": 4557000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.06934934552534223
+    },
+    {
+      "issuer": "HDFC BANK LTD",
+      "cusip": "40415F101",
+      "value_usd": 4766314,
+      "shares": 130441,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.067821164707607
+    },
+    {
+      "issuer": "STRATEGY INC",
+      "cusip": "594972AS0",
+      "value_usd": 4746406,
+      "shares": 5763000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.06753788841758519
+    },
+    {
+      "issuer": "SNAP INC",
+      "cusip": "83304AAB2",
+      "value_usd": 3652294,
+      "shares": 3767000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.05196947430123253
+    },
+    {
+      "issuer": "ZIFF DAVIS INC",
+      "cusip": "48123VAH5",
+      "value_usd": 3428702,
+      "shares": 3496000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.048787923555875995
+    },
+    {
+      "issuer": "AMERICAN WATER CAPITAL CORP",
+      "cusip": "03040WBE4",
+      "value_usd": 3415893,
+      "shares": 3426000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.04860566084747287
+    },
+    {
+      "issuer": "BATTALION OIL CORP",
+      "cusip": "07134L107",
+      "value_usd": 3401200,
+      "shares": 3009912,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.04839659019601163
+    },
+    {
+      "issuer": "TWO HARBORS INVESTMENT CORP",
+      "cusip": "90187BAB7",
+      "value_usd": 3289755,
+      "shares": 3298000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.0468108092968012
+    },
+    {
+      "issuer": "BILL HOLDINGS INC",
+      "cusip": "090043AD2",
+      "value_usd": 3136567,
+      "shares": 3306000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.04463105601591603
+    },
+    {
+      "issuer": "ALVOTECH SA",
+      "cusip": "L01800116",
+      "value_usd": 3032866,
+      "shares": 4666667,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "WARRANT",
+      "weight_pct": 0.04315546657691902
+    },
+    {
+      "issuer": "FORD MOTOR CO",
+      "cusip": "345370CZ1",
+      "value_usd": 3018900,
+      "shares": 2900000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.04295674060412192
+    },
+    {
+      "issuer": "BRIDGEBIO PHARMA INC",
+      "cusip": "10806XAD4",
+      "value_usd": 2871937,
+      "shares": 2550000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.04086556452362785
+    },
+    {
+      "issuer": "POST HOLDINGS INC",
+      "cusip": "737446AT1",
+      "value_usd": 2858025,
+      "shares": 2650000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.04066760693136426
+    },
+    {
+      "issuer": "ON SEMICONDUCTOR CORP",
+      "cusip": "682189AS4",
+      "value_usd": 2326350,
+      "shares": 1950000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.0331022602618169
+    },
+    {
+      "issuer": "NUTANIX INC",
+      "cusip": "67059NAH1",
+      "value_usd": 2251000,
+      "shares": 2000000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.03203008483218339
+    },
+    {
+      "issuer": "WISDOMTREE INC",
+      "cusip": "97717PAH7",
+      "value_usd": 2228093,
+      "shares": 1850000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.03170413496401332
+    },
+    {
+      "issuer": "DROPBOX INC",
+      "cusip": "26210CAC8",
+      "value_usd": 2159775,
+      "shares": 2175000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.03073201975496619
+    },
+    {
+      "issuer": "ALVOTECH SA",
+      "cusip": "L01800108",
+      "value_usd": 2023114,
+      "shares": 533656,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.028787433605143437
+    },
+    {
+      "issuer": "CHEESECAKE FACTORY INC/THE",
+      "cusip": "163072AA9",
+      "value_usd": 1941772,
+      "shares": 1960000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.02762999639482826
+    },
+    {
+      "issuer": "GROUPON INC",
+      "cusip": "399473AF4",
+      "value_usd": 1862767,
+      "shares": 1874000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.026505812986491233
+    },
+    {
+      "issuer": "VAIL RESORTS INC",
+      "cusip": "91879QAN9",
+      "value_usd": 1819909,
+      "shares": 1819000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.025895974969726364
+    },
+    {
+      "issuer": "DIGITALOCEAN HOLDINGS INC",
+      "cusip": "25402DAB8",
+      "value_usd": 1817302,
+      "shares": 1880000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.02585887926508065
+    },
+    {
+      "issuer": "BLACKLINE INC",
+      "cusip": "09239BAD1",
+      "value_usd": 1801018,
+      "shares": 1816000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.025627169846419048
+    },
+    {
+      "issuer": "NEXTERA ENERGY INC",
+      "cusip": "65339KCY4",
+      "value_usd": 1606602,
+      "shares": 1292000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.022860772257465797
+    },
+    {
+      "issuer": "CELCUITY INC",
+      "cusip": "15102KAA8",
+      "value_usd": 1520330,
+      "shares": 700000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.021633184750294705
+    },
+    {
+      "issuer": "FASTLY INC",
+      "cusip": "31188VAD2",
+      "value_usd": 1497365,
+      "shares": 1353000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.021306409584514567
+    },
+    {
+      "issuer": "VISHAY INTERTECHNOLOGY INC",
+      "cusip": "928298AR9",
+      "value_usd": 1487963,
+      "shares": 1651000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.02117262599606846
+    },
+    {
+      "issuer": "SPOTIFY TECHNOLOGY SA",
+      "cusip": "84921RAB6",
+      "value_usd": 1478750,
+      "shares": 1300000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.021041531739489645
+    },
+    {
+      "issuer": "TRIP.COM GROUP LTD",
+      "cusip": "89677QAB3",
+      "value_usd": 1467820,
+      "shares": 1189000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.020886005827798947
+    },
+    {
+      "issuer": "HERBALIFE LTD",
+      "cusip": "42703MAF0",
+      "value_usd": 1346949,
+      "shares": 1242000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.019166099837683068
+    },
+    {
+      "issuer": "STRATEGY INC",
+      "cusip": "594972AL5",
+      "value_usd": 1342250,
+      "shares": 1300000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.019099236501998296
+    },
+    {
+      "issuer": "LYFT INC",
+      "cusip": "55087PAD6",
+      "value_usd": 1326435,
+      "shares": 1100000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.01887420061056294
+    },
+    {
+      "issuer": "PARSONS CORP",
+      "cusip": "70202LAD4",
+      "value_usd": 1195380,
+      "shares": 1160000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.017009383743534157
+    },
+    {
+      "issuer": "AFFIRM HOLDINGS INC",
+      "cusip": "00827BAD8",
+      "value_usd": 1028738,
+      "shares": 927000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.014638189875651126
+    },
+    {
+      "issuer": "TYLER TECHNOLOGIES INC",
+      "cusip": "902252AB1",
+      "value_usd": 1013500,
+      "shares": 1000000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.014421364272509049
+    },
+    {
+      "issuer": "ASCENDIS PHARMA A/S",
+      "cusip": "04351PAD3",
+      "value_usd": 994315,
+      "shares": 700000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.014148375744074826
+    },
+    {
+      "issuer": "RINGCENTRAL INC",
+      "cusip": "76680RAH0",
+      "value_usd": 974651,
+      "shares": 984000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.013868571395722956
+    },
+    {
+      "issuer": "HAEMONETICS CORP",
+      "cusip": "405024AD2",
+      "value_usd": 938711,
+      "shares": 902000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.013357171462862596
+    },
+    {
+      "issuer": "FASTLY INC",
+      "cusip": "31188VAB6",
+      "value_usd": 850055,
+      "shares": 863000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.012095661378063819
+    },
+    {
+      "issuer": "GLADSTONE CAPITAL CORP",
+      "cusip": "376535AG5",
+      "value_usd": 738919,
+      "shares": 754000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.01051427732301738
+    },
+    {
+      "issuer": "GUARDANT HEALTH INC",
+      "cusip": "40131MAB5",
+      "value_usd": 599677,
+      "shares": 555000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.00853296542954653
+    },
+    {
+      "issuer": "PELOTON INTERACTIVE INC",
+      "cusip": "70614WAB6",
+      "value_usd": 552711,
+      "shares": 559000,
+      "share_type": "PRN",
+      "put_call": "",
+      "title_class": "CONVERTIBLE BOND",
+      "weight_pct": 0.007864673575158115
+    },
+    {
+      "issuer": "BIOXCEL THERAPEUTICS INC",
+      "cusip": "09075P204",
+      "value_usd": 385902,
+      "shares": 241188,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.0054911034193288475
+    },
+    {
+      "issuer": "RICE ACQUISITION CORP 3",
+      "cusip": "G7553X114",
+      "value_usd": 319999,
+      "shares": 399999,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "WARRANT",
+      "weight_pct": 0.004553351895252712
+    }
+  ]
+}

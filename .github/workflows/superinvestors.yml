@@ -24,17 +24,22 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 运行监控脚本
+      - name: 运行监控脚本(发邮件 + 归档到 history/)
         env:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: python superinvestors_monitor.py
 
-      - name: 提交状态文件
+      - name: 构建静态站点 docs/
+        run: python build_site.py
+
+      - name: 提交状态/归档/站点
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          if [ -f superinvestor_state.json ]; then
-            git add superinvestor_state.json
-            git diff --staged --quiet || git commit -m "Update superinvestor state [skip ci]"
-            git push || echo "无需推送"
+          git add superinvestor_state.json history/ docs/ 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "无内容变化,跳过提交"
+          else
+            git commit -m "Update state/history/site [skip ci]"
+            git push || echo "推送失败(可能无权限或冲突)"
           fi
