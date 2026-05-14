@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-14T00:00:06.698133",
-  "latest_quarter": "2025Q4",
+  "generated_at": "2026-05-14T23:58:25.264774",
+  "latest_quarter": "2026Q1",
   "investors": {
     "Buffett": {
       "info": {
@@ -10222,9 +10222,97 @@
               ]
             }
           }
+        },
+        {
+          "quarter": "2026Q1",
+          "report_date": "2026-03-31",
+          "filing_date": "2026-05-14",
+          "n_holdings": 3,
+          "total_value": 422885142,
+          "concentration": {
+            "top5": 100.0,
+            "top10": 100.0,
+            "hhi": 34.05109919447246
+          },
+          "top_holding": {
+            "issuer": "WARRIOR MET COAL INC",
+            "cusip": "93627C101",
+            "value_usd": 168678908,
+            "shares": 1810831,
+            "share_type": "SH",
+            "put_call": "",
+            "title_class": "COM",
+            "weight_pct": 39.88764116947859
+          },
+          "diff_vs_prev": {
+            "n_new_buys": 0,
+            "n_sold_out": 1,
+            "n_added": 2,
+            "n_reduced": 1,
+            "turnover_pct": 5.755279558132376,
+            "raw": {
+              "new_buys": [],
+              "sold_out": [
+                {
+                  "issuer": "VALARIS LTD",
+                  "cusip": "G9460G101",
+                  "value_usd": 23138539,
+                  "shares": 459098,
+                  "share_type": "SH",
+                  "put_call": "",
+                  "title_class": "CL A",
+                  "weight_pct": 5.755279558132376
+                }
+              ],
+              "added": [
+                {
+                  "issuer": "ALPHA METALLURGICAL RESOUR I",
+                  "cusip": "020764106",
+                  "value_usd": 119002819,
+                  "shares": 579738,
+                  "share_type": "SH",
+                  "put_call": "",
+                  "title_class": "COM",
+                  "weight_pct": 28.14069523397916,
+                  "old_shares": 543000,
+                  "change": 36738,
+                  "change_pct": 6.7657458563535915
+                },
+                {
+                  "issuer": "WARRIOR MET COAL INC",
+                  "cusip": "93627C101",
+                  "value_usd": 168678908,
+                  "shares": 1810831,
+                  "share_type": "SH",
+                  "put_call": "",
+                  "title_class": "COM",
+                  "weight_pct": 39.88764116947859,
+                  "old_shares": 1799831,
+                  "change": 11000,
+                  "change_pct": 0.6111684930418467
+                }
+              ],
+              "reduced": [
+                {
+                  "issuer": "TRANSOCEAN LTD",
+                  "cusip": "H8817H100",
+                  "value_usd": 135203415,
+                  "shares": 20392672,
+                  "share_type": "SH",
+                  "put_call": "",
+                  "title_class": "REGISTERED SHS",
+                  "weight_pct": 31.97166359654225,
+                  "old_shares": 27040133,
+                  "change": -6647461,
+                  "change_pct": -24.583684555101858
+                }
+              ],
+              "unchanged": []
+            }
+          }
         }
       ]
     }
   },
-  "consensus_count": 29
+  "consensus_count": 0
 }

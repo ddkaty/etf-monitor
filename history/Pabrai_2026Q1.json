@@ -1,0 +1,45 @@
+{
+  "investor_key": "Pabrai",
+  "investor_name_cn": "莫尼什·帕伯莱",
+  "investor_name": "Mohnish Pabrai",
+  "fund": "Dalal Street, LLC",
+  "cik": "0001549575",
+  "color": "#ec4899",
+  "report_date": "2026-03-31",
+  "filing_date": "2026-05-14",
+  "accession": "0001549575-26-000009",
+  "quarter": "2026Q1",
+  "total_value": 422885142,
+  "holdings": [
+    {
+      "issuer": "WARRIOR MET COAL INC",
+      "cusip": "93627C101",
+      "value_usd": 168678908,
+      "shares": 1810831,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 39.88764116947859
+    },
+    {
+      "issuer": "TRANSOCEAN LTD",
+      "cusip": "H8817H100",
+      "value_usd": 135203415,
+      "shares": 20392672,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "REGISTERED SHS",
+      "weight_pct": 31.97166359654225
+    },
+    {
+      "issuer": "ALPHA METALLURGICAL RESOUR I",
+      "cusip": "020764106",
+      "value_usd": 119002819,
+      "shares": 579738,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 28.14069523397916
+    }
+  ]
+}
