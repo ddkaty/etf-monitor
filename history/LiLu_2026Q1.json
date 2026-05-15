@@ -1,0 +1,155 @@
+{
+  "investor_key": "LiLu",
+  "investor_name_cn": "李录",
+  "investor_name": "Li Lu",
+  "fund": "Himalaya Capital Management",
+  "cik": "0001709323",
+  "color": "#8b5cf6",
+  "report_date": "2026-03-31",
+  "filing_date": "2026-05-15",
+  "accession": "0002043585-26-000013",
+  "quarter": "2026Q1",
+  "total_value": 3201226867,
+  "holdings": [
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 731351348,
+      "shares": 2543300,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 22.845970572694185
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value_usd": 703179918,
+      "shares": 2451300,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL C",
+      "weight_pct": 21.965950781207162
+    },
+    {
+      "issuer": "PDD HOLDINGS INC",
+      "cusip": "722304102",
+      "value_usd": 470845440,
+      "shares": 4608000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPONSORED ADS",
+      "weight_pct": 14.70828090485347
+    },
+    {
+      "issuer": "BERKSHIRE HATHAWAY INC DEL",
+      "cusip": "084670702",
+      "value_usd": 430201321,
+      "shares": 897749,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL B NEW",
+      "weight_pct": 13.438638961666568
+    },
+    {
+      "issuer": "EAST WEST BANCORP INC",
+      "cusip": "27579R104",
+      "value_usd": 296403233,
+      "shares": 2776351,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 9.259051148654502
+    },
+    {
+      "issuer": "BK OF AMERICA CORP",
+      "cusip": "060505104",
+      "value_usd": 146151866,
+      "shares": 2997987,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 4.565495420103257
+    },
+    {
+      "issuer": "OCCIDENTAL PETE CORP",
+      "cusip": "674599105",
+      "value_usd": 95322500,
+      "shares": 1466500,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.9776864920957817
+    },
+    {
+      "issuer": "CROCS INC",
+      "cusip": "227046109",
+      "value_usd": 73646461,
+      "shares": 887093,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.300569877105183
+    },
+    {
+      "issuer": "TENCENT MUSIC ENTMT GROUP",
+      "cusip": "88034P109",
+      "value_usd": 61162958,
+      "shares": 6590836,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPON ADS",
+      "weight_pct": 1.9106099174195141
+    },
+    {
+      "issuer": "S&P GLOBAL INC",
+      "cusip": "78409V104",
+      "value_usd": 51663072,
+      "shares": 121463,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.6138522556014772
+    },
+    {
+      "issuer": "BLOCK H & R INC",
+      "cusip": "093671105",
+      "value_usd": 51637996,
+      "shares": 1626906,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.6130689309249757
+    },
+    {
+      "issuer": "MOODYS CORP",
+      "cusip": "615369105",
+      "value_usd": 51383270,
+      "shares": 117784,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.6051117941588862
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 28069174,
+      "shares": 110600,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.8768255161592082
+    },
+    {
+      "issuer": "MSCI INC",
+      "cusip": "55354G100",
+      "value_usd": 10208310,
+      "shares": 18939,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.318887427355832
+    }
+  ]
+}
