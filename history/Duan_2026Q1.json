@@ -1,0 +1,205 @@
+{
+  "investor_key": "Duan",
+  "investor_name_cn": "段永平",
+  "investor_name": "Duan Yongping",
+  "fund": "H&H International Investment",
+  "cik": "0001759760",
+  "color": "#10b981",
+  "report_date": "2026-03-31",
+  "filing_date": "2026-05-19",
+  "accession": "0001759760-26-000005",
+  "quarter": "2026Q1",
+  "total_value": 20003996234,
+  "holdings": [
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 7346105601,
+      "shares": 28945607,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 36.723190281920346
+    },
+    {
+      "issuer": "BERKSHIRE HATHAWAY INC DEL",
+      "cusip": "084670702",
+      "value_usd": 4383623843,
+      "shares": 9147796,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL B NEW",
+      "weight_pct": 21.913740593238707
+    },
+    {
+      "issuer": "NVIDIA CORPORATION",
+      "cusip": "67066G104",
+      "value_usd": 2414354360,
+      "shares": 13843775,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 12.069360200620402
+    },
+    {
+      "issuer": "PDD HOLDINGS INC",
+      "cusip": "722304102",
+      "value_usd": 2017880681,
+      "shares": 19748294,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPONSORED ADS",
+      "weight_pct": 10.087387826889751
+    },
+    {
+      "issuer": "TESLA INC",
+      "cusip": "88160R101",
+      "value_usd": 1267258575,
+      "shares": 3408900,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 6.3350270624731015
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value_usd": 1063103160,
+      "shares": 3706000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL C",
+      "weight_pct": 5.314453909929686
+    },
+    {
+      "issuer": "OCCIDENTAL PETE CORP",
+      "cusip": "674599105",
+      "value_usd": 666997500,
+      "shares": 10261500,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 3.3343212635999735
+    },
+    {
+      "issuer": "MICROSOFT CORP",
+      "cusip": "594918104",
+      "value_usd": 376092720,
+      "shares": 1016000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.8800879364332717
+    },
+    {
+      "issuer": "UNITEDHEALTH GROUP INC",
+      "cusip": "91324P102",
+      "value_usd": 162732826,
+      "shares": 601400,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.8135015828657749
+    },
+    {
+      "issuer": "DISNEY WALT CO",
+      "cusip": "254687106",
+      "value_usd": 145707284,
+      "shares": 1511800,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.7283908789802065
+    },
+    {
+      "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+      "cusip": "G25457105",
+      "value_usd": 70515144,
+      "shares": 751200,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "ORDINARY SHARES",
+      "weight_pct": 0.3525052853196813
+    },
+    {
+      "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+      "cusip": "874039100",
+      "value_usd": 51098040,
+      "shares": 151200,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPONSORED ADS",
+      "weight_pct": 0.2554391602671405
+    },
+    {
+      "issuer": "CIRCLE INTERNET GROUP INC",
+      "cusip": "172573107",
+      "value_usd": 19082000,
+      "shares": 200000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM CL A",
+      "weight_pct": 0.09539093977415912
+    },
+    {
+      "issuer": "PALANTIR TECHNOLOGIES INC",
+      "cusip": "69608A108",
+      "value_usd": 8776800,
+      "shares": 60000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.043875233215063404
+    },
+    {
+      "issuer": "SYNOPSYS INC",
+      "cusip": "871607107",
+      "value_usd": 3964800,
+      "shares": 10000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.019820039724168646
+    },
+    {
+      "issuer": "CROWDSTRIKE HLDGS INC",
+      "cusip": "22788C105",
+      "value_usd": 3904100,
+      "shares": 10000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.019516600354904864
+    },
+    {
+      "issuer": "SNOWFLAKE INC",
+      "cusip": "833445109",
+      "value_usd": 1508200,
+      "shares": 10000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SHS",
+      "weight_pct": 0.007539493520982434
+    },
+    {
+      "issuer": "TEMPUS AI INC",
+      "cusip": "88023B103",
+      "value_usd": 904400,
+      "shares": 20000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.004521096631996097
+    },
+    {
+      "issuer": "INNODATA INC",
+      "cusip": "457642205",
+      "value_usd": 386200,
+      "shares": 10000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM NEW",
+      "weight_pct": 0.0019306142406865243
+    }
+  ]
+}
