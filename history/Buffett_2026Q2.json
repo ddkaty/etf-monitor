@@ -1,0 +1,905 @@
+{
+  "investor_key": "Buffett",
+  "investor_name_cn": "巴菲特",
+  "investor_name": "Warren Buffett",
+  "fund": "Berkshire Hathaway",
+  "cik": "0001067983",
+  "color": "#0891b2",
+  "report_date": "2026-06-30",
+  "filing_date": "2026-08-14",
+  "accession": "0001193125-26-352200",
+  "quarter": "2026Q2",
+  "total_value": 299253556246,
+  "holdings": [
+    {
+      "issuer": "AMERICAN EXPRESS CO",
+      "cusip": "025816109",
+      "value_usd": 50419898471,
+      "shares": 149061045,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 16.848554484529686
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 23523689772,
+      "shares": 65824467,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 7.8607887127872464
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 23341172315,
+      "shares": 80664820,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 7.79979780618296
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 22976876186,
+      "shares": 282722729,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 7.678062868904377
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 17808079008,
+      "shares": 61542988,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 5.950832876104887
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 17595909185,
+      "shares": 308808515,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 5.879933193019555
+    },
+    {
+      "issuer": "OCCIDENTAL PETE CORP",
+      "cusip": "674599105",
+      "value_usd": 12868205304,
+      "shares": 264941431,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 4.300101046559243
+    },
+    {
+      "issuer": "CHUBB LIMITED",
+      "cusip": "H1467J104",
+      "value_usd": 11670066615,
+      "shares": 34249183,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 3.8997252902841617
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 10047736640,
+      "shares": 34724000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 3.357599744525778
+    },
+    {
+      "issuer": "CHEVRON CORPORATION",
+      "cusip": "166764100",
+      "value_usd": 9655809914,
+      "shares": 58251749,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 3.2266316347674366
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value_usd": 9606489032,
+      "shares": 27188433,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL C",
+      "weight_pct": 3.2101503328846093
+    },
+    {
+      "issuer": "KRAFT HEINZ CO",
+      "cusip": "500754106",
+      "value_usd": 7691494401,
+      "shares": 325634818,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.5702265655540755
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 7163525600,
+      "shares": 125720000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.3937979851812545
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 6524615664,
+      "shares": 80283200,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.180296784388577
+    },
+    {
+      "issuer": "MOODYS CORP",
+      "cusip": "615369105",
+      "value_usd": 5717548850,
+      "shares": 12623750,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.910603476772024
+    },
+    {
+      "issuer": "MOODYS CORP",
+      "cusip": "615369105",
+      "value_usd": 5423231470,
+      "shares": 11973928,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.8122529730413155
+    },
+    {
+      "issuer": "DELTA AIR LINES INC",
+      "cusip": "247361702",
+      "value_usd": 5368591200,
+      "shares": 57320000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM NEW",
+      "weight_pct": 1.7939941190161746
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 4494339520,
+      "shares": 15532000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.5018499951611097
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 4187617920,
+      "shares": 14472000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.399354437932757
+    },
+    {
+      "issuer": "DAVITA INC",
+      "cusip": "23918K108",
+      "value_usd": 3331328308,
+      "shares": 14973608,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.1132126046520554
+    },
+    {
+      "issuer": "SIRIUSXM HOLDINGS INC",
+      "cusip": "829933100",
+      "value_usd": 3214608586,
+      "shares": 108822227,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 1.0742089839552136
+    },
+    {
+      "issuer": "DAVITA INC",
+      "cusip": "23918K108",
+      "value_usd": 3093940590,
+      "shares": 13906601,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 1.0338859891297802
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 2394379000,
+      "shares": 6700000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 0.800117141475743
+    },
+    {
+      "issuer": "CHEVRON CORPORATION",
+      "cusip": "166764100",
+      "value_usd": 2234059905,
+      "shares": 13477678,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.7465441457155154
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 2233562500,
+      "shares": 6250000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 0.7463779304811036
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 2084549440,
+      "shares": 7204000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.6965830134651452
+    },
+    {
+      "issuer": "VERISIGN INC",
+      "cusip": "92343E102",
+      "value_usd": 2016739665,
+      "shares": 8016933,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.673923374645596
+    },
+    {
+      "issuer": "CHEVRON CORPORATION",
+      "cusip": "166764100",
+      "value_usd": 1523694265,
+      "shares": 9192171,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.5091649650263318
+    },
+    {
+      "issuer": "KROGER CO",
+      "cusip": "501044101",
+      "value_usd": 1513595648,
+      "shares": 27257260,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.5057903628572941
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 1218269808,
+      "shares": 14990400,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.4071028673084597
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 1196580000,
+      "shares": 21000000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.3998548973019913
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 1171198224,
+      "shares": 14411200,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.3913732016060728
+    },
+    {
+      "issuer": "LENNAR CORP",
+      "cusip": "526057104",
+      "value_usd": 1119030921,
+      "shares": 12366349,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.37394072606445683
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 1111142400,
+      "shares": 3840000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.3713046601479952
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 1092623360,
+      "shares": 3776000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.3651162491455286
+    },
+    {
+      "issuer": "NEW YORK TIMES CO MTN BE",
+      "cusip": "650111107",
+      "value_usd": 1000714000,
+      "shares": 14300000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.3344033777086905
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 788216640,
+      "shares": 2724000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.2633942432924841
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 784744320,
+      "shares": 2712000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.26223391622952164
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 678062000,
+      "shares": 11900000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.22658444180446172
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909308",
+      "value_usd": 581821068,
+      "shares": 5507583,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SHS SER C",
+      "weight_pct": 0.19442411154563413
+    },
+    {
+      "issuer": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value_usd": 577211815,
+      "shares": 12561737,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.19288386151224407
+    },
+    {
+      "issuer": "CHEVRON CORPORATION",
+      "cusip": "166764100",
+      "value_usd": 572577806,
+      "shares": 3454258,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.19133533889545998
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 558404000,
+      "shares": 9800000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.18659895207426258
+    },
+    {
+      "issuer": "AMERICAN EXPRESS CO",
+      "cusip": "025816109",
+      "value_usd": 473452922,
+      "shares": 1399713,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.15821129343933352
+    },
+    {
+      "issuer": "SIRIUSXM HOLDINGS INC",
+      "cusip": "829933100",
+      "value_usd": 472193651,
+      "shares": 15984890,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COMMON STOCK",
+      "weight_pct": 0.15779048941755447
+    },
+    {
+      "issuer": "NUCOR CORP",
+      "cusip": "670346105",
+      "value_usd": 413814258,
+      "shares": 1857752,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.13828215216257142
+    },
+    {
+      "issuer": "AMERICAN EXPRESS CO",
+      "cusip": "025816109",
+      "value_usd": 388967882,
+      "shares": 1149942,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.12997936829203485
+    },
+    {
+      "issuer": "CAPITAL ONE FINL CORP",
+      "cusip": "14040H105",
+      "value_usd": 373531971,
+      "shares": 1861888,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.12482123042606041
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909308",
+      "value_usd": 367590332,
+      "shares": 3479651,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SHS SER C",
+      "weight_pct": 0.12283574391270527
+    },
+    {
+      "issuer": "LOUISIANA PAC CORP",
+      "cusip": "546347105",
+      "value_usd": 341770542,
+      "shares": 4344909,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.11420767936306465
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909100",
+      "value_usd": 332616317,
+      "shares": 3284775,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SER A",
+      "weight_pct": 0.1111486597427682
+    },
+    {
+      "issuer": "KROGER CO",
+      "cusip": "501044101",
+      "value_usd": 311361708,
+      "shares": 5607090,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.10404611791615488
+    },
+    {
+      "issuer": "KROGER CO",
+      "cusip": "501044101",
+      "value_usd": 298036118,
+      "shares": 5367119,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0995931750114277
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 288671040,
+      "shares": 3552000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.09646369574391936
+    },
+    {
+      "issuer": "VERISIGN INC",
+      "cusip": "92343E102",
+      "value_usd": 244754547,
+      "shares": 972947,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.08178835034421468
+    },
+    {
+      "issuer": "CAPITAL ONE FINL CORP",
+      "cusip": "14040H105",
+      "value_usd": 228328029,
+      "shares": 1138112,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.07629918650400398
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 223361600,
+      "shares": 3920000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.07463958082970504
+    },
+    {
+      "issuer": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value_usd": 203264788,
+      "shares": 4423608,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.06792393398757378
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 200237120,
+      "shares": 692000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.06691219396416997
+    },
+    {
+      "issuer": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value_usd": 194285790,
+      "shares": 4228200,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.06492346905989256
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909308",
+      "value_usd": 151835210,
+      "shares": 1437289,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SHS SER C",
+      "weight_pct": 0.05073798016127319
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 148236480,
+      "shares": 1824000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.049535411327958585
+    },
+    {
+      "issuer": "MACYS INC",
+      "cusip": "55616P104",
+      "value_usd": 130170294,
+      "shares": 5527401,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.04349832818460948
+    },
+    {
+      "issuer": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value_usd": 128838056,
+      "shares": 2803875,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.04305314116103244
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 119658000,
+      "shares": 2100000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.03998548973019913
+    },
+    {
+      "issuer": "LOUISIANA PAC CORP",
+      "cusip": "546347105",
+      "value_usd": 103822075,
+      "shares": 1319884,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.03469368127229658
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909100",
+      "value_usd": 102444539,
+      "shares": 1011698,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SER A",
+      "weight_pct": 0.03423335725233151
+    },
+    {
+      "issuer": "NEW YORK TIMES CO MTN BE",
+      "cusip": "650111107",
+      "value_usd": 97972000,
+      "shares": 1400000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.03273879222322844
+    },
+    {
+      "issuer": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value_usd": 78463301,
+      "shares": 1707580,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.02621967203474087
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 78019200,
+      "shares": 960000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0260712691199782
+    },
+    {
+      "issuer": "NVR INC",
+      "cusip": "62944T105",
+      "value_usd": 75710501,
+      "shares": 11112,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.02529978321720011
+    },
+    {
+      "issuer": "LENNAR CORP",
+      "cusip": "526057104",
+      "value_usd": 67450522,
+      "shares": 745392,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL A",
+      "weight_pct": 0.022539589118383812
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 65016000,
+      "shares": 800000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.021726057599981835
+    },
+    {
+      "issuer": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value_usd": 58586250,
+      "shares": 1275000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.01957746157971785
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909100",
+      "value_usd": 46252328,
+      "shares": 456768,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SER A",
+      "weight_pct": 0.015455899198062827
+    },
+    {
+      "issuer": "KROGER CO",
+      "cusip": "501044101",
+      "value_usd": 42676526,
+      "shares": 768531,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.014260992094916979
+    },
+    {
+      "issuer": "MOODYS CORP",
+      "cusip": "615369105",
+      "value_usd": 32655532,
+      "shares": 72100,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.010912328798911807
+    },
+    {
+      "issuer": "MACYS INC",
+      "cusip": "55616P104",
+      "value_usd": 32410122,
+      "shares": 1376226,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.01083032141925739
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 30189448,
+      "shares": 371471,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.010088250371595551
+    },
+    {
+      "issuer": "LENNAR CORP",
+      "cusip": "526057302",
+      "value_usd": 26445959,
+      "shares": 298117,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL B",
+      "weight_pct": 0.008837308178306233
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909100",
+      "value_usd": 23628717,
+      "shares": 233347,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SER A",
+      "weight_pct": 0.007895885113751538
+    },
+    {
+      "issuer": "JEFFERIES FINANCIAL GROUP IN",
+      "cusip": "47233W109",
+      "value_usd": 21669229,
+      "shares": 433558,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0072410932293773345
+    },
+    {
+      "issuer": "LIBERTY LIVE HOLDINGS INC",
+      "cusip": "530909308",
+      "value_usd": 17179177,
+      "shares": 162620,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM SHS SER C",
+      "weight_pct": 0.005740675972411147
+    },
+    {
+      "issuer": "MACYS INC",
+      "cusip": "55616P104",
+      "value_usd": 10451466,
+      "shares": 443799,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0034925118789259834
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 9838240,
+      "shares": 34000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0032875933450603745
+    },
+    {
+      "issuer": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value_usd": 8290590,
+      "shares": 145500,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0027704232170209396
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "value_usd": 6907950,
+      "shares": 85000,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.00230839361999807
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 5968079,
+      "shares": 16700,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 0.001994321830245509
+    },
+    {
+      "issuer": "D R HORTON INC",
+      "cusip": "23331A109",
+      "value_usd": 580504,
+      "shares": 3564,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.0001939839938018312
+    }
+  ]
+}

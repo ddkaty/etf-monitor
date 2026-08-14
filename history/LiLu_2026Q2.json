@@ -1,0 +1,95 @@
+{
+  "investor_key": "LiLu",
+  "investor_name_cn": "李录",
+  "investor_name": "Li Lu",
+  "fund": "Himalaya Capital Management",
+  "cik": "0001709323",
+  "color": "#8b5cf6",
+  "report_date": "2026-06-30",
+  "filing_date": "2026-08-14",
+  "accession": "0002043585-26-000022",
+  "quarter": "2026Q2",
+  "total_value": 3702921099,
+  "holdings": [
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value_usd": 908899121,
+      "shares": 2543300,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL A",
+      "weight_pct": 24.545462803554056
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value_usd": 866117829,
+      "shares": 2451300,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CAP STK CL C",
+      "weight_pct": 23.39012379264309
+    },
+    {
+      "issuer": "PDD HOLDINGS INC",
+      "cusip": "722304102",
+      "value_usd": 820858157,
+      "shares": 10761119,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPON ADS",
+      "weight_pct": 22.16785437911919
+    },
+    {
+      "issuer": "BERKSHIRE HATHAWAY INC DEL",
+      "cusip": "084670702",
+      "value_usd": 554591244,
+      "shares": 1108318,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "CL B NEW",
+      "weight_pct": 14.977128304185882
+    },
+    {
+      "issuer": "EAST WEST BANCORP INC",
+      "cusip": "27579R104",
+      "value_usd": 358399151,
+      "shares": 2776351,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 9.678822243789861
+    },
+    {
+      "issuer": "CROCS INC",
+      "cusip": "227046109",
+      "value_usd": 107018900,
+      "shares": 887093,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 2.8901209920163087
+    },
+    {
+      "issuer": "TENCENT MUSIC ENTERTAINM",
+      "cusip": "88034P109",
+      "value_usd": 55033481,
+      "shares": 6590836,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "SPON ADS",
+      "weight_pct": 1.4862180297296148
+    },
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "value_usd": 32003216,
+      "shares": 110600,
+      "share_type": "SH",
+      "put_call": "",
+      "title_class": "COM",
+      "weight_pct": 0.8642694549619946
+    }
+  ]
+}
