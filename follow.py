@@ -34,6 +34,7 @@ SIGNALS_PATH = os.path.join(DATA, "signals.json")
 FAST_PATH = os.path.join(DATA, "fast_filings.json")
 STATE_PATH = os.path.join(HERE, "follow_state.json")
 PORTFOLIO_PATH = os.path.join(DATA, "portfolio.json")
+CALENDAR_PATH = os.path.join(DATA, "calendar.json")
 
 USER_AGENT = "SuperinvestorMonitor your_email@gmail.com"   # SEC 要求带联系方式,可改成自己的
 START = "2016-12-31"
@@ -415,7 +416,7 @@ def compute_signals(emap, close, splits, prev_signals=None, raw=None, prev_view=
 
         # 建仓参考价:披露日之后第一个交易日收盘
         old = prev_px.get((s["investor"], s["kind"], s["key"], s["quarter"]), {})
-        for f in ("entry_date", "entry_px", "last_px", "ret", "spy_ret", "px_date"):
+        for f in ("entry_date", "entry_px", "last_px", "ret", "spy_ret", "px_date", "stop_date"):
             s[f] = old.get(f)
         ent = s["entity"]
         if close is not None and ent and ent in close.columns:
@@ -424,6 +425,11 @@ def compute_signals(emap, close, splits, prev_signals=None, raw=None, prev_view=
                 t0, t1 = close.index[i], close.index[-1]
                 p0, p1 = close[ent].get(t0), close[ent].get(t1)
                 if p0 == p0 and p1 == p1 and p0:
+                    # 入场以来收盘价是否曾跌破止损线(与模拟组合同一口径)
+                    import paper
+                    path = close[ent].loc[t0:]
+                    below = path[path <= p0 * (1 - paper.PARAMS["stop_loss"])]
+                    s["stop_date"] = str(below.index[0].date()) if len(below) else None
                     show = raw if raw is not None and ent in raw.columns else close
                     s.update({"entry_date": str(t0.date()), "entry_px": round(float(show[ent].get(t0, p0)), 2),
                               "last_px": round(float(show[ent].get(t1, p1)), 2), "px_date": str(t1.date()),
@@ -465,6 +471,81 @@ def build_memo(signals, view):
         memo[k].sort(key=order, reverse=True)
     memo["new"] = [s for s in recent if s["quarter"] == latest_q]
     return memo
+
+
+# ============ 交易计划 ============
+
+def next_13f_deadline(today=None):
+    """下一个 13F 披露截止日(季度结束后 45 天)"""
+    today = today or date.today()
+    for y in (today.year, today.year + 1):
+        for m, d in ((2, 14), (5, 15), (8, 14), (11, 14)):
+            if date(y, m, d) >= today:
+                return date(y, m, d).isoformat()
+
+
+def load_earnings_dates(tickers, log=print):
+    """各标的下一次财报日。结果缓存 3 天;取不到就留空,不影响其他功能"""
+    cache = json.load(open(CALENDAR_PATH, encoding="utf-8")) if os.path.exists(CALENDAR_PATH) else {}
+    today = date.today().isoformat()
+    fresh = (date.today() - timedelta(days=3)).isoformat()
+    changed = False
+    for t in sorted(tickers):
+        c = cache.get(t)
+        if c and c.get("checked", "") >= fresh and (not c.get("date") or c["date"] >= today):
+            continue
+        try:
+            import yfinance as yf
+            cal = yf.Ticker(t).calendar or {}
+            ds = cal.get("Earnings Date") or []
+            ds = sorted(str(d)[:10] for d in (ds if isinstance(ds, (list, tuple)) else [ds]))
+            cache[t] = {"date": next((d for d in ds if d >= today), None), "checked": today}
+        except Exception as e:
+            log(f"   ⚠️ {t} 财报日获取失败({e})")
+            cache[t] = {"date": (c or {}).get("date"), "checked": today}
+        changed = True
+        time.sleep(0.3)
+    if changed:
+        with open(CALENDAR_PATH, "w", encoding="utf-8") as fh:
+            json.dump(cache, fh, ensure_ascii=False, indent=1, sort_keys=True)
+    return {t: (cache.get(t) or {}).get("date") for t in tickers}
+
+
+def build_plans(memo, view, portfolio, earnings, params):
+    """给"优先研究"和"有分歧"里的每只股票生成交易计划。
+    仓位、止损、持有期全部来自 paper.PARAMS,与模拟组合同一套规则"""
+    today = date.today()
+    held = {}
+    for lot in (portfolio or {}).get("open", []):
+        held[lot["entity"]] = held.get(lot["entity"], 0.0) + lot.get("weight_now", 0.0)
+    cost = {(k, h["quarter"], r["key"]): r for k, v in view.items() for h in v.get("history", []) for r in h["rows"]}
+    total = 0.0
+    for g in memo["priority"] + memo["divergent"]:
+        active = [s for s in g["buys"] if s["status"] == "active"]
+        priced = [s for s in active if s.get("entry_px")]
+        live = [s for s in active if not s.get("stop_date")]      # 自身已触发止损的信号不再计入仓位
+        size = min(len(live) * params["per_signal"], params["per_stock_cap"])
+        total += size
+        priced = [s for s in live if s.get("entry_px")] or priced
+        plan = {"n_signals": len(live), "n_stopped": len(active) - len(live), "size": size, "paper_weight": held.get(g["entity"]),
+                "earnings": earnings.get(g["entity"]), "next_13f": next_13f_deadline(today), "pending": not priced}
+        if priced:
+            ref = max(priced, key=lambda s: s["entry_date"])
+            ref_date = datetime.strptime(ref["entry_date"], "%Y-%m-%d").date()
+            expiry = ref_date + timedelta(days=365)
+            stop = round(ref["entry_px"] * (1 - params["stop_loss"]), 2)
+            row = cost.get((ref["investor"], ref["quarter"], ref["key"]), {})
+            plan.update({
+                "ref_investor": ref["investor"], "ref_quarter": ref["quarter_name"], "ref_date": ref["entry_date"],
+                "ref_px": ref["entry_px"], "last_px": ref["last_px"],
+                "vs_ref": round(ref["last_px"] / ref["entry_px"] - 1, 4),
+                "stop_px": stop, "to_stop": round(stop / ref["last_px"] - 1, 4),
+                "stopped": bool(ref.get("stop_date")), "stop_date": ref.get("stop_date"),
+                "expiry": expiry.isoformat(), "days_left": (expiry - today).days, "age_days": (today - ref_date).days,
+                "late": (today - ref_date).days > 183,
+                "q_avg": row.get("q_avg"), "q_low": row.get("q_low"), "q_high": row.get("q_high")})
+        g["plan"] = plan
+    return {"total_size": total, "n": len(memo["priority"]) + len(memo["divergent"]), "params": params}
 
 
 # ============ 快速披露 (Form 4 / 13D / 13G) ============
@@ -629,6 +710,8 @@ def main():
         portfolio = json.load(open(PORTFOLIO_PATH, encoding="utf-8"))
     signals = [s for s in signals if s["age_days"] <= 2 * RULES["active_days"]]
     memo = build_memo(signals, view)
+    plan_names = {g["entity"] for g in memo["priority"] + memo["divergent"] if g["entity"]}
+    memo["plan_summary"] = build_plans(memo, view, portfolio, load_earnings_dates(plan_names), paper.PARAMS)
     px_date = str(close.index[-1].date()) if close is not None else next((s["px_date"] for s in signals if s.get("px_date")), None)
     payload = {"generated": beijing_now().strftime("%Y-%m-%d %H:%M"), "px_date": px_date,
                "prices_stale": close is None, "rules": RULES, "signals": signals, "investors": view}
