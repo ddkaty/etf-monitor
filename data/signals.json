@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23 23:03",
+ "generated": "2026-11-23 23:09",
  "px_date": "2026-11-23",
  "prices_stale": false,
  "rules": {
@@ -27,9 +27,9 @@
    "divergence": [],
    "entry_date": "2026-11-17",
    "entry_px": 9.47,
-   "last_px": 8.97,
-   "ret": -0.0533,
-   "spy_ret": -0.016,
+   "last_px": 8.94,
+   "ret": -0.0554,
+   "spy_ret": -0.0161,
    "px_date": "2026-11-23",
    "age_days": 6
   },
@@ -49,9 +49,9 @@
    "divergence": [],
    "entry_date": "2026-11-17",
    "entry_px": 380.11,
-   "last_px": 388.23,
-   "ret": 0.0214,
-   "spy_ret": -0.016,
+   "last_px": 387.95,
+   "ret": 0.0206,
+   "spy_ret": -0.0161,
    "px_date": "2026-11-23",
    "age_days": 6
   },
@@ -71,9 +71,9 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 86.94,
-   "last_px": 85.05,
-   "ret": -0.0217,
-   "spy_ret": -0.0649,
+   "last_px": 84.88,
+   "ret": -0.0237,
+   "spy_ret": -0.065,
    "px_date": "2026-11-23",
    "age_days": 98
   },
@@ -93,9 +93,9 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 498.23,
-   "last_px": 571.62,
-   "ret": 0.1473,
-   "spy_ret": -0.0649,
+   "last_px": 571.87,
+   "ret": 0.1478,
+   "spy_ret": -0.065,
    "px_date": "2026-11-23",
    "age_days": 98
   },
@@ -114,10 +114,10 @@
    "status_note": null,
    "divergence": [],
    "entry_date": "2026-08-17",
-   "entry_px": 63.57,
-   "last_px": 48.18,
-   "ret": -0.242,
-   "spy_ret": -0.0649,
+   "entry_px": 63.89,
+   "last_px": 48.17,
+   "ret": -0.2421,
+   "spy_ret": -0.065,
    "px_date": "2026-11-23",
    "age_days": 98
   },
@@ -137,9 +137,9 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 86.94,
-   "last_px": 85.05,
-   "ret": -0.0217,
-   "spy_ret": -0.0649,
+   "last_px": 84.88,
+   "ret": -0.0237,
+   "spy_ret": -0.065,
    "px_date": "2026-11-23",
    "age_days": 98
   },
@@ -169,10 +169,10 @@
     }
    ],
    "entry_date": "2026-08-17",
-   "entry_px": 343.78,
-   "last_px": 280.88,
-   "ret": -0.183,
-   "spy_ret": -0.0649,
+   "entry_px": 344.0,
+   "last_px": 280.75,
+   "ret": -0.1833,
+   "spy_ret": -0.065,
    "px_date": "2026-11-23",
    "age_days": 98
   },
@@ -192,9 +192,9 @@
    "divergence": [],
    "entry_date": "2026-05-18",
    "entry_px": 97.0,
-   "last_px": 157.2,
-   "ret": 0.6206,
-   "spy_ret": -0.0193,
+   "last_px": 157.09,
+   "ret": 0.6195,
+   "spy_ret": -0.0194,
    "px_date": "2026-11-23",
    "age_days": 189
   },
@@ -224,10 +224,10 @@
     }
    ],
    "entry_date": "2026-05-18",
-   "entry_px": 396.45,
-   "last_px": 280.88,
-   "ret": -0.2915,
-   "spy_ret": -0.0193,
+   "entry_px": 396.94,
+   "last_px": 280.75,
+   "ret": -0.2918,
+   "spy_ret": -0.0194,
    "px_date": "2026-11-23",
    "age_days": 189
   },
@@ -247,9 +247,9 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 480.9,
-   "last_px": 571.62,
-   "ret": 0.1886,
-   "spy_ret": -0.0228,
+   "last_px": 571.87,
+   "ret": 0.1892,
+   "spy_ret": -0.0229,
    "px_date": "2026-11-23",
    "age_days": 187
   },
@@ -268,10 +268,10 @@
    "status_note": "2026Q2 减仓 55%",
    "divergence": [],
    "entry_date": "2026-05-20",
-   "entry_px": 222.96,
-   "last_px": 166.38,
-   "ret": -0.2537,
-   "spy_ret": -0.0228,
+   "entry_px": 223.47,
+   "last_px": 165.1,
+   "ret": -0.2595,
+   "spy_ret": -0.0229,
    "px_date": "2026-11-23",
    "age_days": 187
   },
@@ -291,9 +291,9 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 98.15,
-   "last_px": 85.05,
-   "ret": -0.1335,
-   "spy_ret": -0.0228,
+   "last_px": 84.88,
+   "ret": -0.1352,
+   "spy_ret": -0.0229,
    "px_date": "2026-11-23",
    "age_days": 187
   },
@@ -313,9 +313,9 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 417.26,
-   "last_px": 388.23,
-   "ret": -0.0696,
-   "spy_ret": -0.0228,
+   "last_px": 387.95,
+   "ret": -0.0702,
+   "spy_ret": -0.0229,
    "px_date": "2026-11-23",
    "age_days": 187
   },
@@ -334,10 +334,10 @@
    "status_note": "2026Q2 减仓 47%",
    "divergence": [],
    "entry_date": "2026-05-20",
-   "entry_px": 388.43,
-   "last_px": 280.88,
-   "ret": -0.2769,
-   "spy_ret": -0.0228,
+   "entry_px": 388.91,
+   "last_px": 280.75,
+   "ret": -0.2772,
+   "spy_ret": -0.0229,
    "px_date": "2026-11-23",
    "age_days": 187
   },
@@ -367,10 +367,10 @@
     }
    ],
    "entry_date": "2026-05-18",
-   "entry_px": 396.45,
-   "last_px": 280.88,
-   "ret": -0.2915,
-   "spy_ret": -0.0193,
+   "entry_px": 396.94,
+   "last_px": 280.75,
+   "ret": -0.2918,
+   "spy_ret": -0.0194,
    "px_date": "2026-11-23",
    "age_days": 189
   },
@@ -390,9 +390,9 @@
    "divergence": [],
    "entry_date": "2026-02-18",
    "entry_px": 499.07,
-   "last_px": 571.62,
-   "ret": 0.1454,
-   "spy_ret": 0.0584,
+   "last_px": 571.87,
+   "ret": 0.1459,
+   "spy_ret": 0.0583,
    "px_date": "2026-11-23",
    "age_days": 278
   },
@@ -411,10 +411,10 @@
    "status_note": "2026Q2 减仓 55%",
    "divergence": [],
    "entry_date": "2026-02-18",
-   "entry_px": 187.54,
-   "last_px": 166.38,
-   "ret": -0.1128,
-   "spy_ret": 0.0584,
+   "entry_px": 187.98,
+   "last_px": 165.1,
+   "ret": -0.1196,
+   "spy_ret": 0.0583,
    "px_date": "2026-11-23",
    "age_days": 278
   },
@@ -434,9 +434,9 @@
    "divergence": [],
    "entry_date": "2026-02-18",
    "entry_px": 102.92,
-   "last_px": 85.05,
-   "ret": -0.1736,
-   "spy_ret": 0.0584,
+   "last_px": 84.88,
+   "ret": -0.1753,
+   "spy_ret": 0.0583,
    "px_date": "2026-11-23",
    "age_days": 278
   },
@@ -466,10 +466,10 @@
     }
    ],
    "entry_date": "2026-02-18",
-   "entry_px": 396.32,
-   "last_px": 503.77,
-   "ret": 0.2711,
-   "spy_ret": 0.0584,
+   "entry_px": 399.6,
+   "last_px": 503.78,
+   "ret": 0.2712,
+   "spy_ret": 0.0583,
    "px_date": "2026-11-23",
    "age_days": 278
   },
@@ -488,10 +488,10 @@
    "status_note": "2026Q1 减仓 88%",
    "divergence": [],
    "entry_date": "2026-02-18",
-   "entry_px": 359.43,
-   "last_px": 368.75,
-   "ret": 0.0259,
-   "spy_ret": 0.0584,
+   "entry_px": 362.26,
+   "last_px": 368.08,
+   "ret": 0.0241,
+   "spy_ret": 0.0583,
    "px_date": "2026-11-23",
    "age_days": 278
   },
@@ -516,10 +516,10 @@
     }
    ],
    "entry_date": "2025-11-17",
-   "entry_px": 323.21,
-   "last_px": 409.38,
-   "ret": 0.2666,
-   "spy_ret": 0.0944,
+   "entry_px": 325.75,
+   "last_px": 409.96,
+   "ret": 0.2684,
+   "spy_ret": 0.0943,
    "px_date": "2026-11-23",
    "age_days": 371
   },
@@ -539,9 +539,9 @@
    "divergence": [],
    "entry_date": "2025-11-17",
    "entry_px": 503.26,
-   "last_px": 571.62,
-   "ret": 0.1358,
-   "spy_ret": 0.0944,
+   "last_px": 571.87,
+   "ret": 0.1363,
+   "spy_ret": 0.0943,
    "px_date": "2026-11-23",
    "age_days": 371
   },
@@ -561,9 +561,9 @@
    "divergence": [],
    "entry_date": "2025-08-15",
    "entry_px": 118.95,
-   "last_px": 85.05,
-   "ret": -0.285,
-   "spy_ret": 0.1353,
+   "last_px": 84.88,
+   "ret": -0.2864,
+   "spy_ret": 0.1352,
    "px_date": "2026-11-23",
    "age_days": 465
   },
@@ -588,10 +588,10 @@
     }
    ],
    "entry_date": "2025-08-15",
-   "entry_px": 203.19,
-   "last_px": 280.88,
-   "ret": 0.3824,
-   "spy_ret": 0.1353,
+   "entry_px": 203.9,
+   "last_px": 280.75,
+   "ret": 0.3817,
+   "spy_ret": 0.1352,
    "px_date": "2026-11-23",
    "age_days": 465
   },
@@ -616,10 +616,10 @@
     }
    ],
    "entry_date": "2025-05-16",
-   "entry_px": 448.96,
-   "last_px": 503.77,
+   "entry_px": 454.27,
+   "last_px": 503.78,
    "ret": 0.1221,
-   "spy_ret": 0.233,
+   "spy_ret": 0.2329,
    "px_date": "2026-11-23",
    "age_days": 556
   },
@@ -639,9 +639,9 @@
    "divergence": [],
    "entry_date": "2025-02-18",
    "entry_px": 128.46,
-   "last_px": 85.05,
-   "ret": -0.3379,
-   "spy_ret": 0.2018,
+   "last_px": 84.88,
+   "ret": -0.3392,
+   "spy_ret": 0.2017,
    "px_date": "2026-11-23",
    "age_days": 643
   },
@@ -666,10 +666,10 @@
     }
    ],
    "entry_date": "2025-02-18",
-   "entry_px": 47.13,
-   "last_px": 53.99,
-   "ret": 0.1456,
-   "spy_ret": 0.2018,
+   "entry_px": 48.84,
+   "last_px": 53.85,
+   "ret": 0.1428,
+   "spy_ret": 0.2017,
    "px_date": "2026-11-23",
    "age_days": 643
   }
@@ -774,8 +774,8 @@
      "chg": 0.0
     },
     {
-     "key": "?526057104",
-     "entity": null,
+     "key": "LEN",
+     "entity": "LEN",
      "issuer": "LENNAR CORP",
      "weight": 0.7,
      "chg": 0.986
@@ -805,7 +805,12 @@
        "chg": -0.057,
        "before": 9.2,
        "after": 8.16,
-       "signal": false
+       "signal": false,
+       "q_avg": 60.92,
+       "q_low": 54.43,
+       "q_high": 64.81,
+       "last_px": 48.17,
+       "px_chg": -0.2093
       },
       {
        "kind": "add",
@@ -815,7 +820,12 @@
        "chg": 0.124,
        "before": 1.79,
        "after": 1.77,
-       "signal": false
+       "signal": false,
+       "q_avg": 84.83,
+       "q_low": 76.38,
+       "q_high": 93.14,
+       "last_px": 83.3,
+       "px_chg": -0.018
       },
       {
        "kind": "trim",
@@ -825,17 +835,27 @@
        "chg": -0.006,
        "before": 2.15,
        "after": 1.65,
-       "signal": false
+       "signal": false,
+       "q_avg": 200.82,
+       "q_low": 173.82,
+       "q_high": 240.96,
+       "last_px": 156.43,
+       "px_chg": -0.221
       },
       {
        "kind": "add",
-       "key": "?526057104",
-       "entity": null,
+       "key": "LEN",
+       "entity": "LEN",
        "issuer": "LENNAR CORP",
        "chg": 0.986,
        "before": 0.4,
        "after": 0.7,
-       "signal": false
+       "signal": false,
+       "q_avg": 84.02,
+       "q_low": 76.43,
+       "q_high": 88.21,
+       "last_px": 80.57,
+       "px_chg": -0.041
       },
       {
        "kind": "trim",
@@ -845,7 +865,12 @@
        "chg": -0.103,
        "before": 0.72,
        "after": 0.67,
-       "signal": false
+       "signal": false,
+       "q_avg": 58.17,
+       "q_low": 55.76,
+       "q_high": 62.25,
+       "last_px": 66.72,
+       "px_chg": 0.1471
       },
       {
        "kind": "trim",
@@ -855,7 +880,12 @@
        "chg": -0.341,
        "before": 0.76,
        "after": 0.55,
-       "signal": false
+       "signal": false,
+       "q_avg": 283.83,
+       "q_low": 255.9,
+       "q_high": 308.18,
+       "last_px": 311.3,
+       "px_chg": 0.0968
       },
       {
        "kind": "new",
@@ -865,47 +895,72 @@
        "chg": null,
        "before": 0.0,
        "after": 0.23,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "trim",
-       "key": "?670346105",
-       "entity": null,
+       "key": "NUE",
+       "entity": "NUE",
        "issuer": "NUCOR CORP",
        "chg": -0.149,
        "before": 0.14,
        "after": 0.12,
-       "signal": false
+       "signal": false,
+       "q_avg": 249.98,
+       "q_low": 219.02,
+       "q_high": 274.74,
+       "last_px": 244.15,
+       "px_chg": -0.0233
       },
       {
        "kind": "trim",
-       "key": "?14040H105",
-       "entity": null,
+       "key": "COF",
+       "entity": "COF",
        "issuer": "CAPITAL ONE FINL CORP",
        "chg": -0.617,
        "before": 0.2,
        "after": 0.07,
-       "signal": false
+       "signal": false,
+       "q_avg": 209.84,
+       "q_low": 191.95,
+       "q_high": 227.34,
+       "last_px": 180.96,
+       "px_chg": -0.1376
       },
       {
        "kind": "add",
-       "key": "?55616P104",
-       "entity": null,
+       "key": "M",
+       "entity": "M",
        "issuer": "MACYS INC",
        "chg": 0.026,
        "before": 0.06,
        "after": 0.06,
-       "signal": false
+       "signal": false,
+       "q_avg": 23.26,
+       "q_low": 20.5,
+       "q_high": 26.21,
+       "last_px": 22.94,
+       "px_chg": -0.0137
       },
       {
        "kind": "add",
-       "key": "?526057302",
-       "entity": null,
+       "key": "LEN-B",
+       "entity": "LEN-B",
        "issuer": "LENNAR CORP",
        "chg": 0.855,
        "before": 0.01,
        "after": 0.01,
-       "signal": false
+       "signal": false,
+       "q_avg": 82.42,
+       "q_low": 74.71,
+       "q_high": 86.77,
+       "last_px": 77.96,
+       "px_chg": -0.0541
       }
      ]
     },
@@ -924,7 +979,12 @@
        "chg": 0.832,
        "before": 6.32,
        "after": 12.62,
-       "signal": true
+       "signal": true,
+       "q_avg": 359.96,
+       "q_low": 295.77,
+       "q_high": 402.62,
+       "last_px": 280.75,
+       "px_chg": -0.2201
       },
       {
        "kind": "trim",
@@ -934,7 +994,12 @@
        "chg": -0.059,
        "before": 9.52,
        "after": 9.2,
-       "signal": false
+       "signal": false,
+       "q_avg": 53.18,
+       "q_low": 49.27,
+       "q_high": 58.19,
+       "last_px": 48.17,
+       "px_chg": -0.0942
       },
       {
        "kind": "trim",
@@ -944,7 +1009,12 @@
        "chg": -0.041,
        "before": 1.76,
        "after": 2.15,
-       "signal": false
+       "signal": false,
+       "q_avg": 181.7,
+       "q_low": 144.57,
+       "q_high": 222.48,
+       "last_px": 156.43,
+       "px_chg": -0.1391
       },
       {
        "kind": "add",
@@ -954,7 +1024,12 @@
        "chg": 0.44,
        "before": 1.01,
        "after": 1.79,
-       "signal": false
+       "signal": false,
+       "q_avg": 75.49,
+       "q_low": 65.62,
+       "q_high": 93.66,
+       "last_px": 83.3,
+       "px_chg": 0.1034
       },
       {
        "kind": "trim",
@@ -964,97 +1039,147 @@
        "chg": -0.22,
        "before": 1.38,
        "after": 0.72,
-       "signal": false
+       "signal": false,
+       "q_avg": 65.24,
+       "q_low": 55.53,
+       "q_high": 73.03,
+       "last_px": 66.72,
+       "px_chg": 0.0227
       },
       {
        "kind": "trim",
-       "key": "?02005N100",
-       "entity": null,
+       "key": "ALLY",
+       "entity": "ALLY",
        "issuer": "ALLY FINL INC",
        "chg": -0.069,
        "before": 0.43,
        "after": 0.41,
-       "signal": false
+       "signal": false,
+       "q_avg": 43.38,
+       "q_low": 39.77,
+       "q_high": 47.25,
+       "last_px": 37.17,
+       "px_chg": -0.1433
       },
       {
        "kind": "add",
-       "key": "?526057104",
-       "entity": null,
+       "key": "LEN",
+       "entity": "LEN",
        "issuer": "LENNAR CORP",
        "chg": 0.298,
        "before": 0.33,
        "after": 0.4,
-       "signal": false
+       "signal": false,
+       "q_avg": 89.41,
+       "q_low": 82.3,
+       "q_high": 94.95,
+       "last_px": 80.57,
+       "px_chg": -0.0989
       },
       {
        "kind": "add",
-       "key": "?650111107",
-       "entity": null,
+       "key": "NYT",
+       "entity": "NYT",
        "issuer": "NEW YORK TIMES CO MTN BE",
        "chg": 0.037,
        "before": 0.48,
        "after": 0.37,
-       "signal": false
+       "signal": false,
+       "q_avg": 77.1,
+       "q_low": 68.57,
+       "q_high": 85.86,
+       "last_px": 67.82,
+       "px_chg": -0.1203
       },
       {
        "kind": "trim",
-       "key": "?14040H105",
-       "entity": null,
+       "key": "COF",
+       "entity": "COF",
        "issuer": "CAPITAL ONE FINL CORP",
        "chg": -0.58,
        "before": 0.5,
        "after": 0.2,
-       "signal": false
+       "signal": false,
+       "q_avg": 191.29,
+       "q_low": 177.62,
+       "q_high": 206.47,
+       "last_px": 180.96,
+       "px_chg": -0.054
       },
       {
        "kind": "trim",
-       "key": "?670346105",
-       "entity": null,
+       "key": "NUE",
+       "entity": "NUE",
        "issuer": "NUCOR CORP",
        "chg": -0.525,
        "before": 0.25,
        "after": 0.14,
-       "signal": false
+       "signal": false,
+       "q_avg": 226.33,
+       "q_low": 169.59,
+       "q_high": 266.35,
+       "last_px": 244.15,
+       "px_chg": 0.0787
       },
       {
        "kind": "add",
-       "key": "?55616P104",
-       "entity": null,
+       "key": "M",
+       "entity": "M",
        "issuer": "MACYS INC",
        "chg": 1.418,
        "before": 0.02,
        "after": 0.06,
-       "signal": false
+       "signal": false,
+       "q_avg": 20.94,
+       "q_low": 17.82,
+       "q_high": 25.96,
+       "last_px": 22.94,
+       "px_chg": 0.0957
       },
       {
        "kind": "add",
-       "key": "?526057302",
-       "entity": null,
+       "key": "LEN-B",
+       "entity": "LEN-B",
        "issuer": "LENNAR CORP",
        "chg": 0.254,
        "before": 0.01,
        "after": 0.01,
-       "signal": false
+       "signal": false,
+       "q_avg": 87.32,
+       "q_low": 80.32,
+       "q_high": 92.93,
+       "last_px": 77.96,
+       "px_chg": -0.1072
       },
       {
        "kind": "new",
-       "key": "?23331A109",
-       "entity": null,
+       "key": "DHI",
+       "entity": "DHI",
        "issuer": "D R HORTON INC",
        "chg": null,
        "before": 0.0,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 149.24,
+       "q_low": 134.72,
+       "q_high": 166.95,
+       "last_px": 144.49,
+       "px_chg": -0.0319
       },
       {
        "kind": "exit",
-       "key": "?21036P108",
-       "entity": null,
+       "key": "STZ",
+       "entity": "STZ",
        "issuer": "CONSTELLATION BRANDS INC",
        "chg": -1.0,
        "before": 0.04,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 148.65,
+       "q_low": 135.4,
+       "q_high": 166.15,
+       "last_px": 136.55,
+       "px_chg": -0.0814
       }
      ]
     },
@@ -1073,7 +1198,12 @@
        "chg": -0.007,
        "before": 10.38,
        "after": 9.52,
-       "signal": false
+       "signal": false,
+       "q_avg": 51.6,
+       "q_low": 46.72,
+       "q_high": 57.25,
+       "last_px": 48.17,
+       "px_chg": -0.0664
       },
       {
        "kind": "trim",
@@ -1083,7 +1213,12 @@
        "chg": -0.352,
        "before": 7.24,
        "after": 6.64,
-       "signal": false
+       "signal": false,
+       "q_avg": 182.35,
+       "q_low": 155.2,
+       "q_high": 211.15,
+       "last_px": 207.93,
+       "px_chg": 0.1403
       },
       {
        "kind": "add",
@@ -1093,7 +1228,12 @@
        "chg": 2.241,
        "before": 2.04,
        "after": 6.32,
-       "signal": true
+       "signal": true,
+       "q_avg": 314.21,
+       "q_low": 273.5,
+       "q_high": 343.69,
+       "last_px": 280.75,
+       "px_chg": -0.1065
       },
       {
        "kind": "trim",
@@ -1103,7 +1243,12 @@
        "chg": -0.052,
        "before": 1.32,
        "after": 1.76,
-       "signal": false
+       "signal": false,
+       "q_avg": 135.63,
+       "q_low": 103.87,
+       "q_high": 156.76,
+       "last_px": 156.43,
+       "px_chg": 0.1533
       },
       {
        "kind": "new",
@@ -1113,77 +1258,117 @@
        "chg": null,
        "before": 0.0,
        "after": 1.01,
-       "signal": false
+       "signal": false,
+       "q_avg": 67.33,
+       "q_low": 57.94,
+       "q_high": 75.35,
+       "last_px": 83.3,
+       "px_chg": 0.2371
       },
       {
        "kind": "add",
-       "key": "?650111107",
-       "entity": null,
+       "key": "NYT",
+       "entity": "NYT",
        "issuer": "NEW YORK TIMES CO MTN BE",
        "chg": 1.99,
        "before": 0.13,
        "after": 0.48,
-       "signal": false
+       "signal": false,
+       "q_avg": 75.65,
+       "q_low": 67.63,
+       "q_high": 85.17,
+       "last_px": 67.82,
+       "px_chg": -0.1034
       },
       {
        "kind": "trim",
-       "key": "?530909308",
-       "entity": null,
+       "key": "LLYVK",
+       "entity": "LLYVK",
        "issuer": "LIBERTY LIVE HOLDINGS INC",
        "chg": -0.03,
        "before": 0.33,
        "after": 0.38,
-       "signal": false
+       "signal": false,
+       "q_avg": 89.92,
+       "q_low": 79.68,
+       "q_high": 100.52,
+       "last_px": 104.03,
+       "px_chg": 0.1569
       },
       {
        "kind": "add",
-       "key": "?526057104",
-       "entity": null,
+       "key": "LEN",
+       "entity": "LEN",
        "issuer": "LENNAR CORP",
        "chg": 0.432,
        "before": 0.26,
        "after": 0.33,
-       "signal": false
+       "signal": false,
+       "q_avg": 108.07,
+       "q_low": 84.88,
+       "q_high": 123.32,
+       "last_px": 80.57,
+       "px_chg": -0.2545
       },
       {
        "kind": "trim",
-       "key": "?670346105",
-       "entity": null,
+       "key": "NUE",
+       "entity": "NUE",
        "issuer": "NUCOR CORP",
        "chg": -0.39,
        "before": 0.38,
        "after": 0.25,
-       "signal": false
+       "signal": false,
+       "q_avg": 174.29,
+       "q_low": 158.58,
+       "q_high": 194.42,
+       "last_px": 244.15,
+       "px_chg": 0.4009
       },
       {
        "kind": "trim",
-       "key": "?21036P108",
-       "entity": null,
+       "key": "STZ",
+       "entity": "STZ",
        "issuer": "CONSTELLATION BRANDS INC",
        "chg": -0.951,
        "before": 0.65,
        "after": 0.04,
-       "signal": false
+       "signal": false,
+       "q_avg": 154.49,
+       "q_low": 140.49,
+       "q_high": 166.68,
+       "last_px": 136.55,
+       "px_chg": -0.1161
       },
       {
        "kind": "new",
-       "key": "?55616P104",
-       "entity": null,
+       "key": "M",
+       "entity": "M",
        "issuer": "MACYS INC",
        "chg": null,
        "before": 0.0,
        "after": 0.02,
-       "signal": false
+       "signal": false,
+       "q_avg": 20.24,
+       "q_low": 16.92,
+       "q_high": 23.72,
+       "last_px": 22.94,
+       "px_chg": 0.1333
       },
       {
        "kind": "add",
-       "key": "?526057302",
-       "entity": null,
+       "key": "LEN-B",
+       "entity": "LEN-B",
        "issuer": "LENNAR CORP",
        "chg": 0.313,
        "before": 0.01,
        "after": 0.01,
-       "signal": false
+       "signal": false,
+       "q_avg": 100.73,
+       "q_low": 81.84,
+       "q_high": 114.25,
+       "last_px": 77.96,
+       "px_chg": -0.226
       },
       {
        "kind": "exit",
@@ -1193,7 +1378,12 @@
        "chg": -1.0,
        "before": 1.06,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 321.55,
+       "q_low": 295.52,
+       "q_high": 357.56,
+       "last_px": 409.96,
+       "px_chg": 0.2749
       },
       {
        "kind": "exit",
@@ -1203,7 +1393,12 @@
        "chg": -1.0,
        "before": 0.83,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 526.66,
+       "q_low": 484.24,
+       "q_high": 580.34,
+       "last_px": 635.08,
+       "px_chg": 0.2059
       },
       {
        "kind": "exit",
@@ -1213,17 +1408,27 @@
        "chg": -1.0,
        "before": 0.61,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 297.81,
+       "q_low": 259.02,
+       "q_high": 356.26,
+       "last_px": 333.68,
+       "px_chg": 0.1205
       },
       {
        "kind": "exit",
-       "key": "?25754A201",
-       "entity": null,
+       "key": "DPZ",
+       "entity": "DPZ",
        "issuer": "DOMINOS PIZZA INC",
        "chg": -1.0,
        "before": 0.51,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 394.83,
+       "q_low": 348.14,
+       "q_high": 425.28,
+       "last_px": 348.41,
+       "px_chg": -0.1176
       },
       {
        "kind": "exit",
@@ -1233,17 +1438,27 @@
        "chg": -1.0,
        "before": 0.46,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "exit",
-       "key": "?73278L105",
-       "entity": null,
+       "key": "POOL",
+       "entity": "POOL",
        "issuer": "POOL CORP",
        "chg": -1.0,
        "before": 0.26,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 235.72,
+       "q_low": 198.74,
+       "q_high": 271.48,
+       "last_px": 207.91,
+       "px_chg": -0.118
       },
       {
        "kind": "exit",
@@ -1253,27 +1468,42 @@
        "chg": -1.0,
        "before": 0.19,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 220.17,
+       "q_low": 198.79,
+       "q_high": 247.38,
+       "last_px": 255.22,
+       "px_chg": 0.1592
       },
       {
        "kind": "exit",
-       "key": "?422806208",
-       "entity": null,
+       "key": "HEI-A",
+       "entity": "HEI-A",
        "issuer": "HEICO CORP NEW",
        "chg": -1.0,
        "before": 0.12,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 246.19,
+       "q_low": 204.88,
+       "q_high": 276.13,
+       "last_px": 246.63,
+       "px_chg": 0.0018
       },
       {
        "kind": "exit",
-       "key": "?531229755",
-       "entity": null,
+       "key": "FWONK",
+       "entity": "FWONK",
        "issuer": "LIBERTY MEDIA CORP DEL",
        "chg": -1.0,
        "before": 0.11,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 87.41,
+       "q_low": 81.42,
+       "q_high": 98.25,
+       "last_px": 104.51,
+       "px_chg": 0.1957
       },
       {
        "kind": "exit",
@@ -1283,17 +1513,27 @@
        "chg": -1.0,
        "before": 0.08,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 216.63,
+       "q_low": 182.81,
+       "q_high": 248.19,
+       "last_px": 125.42,
+       "px_chg": -0.421
       },
       {
        "kind": "exit",
-       "key": "?512816109",
-       "entity": null,
+       "key": "LAMR",
+       "entity": "LAMR",
        "issuer": "LAMAR ADVERTISING CO NEW",
        "chg": -1.0,
        "before": 0.06,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 131.03,
+       "q_low": 123.71,
+       "q_high": 139.18,
+       "last_px": 153.18,
+       "px_chg": 0.1691
       },
       {
        "kind": "exit",
@@ -1303,17 +1543,27 @@
        "chg": -1.0,
        "before": 0.05,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "exit",
-       "key": "?25243Q205",
-       "entity": null,
+       "key": "DEO",
+       "entity": "DEO",
        "issuer": "DIAGEO PLC",
        "chg": -1.0,
        "before": 0.01,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 87.24,
+       "q_low": 72.47,
+       "q_high": 102.14,
+       "last_px": 96.68,
+       "px_chg": 0.1082
       },
       {
        "kind": "exit",
@@ -1323,7 +1573,12 @@
        "chg": -1.0,
        "before": 0.01,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "exit",
@@ -1333,17 +1588,27 @@
        "chg": -1.0,
        "before": 0.0,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "exit",
-       "key": "?047726302",
-       "entity": null,
+       "key": "BATRK",
+       "entity": "BATRK",
        "issuer": "ATLANTA BRAVES HLDGS INC",
        "chg": -1.0,
        "before": 0.0,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 41.55,
+       "q_low": 39.13,
+       "q_high": 43.99,
+       "last_px": 51.22,
+       "px_chg": 0.2326
       }
      ]
     },
@@ -1362,7 +1627,12 @@
        "chg": -0.043,
        "before": 22.69,
        "after": 22.6,
-       "signal": false
+       "signal": false,
+       "q_avg": 268.45,
+       "q_low": 245.27,
+       "q_high": 286.19,
+       "last_px": 348.58,
+       "px_chg": 0.2985
       },
       {
        "kind": "trim",
@@ -1372,7 +1642,12 @@
        "chg": -0.089,
        "before": 10.96,
        "after": 10.38,
-       "signal": false
+       "signal": false,
+       "q_avg": 52.86,
+       "q_low": 48.65,
+       "q_high": 56.25,
+       "last_px": 48.17,
+       "px_chg": -0.0886
       },
       {
        "kind": "add",
@@ -1382,7 +1657,12 @@
        "chg": 0.066,
        "before": 7.09,
        "after": 7.24,
-       "signal": false
+       "signal": false,
+       "q_avg": 152.3,
+       "q_low": 146.75,
+       "q_high": 157.72,
+       "last_px": 207.93,
+       "px_chg": 0.3653
       },
       {
        "kind": "add",
@@ -1392,7 +1672,12 @@
        "chg": 0.093,
        "before": 3.31,
        "after": 3.9,
-       "signal": false
+       "signal": false,
+       "q_avg": 292.4,
+       "q_low": 268.2,
+       "q_high": 314.45,
+       "last_px": 368.96,
+       "px_chg": 0.2618
       },
       {
        "kind": "trim",
@@ -1402,27 +1687,42 @@
        "chg": -0.012,
        "before": 1.6,
        "after": 1.32,
-       "signal": false
+       "signal": false,
+       "q_avg": 121.6,
+       "q_low": 113.5,
+       "q_high": 132.87,
+       "last_px": 156.43,
+       "px_chg": 0.2864
       },
       {
        "kind": "trim",
-       "key": "?21036P108",
-       "entity": null,
+       "key": "STZ",
+       "entity": "STZ",
        "issuer": "CONSTELLATION BRANDS INC",
        "chg": -0.03,
        "before": 0.68,
        "after": 0.65,
-       "signal": false
+       "signal": false,
+       "q_avg": 137.2,
+       "q_low": 127.65,
+       "q_high": 149.55,
+       "last_px": 136.55,
+       "px_chg": -0.0047
       },
       {
        "kind": "add",
-       "key": "?25754A201",
-       "entity": null,
+       "key": "DPZ",
+       "entity": "DPZ",
        "issuer": "DOMINOS PIZZA INC",
        "chg": 0.123,
        "before": 0.48,
        "after": 0.51,
-       "signal": false
+       "signal": false,
+       "q_avg": 416.82,
+       "q_low": 397.21,
+       "q_high": 438.42,
+       "last_px": 348.41,
+       "px_chg": -0.1641
       },
       {
        "kind": "trim",
@@ -1432,27 +1732,42 @@
        "chg": -0.121,
        "before": 0.55,
        "after": 0.46,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "new",
-       "key": "?530909308",
-       "entity": null,
+       "key": "LLYVK",
+       "entity": "LLYVK",
        "issuer": "LIBERTY LIVE HOLDINGS INC",
        "chg": null,
        "before": 0.0,
        "after": 0.33,
-       "signal": false
+       "signal": false,
+       "q_avg": 85.87,
+       "q_low": 77.33,
+       "q_high": 94.51,
+       "last_px": 104.03,
+       "px_chg": 0.2114
       },
       {
        "kind": "trim",
-       "key": "?73278L105",
-       "entity": null,
+       "key": "POOL",
+       "entity": "POOL",
        "issuer": "POOL CORP",
        "chg": -0.113,
        "before": 0.4,
        "after": 0.26,
-       "signal": false
+       "signal": false,
+       "q_avg": 260.12,
+       "q_low": 228.75,
+       "q_high": 312.05,
+       "last_px": 207.91,
+       "px_chg": -0.2007
       },
       {
        "kind": "trim",
@@ -1462,37 +1777,57 @@
        "chg": -0.772,
        "before": 0.82,
        "after": 0.19,
-       "signal": false
+       "signal": false,
+       "q_avg": 228.79,
+       "q_low": 213.04,
+       "q_high": 254.0,
+       "last_px": 255.22,
+       "px_chg": 0.1155
       },
       {
        "kind": "new",
-       "key": "?530909100",
-       "entity": null,
+       "key": "LLYVA",
+       "entity": "LLYVA",
        "issuer": "LIBERTY LIVE HOLDINGS INC",
        "chg": null,
        "before": 0.0,
        "after": 0.15,
-       "signal": false
+       "signal": false,
+       "q_avg": 83.24,
+       "q_low": 74.85,
+       "q_high": 91.65,
+       "last_px": 101.4,
+       "px_chg": 0.2182
       },
       {
        "kind": "new",
-       "key": "?650111107",
-       "entity": null,
+       "key": "NYT",
+       "entity": "NYT",
        "issuer": "NEW YORK TIMES CO",
        "chg": null,
        "before": 0.0,
        "after": 0.13,
-       "signal": false
+       "signal": false,
+       "q_avg": 62.0,
+       "q_low": 54.66,
+       "q_high": 71.01,
+       "last_px": 67.82,
+       "px_chg": 0.094
       },
       {
        "kind": "new",
-       "key": "?531229755",
-       "entity": null,
+       "key": "FWONK",
+       "entity": "FWONK",
        "issuer": "LIBERTY MEDIA CORP DEL",
        "chg": null,
        "before": 0.0,
        "after": 0.11,
-       "signal": false
+       "signal": false,
+       "q_avg": 98.15,
+       "q_low": 90.56,
+       "q_high": 108.33,
+       "last_px": 104.51,
+       "px_chg": 0.0649
       },
       {
        "kind": "trim",
@@ -1502,17 +1837,27 @@
        "chg": -0.089,
        "before": 0.01,
        "after": 0.01,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "trim",
-       "key": "?047726302",
-       "entity": null,
+       "key": "BATRK",
+       "entity": "BATRK",
        "issuer": "ATLANTA BRAVES HLDGS INC",
        "chg": -0.484,
        "before": 0.0,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 39.53,
+       "q_low": 38.04,
+       "q_high": 41.13,
+       "last_px": 51.22,
+       "px_chg": 0.2956
       },
       {
        "kind": "exit",
@@ -1522,7 +1867,12 @@
        "chg": -1.0,
        "before": 0.4,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "exit",
@@ -1532,7 +1882,12 @@
        "chg": -1.0,
        "before": 0.18,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       },
       {
        "kind": "exit",
@@ -1542,7 +1897,12 @@
        "chg": -1.0,
        "before": 0.12,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": null,
+       "q_low": null,
+       "q_high": null,
+       "last_px": null,
+       "px_chg": null
       }
      ]
     },
@@ -1561,7 +1921,12 @@
        "chg": -0.149,
        "before": 22.31,
        "after": 22.69,
-       "signal": false
+       "signal": false,
+       "q_avg": 225.91,
+       "q_low": 202.38,
+       "q_high": 256.87,
+       "last_px": 348.58,
+       "px_chg": 0.5431
       },
       {
        "kind": "trim",
@@ -1571,7 +1936,12 @@
        "chg": -0.061,
        "before": 11.12,
        "after": 10.96,
-       "signal": false
+       "signal": false,
+       "q_avg": 48.79,
+       "q_low": 44.92,
+       "q_high": 52.42,
+       "last_px": 48.17,
+       "px_chg": -0.0125
       },
       {
        "kind": "add",
@@ -1581,7 +1951,12 @@
        "chg": 0.159,
        "before": 3.04,
        "after": 3.31,
-       "signal": false
+       "signal": false,
+       "q_avg": 275.21,
+       "q_low": 265.99,
+       "q_high": 289.59,
+       "last_px": 368.96,
+       "px_chg": 0.3406
       },
       {
        "kind": "new",
@@ -1591,7 +1966,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.62,
-       "signal": false
+       "signal": false,
+       "q_avg": 209.46,
+       "q_low": 174.36,
+       "q_high": 254.72,
+       "last_px": 280.75,
+       "px_chg": 0.3403
       },
       {
        "kind": "trim",
@@ -1601,7 +1981,12 @@
        "chg": -0.048,
        "before": 1.87,
        "after": 1.6,
-       "signal": false
+       "signal": false,
+       "q_avg": 137.31,
+       "q_low": 127.69,
+       "q_high": 151.32,
+       "last_px": 156.43,
+       "px_chg": 0.1393
       },
       {
        "kind": "add",
@@ -1611,7 +1996,12 @@
        "chg": 0.042,
        "before": 1.07,
        "after": 1.09,
-       "signal": false
+       "signal": false,
+       "q_avg": 23.13,
+       "q_low": 20.95,
+       "q_high": 24.49,
+       "last_px": 31.2,
+       "px_chg": 0.3487
       },
       {
        "kind": "trim",
@@ -1621,47 +2011,72 @@
        "chg": -0.324,
        "before": 1.49,
        "after": 0.94,
-       "signal": false
+       "signal": false,
+       "q_avg": 279.42,
+       "q_low": 263.02,
+       "q_high": 305.98,
+       "last_px": 311.3,
+       "px_chg": 0.1141
       },
       {
        "kind": "add",
-       "key": "?25754A201",
-       "entity": null,
+       "key": "DPZ",
+       "entity": "DPZ",
        "issuer": "DOMINOS PIZZA INC",
        "chg": 0.132,
        "before": 0.46,
        "after": 0.48,
-       "signal": false
+       "signal": false,
+       "q_avg": 454.08,
+       "q_low": 422.75,
+       "q_high": 485.53,
+       "last_px": 348.41,
+       "px_chg": -0.2327
       },
       {
        "kind": "trim",
-       "key": "?670346105",
-       "entity": null,
+       "key": "NUE",
+       "entity": "NUE",
        "issuer": "NUCOR CORP",
        "chg": -0.031,
        "before": 0.33,
        "after": 0.32,
-       "signal": false
+       "signal": false,
+       "q_avg": 141.56,
+       "q_low": 133.3,
+       "q_high": 150.33,
+       "last_px": 244.15,
+       "px_chg": 0.7248
       },
       {
        "kind": "add",
-       "key": "?512816109",
-       "entity": null,
+       "key": "LAMR",
+       "entity": "LAMR",
        "issuer": "LAMAR ADVERTISING CO NEW",
        "chg": 0.028,
        "before": 0.06,
        "after": 0.06,
-       "signal": false
+       "signal": false,
+       "q_avg": 124.23,
+       "q_low": 114.98,
+       "q_high": 128.82,
+       "last_px": 153.18,
+       "px_chg": 0.2331
       },
       {
        "kind": "exit",
-       "key": "?23331A109",
-       "entity": null,
+       "key": "DHI",
+       "entity": "DHI",
        "issuer": "D R HORTON INC",
        "chg": -1.0,
        "before": 0.07,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 157.26,
+       "q_low": 129.82,
+       "q_high": 184.04,
+       "last_px": 144.49,
+       "px_chg": -0.0812
       }
      ]
     }
@@ -1752,22 +2167,22 @@
      "chg": -0.142
     },
     {
-     "key": "?84615Q103",
-     "entity": null,
+     "key": "SPCX",
+     "entity": "SPCX",
      "issuer": "SPACE EXPLORATION TECHN CORP",
      "weight": 0.18,
      "chg": "new"
     },
     {
-     "key": "?69608A108",
-     "entity": null,
+     "key": "PLTR",
+     "entity": "PLTR",
      "issuer": "PALANTIR TECHNOLOGIES INC",
      "weight": 0.07,
      "chg": 0.0
     },
     {
-     "key": "?871607107",
-     "entity": null,
+     "key": "SNPS",
+     "entity": "SNPS",
      "issuer": "SYNOPSYS INC",
      "weight": 0.03,
      "chg": 0.0
@@ -1788,15 +2203,15 @@
      "weight": 0.15
     },
     {
-     "key": "?172573107",
+     "key": "CRCL",
      "issuer": "CIRCLE INTERNET GROUP INC",
-     "entity": null,
+     "entity": "CRCL",
      "weight": 0.07
     },
     {
-     "key": "?457642205",
+     "key": "INOD",
      "issuer": "INNODATA INC",
-     "entity": null,
+     "entity": "INOD",
      "weight": 0.0
     }
    ],
@@ -1816,7 +2231,12 @@
        "chg": -0.218,
        "before": 41.05,
        "after": 41.07,
-       "signal": false
+       "signal": false,
+       "q_avg": 321.2,
+       "q_low": 294.38,
+       "q_high": 341.07,
+       "last_px": 348.58,
+       "px_chg": 0.0853
       },
       {
        "kind": "trim",
@@ -1826,7 +2246,12 @@
        "chg": -0.095,
        "before": 24.18,
        "after": 24.21,
-       "signal": false
+       "signal": false,
+       "q_avg": 504.52,
+       "q_low": 488.35,
+       "q_high": 529.42,
+       "last_px": 571.87,
+       "px_chg": 0.1335
       },
       {
        "kind": "add",
@@ -1836,7 +2261,12 @@
        "chg": 0.119,
        "before": 9.99,
        "after": 12.69,
-       "signal": false
+       "signal": false,
+       "q_avg": 84.16,
+       "q_low": 77.5,
+       "q_high": 93.0,
+       "last_px": 84.88,
+       "px_chg": 0.0085
       },
       {
        "kind": "add",
@@ -1846,7 +2276,12 @@
        "chg": 0.207,
        "before": 7.44,
        "after": 8.42,
-       "signal": true
+       "signal": true,
+       "q_avg": 357.87,
+       "q_low": 298.32,
+       "q_high": 425.3,
+       "last_px": 387.95,
+       "px_chg": 0.084
       },
       {
        "kind": "trim",
@@ -1856,7 +2291,12 @@
        "chg": -0.631,
        "before": 6.58,
        "after": 3.08,
-       "signal": false
+       "signal": false,
+       "q_avg": 214.39,
+       "q_low": 190.01,
+       "q_high": 230.36,
+       "last_px": 165.1,
+       "px_chg": -0.2299
       },
       {
        "kind": "trim",
@@ -1866,7 +2306,12 @@
        "chg": -0.415,
        "before": 3.64,
        "after": 2.28,
-       "signal": false
+       "signal": false,
+       "q_avg": 347.07,
+       "q_low": 317.69,
+       "q_high": 377.65,
+       "last_px": 280.75,
+       "px_chg": -0.1911
       },
       {
        "kind": "trim",
@@ -1876,7 +2321,12 @@
        "chg": -0.08,
        "before": 1.47,
        "after": 2.07,
-       "signal": false
+       "signal": false,
+       "q_avg": 462.46,
+       "q_low": 381.58,
+       "q_high": 516.17,
+       "last_px": 503.78,
+       "px_chg": 0.0893
       },
       {
        "kind": "trim",
@@ -1886,17 +2336,27 @@
        "chg": -0.142,
        "before": 1.0,
        "after": 0.68,
-       "signal": false
+       "signal": false,
+       "q_avg": 215.32,
+       "q_low": 150.09,
+       "q_high": 282.82,
+       "last_px": 121.88,
+       "px_chg": -0.434
       },
       {
        "kind": "new",
-       "key": "?84615Q103",
-       "entity": null,
+       "key": "SPCX",
+       "entity": "SPCX",
        "issuer": "SPACE EXPLORATION TECHN CORP",
        "chg": null,
        "before": 0.0,
        "after": 0.18,
-       "signal": false
+       "signal": false,
+       "q_avg": 138.41,
+       "q_low": 108.27,
+       "q_high": 162.0,
+       "last_px": 139.33,
+       "px_chg": 0.0066
       },
       {
        "kind": "exit",
@@ -1906,27 +2366,42 @@
        "chg": -1.0,
        "before": 0.15,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 115.58,
+       "q_low": 96.14,
+       "q_high": 132.32,
+       "last_px": 86.32,
+       "px_chg": -0.2532
       },
       {
        "kind": "exit",
-       "key": "?172573107",
-       "entity": null,
+       "key": "CRCL",
+       "entity": "CRCL",
        "issuer": "CIRCLE INTERNET GROUP INC",
        "chg": -1.0,
        "before": 0.07,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 77.15,
+       "q_low": 60.35,
+       "q_high": 103.23,
+       "last_px": 52.36,
+       "px_chg": -0.3213
       },
       {
        "kind": "exit",
-       "key": "?457642205",
-       "entity": null,
+       "key": "INOD",
+       "entity": "INOD",
        "issuer": "INNODATA INC",
        "chg": -1.0,
        "before": 0.0,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 62.05,
+       "q_low": 53.11,
+       "q_high": 73.12,
+       "last_px": 33.12,
+       "px_chg": -0.4662
       }
      ]
     },
@@ -1945,7 +2420,12 @@
        "chg": -0.064,
        "before": 36.72,
        "after": 41.05,
-       "signal": false
+       "signal": false,
+       "q_avg": 286.04,
+       "q_low": 253.5,
+       "q_high": 315.2,
+       "last_px": 348.58,
+       "px_chg": 0.2187
       },
       {
        "kind": "add",
@@ -1955,7 +2435,12 @@
        "chg": 0.009,
        "before": 21.91,
        "after": 24.18,
-       "signal": false
+       "signal": false,
+       "q_avg": 480.75,
+       "q_low": 465.4,
+       "q_high": 500.39,
+       "last_px": 571.87,
+       "px_chg": 0.1895
       },
       {
        "kind": "add",
@@ -1965,7 +2450,12 @@
        "chg": 0.267,
        "before": 10.09,
        "after": 9.99,
-       "signal": true
+       "signal": true,
+       "q_avg": 92.38,
+       "q_low": 73.3,
+       "q_high": 104.79,
+       "last_px": 84.88,
+       "px_chg": -0.0812
       },
       {
        "kind": "trim",
@@ -1975,7 +2465,12 @@
        "chg": -0.008,
        "before": 6.34,
        "after": 7.44,
-       "signal": false
+       "signal": false,
+       "q_avg": 397.72,
+       "q_low": 343.25,
+       "q_high": 445.27,
+       "last_px": 387.95,
+       "px_chg": -0.0246
       },
       {
        "kind": "trim",
@@ -1985,7 +2480,12 @@
        "chg": -0.546,
        "before": 12.07,
        "after": 6.58,
-       "signal": false
+       "signal": false,
+       "q_avg": 205.61,
+       "q_low": 175.75,
+       "q_high": 235.74,
+       "last_px": 165.1,
+       "px_chg": -0.197
       },
       {
        "kind": "trim",
@@ -1995,7 +2495,12 @@
        "chg": -0.469,
        "before": 5.31,
        "after": 3.64,
-       "signal": false
+       "signal": false,
+       "q_avg": 359.96,
+       "q_low": 295.77,
+       "q_high": 402.62,
+       "last_px": 280.75,
+       "px_chg": -0.2201
       },
       {
        "kind": "trim",
@@ -2005,7 +2510,12 @@
        "chg": -0.258,
        "before": 1.88,
        "after": 1.47,
-       "signal": false
+       "signal": false,
+       "q_avg": 404.6,
+       "q_low": 352.83,
+       "q_high": 460.52,
+       "last_px": 503.78,
+       "px_chg": 0.2451
       },
       {
        "kind": "trim",
@@ -2015,7 +2525,12 @@
        "chg": -0.067,
        "before": 0.35,
        "after": 1.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 197.59,
+       "q_low": 95.92,
+       "q_high": 302.52,
+       "last_px": 121.88,
+       "px_chg": -0.3832
       },
       {
        "kind": "trim",
@@ -2025,7 +2540,12 @@
        "chg": -0.336,
        "before": 0.81,
        "after": 0.87,
-       "signal": false
+       "signal": false,
+       "q_avg": 370.65,
+       "q_low": 273.98,
+       "q_high": 427.89,
+       "last_px": 333.68,
+       "px_chg": -0.0997
       },
       {
        "kind": "add",
@@ -2035,7 +2555,12 @@
        "chg": 0.129,
        "before": 0.73,
        "after": 0.86,
-       "signal": false
+       "signal": false,
+       "q_avg": 101.95,
+       "q_low": 95.78,
+       "q_high": 108.66,
+       "last_px": 118.27,
+       "px_chg": 0.1601
       },
       {
        "kind": "new",
@@ -2045,7 +2570,12 @@
        "chg": null,
        "before": 0.0,
        "after": 0.15,
-       "signal": false
+       "signal": false,
+       "q_avg": 125.27,
+       "q_low": 94.81,
+       "q_high": 145.81,
+       "last_px": 86.32,
+       "px_chg": -0.311
       },
       {
        "kind": "exit",
@@ -2055,17 +2585,27 @@
        "chg": -1.0,
        "before": 0.26,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 405.79,
+       "q_low": 339.04,
+       "q_high": 477.57,
+       "last_px": 368.08,
+       "px_chg": -0.0929
       },
       {
        "kind": "exit",
-       "key": "?22788C105",
-       "entity": null,
+       "key": "CRWD",
+       "entity": "CRWD",
        "issuer": "CROWDSTRIKE HLDGS INC",
        "chg": -1.0,
        "before": 0.02,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 142.07,
+       "q_low": 94.75,
+       "q_high": 195.54,
+       "last_px": 205.47,
+       "px_chg": 0.4462
       }
      ]
     },
@@ -2084,7 +2624,12 @@
        "chg": -0.105,
        "before": 50.3,
        "after": 36.72,
-       "signal": false
+       "signal": false,
+       "q_avg": 260.25,
+       "q_low": 246.63,
+       "q_high": 278.12,
+       "last_px": 348.58,
+       "px_chg": 0.3394
       },
       {
        "kind": "add",
@@ -2094,7 +2639,12 @@
        "chg": 0.275,
        "before": 20.63,
        "after": 21.91,
-       "signal": true
+       "signal": true,
+       "q_avg": 490.9,
+       "q_low": 468.49,
+       "q_high": 508.09,
+       "last_px": 571.87,
+       "px_chg": 0.165
       },
       {
        "kind": "add",
@@ -2104,7 +2654,12 @@
        "chg": 0.913,
        "before": 7.72,
        "after": 12.07,
-       "signal": true
+       "signal": true,
+       "q_avg": 183.46,
+       "q_low": 165.17,
+       "q_high": 195.56,
+       "last_px": 165.1,
+       "px_chg": -0.1001
       },
       {
        "kind": "add",
@@ -2114,7 +2669,12 @@
        "chg": 0.712,
        "before": 7.48,
        "after": 10.09,
-       "signal": true
+       "signal": true,
+       "q_avg": 105.11,
+       "q_low": 96.19,
+       "q_high": 122.66,
+       "last_px": 84.88,
+       "px_chg": -0.1924
       },
       {
        "kind": "new",
@@ -2124,7 +2684,12 @@
        "chg": null,
        "before": 0.0,
        "after": 6.34,
-       "signal": true
+       "signal": true,
+       "q_avg": 411.95,
+       "q_low": 355.28,
+       "q_high": 451.67,
+       "last_px": 387.95,
+       "px_chg": -0.0583
       },
       {
        "kind": "add",
@@ -2134,7 +2699,12 @@
        "chg": 0.997,
        "before": 3.33,
        "after": 5.31,
-       "signal": true
+       "signal": true,
+       "q_avg": 314.21,
+       "q_low": 273.5,
+       "q_high": 343.69,
+       "last_px": 280.75,
+       "px_chg": -0.1065
       },
       {
        "kind": "trim",
@@ -2144,7 +2714,12 @@
        "chg": -0.221,
        "before": 3.1,
        "after": 3.33,
-       "signal": false
+       "signal": false,
+       "q_avg": 50.29,
+       "q_low": 40.99,
+       "q_high": 66.24,
+       "last_px": 53.85,
+       "px_chg": 0.0708
       },
       {
        "kind": "add",
@@ -2154,7 +2729,12 @@
        "chg": 0.183,
        "before": 2.38,
        "after": 1.88,
-       "signal": false
+       "signal": false,
+       "q_avg": 418.44,
+       "q_low": 356.77,
+       "q_high": 483.47,
+       "last_px": 503.78,
+       "px_chg": 0.2039
       },
       {
        "kind": "new",
@@ -2164,7 +2744,12 @@
        "chg": null,
        "before": 0.0,
        "after": 0.81,
-       "signal": false
+       "signal": false,
+       "q_avg": 297.81,
+       "q_low": 259.02,
+       "q_high": 356.26,
+       "last_px": 333.68,
+       "px_chg": 0.1205
       },
       {
        "kind": "add",
@@ -2174,7 +2759,12 @@
        "chg": 1.123,
        "before": 0.46,
        "after": 0.73,
-       "signal": false
+       "signal": false,
+       "q_avg": 105.69,
+       "q_low": 92.42,
+       "q_high": 115.88,
+       "last_px": 118.27,
+       "px_chg": 0.119
       },
       {
        "kind": "add",
@@ -2184,7 +2774,12 @@
        "chg": 4.316,
        "before": 0.12,
        "after": 0.35,
-       "signal": false
+       "signal": false,
+       "q_avg": 121.71,
+       "q_low": 87.81,
+       "q_high": 161.38,
+       "last_px": 121.88,
+       "px_chg": 0.0014
       },
       {
        "kind": "trim",
@@ -2194,47 +2789,72 @@
        "chg": -0.877,
        "before": 2.13,
        "after": 0.26,
-       "signal": false
+       "signal": false,
+       "q_avg": 344.13,
+       "q_low": 316.5,
+       "q_high": 387.73,
+       "last_px": 368.08,
+       "px_chg": 0.0696
       },
       {
        "kind": "new",
-       "key": "?172573107",
-       "entity": null,
+       "key": "CRCL",
+       "entity": "CRCL",
        "issuer": "CIRCLE INTERNET GROUP INC",
        "chg": null,
        "before": 0.0,
        "after": 0.1,
-       "signal": false
+       "signal": false,
+       "q_avg": 84.77,
+       "q_low": 50.23,
+       "q_high": 132.84,
+       "last_px": 52.36,
+       "px_chg": -0.3823
       },
       {
        "kind": "new",
-       "key": "?69608A108",
-       "entity": null,
+       "key": "PLTR",
+       "entity": "PLTR",
        "issuer": "PALANTIR TECHNOLOGIES INC",
        "chg": null,
        "before": 0.0,
        "after": 0.04,
-       "signal": false
+       "signal": false,
+       "q_avg": 152.9,
+       "q_low": 128.84,
+       "q_high": 181.68,
+       "last_px": 157.62,
+       "px_chg": 0.0309
       },
       {
        "kind": "new",
-       "key": "?871607107",
-       "entity": null,
+       "key": "SNPS",
+       "entity": "SNPS",
        "issuer": "SYNOPSYS INC",
        "chg": null,
        "before": 0.0,
        "after": 0.02,
-       "signal": false
+       "signal": false,
+       "q_avg": 452.07,
+       "q_low": 380.47,
+       "q_high": 533.42,
+       "last_px": 428.67,
+       "px_chg": -0.0518
       },
       {
        "kind": "new",
-       "key": "?22788C105",
-       "entity": null,
+       "key": "CRWD",
+       "entity": "CRWD",
        "issuer": "CROWDSTRIKE HLDGS INC",
        "chg": null,
        "before": 0.0,
        "after": 0.02,
-       "signal": false
+       "signal": false,
+       "q_avg": 105.97,
+       "q_low": 87.56,
+       "q_high": 119.73,
+       "last_px": 205.47,
+       "px_chg": 0.9389
       },
       {
        "kind": "new",
@@ -2244,27 +2864,42 @@
        "chg": null,
        "before": 0.0,
        "after": 0.01,
-       "signal": false
+       "signal": false,
+       "q_avg": 185.08,
+       "q_low": 150.82,
+       "q_high": 234.53,
+       "last_px": 273.31,
+       "px_chg": 0.4767
       },
       {
        "kind": "trim",
-       "key": "?88023B103",
-       "entity": null,
+       "key": "TEM",
+       "entity": "TEM",
        "issuer": "TEMPUS AI INC",
        "chg": -0.818,
        "before": 0.04,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 56.83,
+       "q_low": 42.37,
+       "q_high": 70.33,
+       "last_px": 57.49,
+       "px_chg": 0.0116
       },
       {
        "kind": "new",
-       "key": "?457642205",
-       "entity": null,
+       "key": "INOD",
+       "entity": "INOD",
        "issuer": "INNODATA INC",
        "chg": null,
        "before": 0.0,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 49.88,
+       "q_low": 34.45,
+       "q_high": 65.01,
+       "last_px": 33.12,
+       "px_chg": -0.336
       },
       {
        "kind": "exit",
@@ -2274,17 +2909,27 @@
        "chg": -1.0,
        "before": 2.15,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 150.32,
+       "q_low": 121.98,
+       "q_high": 177.18,
+       "last_px": 86.32,
+       "px_chg": -0.4258
       },
       {
        "kind": "exit",
-       "key": "?21873S108",
-       "entity": null,
+       "key": "CRWV",
+       "entity": "CRWV",
        "issuer": "COREWEAVE INC",
        "chg": -1.0,
        "before": 0.12,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 86.78,
+       "q_low": 69.15,
+       "q_high": 108.86,
+       "last_px": 48.38,
+       "px_chg": -0.4425
       },
       {
        "kind": "exit",
@@ -2294,7 +2939,12 @@
        "chg": -1.0,
        "before": 0.06,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 1370.36,
+       "q_low": 1163.78,
+       "q_high": 1526.51,
+       "last_px": 1388.95,
+       "px_chg": 0.0136
       }
      ]
     },
@@ -2313,7 +2963,12 @@
        "chg": -0.071,
        "before": 60.42,
        "after": 50.3,
-       "signal": false
+       "signal": false,
+       "q_avg": 268.45,
+       "q_low": 245.27,
+       "q_high": 286.19,
+       "last_px": 348.58,
+       "px_chg": 0.2985
       },
       {
        "kind": "add",
@@ -2323,7 +2978,12 @@
        "chg": 0.382,
        "before": 17.78,
        "after": 20.63,
-       "signal": true
+       "signal": true,
+       "q_avg": 497.53,
+       "q_low": 475.68,
+       "q_high": 513.81,
+       "last_px": 571.87,
+       "px_chg": 0.1494
       },
       {
        "kind": "add",
@@ -2333,7 +2993,12 @@
        "chg": 11.106,
        "before": 0.76,
        "after": 7.72,
-       "signal": true
+       "signal": true,
+       "q_avg": 186.14,
+       "q_low": 170.94,
+       "q_high": 207.04,
+       "last_px": 165.1,
+       "px_chg": -0.113
       },
       {
        "kind": "add",
@@ -2343,7 +3008,12 @@
        "chg": 0.346,
        "before": 7.72,
        "after": 7.48,
-       "signal": true
+       "signal": true,
+       "q_avg": 124.16,
+       "q_low": 105.0,
+       "q_high": 138.13,
+       "last_px": 84.88,
+       "px_chg": -0.3163
       },
       {
        "kind": "add",
@@ -2353,7 +3023,12 @@
        "chg": 0.025,
        "before": 3.0,
        "after": 3.33,
-       "signal": false
+       "signal": false,
+       "q_avg": 285.73,
+       "q_low": 236.57,
+       "q_high": 323.44,
+       "last_px": 280.75,
+       "px_chg": -0.0174
       },
       {
        "kind": "trim",
@@ -2363,7 +3038,12 @@
        "chg": -0.028,
        "before": 4.36,
        "after": 3.1,
-       "signal": false
+       "signal": false,
+       "q_avg": 41.73,
+       "q_low": 38.92,
+       "q_high": 47.72,
+       "last_px": 53.85,
+       "px_chg": 0.2905
       },
       {
        "kind": "add",
@@ -2373,7 +3053,12 @@
        "chg": 2.077,
        "before": 0.99,
        "after": 2.38,
-       "signal": true
+       "signal": true,
+       "q_avg": 501.12,
+       "q_low": 472.12,
+       "q_high": 542.07,
+       "last_px": 503.78,
+       "px_chg": 0.0053
       },
       {
        "kind": "trim",
@@ -2383,7 +3068,12 @@
        "chg": -0.078,
        "before": 3.38,
        "after": 2.15,
-       "signal": false
+       "signal": false,
+       "q_avg": 162.85,
+       "q_low": 146.58,
+       "q_high": 189.34,
+       "last_px": 86.32,
+       "px_chg": -0.47
       },
       {
        "kind": "add",
@@ -2393,7 +3083,12 @@
        "chg": 3.709,
        "before": 0.49,
        "after": 2.13,
-       "signal": true
+       "signal": true,
+       "q_avg": 293.42,
+       "q_low": 275.06,
+       "q_high": 310.14,
+       "last_px": 368.08,
+       "px_chg": 0.2545
       },
       {
        "kind": "trim",
@@ -2403,17 +3098,27 @@
        "chg": -0.015,
        "before": 0.56,
        "after": 0.46,
-       "signal": false
+       "signal": false,
+       "q_avg": 110.13,
+       "q_low": 101.94,
+       "q_high": 116.65,
+       "last_px": 118.27,
+       "px_chg": 0.0739
       },
       {
        "kind": "new",
-       "key": "?21873S108",
-       "entity": null,
+       "key": "CRWV",
+       "entity": "CRWV",
        "issuer": "COREWEAVE INC",
        "chg": null,
        "before": 0.0,
        "after": 0.12,
-       "signal": false
+       "signal": false,
+       "q_avg": 101.39,
+       "q_low": 64.55,
+       "q_high": 143.08,
+       "last_px": 48.38,
+       "px_chg": -0.5228
       },
       {
        "kind": "new",
@@ -2423,7 +3128,12 @@
        "chg": null,
        "before": 0.0,
        "after": 0.12,
-       "signal": false
+       "signal": false,
+       "q_avg": 153.78,
+       "q_low": 129.75,
+       "q_high": 189.19,
+       "last_px": 121.88,
+       "px_chg": -0.2074
       },
       {
        "kind": "trim",
@@ -2433,17 +3143,27 @@
        "chg": -0.876,
        "before": 0.53,
        "after": 0.06,
-       "signal": false
+       "signal": false,
+       "q_avg": 1043.15,
+       "q_low": 936.19,
+       "q_high": 1140.92,
+       "last_px": 1388.95,
+       "px_chg": 0.3315
       },
       {
        "kind": "new",
-       "key": "?88023B103",
-       "entity": null,
+       "key": "TEM",
+       "entity": "TEM",
        "issuer": "TEMPUS AI INC",
        "chg": null,
        "before": 0.0,
        "after": 0.04,
-       "signal": false
+       "signal": false,
+       "q_avg": 78.23,
+       "q_low": 59.05,
+       "q_high": 103.25,
+       "last_px": 57.49,
+       "px_chg": -0.2651
       }
      ]
     },
@@ -2462,7 +3182,12 @@
        "chg": -0.008,
        "before": 62.47,
        "after": 60.42,
-       "signal": false
+       "signal": false,
+       "q_avg": 225.91,
+       "q_low": 202.38,
+       "q_high": 256.87,
+       "last_px": 348.58,
+       "px_chg": 0.5431
       },
       {
        "kind": "add",
@@ -2472,7 +3197,12 @@
        "chg": 0.535,
        "before": 14.24,
        "after": 17.78,
-       "signal": true
+       "signal": true,
+       "q_avg": 484.36,
+       "q_low": 459.11,
+       "q_high": 506.91,
+       "last_px": 571.87,
+       "px_chg": 0.1807
       },
       {
        "kind": "trim",
@@ -2482,7 +3212,12 @@
        "chg": -0.01,
        "before": 7.86,
        "after": 7.72,
-       "signal": false
+       "signal": false,
+       "q_avg": 118.37,
+       "q_low": 102.41,
+       "q_high": 134.86,
+       "last_px": 84.88,
+       "px_chg": -0.2829
       },
       {
        "kind": "trim",
@@ -2492,7 +3227,12 @@
        "chg": -0.259,
        "before": 3.68,
        "after": 3.38,
-       "signal": false
+       "signal": false,
+       "q_avg": 131.03,
+       "q_low": 103.83,
+       "q_high": 179.9,
+       "last_px": 86.32,
+       "px_chg": -0.3412
       },
       {
        "kind": "trim",
@@ -2502,7 +3242,12 @@
        "chg": -0.069,
        "before": 2.99,
        "after": 3.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 209.46,
+       "q_low": 174.36,
+       "q_high": 254.72,
+       "last_px": 280.75,
+       "px_chg": 0.3403
       },
       {
        "kind": "trim",
@@ -2512,7 +3257,12 @@
        "chg": -0.38,
        "before": 1.32,
        "after": 0.76,
-       "signal": false
+       "signal": false,
+       "q_avg": 174.31,
+       "q_low": 153.3,
+       "q_high": 186.58,
+       "last_px": 165.1,
+       "px_chg": -0.0528
       },
       {
        "kind": "new",
@@ -2522,7 +3272,12 @@
        "chg": null,
        "before": 0.0,
        "after": 0.53,
-       "signal": false
+       "signal": false,
+       "q_avg": 786.07,
+       "q_low": 689.63,
+       "q_high": 968.09,
+       "last_px": 1388.95,
+       "px_chg": 0.767
       }
      ]
     }
@@ -2602,7 +3357,12 @@
        "chg": 0.093,
        "before": 22.17,
        "after": 24.24,
-       "signal": false
+       "signal": false,
+       "q_avg": 84.16,
+       "q_low": 77.5,
+       "q_high": 93.0,
+       "last_px": 84.88,
+       "px_chg": 0.0085
       },
       {
        "kind": "add",
@@ -2612,7 +3372,12 @@
        "chg": 1.249,
        "before": 1.49,
        "after": 3.11,
-       "signal": true
+       "signal": true,
+       "q_avg": 8.69,
+       "q_low": 7.76,
+       "q_high": 9.9,
+       "last_px": 8.94,
+       "px_chg": 0.0288
       }
      ]
     },
@@ -2631,7 +3396,12 @@
        "chg": 1.335,
        "before": 14.71,
        "after": 22.17,
-       "signal": true
+       "signal": true,
+       "q_avg": 92.38,
+       "q_low": 73.3,
+       "q_high": 104.79,
+       "last_px": 84.88,
+       "px_chg": -0.0812
       },
       {
        "kind": "add",
@@ -2641,7 +3411,12 @@
        "chg": 0.235,
        "before": 13.44,
        "after": 14.98,
-       "signal": true
+       "signal": true,
+       "q_avg": 480.75,
+       "q_low": 465.4,
+       "q_high": 500.39,
+       "last_px": 571.87,
+       "px_chg": 0.1895
       },
       {
        "kind": "exit",
@@ -2651,7 +3426,12 @@
        "chg": -1.0,
        "before": 4.57,
        "after": 0.0,
-       "signal": true
+       "signal": true,
+       "q_avg": 53.18,
+       "q_low": 49.27,
+       "q_high": 58.19,
+       "last_px": 48.17,
+       "px_chg": -0.0942
       },
       {
        "kind": "exit",
@@ -2661,7 +3441,12 @@
        "chg": -1.0,
        "before": 2.98,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 56.78,
+       "q_low": 48.57,
+       "q_high": 62.97,
+       "last_px": 53.85,
+       "px_chg": -0.0516
       },
       {
        "kind": "exit",
@@ -2671,7 +3456,12 @@
        "chg": -1.0,
        "before": 1.61,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 399.53,
+       "q_low": 373.83,
+       "q_high": 424.84,
+       "last_px": 450.96,
+       "px_chg": 0.1287
       },
       {
        "kind": "exit",
@@ -2681,7 +3471,12 @@
        "chg": -1.0,
        "before": 1.61,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 34.84,
+       "q_low": 29.32,
+       "q_high": 39.8,
+       "last_px": 45.26,
+       "px_chg": 0.2992
       },
       {
        "kind": "exit",
@@ -2691,17 +3486,27 @@
        "chg": -1.0,
        "before": 1.61,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 449.1,
+       "q_low": 427.41,
+       "q_high": 468.41,
+       "last_px": 480.16,
+       "px_chg": 0.0692
       },
       {
        "kind": "exit",
-       "key": "?55354G100",
-       "entity": null,
+       "key": "MSCI",
+       "entity": "MSCI",
        "issuer": "MSCI INC",
        "chg": -1.0,
        "before": 0.32,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 583.46,
+       "q_low": 536.48,
+       "q_high": 643.83,
+       "last_px": 621.03,
+       "px_chg": 0.0644
       }
      ]
     },
@@ -2720,7 +3525,12 @@
        "chg": -0.713,
        "before": 16.08,
        "after": 4.57,
-       "signal": false
+       "signal": false,
+       "q_avg": 51.6,
+       "q_low": 46.72,
+       "q_high": 57.25,
+       "last_px": 48.17,
+       "px_chg": -0.0664
       },
       {
        "kind": "add",
@@ -2730,7 +3540,12 @@
        "chg": 0.412,
        "before": 1.51,
        "after": 2.3,
-       "signal": true
+       "signal": true,
+       "q_avg": 85.65,
+       "q_low": 75.78,
+       "q_high": 100.04,
+       "last_px": 157.09,
+       "px_chg": 0.834
       },
       {
        "kind": "new",
@@ -2740,7 +3555,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.91,
-       "signal": false
+       "signal": false,
+       "q_avg": 14.78,
+       "q_low": 9.28,
+       "q_high": 18.48,
+       "last_px": 8.94,
+       "px_chg": -0.3947
       },
       {
        "kind": "new",
@@ -2750,7 +3570,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.61,
-       "signal": false
+       "signal": false,
+       "q_avg": 439.22,
+       "q_low": 369.69,
+       "q_high": 516.89,
+       "last_px": 450.96,
+       "px_chg": 0.0267
       },
       {
        "kind": "new",
@@ -2760,7 +3585,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.61,
-       "signal": false
+       "signal": false,
+       "q_avg": 34.85,
+       "q_low": 28.34,
+       "q_high": 45.08,
+       "last_px": 45.26,
+       "px_chg": 0.2989
       },
       {
        "kind": "new",
@@ -2770,17 +3600,27 @@
        "chg": null,
        "before": 0.0,
        "after": 1.61,
-       "signal": false
+       "signal": false,
+       "q_avg": 473.05,
+       "q_low": 412.23,
+       "q_high": 539.61,
+       "last_px": 480.16,
+       "px_chg": 0.015
       },
       {
        "kind": "new",
-       "key": "?55354G100",
-       "entity": null,
+       "key": "MSCI",
+       "entity": "MSCI",
        "issuer": "MSCI INC",
        "chg": null,
        "before": 0.0,
        "after": 0.32,
-       "signal": false
+       "signal": false,
+       "q_avg": 563.88,
+       "q_low": 511.84,
+       "q_high": 624.75,
+       "last_px": 621.03,
+       "px_chg": 0.1013
       }
      ]
     },
@@ -2799,7 +3639,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.51,
-       "signal": false
+       "signal": false,
+       "q_avg": 83.64,
+       "q_low": 73.39,
+       "q_high": 91.65,
+       "last_px": 157.09,
+       "px_chg": 0.8782
       },
       {
        "kind": "exit",
@@ -2809,7 +3654,12 @@
        "chg": -1.0,
        "before": 0.73,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 9.44,
+       "q_low": 4.12,
+       "q_high": 20.06,
+       "last_px": 0.55,
+       "px_chg": -0.9416
       }
      ]
     },
@@ -2901,8 +3751,8 @@
      "chg": 0.135
     },
     {
-     "key": "?60744M106",
-     "entity": null,
+     "key": "MBGL",
+     "entity": "MBGL",
      "issuer": "MOBILITY GLOBAL INC",
      "weight": 0.02,
      "chg": "new"
@@ -2925,7 +3775,12 @@
        "chg": -0.054,
        "before": 10.87,
        "after": 11.2,
-       "signal": false
+       "signal": false,
+       "q_avg": 423.14,
+       "q_low": 392.45,
+       "q_high": 457.38,
+       "last_px": 450.96,
+       "px_chg": 0.0657
       },
       {
        "kind": "trim",
@@ -2935,7 +3790,12 @@
        "chg": -0.019,
        "before": 7.44,
        "after": 7.64,
-       "signal": false
+       "signal": false,
+       "q_avg": 90.69,
+       "q_low": 85.1,
+       "q_high": 96.69,
+       "last_px": 90.58,
+       "px_chg": -0.0012
       },
       {
        "kind": "add",
@@ -2945,7 +3805,12 @@
        "chg": 0.369,
        "before": 1.44,
        "after": 1.74,
-       "signal": false
+       "signal": false,
+       "q_avg": 535.55,
+       "q_low": 479.09,
+       "q_high": 605.3,
+       "last_px": 513.73,
+       "px_chg": -0.0407
       },
       {
        "kind": "add",
@@ -2955,17 +3820,27 @@
        "chg": 0.135,
        "before": 1.37,
        "after": 1.37,
-       "signal": false
+       "signal": false,
+       "q_avg": 272.05,
+       "q_low": 240.83,
+       "q_high": 304.84,
+       "last_px": 276.57,
+       "px_chg": 0.0166
       },
       {
        "kind": "new",
-       "key": "?60744M106",
-       "entity": null,
+       "key": "MBGL",
+       "entity": "MBGL",
        "issuer": "MOBILITY GLOBAL INC",
        "chg": null,
        "before": 0.0,
        "after": 0.02,
-       "signal": false
+       "signal": false,
+       "q_avg": 20.11,
+       "q_low": 17.15,
+       "q_high": 22.26,
+       "last_px": 22.66,
+       "px_chg": 0.1269
       }
      ]
     },
@@ -2984,7 +3859,12 @@
        "chg": -0.026,
        "before": 8.1,
        "after": 7.44,
-       "signal": false
+       "signal": false,
+       "q_avg": 85.68,
+       "q_low": 78.02,
+       "q_high": 91.26,
+       "last_px": 90.58,
+       "px_chg": 0.0572
       },
       {
        "kind": "add",
@@ -2994,7 +3874,12 @@
        "chg": 0.096,
        "before": 7.19,
        "after": 8.32,
-       "signal": false
+       "signal": false,
+       "q_avg": 359.96,
+       "q_low": 295.77,
+       "q_high": 402.62,
+       "last_px": 280.75,
+       "px_chg": -0.2201
       },
       {
        "kind": "add",
@@ -3004,7 +3889,12 @@
        "chg": 0.01,
        "before": 2.94,
        "after": 2.72,
-       "signal": false
+       "signal": false,
+       "q_avg": 68.65,
+       "q_low": 64.3,
+       "q_high": 72.28,
+       "last_px": 58.92,
+       "px_chg": -0.1417
       },
       {
        "kind": "trim",
@@ -3014,7 +3904,12 @@
        "chg": -0.042,
        "before": 2.24,
        "after": 2.13,
-       "signal": false
+       "signal": false,
+       "q_avg": 113.86,
+       "q_low": 103.25,
+       "q_high": 121.23,
+       "last_px": 123.32,
+       "px_chg": 0.0831
       },
       {
        "kind": "new",
@@ -3024,7 +3919,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.44,
-       "signal": false
+       "signal": false,
+       "q_avg": 593.01,
+       "q_low": 532.65,
+       "q_high": 635.29,
+       "last_px": 513.73,
+       "px_chg": -0.1337
       },
       {
        "kind": "new",
@@ -3034,7 +3934,12 @@
        "chg": null,
        "before": 0.0,
        "after": 1.37,
-       "signal": false
+       "signal": false,
+       "q_avg": 286.64,
+       "q_low": 259.46,
+       "q_high": 312.97,
+       "last_px": 276.57,
+       "px_chg": -0.0351
       },
       {
        "kind": "exit",
@@ -3044,7 +3949,12 @@
        "chg": -1.0,
        "before": 2.24,
        "after": 0.0,
-       "signal": false
+       "signal": false,
+       "q_avg": 404.6,
+       "q_low": 352.83,
+       "q_high": 460.52,
+       "last_px": 503.78,
+       "px_chg": 0.2451
       }
      ]
     },
@@ -3063,7 +3973,12 @@
        "chg": 0.099,
        "before": 18.12,
        "after": 20.39,
-       "signal": false
+       "signal": false,
+       "q_avg": 321.55,
+       "q_low": 295.52,
+       "q_high": 357.56,
+       "last_px": 409.96,
+       "px_chg": 0.2749
       },
       {
        "kind": "add",
@@ -3073,7 +3988,12 @@
        "chg": 0.077,
        "before": 12.67,
        "after": 13.84,
-       "signal": false
+       "signal": false,
+       "q_avg": 473.05,
+       "q_low": 412.23,
+       "q_high": 539.61,
+       "last_px": 480.16,
+       "px_chg": 0.015
       },
       {
        "kind": "add",
@@ -3083,7 +4003,12 @@
        "chg": 0.19,
        "before": 11.48,
        "after": 13.22,
-       "signal": false
+       "signal": false,
+       "q_avg": 439.22,
+       "q_low": 369.69,
+       "q_high": 516.89,
+       "last_px": 450.96,
+       "px_chg": 0.0267
       },
       {
        "kind": "trim",
@@ -3093,7 +4018,12 @@
        "chg": -0.024,
        "before": 6.54,
        "after": 8.1,
-       "signal": false
+       "signal": false,
+       "q_avg": 79.03,
+       "q_low": 70.21,
+       "q_high": 89.39,
+       "last_px": 90.58,
+       "px_chg": 0.1461
       },
       {
        "kind": "add",
@@ -3103,7 +4033,12 @@
        "chg": 0.489,
        "before": 4.44,
        "after": 7.19,
-       "signal": true
+       "signal": true,
+       "q_avg": 314.21,
+       "q_low": 273.5,
+       "q_high": 343.69,
+       "last_px": 280.75,
+       "px_chg": -0.1065
       },
       {
        "kind": "trim",
@@ -3113,7 +4048,12 @@
        "chg": -0.837,
        "before": 15.13,
        "after": 2.24,
-       "signal": false
+       "signal": false,
+       "q_avg": 418.44,
+       "q_low": 356.77,
+       "q_high": 483.47,
+       "last_px": 503.78,
+       "px_chg": 0.2039
       }
      ]
     },
@@ -3132,7 +4072,12 @@
        "chg": -0.012,
        "before": 18.18,
        "after": 18.12,
-       "signal": false
+       "signal": false,
+       "q_avg": 340.7,
+       "q_low": 321.18,
+       "q_high": 355.14,
+       "last_px": 409.96,
+       "px_chg": 0.2033
       },
       {
        "kind": "add",
@@ -3142,7 +4087,12 @@
        "chg": 0.011,
        "before": 16.31,
        "after": 15.13,
-       "signal": false
+       "signal": false,
+       "q_avg": 501.12,
+       "q_low": 472.12,
+       "q_high": 542.07,
+       "last_px": 503.78,
+       "px_chg": 0.0053
       },
       {
        "kind": "add",
@@ -3152,7 +4102,12 @@
        "chg": 0.054,
        "before": 10.33,
        "after": 11.48,
-       "signal": false
+       "signal": false,
+       "q_avg": 468.11,
+       "q_low": 446.59,
+       "q_high": 501.51,
+       "last_px": 450.96,
+       "px_chg": -0.0366
       },
       {
        "kind": "trim",
@@ -3162,7 +4117,12 @@
        "chg": -0.044,
        "before": 7.05,
        "after": 6.54,
-       "signal": false
+       "signal": false,
+       "q_avg": 73.6,
+       "q_low": 68.88,
+       "q_high": 77.73,
+       "last_px": 90.58,
+       "px_chg": 0.2306
       },
       {
        "kind": "add",
@@ -3172,7 +4132,12 @@
        "chg": 0.065,
        "before": 2.11,
        "after": 2.51,
-       "signal": false
+       "signal": false,
+       "q_avg": 63.88,
+       "q_low": 58.52,
+       "q_high": 67.47,
+       "last_px": 58.92,
+       "px_chg": -0.0777
       },
       {
        "kind": "trim",
@@ -3182,7 +4147,12 @@
        "chg": -0.475,
        "before": 3.36,
        "after": 1.82,
-       "signal": false
+       "signal": false,
+       "q_avg": 96.14,
+       "q_low": 90.91,
+       "q_high": 99.58,
+       "last_px": 123.32,
+       "px_chg": 0.2827
       }
      ]
     },
@@ -3201,7 +4171,12 @@
        "chg": 0.471,
        "before": 13.35,
        "after": 18.18,
-       "signal": true
+       "signal": true,
+       "q_avg": 346.1,
+       "q_low": 332.09,
+       "q_high": 358.86,
+       "last_px": 409.96,
+       "px_chg": 0.1845
       },
       {
        "kind": "trim",
@@ -3211,7 +4186,12 @@
        "chg": -0.055,
        "before": 17.23,
        "after": 16.31,
-       "signal": false
+       "signal": false,
+       "q_avg": 510.13,
+       "q_low": 491.09,
+       "q_high": 535.64,
+       "last_px": 503.78,
+       "px_chg": -0.0125
       },
       {
        "kind": "add",
@@ -3221,7 +4201,12 @@
        "chg": 0.009,
        "before": 11.53,
        "after": 10.33,
-       "signal": false
+       "signal": false,
+       "q_avg": 506.59,
+       "q_low": 458.79,
+       "q_high": 533.73,
+       "last_px": 450.96,
+       "px_chg": -0.1098
       },
       {
        "kind": "trim",
@@ -3231,7 +4216,12 @@
        "chg": -0.056,
        "before": 8.26,
        "after": 7.05,
-       "signal": false
+       "signal": false,
+       "q_avg": 76.4,
+       "q_low": 72.88,
+       "q_high": 82.41,
+       "last_px": 90.58,
+       "px_chg": 0.1856
       },
       {
        "kind": "trim",
@@ -3241,7 +4231,12 @@
        "chg": -0.529,
        "before": 5.63,
        "after": 3.51,
-       "signal": false
+       "signal": false,
+       "q_avg": 209.46,
+       "q_low": 174.36,
+       "q_high": 254.72,
+       "last_px": 280.75,
+       "px_chg": 0.3403
       },
       {
        "kind": "trim",
@@ -3251,7 +4246,12 @@
        "chg": -0.184,
        "before": 4.72,
        "after": 3.36,
-       "signal": false
+       "signal": false,
+       "q_avg": 96.49,
+       "q_low": 92.01,
+       "q_high": 106.6,
+       "last_px": 123.32,
+       "px_chg": 0.278
       }
      ]
     }

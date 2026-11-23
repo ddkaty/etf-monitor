@@ -252,19 +252,21 @@ def to_positions(filing, emap):
 # ============ 行情 ============
 
 def load_prices(tickers, log=print):
-    """返回 (复权收盘价 DataFrame, 拆股 DataFrame);失败返回 (None, None)"""
+    """返回 (含分红复权收盘价, 拆股, 仅拆股调整的收盘价);失败返回 (None, None, None)。
+    前者用于算涨跌幅,后者用于展示当时的实际价格水平"""
     try:
         import yfinance as yf
         start = (date.today() - timedelta(days=900)).isoformat()
-        df = yf.download(sorted(set(tickers) | {"SPY"}), start=start, auto_adjust=True,
+        df = yf.download(sorted(set(tickers) | {"SPY"}), start=start, auto_adjust=False,
                          actions=True, progress=False, threads=True)
-        close = df["Close"].dropna(how="all").ffill()
+        close = df["Adj Close"].dropna(how="all").ffill()
+        raw = df["Close"].dropna(how="all").ffill()
         if close.empty or "SPY" not in close.columns or close["SPY"].dropna().empty:
             raise RuntimeError("行情为空")
-        return close, df["Stock Splits"].fillna(0)
+        return close, df["Stock Splits"].fillna(0), raw
     except Exception as e:
         log(f"   ⚠️ 行情下载失败({e}),沿用上次价格")
-        return None, None
+        return None, None, None
 
 
 def split_factor(splits, ent, d0, d1):
@@ -285,11 +287,13 @@ def quarter_name(report_date):
     return f"{y}Q{(int(m) - 1) // 3 + 1}"
 
 
-def compute_signals(emap, close, splits, prev_signals=None):
+def compute_signals(emap, close, splits, prev_signals=None, raw=None, prev_view=None):
     """对四位投资者计算信号。返回 (signals, investors_view)"""
     import pandas as pd
     today = date.today()
     prev_px = {(s["investor"], s["kind"], s["key"], s["quarter"]): s for s in (prev_signals or [])}
+    prev_rows = {(k, h["quarter"], r["key"]): r for k, v in (prev_view or {}).items()
+                 for h in v.get("history", []) for r in h["rows"]}
     signals, changes, view, history = [], {}, {}, {}
 
     for key, info in INVESTORS.items():
@@ -312,9 +316,23 @@ def compute_signals(emap, close, splits, prev_signals=None):
                 signal = ((kind == "new" and after >= RULES["new_min_weight"])
                           or (kind == "add" and chg >= RULES["add_min_chg"] and after >= RULES["add_min_weight"])
                           or (kind == "exit" and before >= RULES["exit_min_weight"]))
-                rows["rows"].append({"kind": kind, "key": k, "entity": p["entity"], "issuer": p["issuer"],
-                                     "chg": None if chg is None else round(chg, 3),
-                                     "before": round(before, 2), "after": round(after, 2), "signal": signal})
+                row = {"kind": kind, "key": k, "entity": p["entity"], "issuer": p["issuer"],
+                       "chg": None if chg is None else round(chg, 3),
+                       "before": round(before, 2), "after": round(after, 2), "signal": signal}
+                # 13F 不披露成交价:用当季每日收盘价的均值与区间估算,再对比现价
+                old = prev_rows.get((key, b["report_date"], k), {})
+                for f in ("q_avg", "q_low", "q_high", "last_px", "px_chg"):
+                    row[f] = old.get(f)
+                ent = p["entity"]
+                if raw is not None and ent and ent in raw.columns:
+                    seg = raw[ent].loc[d0 + pd.Timedelta(days=1):d1].dropna()
+                    last = raw[ent].dropna()
+                    if len(seg) >= 20 and len(last):
+                        avg, lp_ = float(seg.mean()), float(last.iloc[-1])
+                        row.update({"q_avg": round(avg, 2), "q_low": round(float(seg.min()), 2),
+                                    "q_high": round(float(seg.max()), 2), "last_px": round(lp_, 2),
+                                    "px_chg": round(lp_ / avg - 1, 4)})
+                rows["rows"].append(row)
 
             def emit(kind, k, p, chg=None):
                 signals.append({"investor": key, "kind": kind, "key": k, "entity": p["entity"],
@@ -401,8 +419,9 @@ def compute_signals(emap, close, splits, prev_signals=None):
                 t0, t1 = close.index[i], close.index[-1]
                 p0, p1 = close[ent].get(t0), close[ent].get(t1)
                 if p0 == p0 and p1 == p1 and p0:
-                    s.update({"entry_date": str(t0.date()), "entry_px": round(float(p0), 2),
-                              "last_px": round(float(p1), 2), "px_date": str(t1.date()),
+                    show = raw if raw is not None and ent in raw.columns else close
+                    s.update({"entry_date": str(t0.date()), "entry_px": round(float(show[ent].get(t0, p0)), 2),
+                              "last_px": round(float(show[ent].get(t1, p1)), 2), "px_date": str(t1.date()),
                               "ret": round(float(p1 / p0 - 1), 4),
                               "spy_ret": round(float(close["SPY"][t1] / close["SPY"][t0] - 1), 4)})
         ref = datetime.strptime(s["entry_date"] or s["filing_date"], "%Y-%m-%d").date()
@@ -585,17 +604,16 @@ def main():
     emap = load_entity_map()
     needed = {}
     for key in INVESTORS:
-        for f in load_filings(key)[-6:]:
-            for i, h in enumerate(f["holdings"]):
-                if h["weight"] >= 1 or i < 10:
-                    needed.setdefault(h["cusip"], h["issuer"])
+        for f in load_filings(key)[-7:]:      # 覆盖"历次变动"页用到的全部持仓
+            for h in f["holdings"]:
+                needed.setdefault(h["cusip"], h["issuer"])
     resolve_cusips(emap, needed)
     tickers = {emap[c]["entity"] for c in needed if emap.get(c, {}).get("entity")}
-    close, splits = load_prices(tickers)
+    close, splits, raw = load_prices(tickers)
 
     print("\n4) 计算信号")
-    prev = json.load(open(SIGNALS_PATH, encoding="utf-8")).get("signals") if os.path.exists(SIGNALS_PATH) else None
-    signals, view = compute_signals(emap, close, splits, prev)
+    old = json.load(open(SIGNALS_PATH, encoding="utf-8")) if os.path.exists(SIGNALS_PATH) else {}
+    signals, view = compute_signals(emap, close, splits, old.get("signals"), raw, old.get("investors"))
     signals = [s for s in signals if s["age_days"] <= 2 * RULES["active_days"]]
     memo = build_memo(signals, view)
     px_date = str(close.index[-1].date()) if close is not None else next((s["px_date"] for s in signals if s.get("px_date")), None)
