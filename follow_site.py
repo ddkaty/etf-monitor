@@ -109,7 +109,7 @@ GLOSSARY = [
     ("加仓 X%", "持股数量比上一季度增加的比例。例如上季 659 万股、本季 1482 万股,1482 ÷ 659 − 1 = 125%,即加仓 125%,股数变成原来的 2.25 倍。算的是股数而不是市值,所以不受股价涨跌影响;期间如有拆股,会先换算再比较。百分比大不等于仓位重,要和权重一起看。"),
     ("清仓", "上一季度持有、这一季度完全消失的持仓。"),
     ("参考价", "13F 披露日之后第一个交易日的收盘价。用它而不是大师的实际买入价,是因为普通人只能在披露之后才知道这笔交易。"),
-    ("当季均价与区间", "13F 只披露季度末的持股数,不披露买卖的日期和价格。当季均价是该季度每个交易日收盘价的平均值,区间是当季最低和最高收盘价,用来估算这笔买卖大致发生在什么价位。现价旁边的百分比是现价相对当季均价的涨跌,不含分红。"),
+    ("当季均价与区间", "13F 只披露季度末的持股数,不披露买卖的日期和价格。当季均价是该季度每个交易日收盘价的平均值,区间是当季最低和最高收盘价,用来估算这笔买卖大致发生在什么价位。“至今”是现价相对当季均价的涨跌;“同期标普”是标普 500 指数基金按同样口径(当季均价到现价)的涨跌;两者相减就是跑赢或跑输的幅度。均不含分红。"),
     ("披露后涨跌", "从参考价到最新收盘价的涨跌幅,已计入分红。"),
     ("同期标普", "同一段时间里标普 500 指数基金(SPY)的涨跌幅,用来判断这只股票是跑赢还是跑输大盘。"),
     ("超额", "股票涨跌幅减去同期标普涨跌幅。股票涨 10%、标普涨 4%,超额就是 +6%。"),
@@ -253,7 +253,7 @@ def render_changes(payload):
     chips = "".join(f'<a href="#q{q}" data-q="{q}"{" class=on" if i == 0 else ""}>{quarter_name(q)}</a>'
                     for i, q in enumerate(quarters))
     body = (f'<div class="hint" style="margin-top:14px">选择季度,查看当期 13F 相对上一期的全部变动。'
-            f'带"信号"标记的是符合跟随规则的动作,其余仅供参考。13F 不披露成交价,"当季均价"是该季度每日收盘价的平均值,用来估算买卖发生时的价格水平。</div><nav class="qnav">{chips}</nav>')
+            f'带"信号"标记的是符合跟随规则的动作,其余仅供参考。13F 不披露成交价,"当季均价"是该季度每日收盘价的平均值,用来估算买卖发生时的价格水平。"同期标普"按同样口径计算:标普 500 从当季均价到现在的涨跌。</div><nav class="qnav">{chips}</nav>')
     for i, q in enumerate(quarters):
         sec = ""
         for key, v in inv.items():
@@ -272,9 +272,14 @@ def render_changes(payload):
                 mark = ' <span class="sig">信号</span>' if r["signal"] else ""
                 px = ""
                 if r.get("q_avg"):
-                    c = "up" if r["px_chg"] >= 0 else "down"
                     px = (f'<div class="px">当季均价 ${r["q_avg"]:,.2f}(区间 ${r["q_low"]:,.2f}–${r["q_high"]:,.2f})'
-                          f' · 现价 ${r["last_px"]:,.2f} <span class="{c}">{pct(r["px_chg"])}</span></div>')
+                          f' · 现价 ${r["last_px"]:,.2f}</div>')
+                    if r.get("spy_chg") is not None:
+                        ex = r["px_chg"] - r["spy_chg"]
+                        px += (f'<div class="px">至今 {pct(r["px_chg"])} · 同期标普 {pct(r["spy_chg"])} · '
+                               f'<span class="{"up" if ex >= 0 else "down"}">{"跑赢" if ex >= 0 else "跑输"} {abs(ex) * 100:.1f}%</span></div>')
+                    else:
+                        px += f'<div class="px">至今 {pct(r["px_chg"])}</div>'
                 rows += (f'<tr><td>{escape(name_of(r["entity"], r["issuer"]))}{mark}{px}</td>'
                          f'<td class="num"><span class="{cls}">{name}{amount}</span></td><td class="num">{weight}</td></tr>')
             meta = (f'{h["filing_date"]} 披露 · {h["n_positions"]} 只持仓 · 合计 {money(h["total_value"])} · '

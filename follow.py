@@ -321,7 +321,7 @@ def compute_signals(emap, close, splits, prev_signals=None, raw=None, prev_view=
                        "before": round(before, 2), "after": round(after, 2), "signal": signal}
                 # 13F 不披露成交价:用当季每日收盘价的均值与区间估算,再对比现价
                 old = prev_rows.get((key, b["report_date"], k), {})
-                for f in ("q_avg", "q_low", "q_high", "last_px", "px_chg"):
+                for f in ("q_avg", "q_low", "q_high", "last_px", "px_chg", "spy_chg"):
                     row[f] = old.get(f)
                 ent = p["entity"]
                 if raw is not None and ent and ent in raw.columns:
@@ -329,9 +329,12 @@ def compute_signals(emap, close, splits, prev_signals=None, raw=None, prev_view=
                     last = raw[ent].dropna()
                     if len(seg) >= 20 and len(last):
                         avg, lp_ = float(seg.mean()), float(last.iloc[-1])
+                        # 标普用同一口径:当季均价 → 现价
+                        spy_seg = raw["SPY"].loc[d0 + pd.Timedelta(days=1):d1].dropna()
                         row.update({"q_avg": round(avg, 2), "q_low": round(float(seg.min()), 2),
                                     "q_high": round(float(seg.max()), 2), "last_px": round(lp_, 2),
-                                    "px_chg": round(lp_ / avg - 1, 4)})
+                                    "px_chg": round(lp_ / avg - 1, 4),
+                                    "spy_chg": round(float(raw["SPY"].dropna().iloc[-1] / spy_seg.mean() - 1), 4)})
                 rows["rows"].append(row)
 
             def emit(kind, k, p, chg=None):
