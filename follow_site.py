@@ -97,6 +97,23 @@ tr:last-child td{border-bottom:none}
 @media (prefers-color-scheme:dark){.sig{color:#0f1318}}
 .qnav{margin:8px 0 0}
 .px{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.tl{font-size:12px;color:var(--muted)}.tv{font-size:24px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums}
+.ts{font-size:12px;color:var(--muted);margin-top:2px}
+.chart{--s1:#2a78d6;--s2:#eb6834}
+@media (prefers-color-scheme:dark){.chart{--s1:#3987e5;--s2:#d95926}}
+.legend{display:flex;gap:16px;font-size:13px;margin-bottom:6px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}.sw.s1{background:var(--s1)}.sw.s2{background:var(--s2)}
+.plot{position:relative}.plot svg{width:100%;height:auto;display:block}
+.plot .grid{stroke:var(--line);stroke-width:1}.plot .zero{stroke:var(--muted);stroke-width:1;opacity:.6}
+.plot .tick{font-size:11px;fill:var(--muted)}.plot .endlabel{font-size:12px;fill:var(--text);font-weight:600}
+.plot .line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.plot .line.s1{stroke:var(--s1)}.plot .line.s2{stroke:var(--s2)}
+.plot .dot{stroke:var(--card);stroke-width:2}.plot .dot.s1{fill:var(--s1)}.plot .dot.s2{fill:var(--s2)}
+.plot .cross{stroke:var(--muted);stroke-width:1}.plot .live{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
+.tip{position:absolute;top:8px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12px;
+line-height:1.6;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap}
+@media (max-width:520px){.plot .tick{font-size:16px}.plot .endlabel{display:none}}
 ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 """
@@ -113,7 +130,10 @@ GLOSSARY = [
     ("披露后涨跌", "从参考价到最新收盘价的涨跌幅,已计入分红。"),
     ("同期标普", "同一段时间里标普 500 指数基金(SPY)的涨跌幅,用来判断这只股票是跑赢还是跑输大盘。"),
     ("超额", "股票涨跌幅减去同期标普涨跌幅。股票涨 10%、标普涨 4%,超额就是 +6%。"),
-    ("有效 / 失效 / 分歧", "信号发出后 12 个月内为有效。发出信号的投资者随后自己减仓 20% 以上或清仓,信号失效。另一位跟踪对象在同期或之后减仓 20% 以上,则标为有分歧。"),
+    ("有效 / 大师已减仓 / 分歧", "信号发出后 12 个月内为有效。发出信号的投资者随后自己减仓 20% 以上或清仓,标为大师已减仓;回测显示这不足以构成卖出理由,所以只作提醒。另一位跟踪对象在同期或之后减仓 20% 以上,则标为有分歧。"),
+    ("模拟组合", "按固定规则自动记账的纸面组合,用来检验这套信号在实际中是否有效。每条买入信号投入组合的 10%,持有 12 个月或触发止损后卖出,闲置资金放在标普 500。不是真实交易,不计成本和税。"),
+    ("止损", "模拟组合中,某笔持仓的收盘价跌破买入价 25% 时卖出。回测显示这能把单笔最大亏损从约 68% 收窄到约 33%,平均收益基本不变。"),
+    ("补算与实盘", "补算是用历史数据倒推规则上线之前的表现,规则是看过结果后才定的,容易偏乐观。实盘是规则确定之后逐日累积的记录,更可信。"),
     ("信号回测", "用历史数据检验规则:找出过去每一次符合条件的情况,假设在披露后第一个交易日买入,看之后 12 个月相对标普 500 的表现,再把所有情况汇总。它只说明过去怎样,不保证将来。"),
     ("样本数", "回测区间内这种情况一共出现了多少次。次数越少,结论越不可靠。"),
     ("平均超额", "所有样本的超额收益取平均。容易被个别暴涨暴跌拉高或拉低。"),
@@ -128,6 +148,7 @@ CSS_VER = hashlib.md5(CSS.encode()).hexdigest()[:8]      # 样式变了就换地
 def page(title, active, body, payload):
     nav = "".join(f'<a href="{href}"{" class=on" if key == active else ""}>{label}</a>'
                   for key, label, href in (("memo", "行动备忘录", "index.html"),
+                                           ("portfolio", "模拟组合", "portfolio.html"),
                                            ("investors", "四位持仓", "investors.html"),
                                            ("changes", "历次变动", "changes.html"),
                                            ("evidence", "规则与依据", "evidence.html")))
@@ -155,7 +176,7 @@ def signal_row(s):
     cls = "" if s.get("ret") is None else (" up" if s["ret"] - (s["spy_ret"] or 0) >= 0 else " down")
     extra = ""
     if s["status"] == "invalid":
-        extra = f' <span class="warn">· 已失效({escape(s["status_note"] or "")})</span>'
+        extra = f' <span class="warn">· 大师已减仓({escape(s["status_note"] or "")})</span>'
     elif s["status"] == "expired":
         extra = ' <span class="muted">· 已过 12 个月</span>'
     return (f'<div class="row"><span class="who">{escape(INVESTORS[s["investor"]]["cn"])}</span> '
@@ -199,7 +220,13 @@ def fast_section(fast_log, limit=20):
     return f'<div class="card fast">{rows}</div>'
 
 
-def render_memo(payload, memo, fast_log):
+def portfolio_line(p):
+    st = p["stats"]
+    return (f'模拟组合自 {p["start"]} 起 {pct(st["ret"])},同期标普 {pct(st["spy_ret"])},'
+            f'{"跑赢" if st["excess"] >= 0 else "跑输"} {abs(st["excess"]) * 100:.1f} 个百分点;目前持有 {st["n_names"]} 只。')
+
+
+def render_memo(payload, memo, fast_log, portfolio=None):
     q = quarter_name(memo["latest_quarter"]) if memo["latest_quarter"] else "—"
     if memo["new"]:
         items = "".join(f'<li><b>{escape(INVESTORS[s["investor"]]["cn"])}</b> '
@@ -207,6 +234,8 @@ def render_memo(payload, memo, fast_log):
         new = f'<div class="banner"><b>{q} 新信号 {len(memo["new"])} 条</b><ul class="plain">{items}</ul></div>'
     else:
         new = f'<div class="banner"><b>{q} 没有触发任何信号。</b>四位投资者本季没有大仓位新建、大幅加仓或清仓。</div>'
+    if portfolio:
+        new += f'<div class="hint" style="margin-top:10px">{portfolio_line(portfolio)} <a href="portfolio.html">查看模拟组合</a></div>'
     body = new + '<div class="hint" style="margin-top:10px">加仓幅度、权重、参考价等用词的含义见 <a href="evidence.html#glossary">名词解释</a>。</div>'
     body += section("优先研究", "有效的买入类信号,且没有其他跟踪对象反向操作。按跟进人数和时间排序。",
                     memo["priority"], empty="目前没有")
@@ -214,10 +243,136 @@ def render_memo(payload, memo, fast_log):
                     memo["divergent"], empty="目前没有")
     body += section("持仓复查", "被清仓的原重仓股。回测中这类股票之后一年约三分之二跑输大盘,持有者值得重新审视。",
                     memo["review"], show="exits", empty="近 12 个月没有清仓信号")
-    body += section("已失效", "发出信号的投资者随后自己减仓 20% 以上或清仓,信号作废。", memo["invalid"], empty="目前没有")
+    body += section("大师已减仓", "发出信号的投资者随后自己减仓 20% 以上或清仓。回测显示这不足以构成卖出理由,这里只作提醒。",
+                    memo["invalid"], empty="目前没有")
     body += '<h2>快速披露</h2><div class="hint">Form 4 与 13D/13G 在交易后几天内公布,比 13F 快。每天检查一次。</div>'
     body += fast_section(fast_log)
     return page("行动备忘录", "memo", body, payload)
+
+
+def nav_chart(p):
+    """组合与标普的累计收益折线(同一坐标轴,起点为 0%)"""
+    W, H, L, R, T, B = 640, 280, 44, 96, 16, 28
+    n = len(p["dates"])
+    ys = [v - 1 for v in p["nav"]] + [v - 1 for v in p["spy"]]
+    lo, hi = min(ys + [0]), max(ys + [0])
+    step = next(s for s in (0.02, 0.05, 0.10, 0.20, 0.50) if (hi - lo) / s <= 6)
+    lo, hi = step * int(lo / step - (1 if lo < 0 else 0)), step * (int(hi / step) + 1)
+    X = lambda i: L + (W - L - R) * i / max(n - 1, 1)
+    Y = lambda v: T + (H - T - B) * (hi - v) / (hi - lo)
+    grid, v = "", lo
+    while v <= hi + 1e-9:
+        grid += (f'<line x1="{L}" x2="{W - R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" class="{"zero" if abs(v) < 1e-9 else "grid"}"/>'
+                 f'<text x="{L - 6}" y="{Y(v) + 4:.1f}" text-anchor="end" class="tick">{v * 100:+.0f}%</text>')
+        v += step
+    ticks, last_m = "", None
+    for i, d in enumerate(p["dates"]):
+        m = d[:7]
+        if m != last_m and int(d[5:7]) % 2 == 1 and i > 0:
+            ticks += f'<text x="{X(i):.1f}" y="{H - 8}" text-anchor="middle" class="tick">{d[2:4]}/{d[5:7]}</text>'
+        last_m = m
+    path = lambda arr: " ".join(f'{"M" if i == 0 else "L"}{X(i):.1f},{Y(v - 1):.1f}' for i, v in enumerate(arr))
+    live = ""
+    li = next((i for i, d in enumerate(p["dates"]) if d >= p["params"]["live_from"]), None)
+    if li is not None:
+        live = (f'<line x1="{X(li):.1f}" x2="{X(li):.1f}" y1="{T}" y2="{H - B}" class="live"/>'
+                f'<text x="{X(li) - 4:.1f}" y="{T + 10}" text-anchor="end" class="tick">实盘起点</text>')
+    ya, yb = Y(p["nav"][-1] - 1), Y(p["spy"][-1] - 1)
+    if abs(ya - yb) < 15:      # 末端标签避让
+        mid = (ya + yb) / 2
+        ya, yb = (mid - 8, mid + 8) if ya <= yb else (mid + 8, mid - 8)
+    ends = (f'<circle cx="{X(n - 1):.1f}" cy="{Y(p["nav"][-1] - 1):.1f}" r="4" class="dot s1"/>'
+            f'<circle cx="{X(n - 1):.1f}" cy="{Y(p["spy"][-1] - 1):.1f}" r="4" class="dot s2"/>'
+            f'<text x="{X(n - 1) + 9:.1f}" y="{ya + 4:.1f}" class="endlabel">组合 {pct(p["nav"][-1] - 1)}</text>'
+            f'<text x="{X(n - 1) + 9:.1f}" y="{yb + 4:.1f}" class="endlabel">标普 {pct(p["spy"][-1] - 1)}</text>')
+    data = json.dumps({"d": p["dates"], "a": p["nav"], "b": p["spy"], "L": L, "R": R, "W": W, "T": T, "B": B, "H": H,
+                       "lo": lo, "hi": hi})
+    return f"""<div class="card chart">
+<div class="legend"><span><i class="sw s1"></i>模拟组合</span><span><i class="sw s2"></i>标普 500</span></div>
+<div class="plot"><svg viewBox="0 0 {W} {H}" role="img" aria-label="模拟组合与标普 500 的累计收益">
+{grid}{ticks}{live}
+<path d="{path(p["spy"])}" class="line s2"/><path d="{path(p["nav"])}" class="line s1"/>
+{ends}
+<line class="cross" x1="0" x2="0" y1="{T}" y2="{H - B}" style="display:none"/>
+<circle class="hd s1 dot" r="4" style="display:none"/><circle class="hd s2 dot" r="4" style="display:none"/>
+<rect x="{L}" y="{T}" width="{W - L - R}" height="{H - T - B}" fill="transparent" class="hit"/>
+</svg><div class="tip" hidden></div></div></div>
+<script>
+(function(){{
+  var c={data},plot=document.querySelector('.plot'),svg=plot.querySelector('svg'),tip=plot.querySelector('.tip'),
+      cross=svg.querySelector('.cross'),h=svg.querySelectorAll('.hd'),n=c.d.length;
+  function f(v){{return (v>=1?'+':'')+((v-1)*100).toFixed(1)+'%'}}
+  function Y(v){{return c.T+(c.H-c.T-c.B)*(c.hi-(v-1))/(c.hi-c.lo)}}
+  function move(e){{
+    var r=svg.getBoundingClientRect(),px=((e.touches?e.touches[0].clientX:e.clientX)-r.left)*c.W/r.width,
+        i=Math.max(0,Math.min(n-1,Math.round((px-c.L)/(c.W-c.L-c.R)*(n-1)))),x=c.L+(c.W-c.L-c.R)*i/(n-1);
+    cross.setAttribute('x1',x);cross.setAttribute('x2',x);cross.style.display='';
+    h[0].setAttribute('cx',x);h[0].setAttribute('cy',Y(c.a[i]));h[1].setAttribute('cx',x);h[1].setAttribute('cy',Y(c.b[i]));
+    h[0].style.display=h[1].style.display='';
+    tip.hidden=false;tip.innerHTML='<b>'+c.d[i]+'</b><br><i class="sw s1"></i>组合 '+f(c.a[i])+'<br><i class="sw s2"></i>标普 '+f(c.b[i]);
+    var left=x/c.W*r.width;tip.style.left=Math.min(Math.max(left+10,0),r.width-130)+'px';
+  }}
+  function out(){{cross.style.display='none';h[0].style.display=h[1].style.display='none';tip.hidden=true}}
+  var hit=svg.querySelector('.hit');
+  hit.addEventListener('mousemove',move);hit.addEventListener('touchstart',move,{{passive:true}});
+  hit.addEventListener('touchmove',move,{{passive:true}});hit.addEventListener('mouseleave',out);
+}})();
+</script>"""
+
+
+def render_portfolio(payload, p):
+    if not p:
+        return page("模拟组合", "portfolio", '<div class="banner">行情数据暂不可用,模拟组合尚未生成。</div>', payload)
+    st, pr = p["stats"], p["params"]
+    win = "跑赢" if st["excess"] >= 0 else "跑输"
+    tiles = "".join(f'<div class="tile"><div class="tl">{a}</div><div class="tv">{b}</div><div class="ts">{c}</div></div>' for a, b, c in (
+        ("组合累计", pct(st["ret"]), f'自 {p["start"]}'),
+        ("同期标普", pct(st["spy_ret"]), f'{win} {abs(st["excess"]) * 100:.1f} 个百分点'),
+        ("最大回撤", pct(st["mdd"]), f'标普 {pct(st["spy_mdd"])}'),
+        ("跑赢标普的交易", f'{st["n_beat"]} / {st["n_total"]}', f'已平仓 {st["n_closed"]} 笔,其中止损 {st["n_stopped"]} 笔'),
+    ))
+    live = (f'实盘段({pr["live_from"]} 起):组合 {pct(st["live_ret"])},标普 {pct(st["live_spy_ret"])}。'
+            if st.get("live_ret") is not None else f'实盘记录从 {pr["live_from"]} 开始,目前全部为补算。')
+    body = (f'<div class="banner"><b>这是按固定规则自动记账的纸面组合,不是真实交易。</b>'
+            f'{pr["live_from"]} 之前的部分是用历史数据补算的,规则是事后确定的,参考价值低于之后的实盘记录。{live}</div>'
+            f'<div class="tiles">{tiles}</div><h2>累计收益</h2>'
+            f'<div class="hint">起点为 0%,含分红。闲置资金放在标普 500,所以两条线的差距完全来自选股。</div>{nav_chart(p)}')
+
+    def lot_row(l, open_):
+        ex = l["ret"] - l["spy_ret"]
+        who = f'{escape(INVESTORS[l["investor"]]["cn"])} {quarter_name(l["quarter"])} {KIND[l["kind"]]}'
+        tag = ' <span class="warn">· 大师已减仓</span>' if l.get("trimmed") else ""
+        if open_:
+            line2 = (f'{l["entry_date"]} 买入 ${l["entry_px"]:,.2f} → 现价 ${l["last_px"]:,.2f} · 占组合 {l["weight_now"] * 100:.1f}%'
+                     f'<br>止损价 ${l["stop_px"]:,.2f} · 距到期 {l["days_left"]} 个交易日')
+        else:
+            line2 = (f'{l["entry_date"]} 买入 ${l["entry_px"]:,.2f} → {l["exit_date"]} 卖出 ${l["exit_px"]:,.2f} · '
+                     f'{l["exit_reason"]} · 初始仓位 {l["size"] * 100:.0f}%')
+        return (f'<div class="row"><span class="who">{escape(name_of(l["entity"], l["issuer"]))}</span> '
+                f'<span class="muted">{who}</span>{tag}<div class="perf">{line2}</div>'
+                f'<div class="perf {"up" if ex >= 0 else "down"}">收益 {pct(l["ret"])} · 同期标普 {pct(l["spy_ret"])} · '
+                f'{"跑赢" if ex >= 0 else "跑输"} {abs(ex) * 100:.1f}%</div></div>')
+
+    body += (f'<h2>当前持仓</h2><div class="hint">{st["n_open"]} 笔,{st["n_names"]} 只股票,合计占组合 {st["invested"] * 100:.0f}%,'
+             f'其余 {100 - st["invested"] * 100:.0f}% 在标普 500。</div>')
+    body += f'<div class="card fast">{"".join(lot_row(l, True) for l in p["open"])}</div>' if p["open"] else '<div class="empty">目前空仓</div>'
+    body += '<h2>已平仓</h2>'
+    body += f'<div class="card fast">{"".join(lot_row(l, False) for l in p["closed"])}</div>' if p["closed"] else '<div class="empty">还没有平仓记录</div>'
+    if p["skipped"]:
+        rows = "".join(f'<div class="row"><span class="who">{escape(name_of(x["entity"], x["issuer"]))}</span> '
+                       f'<span class="muted">{escape(INVESTORS[x["investor"]]["cn"])} {quarter_name(x["quarter"])} {KIND[x["kind"]]}</span>'
+                       f'<div class="perf">{x["date"]} · 未买入:{escape(x["why"])}</div></div>'
+                       for x in sorted(p["skipped"], key=lambda x: x["date"], reverse=True))
+        body += f'<h2>跳过的信号</h2><div class="hint">受仓位规则限制没有买入的信号,如实记录。</div><div class="card fast">{rows}</div>'
+    body += f"""<h2>组合规则</h2><div class="card"><ul class="plain">
+<li><b>入场:</b>买入类信号披露后第一个交易日的收盘价。</li>
+<li><b>仓位:</b>每条信号占组合 {pr['per_signal'] * 100:.0f}%;同一只股票累计不超过 {pr['per_stock_cap'] * 100:.0f}%;最多同时持有 {pr['max_names']} 只。</li>
+<li><b>出场:</b>满 12 个月卖出;收盘价跌破买入价 {pr['stop_loss'] * 100:.0f}% 时止损。</li>
+<li><b>大师减仓:</b>不触发卖出,只在持仓上标注。</li>
+<li><b>闲置资金:</b>放在标普 500 指数基金。</li>
+<li>不计交易成本和税。每天按最新行情从头重算,历史数字可能因分红调整有极小变化。</li>
+</ul></div>"""
+    return page("模拟组合", "portfolio", body, payload)
 
 
 def render_investors(payload):
@@ -307,7 +462,7 @@ def render_evidence(payload):
 <li><b>跟随:</b>新建仓且权重 ≥{RULES['new_min_weight']:.0f}%;单季加仓 ≥{RULES['add_min_chg'] * 100:.0f}% 且权重 ≥{RULES['add_min_weight']:.0f}%。</li>
 <li><b>复查:</b>清仓原权重 ≥{RULES['exit_min_weight']:.0f}% 的仓位。</li>
 <li><b>忽略:</b>小仓位新建、小幅加仓、减仓。回测中它们没有信息量。</li>
-<li><b>失效:</b>同一位投资者随后减仓 ≥{RULES['invalidate_cut'] * 100:.0f}% 或清仓。</li>
+<li><b>提醒:</b>同一位投资者随后减仓 ≥{RULES['invalidate_cut'] * 100:.0f}% 或清仓时,标注"大师已减仓"。回测显示这不足以构成卖出理由,所以不作废信号。</li>
 <li><b>有效期:</b>披露后 12 个月。参考价是披露日之后第一个交易日的收盘价。</li>
 <li><b>不等回调:</b>回测中,披露后已跌破大师当季均价的标的后续表现最差,所以不设"等跌到成本价再买"的条件。</li>
 </ul></div>"""
@@ -334,6 +489,17 @@ def render_evidence(payload):
         body += ('<h2>价格条件</h2><div class="hint">买入类信号按"披露时现价相对大师当季均价"分组后的 12 个月表现。</div>'
                  f'<div class="card scroll wide"><table><tr><th>现价相对当季均价</th><th class="num">样本数</th><th class="num">平均超额</th>'
                  f'<th class="num">跑赢比例</th></tr>{rows}</table></div>')
+    xp = os.path.join(HERE, "backtest", "exit_results.json")
+    if os.path.exists(xp):
+        x = json.load(open(xp, encoding="utf-8"))
+        rows = "".join(f'<tr><td>{escape(k)}</td><td class="num">{pct(v["mean_excess"])}</td><td class="num">{pct(v["median_excess"])}</td>'
+                       f'<td class="num">{v["hit"] * 100:.0f}%</td><td class="num">{v["avg_months"]:.1f}</td><td class="num">{pct(v["worst"], digits=0)}</td></tr>'
+                       for k, v in x["rules"].items())
+        body += (f'<h2>出场规则回测</h2><div class="hint">{x["meta"]["n_events"]} 条买入信号,每条都有完整 24 个月的后续数据。'
+                 '结论:没有哪种出场方式明显好于持有 12 个月;25% 止损几乎不损失平均收益,但把最差一笔的亏损砍掉一半;'
+                 '大师减仓即走没有明显帮助;移动止盈是负贡献。模拟组合据此采用"12 个月加 25% 止损"。</div>'
+                 '<div class="card scroll wide"><table><tr><th>出场规则</th><th class="num">平均超额</th><th class="num">中位数</th>'
+                 f'<th class="num">跑赢比例</th><th class="num">平均持有月数</th><th class="num">最差一笔</th></tr>{rows}</table></div>')
     body += """<h2>这些结论的局限</h2>
 <div class="card"><ul class="plain">
 <li>样本小。大仓位新建仓只有 33 个完整样本,只能算有迹象,不算确证。</li>
@@ -348,13 +514,14 @@ def render_evidence(payload):
     return page("规则与依据", "evidence", body, payload)
 
 
-def build(payload, memo, fast_log):
+def build(payload, memo, fast_log, portfolio=None):
     os.makedirs(os.path.join(DOCS, "assets"), exist_ok=True)
     for name in OBSOLETE:      # 旧版看板的页面
         p = os.path.join(DOCS, name)
         if os.path.exists(p):
             os.remove(p)
-    out = {os.path.join("assets", "style.css"): CSS, "index.html": render_memo(payload, memo, fast_log),
+    out = {os.path.join("assets", "style.css"): CSS, "index.html": render_memo(payload, memo, fast_log, portfolio),
+           "portfolio.html": render_portfolio(payload, portfolio),
            "investors.html": render_investors(payload), "changes.html": render_changes(payload),
            "evidence.html": render_evidence(payload)}
     for name, content in out.items():
@@ -365,7 +532,7 @@ def build(payload, memo, fast_log):
 
 # ============ 邮件 ============
 
-def email_html(payload, memo, fast_log, new_13f=None, new_fast=None):
+def email_html(payload, memo, fast_log, new_13f=None, new_fast=None, portfolio=None):
     P = 'style="margin:0 0 6px;font-size:14px;line-height:1.6;color:#14181f"'
     H = 'style="font-size:16px;margin:22px 0 8px;color:#0e7490"'
 
@@ -406,6 +573,7 @@ def email_html(payload, memo, fast_log, new_13f=None, new_fast=None):
 <div style="font-size:12px;letter-spacing:.12em;color:#0e7490;font-weight:700">大师跟随</div>
 <div style="font-size:12px;color:#667085;margin-bottom:6px">价格截至 {payload.get('px_date') or '—'}</div>
 {top}
+{f'<p {P}>{portfolio_line(portfolio)}</p>' if portfolio else ''}
 <h2 {H}>优先研究</h2>{lines(memo['priority'])}
 <h2 {H}>有分歧</h2>{lines(memo['divergent'])}
 <h2 {H}>持仓复查</h2>{lines(memo['review'], 'exits')}
