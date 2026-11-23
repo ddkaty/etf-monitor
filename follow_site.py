@@ -92,9 +92,30 @@ tr:last-child td{border-bottom:none}
 .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .fast .row:first-child{border-top:none;margin-top:0;padding-top:0}
 .wide table{min-width:520px}.wide td:first-child{min-width:9.5em}
+.def{font-size:14px;color:var(--muted);margin-top:2px}
 ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 """
+
+GLOSSARY = [
+    ("13F", "管理规模超过 1 亿美元的机构每季度必须向美国证监会提交的持仓报告。只包含美股多头持仓,最晚在季度结束 45 天后公布,所以看到时已经是一个半月前的状态。"),
+    ("Form 4 / 13D / 13G", "比 13F 快的披露。持股超过 5% 时要报 13D 或 13G;持股超过 10% 后每次买卖要在两个工作日内报 Form 4。"),
+    ("权重", "这只股票的市值占该投资者 13F 全部持仓市值的比例。权重越高,说明他押得越重。"),
+    ("新建仓", "上一季度没有、这一季度出现的持仓。"),
+    ("加仓 X%", "持股数量比上一季度增加的比例。例如上季 659 万股、本季 1482 万股,1482 ÷ 659 − 1 = 125%,即加仓 125%,股数变成原来的 2.25 倍。算的是股数而不是市值,所以不受股价涨跌影响;期间如有拆股,会先换算再比较。百分比大不等于仓位重,要和权重一起看。"),
+    ("清仓", "上一季度持有、这一季度完全消失的持仓。"),
+    ("参考价", "13F 披露日之后第一个交易日的收盘价。用它而不是大师的实际买入价,是因为普通人只能在披露之后才知道这笔交易。"),
+    ("披露后涨跌", "从参考价到最新收盘价的涨跌幅,已计入分红。"),
+    ("同期标普", "同一段时间里标普 500 指数基金(SPY)的涨跌幅,用来判断这只股票是跑赢还是跑输大盘。"),
+    ("超额", "股票涨跌幅减去同期标普涨跌幅。股票涨 10%、标普涨 4%,超额就是 +6%。"),
+    ("有效 / 失效 / 分歧", "信号发出后 12 个月内为有效。发出信号的投资者随后自己减仓 20% 以上或清仓,信号失效。另一位跟踪对象在同期或之后减仓 20% 以上,则标为有分歧。"),
+    ("信号回测", "用历史数据检验规则:找出过去每一次符合条件的情况,假设在披露后第一个交易日买入,看之后 12 个月相对标普 500 的表现,再把所有情况汇总。它只说明过去怎样,不保证将来。"),
+    ("样本数", "回测区间内这种情况一共出现了多少次。次数越少,结论越不可靠。"),
+    ("平均超额", "所有样本的超额收益取平均。容易被个别暴涨暴跌拉高或拉低。"),
+    ("中位数", "把所有样本从差到好排队,排在正中间那一个的结果。比平均数更能代表通常的情况。"),
+    ("跑赢比例", "样本中超额收益为正的占比。58% 表示每 10 次约有 6 次跑赢、4 次跑输。"),
+    ("最大回撤", "回测期间从最高点到之后最低点的最大跌幅,衡量最坏的时候会亏多少。"),
+]
 
 CSS_VER = hashlib.md5(CSS.encode()).hexdigest()[:8]      # 样式变了就换地址,避免浏览器用旧缓存
 
@@ -180,7 +201,7 @@ def render_memo(payload, memo, fast_log):
         new = f'<div class="banner"><b>{q} 新信号 {len(memo["new"])} 条</b><ul class="plain">{items}</ul></div>'
     else:
         new = f'<div class="banner"><b>{q} 没有触发任何信号。</b>四位投资者本季没有大仓位新建、大幅加仓或清仓。</div>'
-    body = new
+    body = new + '<div class="hint" style="margin-top:10px">加仓幅度、权重、参考价等用词的含义见 <a href="evidence.html#glossary">名词解释</a>。</div>'
     body += section("优先研究", "有效的买入类信号,且没有其他跟踪对象反向操作。按跟进人数和时间排序。",
                     memo["priority"], empty="目前没有")
     body += section("有分歧", "有人买入,同时另一位跟踪对象在减仓或清仓。需要自己弄清原因。",
@@ -260,6 +281,9 @@ def render_evidence(payload):
 <li>已退市的股票缺少行情,被剔除在外。</li>
 <li>信号的优势体现在 12 个月的平均值上,单条信号的输赢接近各半。</li>
 </ul></div>"""
+    items = "".join(f'<div class="row"><span class="who">{escape(t)}</span><div class="def">{escape(d)}</div></div>'
+                    for t, d in GLOSSARY)
+    body += f'<h2 id="glossary">名词解释</h2><div class="card fast">{items}</div>'
     return page("规则与依据", "evidence", body, payload)
 
 

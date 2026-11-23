@@ -38,5 +38,6 @@ tr:last-child td{border-bottom:none}
 .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .fast .row:first-child{border-top:none;margin-top:0;padding-top:0}
 .wide table{min-width:520px}.wide td:first-child{min-width:9.5em}
+.def{font-size:14px;color:var(--muted);margin-top:2px}
 ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
