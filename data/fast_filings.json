@@ -1,0 +1,159 @@
+[
+ {
+  "form": "SCHEDULE 13G/A",
+  "accession": "0001193125-26-464219",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526464219/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "VERISIGN, INC.",
+  "ticker": null,
+  "summary": "持有 5,922,136 股,占该类股份 6.6%",
+  "investor": "Buffett",
+  "filing_date": "2026-11-16"
+ },
+ {
+  "form": "SCHEDULE 13G",
+  "accession": "0001193125-26-464218",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526464218/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "BENDING SPOONS S.p.A.",
+  "ticker": null,
+  "summary": "持有 20,689,655 股,占该类股份 6.4%",
+  "investor": "Buffett",
+  "filing_date": "2026-11-16"
+ },
+ {
+  "form": "SCHEDULE 13G/A",
+  "accession": "0001193125-26-464214",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526464214/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "THE KROGER CO.",
+  "ticker": null,
+  "summary": "持有 35,000,000 股,占该类股份 5.9%",
+  "investor": "Buffett",
+  "filing_date": "2026-11-16"
+ },
+ {
+  "form": "SCHEDULE 13G/A",
+  "accession": "0001193125-26-464211",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526464211/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "BANK OF AMERICA CORPORATION",
+  "ticker": null,
+  "summary": "持有 455,860,908 股,占该类股份 6.6%",
+  "investor": "Buffett",
+  "filing_date": "2026-11-16"
+ },
+ {
+  "form": "SCHEDULE 13G/A",
+  "accession": "0001193125-26-464189",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526464189/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "DELTA AIR LINES, INC.",
+  "ticker": null,
+  "summary": "持有 64,450,000 股,占该类股份 9.8%",
+  "investor": "Buffett",
+  "filing_date": "2026-11-16"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-445930",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526445930/xslF345X06/ownership.xml",
+  "issuer": "SIRIUS XM HOLDINGS INC.",
+  "ticker": "SIRI",
+  "summary": "买入 924,281 股,价格 $28.89–$30.23",
+  "direction": "buy",
+  "investor": "Buffett",
+  "filing_date": "2026-11-03"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-438090",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526438090/xslF345X06/ownership.xml",
+  "issuer": "DAVITA INC.",
+  "ticker": "DVA",
+  "summary": "卖出 382,563 股,价格 $180.43",
+  "direction": "sell",
+  "investor": "Buffett",
+  "filing_date": "2026-10-29"
+ },
+ {
+  "form": "SCHEDULE 13G/A",
+  "accession": "0001193125-26-417254",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526417254/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "LENNAR CORPORATION",
+  "ticker": null,
+  "summary": "持有 26,034,436 股,占该类股份 12.5%",
+  "investor": "Buffett",
+  "filing_date": "2026-10-07"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-414744",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526414744/xslF345X06/ownership.xml",
+  "issuer": "LENNAR CORP /NEW/",
+  "ticker": "LEN",
+  "summary": "买入 2,418,637 股,价格 $77.12–$81.90",
+  "direction": "buy",
+  "investor": "Buffett",
+  "filing_date": "2026-10-05"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-409451",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526409451/xslF345X06/ownership.xml",
+  "issuer": "LENNAR CORP /NEW/",
+  "ticker": "LEN",
+  "summary": "买入 660,410 股,价格 $79.98–$81.96",
+  "direction": "buy",
+  "investor": "Buffett",
+  "filing_date": "2026-09-30"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-403089",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526403089/xslF345X06/ownership.xml",
+  "issuer": "LENNAR CORP /NEW/",
+  "ticker": "LEN",
+  "summary": "买入 1,679,700 股,价格 $79.42–$81.65",
+  "direction": "buy",
+  "investor": "Buffett",
+  "filing_date": "2026-09-25"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-397059",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526397059/xslF345X06/ownership.xml",
+  "issuer": "LENNAR CORP /NEW/",
+  "ticker": "LEN, LEN.B",
+  "summary": "买入 2,743,529 股,价格 $74.80–$79.41",
+  "direction": "buy",
+  "investor": "Buffett",
+  "filing_date": "2026-09-21"
+ },
+ {
+  "form": "SCHEDULE 13G/A",
+  "accession": "0001193125-26-352910",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352910/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "DELTA AIR LINES, INC.",
+  "ticker": null,
+  "summary": "持有 57,320,000 股,占该类股份 8.7%",
+  "investor": "Buffett",
+  "filing_date": "2026-08-14"
+ },
+ {
+  "form": "SCHEDULE 13G",
+  "accession": "0001193125-26-352904",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352904/xslSCHEDULE_13G_X02/primary_doc.xml",
+  "issuer": "LENNAR CORPORATION",
+  "ticker": null,
+  "summary": "持有 13,111,741 股,占该类股份 6.2%",
+  "investor": "Buffett",
+  "filing_date": "2026-08-14"
+ },
+ {
+  "form": "4",
+  "accession": "0001193125-26-333151",
+  "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526333151/xslF345X06/ownership.xml",
+  "issuer": "DAVITA INC.",
+  "ticker": "DVA",
+  "summary": "卖出 182,980 股,价格 $199.55",
+  "direction": "sell",
+  "investor": "Buffett",
+  "filing_date": "2026-08-04"
+ }
+]

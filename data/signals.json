@@ -1,0 +1,1074 @@
+{
+ "generated": "2026-11-23T21:52",
+ "px_date": "2026-11-20",
+ "prices_stale": false,
+ "rules": {
+  "new_min_weight": 5.0,
+  "add_min_chg": 0.2,
+  "add_min_weight": 2.0,
+  "exit_min_weight": 3.0,
+  "invalidate_cut": 0.2,
+  "active_days": 365
+ },
+ "signals": [
+  {
+   "investor": "LiLu",
+   "kind": "ADD",
+   "key": "TME",
+   "entity": "TME",
+   "issuer": "TENCENT MUSIC ENTERTAINM",
+   "quarter": "2026-09-30",
+   "filing_date": "2026-11-16",
+   "weight": 3.11,
+   "chg": 1.249,
+   "quarter_name": "2026Q3",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-11-17",
+   "entry_px": 9.47,
+   "last_px": 8.91,
+   "ret": -0.0591,
+   "spy_ret": -0.0582,
+   "px_date": "2026-11-20",
+   "age_days": 6
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "TSLA",
+   "entity": "TSLA",
+   "issuer": "TESLA INC",
+   "quarter": "2026-09-30",
+   "filing_date": "2026-11-16",
+   "weight": 8.42,
+   "chg": 0.207,
+   "quarter_name": "2026Q3",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-11-17",
+   "entry_px": 380.11,
+   "last_px": 345.82,
+   "ret": -0.0902,
+   "spy_ret": -0.0582,
+   "px_date": "2026-11-20",
+   "age_days": 6
+  },
+  {
+   "investor": "LiLu",
+   "kind": "ADD",
+   "key": "PDD",
+   "entity": "PDD",
+   "issuer": "PDD HOLDINGS INC",
+   "quarter": "2026-06-30",
+   "filing_date": "2026-08-14",
+   "weight": 22.17,
+   "chg": 1.335,
+   "quarter_name": "2026Q2",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-08-17",
+   "entry_px": 86.94,
+   "last_px": 83.68,
+   "ret": -0.0375,
+   "spy_ret": -0.105,
+   "px_date": "2026-11-20",
+   "age_days": 98
+  },
+  {
+   "investor": "LiLu",
+   "kind": "ADD",
+   "key": "BRK-B",
+   "entity": "BRK-B",
+   "issuer": "BERKSHIRE HATHAWAY INC DEL",
+   "quarter": "2026-06-30",
+   "filing_date": "2026-08-14",
+   "weight": 14.98,
+   "chg": 0.235,
+   "quarter_name": "2026Q2",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-08-17",
+   "entry_px": 498.23,
+   "last_px": 570.0,
+   "ret": 0.144,
+   "spy_ret": -0.105,
+   "px_date": "2026-11-20",
+   "age_days": 98
+  },
+  {
+   "investor": "LiLu",
+   "kind": "EXIT",
+   "key": "BAC",
+   "entity": "BAC",
+   "issuer": "BK OF AMERICA CORP",
+   "quarter": "2026-06-30",
+   "filing_date": "2026-08-14",
+   "weight": 4.57,
+   "chg": null,
+   "quarter_name": "2026Q2",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-08-17",
+   "entry_px": 63.57,
+   "last_px": 47.04,
+   "ret": -0.26,
+   "spy_ret": -0.105,
+   "px_date": "2026-11-20",
+   "age_days": 98
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "PDD",
+   "entity": "PDD",
+   "issuer": "PDD HOLDINGS INC",
+   "quarter": "2026-06-30",
+   "filing_date": "2026-08-14",
+   "weight": 9.99,
+   "chg": 0.267,
+   "quarter_name": "2026Q2",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-08-17",
+   "entry_px": 86.94,
+   "last_px": 83.68,
+   "ret": -0.0375,
+   "spy_ret": -0.105,
+   "px_date": "2026-11-20",
+   "age_days": 98
+  },
+  {
+   "investor": "Buffett",
+   "kind": "ADD",
+   "key": "GOOGL",
+   "entity": "GOOGL",
+   "issuer": "ALPHABET INC",
+   "quarter": "2026-06-30",
+   "filing_date": "2026-08-14",
+   "weight": 12.62,
+   "chg": 0.832,
+   "quarter_name": "2026Q2",
+   "status": "active",
+   "status_note": null,
+   "divergence": [
+    {
+     "investor": "Duan",
+     "quarter": "2026Q2",
+     "action": "减仓 47%"
+    },
+    {
+     "investor": "Duan",
+     "quarter": "2026Q3",
+     "action": "减仓 41%"
+    }
+   ],
+   "entry_date": "2026-08-17",
+   "entry_px": 343.78,
+   "last_px": 265.29,
+   "ret": -0.2283,
+   "spy_ret": -0.105,
+   "px_date": "2026-11-20",
+   "age_days": 98
+  },
+  {
+   "investor": "LiLu",
+   "kind": "ADD",
+   "key": "CROX",
+   "entity": "CROX",
+   "issuer": "CROCS INC",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-15",
+   "weight": 2.3,
+   "chg": 0.412,
+   "quarter_name": "2026Q1",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-05-18",
+   "entry_px": 97.0,
+   "last_px": 154.67,
+   "ret": 0.5945,
+   "spy_ret": -0.0614,
+   "px_date": "2026-11-20",
+   "age_days": 189
+  },
+  {
+   "investor": "Hohn",
+   "kind": "ADD",
+   "key": "GOOGL",
+   "entity": "GOOGL",
+   "issuer": "ALPHABET INC",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-15",
+   "weight": 7.19,
+   "chg": 0.489,
+   "quarter_name": "2026Q1",
+   "status": "active",
+   "status_note": null,
+   "divergence": [
+    {
+     "investor": "Duan",
+     "quarter": "2026Q2",
+     "action": "减仓 47%"
+    },
+    {
+     "investor": "Duan",
+     "quarter": "2026Q3",
+     "action": "减仓 41%"
+    }
+   ],
+   "entry_date": "2026-05-18",
+   "entry_px": 396.45,
+   "last_px": 265.29,
+   "ret": -0.3308,
+   "spy_ret": -0.0614,
+   "px_date": "2026-11-20",
+   "age_days": 189
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "BRK-B",
+   "entity": "BRK-B",
+   "issuer": "BERKSHIRE HATHAWAY INC DEL",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-19",
+   "weight": 21.91,
+   "chg": 0.275,
+   "quarter_name": "2026Q1",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-05-20",
+   "entry_px": 480.9,
+   "last_px": 570.0,
+   "ret": 0.1853,
+   "spy_ret": -0.0647,
+   "px_date": "2026-11-20",
+   "age_days": 187
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "NVDA",
+   "entity": "NVDA",
+   "issuer": "NVIDIA CORPORATION",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-19",
+   "weight": 12.07,
+   "chg": 0.913,
+   "quarter_name": "2026Q1",
+   "status": "invalid",
+   "status_note": "2026Q2 减仓 55%",
+   "divergence": [],
+   "entry_date": "2026-05-20",
+   "entry_px": 222.96,
+   "last_px": 125.53,
+   "ret": -0.437,
+   "spy_ret": -0.0647,
+   "px_date": "2026-11-20",
+   "age_days": 187
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "PDD",
+   "entity": "PDD",
+   "issuer": "PDD HOLDINGS INC",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-19",
+   "weight": 10.09,
+   "chg": 0.712,
+   "quarter_name": "2026Q1",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-05-20",
+   "entry_px": 98.15,
+   "last_px": 83.68,
+   "ret": -0.1474,
+   "spy_ret": -0.0647,
+   "px_date": "2026-11-20",
+   "age_days": 187
+  },
+  {
+   "investor": "Duan",
+   "kind": "NEW",
+   "key": "TSLA",
+   "entity": "TSLA",
+   "issuer": "TESLA INC",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-19",
+   "weight": 6.34,
+   "chg": null,
+   "quarter_name": "2026Q1",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-05-20",
+   "entry_px": 417.26,
+   "last_px": 345.82,
+   "ret": -0.1712,
+   "spy_ret": -0.0647,
+   "px_date": "2026-11-20",
+   "age_days": 187
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "GOOGL",
+   "entity": "GOOGL",
+   "issuer": "ALPHABET INC",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-19",
+   "weight": 5.31,
+   "chg": 0.997,
+   "quarter_name": "2026Q1",
+   "status": "invalid",
+   "status_note": "2026Q2 减仓 47%",
+   "divergence": [],
+   "entry_date": "2026-05-20",
+   "entry_px": 388.43,
+   "last_px": 265.29,
+   "ret": -0.317,
+   "spy_ret": -0.0647,
+   "px_date": "2026-11-20",
+   "age_days": 187
+  },
+  {
+   "investor": "Buffett",
+   "kind": "ADD",
+   "key": "GOOGL",
+   "entity": "GOOGL",
+   "issuer": "ALPHABET INC",
+   "quarter": "2026-03-31",
+   "filing_date": "2026-05-15",
+   "weight": 6.32,
+   "chg": 2.241,
+   "quarter_name": "2026Q1",
+   "status": "active",
+   "status_note": null,
+   "divergence": [
+    {
+     "investor": "Duan",
+     "quarter": "2026Q2",
+     "action": "减仓 47%"
+    },
+    {
+     "investor": "Duan",
+     "quarter": "2026Q3",
+     "action": "减仓 41%"
+    }
+   ],
+   "entry_date": "2026-05-18",
+   "entry_px": 396.45,
+   "last_px": 265.29,
+   "ret": -0.3308,
+   "spy_ret": -0.0614,
+   "px_date": "2026-11-20",
+   "age_days": 189
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "BRK-B",
+   "entity": "BRK-B",
+   "issuer": "BERKSHIRE HATHAWAY INC DEL",
+   "quarter": "2025-12-31",
+   "filing_date": "2026-02-17",
+   "weight": 20.63,
+   "chg": 0.382,
+   "quarter_name": "2025Q4",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-02-18",
+   "entry_px": 499.07,
+   "last_px": 570.0,
+   "ret": 0.1421,
+   "spy_ret": 0.013,
+   "px_date": "2026-11-20",
+   "age_days": 278
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "NVDA",
+   "entity": "NVDA",
+   "issuer": "NVIDIA CORPORATION",
+   "quarter": "2025-12-31",
+   "filing_date": "2026-02-17",
+   "weight": 7.72,
+   "chg": 11.106,
+   "quarter_name": "2025Q4",
+   "status": "invalid",
+   "status_note": "2026Q2 减仓 55%",
+   "divergence": [],
+   "entry_date": "2026-02-18",
+   "entry_px": 187.54,
+   "last_px": 125.53,
+   "ret": -0.3307,
+   "spy_ret": 0.013,
+   "px_date": "2026-11-20",
+   "age_days": 278
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "PDD",
+   "entity": "PDD",
+   "issuer": "PDD HOLDINGS INC",
+   "quarter": "2025-12-31",
+   "filing_date": "2026-02-17",
+   "weight": 7.48,
+   "chg": 0.346,
+   "quarter_name": "2025Q4",
+   "status": "active",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2026-02-18",
+   "entry_px": 102.92,
+   "last_px": 83.68,
+   "ret": -0.1869,
+   "spy_ret": 0.013,
+   "px_date": "2026-11-20",
+   "age_days": 278
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "MSFT",
+   "entity": "MSFT",
+   "issuer": "MICROSOFT CORP",
+   "quarter": "2025-12-31",
+   "filing_date": "2026-02-17",
+   "weight": 2.38,
+   "chg": 2.077,
+   "quarter_name": "2025Q4",
+   "status": "invalid",
+   "status_note": "2026Q2 减仓 26%",
+   "divergence": [
+    {
+     "investor": "Hohn",
+     "quarter": "2026Q1",
+     "action": "减仓 84%"
+    },
+    {
+     "investor": "Hohn",
+     "quarter": "2026Q2",
+     "action": "清仓"
+    }
+   ],
+   "entry_date": "2026-02-18",
+   "entry_px": 396.32,
+   "last_px": 484.52,
+   "ret": 0.2226,
+   "spy_ret": 0.013,
+   "px_date": "2026-11-20",
+   "age_days": 278
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "TSM",
+   "entity": "TSM",
+   "issuer": "TAIWAN SEMICONDUCTOR MFG LTD",
+   "quarter": "2025-12-31",
+   "filing_date": "2026-02-17",
+   "weight": 2.13,
+   "chg": 3.709,
+   "quarter_name": "2025Q4",
+   "status": "invalid",
+   "status_note": "2026Q1 减仓 88%",
+   "divergence": [],
+   "entry_date": "2026-02-18",
+   "entry_px": 359.43,
+   "last_px": 318.71,
+   "ret": -0.1133,
+   "spy_ret": 0.013,
+   "px_date": "2026-11-20",
+   "age_days": 278
+  },
+  {
+   "investor": "Hohn",
+   "kind": "ADD",
+   "key": "V",
+   "entity": "V",
+   "issuer": "VISA INC",
+   "quarter": "2025-09-30",
+   "filing_date": "2025-11-14",
+   "weight": 18.18,
+   "chg": 0.471,
+   "quarter_name": "2025Q3",
+   "status": "expired",
+   "status_note": null,
+   "divergence": [
+    {
+     "investor": "Buffett",
+     "quarter": "2026Q1",
+     "action": "清仓"
+    }
+   ],
+   "entry_date": "2025-11-17",
+   "entry_px": 323.21,
+   "last_px": 401.87,
+   "ret": 0.2434,
+   "spy_ret": 0.0474,
+   "px_date": "2026-11-20",
+   "age_days": 371
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "BRK-B",
+   "entity": "BRK-B",
+   "issuer": "BERKSHIRE HATHAWAY INC DEL",
+   "quarter": "2025-09-30",
+   "filing_date": "2025-11-14",
+   "weight": 17.78,
+   "chg": 0.535,
+   "quarter_name": "2025Q3",
+   "status": "expired",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2025-11-17",
+   "entry_px": 503.26,
+   "last_px": 570.0,
+   "ret": 0.1326,
+   "spy_ret": 0.0474,
+   "px_date": "2026-11-20",
+   "age_days": 371
+  },
+  {
+   "investor": "LiLu",
+   "kind": "NEW",
+   "key": "PDD",
+   "entity": "PDD",
+   "issuer": "PDD HOLDINGS INC",
+   "quarter": "2025-06-30",
+   "filing_date": "2025-08-14",
+   "weight": 17.93,
+   "chg": null,
+   "quarter_name": "2025Q2",
+   "status": "expired",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2025-08-15",
+   "entry_px": 118.95,
+   "last_px": 83.68,
+   "ret": -0.2965,
+   "spy_ret": 0.0866,
+   "px_date": "2026-11-20",
+   "age_days": 465
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "GOOGL",
+   "entity": "GOOGL",
+   "issuer": "ALPHABET INC",
+   "quarter": "2025-06-30",
+   "filing_date": "2025-08-14",
+   "weight": 2.99,
+   "chg": 0.752,
+   "quarter_name": "2025Q2",
+   "status": "invalid",
+   "status_note": "2026Q2 减仓 47%",
+   "divergence": [
+    {
+     "investor": "Hohn",
+     "quarter": "2025Q3",
+     "action": "减仓 53%"
+    }
+   ],
+   "entry_date": "2025-08-15",
+   "entry_px": 203.19,
+   "last_px": 265.29,
+   "ret": 0.3056,
+   "spy_ret": 0.0866,
+   "px_date": "2026-11-20",
+   "age_days": 465
+  },
+  {
+   "investor": "Hohn",
+   "kind": "ADD",
+   "key": "MSFT",
+   "entity": "MSFT",
+   "issuer": "MICROSOFT CORP",
+   "quarter": "2025-03-31",
+   "filing_date": "2025-05-15",
+   "weight": 14.97,
+   "chg": 0.236,
+   "quarter_name": "2025Q1",
+   "status": "invalid",
+   "status_note": "2026Q1 减仓 84%",
+   "divergence": [
+    {
+     "investor": "Duan",
+     "quarter": "2026Q2",
+     "action": "减仓 26%"
+    }
+   ],
+   "entry_date": "2025-05-16",
+   "entry_px": 448.96,
+   "last_px": 484.52,
+   "ret": 0.0792,
+   "spy_ret": 0.1802,
+   "px_date": "2026-11-20",
+   "age_days": 556
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "PDD",
+   "entity": "PDD",
+   "issuer": "PDD HOLDINGS INC",
+   "quarter": "2024-12-31",
+   "filing_date": "2025-02-14",
+   "weight": 4.83,
+   "chg": 0.85,
+   "quarter_name": "2024Q4",
+   "status": "expired",
+   "status_note": null,
+   "divergence": [],
+   "entry_date": "2025-02-18",
+   "entry_px": 128.46,
+   "last_px": 83.68,
+   "ret": -0.3486,
+   "spy_ret": 0.1502,
+   "px_date": "2026-11-20",
+   "age_days": 643
+  },
+  {
+   "investor": "Duan",
+   "kind": "ADD",
+   "key": "OXY",
+   "entity": "OXY",
+   "issuer": "OCCIDENTAL PETE CORP",
+   "quarter": "2024-12-31",
+   "filing_date": "2025-02-14",
+   "weight": 4.62,
+   "chg": 0.472,
+   "quarter_name": "2024Q4",
+   "status": "invalid",
+   "status_note": "2026Q1 减仓 22%",
+   "divergence": [
+    {
+     "investor": "LiLu",
+     "quarter": "2026Q2",
+     "action": "清仓"
+    }
+   ],
+   "entry_date": "2025-02-18",
+   "entry_px": 47.13,
+   "last_px": 53.9,
+   "ret": 0.1437,
+   "spy_ret": 0.1502,
+   "px_date": "2026-11-20",
+   "age_days": 643
+  }
+ ],
+ "investors": {
+  "Buffett": {
+   "quarter": "2026-09-30",
+   "filing_date": "2026-11-16",
+   "n_positions": 29,
+   "total_value": 304196581325,
+   "top5_weight": 71.5,
+   "holdings": [
+    {
+     "key": "AAPL",
+     "entity": "AAPL",
+     "issuer": "APPLE INC",
+     "weight": 24.95,
+     "chg": 0.0
+    },
+    {
+     "key": "AXP",
+     "entity": "AXP",
+     "issuer": "AMERICAN EXPRESS CO",
+     "weight": 15.16,
+     "chg": 0.0
+    },
+    {
+     "key": "GOOGL",
+     "entity": "GOOGL",
+     "issuer": "ALPHABET INC",
+     "weight": 11.96,
+     "chg": 0.0
+    },
+    {
+     "key": "KO",
+     "entity": "KO",
+     "issuer": "COCA COLA CO",
+     "weight": 11.32,
+     "chg": 0.0
+    },
+    {
+     "key": "BAC",
+     "entity": "BAC",
+     "issuer": "BANK OF AMER CORP",
+     "weight": 8.16,
+     "chg": -0.057
+    },
+    {
+     "key": "CVX",
+     "entity": "CVX",
+     "issuer": "CHEVRON CORPORATION",
+     "weight": 5.66,
+     "chg": 0.0
+    },
+    {
+     "key": "OXY",
+     "entity": "OXY",
+     "issuer": "OCCIDENTAL PETE CORP",
+     "weight": 4.82,
+     "chg": 0.0
+    },
+    {
+     "key": "MCO",
+     "entity": "MCO",
+     "issuer": "MOODYS CORP",
+     "weight": 3.68,
+     "chg": 0.0
+    },
+    {
+     "key": "CB",
+     "entity": "CB",
+     "issuer": "CHUBB LIMITED",
+     "weight": 3.66,
+     "chg": 0.0
+    },
+    {
+     "key": "KHC",
+     "entity": "KHC",
+     "issuer": "KRAFT HEINZ CO",
+     "weight": 2.43,
+     "chg": 0.0
+    },
+    {
+     "key": "DAL",
+     "entity": "DAL",
+     "issuer": "DELTA AIR LINES INC",
+     "weight": 1.77,
+     "chg": 0.124
+    },
+    {
+     "key": "DVA",
+     "entity": "DVA",
+     "issuer": "DAVITA INC",
+     "weight": 1.65,
+     "chg": -0.006
+    },
+    {
+     "key": "SIRI",
+     "entity": "SIRI",
+     "issuer": "SIRIUSXM HOLDINGS INC",
+     "weight": 1.06,
+     "chg": 0.0
+    },
+    {
+     "key": "?526057104",
+     "entity": null,
+     "issuer": "LENNAR CORP",
+     "weight": 0.7,
+     "chg": 0.986
+    },
+    {
+     "key": "KR",
+     "entity": "KR",
+     "issuer": "KROGER CO",
+     "weight": 0.67,
+     "chg": -0.103
+    }
+   ],
+   "exits": []
+  },
+  "Duan": {
+   "quarter": "2026-09-30",
+   "filing_date": "2026-11-16",
+   "n_positions": 16,
+   "total_value": 17190742843,
+   "top5_weight": 89.7,
+   "holdings": [
+    {
+     "key": "AAPL",
+     "entity": "AAPL",
+     "issuer": "APPLE INC",
+     "weight": 41.07,
+     "chg": -0.218
+    },
+    {
+     "key": "BRK-B",
+     "entity": "BRK-B",
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "weight": 24.21,
+     "chg": -0.095
+    },
+    {
+     "key": "PDD",
+     "entity": "PDD",
+     "issuer": "PDD HOLDINGS INC",
+     "weight": 12.69,
+     "chg": 0.119
+    },
+    {
+     "key": "TSLA",
+     "entity": "TSLA",
+     "issuer": "TESLA INC",
+     "weight": 8.42,
+     "chg": 0.207
+    },
+    {
+     "key": "OXY",
+     "entity": "OXY",
+     "issuer": "OCCIDENTAL PETE CORP",
+     "weight": 3.3,
+     "chg": 0.0
+    },
+    {
+     "key": "NVDA",
+     "entity": "NVDA",
+     "issuer": "NVIDIA CORPORATION",
+     "weight": 3.08,
+     "chg": -0.631
+    },
+    {
+     "key": "GOOGL",
+     "entity": "GOOGL",
+     "issuer": "ALPHABET INC",
+     "weight": 2.28,
+     "chg": -0.415
+    },
+    {
+     "key": "MSFT",
+     "entity": "MSFT",
+     "issuer": "MICROSOFT CORP",
+     "weight": 2.07,
+     "chg": -0.08
+    },
+    {
+     "key": "DIS",
+     "entity": "DIS",
+     "issuer": "DISNEY WALT CO",
+     "weight": 1.04,
+     "chg": 0.0
+    },
+    {
+     "key": "UNH",
+     "entity": "UNH",
+     "issuer": "UNITEDHEALTH GROUP INC",
+     "weight": 0.85,
+     "chg": 0.0
+    },
+    {
+     "key": "CRDO",
+     "entity": "CRDO",
+     "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+     "weight": 0.68,
+     "chg": -0.142
+    },
+    {
+     "key": "?84615Q103",
+     "entity": null,
+     "issuer": "SPACE EXPLORATION TECHN CORP",
+     "weight": 0.18,
+     "chg": "new"
+    },
+    {
+     "key": "?69608A108",
+     "entity": null,
+     "issuer": "PALANTIR TECHNOLOGIES INC",
+     "weight": 0.07,
+     "chg": 0.0
+    },
+    {
+     "key": "?871607107",
+     "entity": null,
+     "issuer": "SYNOPSYS INC",
+     "weight": 0.03,
+     "chg": 0.0
+    },
+    {
+     "key": "SNOW",
+     "entity": "SNOW",
+     "issuer": "SNOWFLAKE INC",
+     "weight": 0.02,
+     "chg": 0.0
+    }
+   ],
+   "exits": [
+    {
+     "key": "BABA",
+     "issuer": "ALIBABA GROUP HLDG LTD",
+     "entity": "BABA",
+     "weight": 0.15
+    },
+    {
+     "key": "?172573107",
+     "issuer": "CIRCLE INTERNET GROUP INC",
+     "entity": null,
+     "weight": 0.07
+    },
+    {
+     "key": "?457642205",
+     "issuer": "INNODATA INC",
+     "entity": null,
+     "weight": 0.0
+    }
+   ]
+  },
+  "LiLu": {
+   "quarter": "2026-09-30",
+   "filing_date": "2026-11-16",
+   "n_positions": 7,
+   "total_value": 3781431260,
+   "top5_weight": 96.3,
+   "holdings": [
+    {
+     "key": "GOOGL",
+     "entity": "GOOGL",
+     "issuer": "ALPHABET INC",
+     "weight": 45.23,
+     "chg": 0.0
+    },
+    {
+     "key": "PDD",
+     "entity": "PDD",
+     "issuer": "PDD HOLDINGS INC",
+     "weight": 24.24,
+     "chg": 0.093
+    },
+    {
+     "key": "BRK-B",
+     "entity": "BRK-B",
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "weight": 14.59,
+     "chg": 0.0
+    },
+    {
+     "key": "EWBC",
+     "entity": "EWBC",
+     "issuer": "EAST WEST BANCORP INC",
+     "weight": 9.1,
+     "chg": 0.0
+    },
+    {
+     "key": "TME",
+     "entity": "TME",
+     "issuer": "TENCENT MUSIC ENTERTAINM",
+     "weight": 3.11,
+     "chg": 1.249
+    },
+    {
+     "key": "CROX",
+     "entity": "CROX",
+     "issuer": "CROCS INC",
+     "weight": 2.75,
+     "chg": 0.0
+    },
+    {
+     "key": "AAPL",
+     "entity": "AAPL",
+     "issuer": "APPLE INC",
+     "weight": 0.97,
+     "chg": 0.0
+    }
+   ],
+   "exits": []
+  },
+  "Hohn": {
+   "quarter": "2026-09-30",
+   "filing_date": "2026-11-16",
+   "n_positions": 11,
+   "total_value": 49583884496,
+   "top5_weight": 84.7,
+   "holdings": [
+    {
+     "key": "GE",
+     "entity": "GE",
+     "issuer": "GE AEROSPACE",
+     "weight": 29.83,
+     "chg": -0.001
+    },
+    {
+     "key": "V",
+     "entity": "V",
+     "issuer": "VISA INC",
+     "weight": 22.02,
+     "chg": -0.004
+    },
+    {
+     "key": "MCO",
+     "entity": "MCO",
+     "issuer": "MOODYS CORP",
+     "weight": 13.08,
+     "chg": -0.004
+    },
+    {
+     "key": "SPGI",
+     "entity": "SPGI",
+     "issuer": "S&P GLOBAL INC",
+     "weight": 11.2,
+     "chg": -0.054
+    },
+    {
+     "key": "GOOGL",
+     "entity": "GOOGL",
+     "issuer": "ALPHABET INC",
+     "weight": 8.56,
+     "chg": 0.003
+    },
+    {
+     "key": "CP",
+     "entity": "CP",
+     "issuer": "CANADIAN PACIFIC KANSAS CITY",
+     "weight": 7.64,
+     "chg": -0.019
+    },
+    {
+     "key": "FER",
+     "entity": "FER",
+     "issuer": "FERROVIAL NV",
+     "weight": 2.27,
+     "chg": 0.0
+    },
+    {
+     "key": "CNI",
+     "entity": "CNI",
+     "issuer": "CANADIAN NATL RY CO",
+     "weight": 2.26,
+     "chg": 0.0
+    },
+    {
+     "key": "MLM",
+     "entity": "MLM",
+     "issuer": "MARTIN MARIETTA MATLS INC",
+     "weight": 1.74,
+     "chg": 0.369
+    },
+    {
+     "key": "VMC",
+     "entity": "VMC",
+     "issuer": "VULCAN MATLS CO",
+     "weight": 1.37,
+     "chg": 0.135
+    },
+    {
+     "key": "?60744M106",
+     "entity": null,
+     "issuer": "MOBILITY GLOBAL INC",
+     "weight": 0.02,
+     "chg": "new"
+    }
+   ],
+   "exits": []
+  }
+ }
+}

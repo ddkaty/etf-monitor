@@ -1,0 +1,47 @@
+name: 大师跟随
+
+on:
+  schedule:
+    # 每个工作日美股收盘后运行(UTC 23:30)
+    - cron: '30 23 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: follow
+  cancel-in-progress: false
+
+jobs:
+  follow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install yfinance pandas numpy
+
+      - name: 检查披露、计算信号、重建看板、发邮件
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: python follow.py
+
+      - name: 提交数据与看板
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add follow_state.json data/ docs/
+          if git diff --staged --quiet; then
+            echo "无内容变化,跳过提交"
+          else
+            git commit -m "Update follow data and site [skip ci]"
+            git pull --rebase
+            git push
+          fi

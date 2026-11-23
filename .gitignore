@@ -8,3 +8,6 @@ venv/
 
 # Claude Code 本地配置
 .claude/
+
+# 回测的行情缓存(可重新下载)
+backtest/cache/

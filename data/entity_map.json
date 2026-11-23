@@ -1,0 +1,937 @@
+{
+ "00287Y109": {
+  "issuer": "ABBVIE INC",
+  "entity": "ABBV",
+  "factor": 1
+ },
+ "00507V109": {
+  "issuer": "ACTIVISION BLIZZARD INC",
+  "entity": null,
+  "factor": 1
+ },
+ "00724F101": {
+  "issuer": "ADOBE INC",
+  "entity": "ADBE",
+  "factor": 1
+ },
+ "009066101": {
+  "issuer": "AIRBNB INC",
+  "entity": "ABNB",
+  "factor": 1
+ },
+ "011642105": {
+  "issuer": "ALARM COM HLDGS INC",
+  "entity": "ALRM",
+  "factor": 1
+ },
+ "01609W102": {
+  "issuer": "ALIBABA GROUP HLDG LTD",
+  "entity": "BABA",
+  "factor": 1
+ },
+ "02079K107": {
+  "issuer": "ALPHABET INC",
+  "entity": "GOOGL",
+  "factor": 1
+ },
+ "02079K305": {
+  "issuer": "ALPHABET INC",
+  "entity": "GOOGL",
+  "factor": 1
+ },
+ "021346101": {
+  "issuer": "ALTABA INC",
+  "entity": null,
+  "factor": 1
+ },
+ "02156B103": {
+  "issuer": "ALTERYX INC",
+  "entity": null,
+  "factor": 1
+ },
+ "02209S103": {
+  "issuer": "Altria Group Inc",
+  "entity": "MO",
+  "factor": 1
+ },
+ "023135106": {
+  "issuer": "AMAZON COM INC",
+  "entity": "AMZN",
+  "factor": 1
+ },
+ "023139884": {
+  "issuer": "AMBAC FINL GROUP INC",
+  "entity": "OSG",
+  "factor": 1
+ },
+ "02376R102": {
+  "issuer": "AMERICAN AIRLS GROUP INC",
+  "entity": "AAL",
+  "factor": 1
+ },
+ "025816109": {
+  "issuer": "AMERICAN EXPRESS CO",
+  "entity": "AXP",
+  "factor": 1
+ },
+ "03027X100": {
+  "issuer": "AMERICAN TOWER CORP NEW",
+  "entity": "AMT",
+  "factor": 1
+ },
+ "03027X407": {
+  "issuer": "AMERICAN TOWER CORP NEW",
+  "entity": "AMT",
+  "factor": 1
+ },
+ "03662Q105": {
+  "issuer": "ANSYS INC",
+  "entity": null,
+  "factor": 1
+ },
+ "036752103": {
+  "issuer": "ANTHEM INC",
+  "entity": "ELV",
+  "factor": 1
+ },
+ "037833100": {
+  "issuer": "APPLE INC",
+  "entity": "AAPL",
+  "factor": 1
+ },
+ "03831W108": {
+  "issuer": "APPLOVIN CORP",
+  "entity": "APP",
+  "factor": 1
+ },
+ "053332102": {
+  "issuer": "AUTOZONE INC",
+  "entity": "AZO",
+  "factor": 1
+ },
+ "05338G106": {
+  "issuer": "AVALARA INC",
+  "entity": null,
+  "factor": 1
+ },
+ "05464C101": {
+  "issuer": "AXON ENTERPRISE INC",
+  "entity": "AXON",
+  "factor": 1
+ },
+ "056752108": {
+  "issuer": "Baidu Inc",
+  "entity": "BIDU",
+  "factor": 1
+ },
+ "056752908": {
+  "issuer": "Baidu Inc",
+  "entity": "BIDU",
+  "factor": 1
+ },
+ "060505104": {
+  "issuer": "BANK AMER CORP",
+  "entity": "BAC",
+  "factor": 1
+ },
+ "064058100": {
+  "issuer": "BANK OF NEW YORK MELLON CORP",
+  "entity": "BNY",
+  "factor": 1
+ },
+ "084670108": {
+  "issuer": "Berkshire Hathaway Inc Cl A",
+  "entity": "BRK-B",
+  "factor": 1500
+ },
+ "084670702": {
+  "issuer": "BERKSHIRE HATHAWAY INC DEL",
+  "entity": "BRK-B",
+  "factor": 1
+ },
+ "093671105": {
+  "issuer": "BLOCK H & R INC",
+  "entity": "HRB",
+  "factor": 1
+ },
+ "09857L108": {
+  "issuer": "BOOKING HOLDINGS INC",
+  "entity": "BKNG",
+  "factor": 1
+ },
+ "101121101": {
+  "issuer": "BOSTON PROPERTIES INC",
+  "entity": "BXP",
+  "factor": 1
+ },
+ "112585104": {
+  "issuer": "BROOKFIELD ASSET MGMT INC",
+  "entity": "BN",
+  "factor": 1
+ },
+ "11271J107": {
+  "issuer": "BROOKFIELD CORP",
+  "entity": "BN",
+  "factor": 1
+ },
+ "113004105": {
+  "issuer": "BROOKFIELD ASSET MANAGMT LTD",
+  "entity": "BAM",
+  "factor": 1
+ },
+ "115637100": {
+  "issuer": "Brown-Forman Corp Cl A",
+  "entity": "BF-B",
+  "factor": 1
+ },
+ "115637209": {
+  "issuer": "Brown-Forman Corp Cl B",
+  "entity": "BF-B",
+  "factor": 1
+ },
+ "12510Q100": {
+  "issuer": "CCC INTELLIGENT SOLUTIONS HL",
+  "entity": "CCC",
+  "factor": 1
+ },
+ "12685J105": {
+  "issuer": "Cable One Inc",
+  "entity": "CABO",
+  "factor": 1
+ },
+ "136375102": {
+  "issuer": "CANADIAN NATL RY CO",
+  "entity": "CNI",
+  "factor": 1
+ },
+ "13645T100": {
+  "issuer": "CANADIAN PAC RY LTD",
+  "entity": "CP",
+  "factor": 1
+ },
+ "13646K108": {
+  "issuer": "CANADIAN PACIFIC KANSAS CITY",
+  "entity": "CP",
+  "factor": 1
+ },
+ "143130102": {
+  "issuer": "CARMAX INC",
+  "entity": "KMX",
+  "factor": 1
+ },
+ "16119P108": {
+  "issuer": "CHARTER COMMUNICATIONS INC N",
+  "entity": "CHTR",
+  "factor": 1
+ },
+ "163092109": {
+  "issuer": "CHEGG INC",
+  "entity": "CHGG",
+  "factor": 1
+ },
+ "166764100": {
+  "issuer": "CHEVRON CORP NEW",
+  "entity": "CVX",
+  "factor": 1
+ },
+ "172967424": {
+  "issuer": "CITIGROUP INC",
+  "entity": "C",
+  "factor": 1
+ },
+ "191216100": {
+  "issuer": "COCA COLA CO",
+  "entity": "KO",
+  "factor": 1
+ },
+ "194014106": {
+  "issuer": "COLFAX CORP",
+  "entity": "ENOV",
+  "factor": 1
+ },
+ "194014502": {
+  "issuer": "ENOVIS CORPORATION",
+  "entity": "ENOV",
+  "factor": 1
+ },
+ "20030N101": {
+  "issuer": "COMCAST CORP NEW",
+  "entity": "CMCSA",
+  "factor": 1
+ },
+ "217204106": {
+  "issuer": "COPART INC",
+  "entity": "CPRT",
+  "factor": 1
+ },
+ "22160N109": {
+  "issuer": "COSTAR GROUP INC",
+  "entity": "CSGP",
+  "factor": 1
+ },
+ "227046109": {
+  "issuer": "CROCS INC",
+  "entity": "CROX",
+  "factor": 1
+ },
+ "235851102": {
+  "issuer": "DANAHER CORP DEL",
+  "entity": "DHR",
+  "factor": 1
+ },
+ "23918K108": {
+  "issuer": "DAVITA HEALTHCARE PARTNERS I",
+  "entity": "DVA",
+  "factor": 1
+ },
+ "247361702": {
+  "issuer": "DELTA AIR LINES INC DEL",
+  "entity": "DAL",
+  "factor": 1
+ },
+ "249906108": {
+  "issuer": "DESCARTES SYS GROUP INC",
+  "entity": "DSGX",
+  "factor": 1
+ },
+ "254687106": {
+  "issuer": "DISNEY WALT CO",
+  "entity": "DIS",
+  "factor": 1
+ },
+ "256677105": {
+  "issuer": "DOLLAR GEN CORP NEW",
+  "entity": "DG",
+  "factor": 1
+ },
+ "256746108": {
+  "issuer": "DOLLAR TREE INC",
+  "entity": "DLTR",
+  "factor": 1
+ },
+ "25809K105": {
+  "issuer": "Doordash Inc Cl A",
+  "entity": "DASH",
+  "factor": 1
+ },
+ "27579R104": {
+  "issuer": "EAST WEST BANCORP INC",
+  "entity": "EWBC",
+  "factor": 1
+ },
+ "278642103": {
+  "issuer": "EBAY INC",
+  "entity": "EBAY",
+  "factor": 1
+ },
+ "294429105": {
+  "issuer": "EQUIFAX INC",
+  "entity": "EFX",
+  "factor": 1
+ },
+ "30231G102": {
+  "issuer": "EXXON MOBIL CORP",
+  "entity": "XOM",
+  "factor": 1
+ },
+ "30303M102": {
+  "issuer": "FACEBOOK INC",
+  "entity": "META",
+  "factor": 1
+ },
+ "303250104": {
+  "issuer": "FAIR ISAAC CORP",
+  "entity": "FICO",
+  "factor": 1
+ },
+ "34417P100": {
+  "issuer": "FOCUS FINL PARTNERS INC",
+  "entity": null,
+  "factor": 1
+ },
+ "35137L105": {
+  "issuer": "FOX CORP",
+  "entity": "FOXA",
+  "factor": 1
+ },
+ "36257Y109": {
+  "issuer": "GAOTU TECHEDU INC",
+  "entity": "GOTU",
+  "factor": 1
+ },
+ "369604103": {
+  "issuer": "GENERAL ELECTRIC CO",
+  "entity": "GE",
+  "factor": 1
+ },
+ "369604301": {
+  "issuer": "GENERAL ELECTRIC CO",
+  "entity": "GE",
+  "factor": 1
+ },
+ "37045V100": {
+  "issuer": "GENERAL MTRS CO",
+  "entity": "GM",
+  "factor": 1
+ },
+ "38141G104": {
+  "issuer": "GOLDMAN SACHS GROUP INC",
+  "entity": "GS",
+  "factor": 1
+ },
+ "40434L105": {
+  "issuer": "HP INC",
+  "entity": "HPQ",
+  "factor": 1
+ },
+ "42704L104": {
+  "issuer": "HERC HLDGS INC",
+  "entity": "HRI",
+  "factor": 1
+ },
+ "459200101": {
+  "issuer": "INTERNATIONAL BUSINESS MACHS",
+  "entity": "IBM",
+  "factor": 1
+ },
+ "464288257": {
+  "issuer": "ISHARES TR",
+  "entity": "ACWI",
+  "factor": 1
+ },
+ "46591M109": {
+  "issuer": "JOYY INC",
+  "entity": "JOYY",
+  "factor": 1
+ },
+ "46625H100": {
+  "issuer": "JPMORGAN CHASE & CO",
+  "entity": "JPM",
+  "factor": 1
+ },
+ "48248M102": {
+  "issuer": "KKR & CO L P DEL",
+  "entity": "KKR",
+  "factor": 1
+ },
+ "48251W104": {
+  "issuer": "KKR & CO L P DEL",
+  "entity": "KKR",
+  "factor": 1
+ },
+ "500754106": {
+  "issuer": "KRAFT HEINZ CO",
+  "entity": "KHC",
+  "factor": 1
+ },
+ "501044101": {
+  "issuer": "KROGER CO",
+  "entity": "KR",
+  "factor": 1
+ },
+ "501889208": {
+  "issuer": "LKQ CORP",
+  "entity": "LKQ",
+  "factor": 1
+ },
+ "538034109": {
+  "issuer": "LIVE NATION ENTERTAINMENT IN",
+  "entity": "LYV",
+  "factor": 1
+ },
+ "570535104": {
+  "issuer": "MARKEL CORP",
+  "entity": "MKL",
+  "factor": 1
+ },
+ "573284106": {
+  "issuer": "MARTIN MARIETTA MATLS INC",
+  "entity": "MLM",
+  "factor": 1
+ },
+ "57636Q104": {
+  "issuer": "MASTERCARD INC",
+  "entity": "MA",
+  "factor": 1
+ },
+ "594918104": {
+  "issuer": "MICROSOFT CORP",
+  "entity": "MSFT",
+  "factor": 1
+ },
+ "595112103": {
+  "issuer": "MICRON TECHNOLOGY INC",
+  "entity": "MU",
+  "factor": 1
+ },
+ "60770K107": {
+  "issuer": "MODERNA INC",
+  "entity": "MRNA",
+  "factor": 1
+ },
+ "610236101": {
+  "issuer": "MONRO MUFFLER BRAKE INC",
+  "entity": "MNRO",
+  "factor": 1
+ },
+ "61166W101": {
+  "issuer": "MOSANTO CO NEW",
+  "entity": null,
+  "factor": 1
+ },
+ "615369105": {
+  "issuer": "MOODYS CORP",
+  "entity": "MCO",
+  "factor": 1
+ },
+ "641069406": {
+  "issuer": "Nestle SA-Spons ADR",
+  "entity": "NSRGY",
+  "factor": 1
+ },
+ "64110L106": {
+  "issuer": "Netflix Inc",
+  "entity": "NFLX",
+  "factor": 1
+ },
+ "64110W102": {
+  "issuer": "NETEASE INC",
+  "entity": "NTES",
+  "factor": 1
+ },
+ "655844108": {
+  "issuer": "NORFOLK SOUTHERN CORP",
+  "entity": "NSC",
+  "factor": 1
+ },
+ "67066G104": {
+  "issuer": "NVIDIA CORPORATION",
+  "entity": "NVDA",
+  "factor": 1
+ },
+ "67103H107": {
+  "issuer": "O REILLY AUTOMOTIVE INC NEW",
+  "entity": "ORLY",
+  "factor": 1
+ },
+ "674599105": {
+  "issuer": "OCCIDENTAL PETE CORP",
+  "entity": "OXY",
+  "factor": 1
+ },
+ "70450Y103": {
+  "issuer": "PAYPAL HLDGS INC",
+  "entity": "PYPL",
+  "factor": 1
+ },
+ "718172109": {
+  "issuer": "Philip Morris International In",
+  "entity": "PM",
+  "factor": 1
+ },
+ "718546104": {
+  "issuer": "PHILLIPS 66",
+  "entity": "PSX",
+  "factor": 1
+ },
+ "722304102": {
+  "issuer": "PINDUODUO INC",
+  "entity": "PDD",
+  "factor": 1
+ },
+ "73739W104": {
+  "issuer": "POSHMARK INC",
+  "entity": null,
+  "factor": 1
+ },
+ "755111507": {
+  "issuer": "RAYTHEON CO",
+  "entity": null,
+  "factor": 1
+ },
+ "75513E101": {
+  "issuer": "RAYTHEON TECHNOLOGIES CORP",
+  "entity": "RTX",
+  "factor": 1
+ },
+ "77543R102": {
+  "issuer": "ROKU INC",
+  "entity": "ROKU",
+  "factor": 1
+ },
+ "776696106": {
+  "issuer": "ROPER INDS INC NEW",
+  "entity": "ROP",
+  "factor": 1
+ },
+ "78388J106": {
+  "issuer": "SBA COMMUNICATIONS CORP",
+  "entity": "SBAC",
+  "factor": 1
+ },
+ "78409V104": {
+  "issuer": "S&P GLOBAL INC",
+  "entity": "SPGI",
+  "factor": 1
+ },
+ "78410G104": {
+  "issuer": "SBA COMMUNICATIONS CORP",
+  "entity": "SBAC",
+  "factor": 1
+ },
+ "78574H104": {
+  "issuer": "SABLE OFFSHORE CORP",
+  "entity": "SOC",
+  "factor": 1
+ },
+ "79466L302": {
+  "issuer": "SALESFORCE COM INC",
+  "entity": "CRM",
+  "factor": 1
+ },
+ "81686C104": {
+  "issuer": "SEMRUSH HLDGS INC",
+  "entity": "SEMR",
+  "factor": 1
+ },
+ "81762P102": {
+  "issuer": "SERVICENOW INC",
+  "entity": "NOW",
+  "factor": 1
+ },
+ "82982L103": {
+  "issuer": "SITEONE LANDSCAPE SUPPLY INC",
+  "entity": "SITE",
+  "factor": 1
+ },
+ "829933100": {
+  "issuer": "SIRIUS XM HOLDINGS INC",
+  "entity": "SIRI",
+  "factor": 1
+ },
+ "83200N103": {
+  "issuer": "SMARTSHEET INC",
+  "entity": null,
+  "factor": 1
+ },
+ "833445109": {
+  "issuer": "SNOWFLAKE INC",
+  "entity": "SNOW",
+  "factor": 1
+ },
+ "83409V104": {
+  "issuer": "SOGOU INC",
+  "entity": null,
+  "factor": 1
+ },
+ "844741108": {
+  "issuer": "SOUTHWEST AIRLS CO",
+  "entity": "LUV",
+  "factor": 1
+ },
+ "85209W109": {
+  "issuer": "SPROUT SOCIAL INC",
+  "entity": "SPT",
+  "factor": 1
+ },
+ "855244109": {
+  "issuer": "STARBUCKS CORP",
+  "entity": "SBUX",
+  "factor": 1
+ },
+ "866966104": {
+  "issuer": "SUNBELT RENTALS HOLDINGS INC",
+  "entity": "SUNB",
+  "factor": 1
+ },
+ "87236Y108": {
+  "issuer": "TD AMERITRADE HLDG CORP",
+  "entity": null,
+  "factor": 1
+ },
+ "874039100": {
+  "issuer": "TAIWAN SEMICONDUCTOR MFG LTD",
+  "entity": "TSM",
+  "factor": 1
+ },
+ "88034P109": {
+  "issuer": "TENCENT MUSIC ENTMT GROUP",
+  "entity": "TME",
+  "factor": 1
+ },
+ "88160R101": {
+  "issuer": "TESLA INC",
+  "entity": "TSLA",
+  "factor": 1
+ },
+ "88339J105": {
+  "issuer": "THE TRADE DESK INC",
+  "entity": "TTD",
+  "factor": 1
+ },
+ "883556102": {
+  "issuer": "THERMO FISHER SCIENTIFIC INC",
+  "entity": "TMO",
+  "factor": 1
+ },
+ "88579Y101": {
+  "issuer": "3M CO",
+  "entity": "MMM",
+  "factor": 1
+ },
+ "887317303": {
+  "issuer": "TIME WARNER INC",
+  "entity": null,
+  "factor": 1
+ },
+ "892331307": {
+  "issuer": "TOYOTA MOTOR CORP",
+  "entity": "TM",
+  "factor": 1
+ },
+ "90130A101": {
+  "issuer": "TWENTY FIRST CENTY FOX INC",
+  "entity": null,
+  "factor": 1
+ },
+ "90130A200": {
+  "issuer": "TWENTY FIRST CENTY FOX INC",
+  "entity": null,
+  "factor": 1
+ },
+ "902252105": {
+  "issuer": "TYLER TECHNOLOGIES INC",
+  "entity": "TYL",
+  "factor": 1
+ },
+ "902973304": {
+  "issuer": "US BANCORP DEL",
+  "entity": "USB",
+  "factor": 1
+ },
+ "90347A100": {
+  "issuer": "UBIQUITI NETWORKS INC",
+  "entity": "UI",
+  "factor": 1
+ },
+ "90353T100": {
+  "issuer": "UBER TECHNOLOGIES INC",
+  "entity": "UBER",
+  "factor": 1
+ },
+ "904767704": {
+  "issuer": "Unilever PLC ADR",
+  "entity": "UL",
+  "factor": 1
+ },
+ "904784709": {
+  "issuer": "Unilever NV ADR",
+  "entity": "UL",
+  "factor": 1
+ },
+ "907818108": {
+  "issuer": "UNION PAC CORP",
+  "entity": "UNP",
+  "factor": 1
+ },
+ "910047109": {
+  "issuer": "UNITED CONTL HLDGS INC",
+  "entity": "UAL",
+  "factor": 1
+ },
+ "91324P102": {
+  "issuer": "UNITEDHEALTH GROUP INC",
+  "entity": "UNH",
+  "factor": 1
+ },
+ "91336L107": {
+  "issuer": "UNIVAR INC",
+  "entity": null,
+  "factor": 1
+ },
+ "91688F104": {
+  "issuer": "UPWORK INC",
+  "entity": "UPWK",
+  "factor": 1
+ },
+ "922475108": {
+  "issuer": "VEEVA SYS INC",
+  "entity": "VEEV",
+  "factor": 1
+ },
+ "92343E102": {
+  "issuer": "VERISIGN INC",
+  "entity": "VRSN",
+  "factor": 1
+ },
+ "92343V104": {
+  "issuer": "VERIZON COMMUNICATIONS INC",
+  "entity": "VZ",
+  "factor": 1
+ },
+ "92345Y106": {
+  "issuer": "VERISK ANALYTICS INC",
+  "entity": "VRSK",
+  "factor": 1
+ },
+ "92826C839": {
+  "issuer": "VISA INC",
+  "entity": "V",
+  "factor": 1
+ },
+ "929042109": {
+  "issuer": "VORNADO RLTY TR",
+  "entity": "VNO",
+  "factor": 1
+ },
+ "929160109": {
+  "issuer": "VULCAN MATLS CO",
+  "entity": "VMC",
+  "factor": 1
+ },
+ "948596101": {
+  "issuer": "Weibo Corp",
+  "entity": "WB",
+  "factor": 1
+ },
+ "949746101": {
+  "issuer": "WELLS FARGO & CO NEW",
+  "entity": "WFC",
+  "factor": 1
+ },
+ "98139A105": {
+  "issuer": "WORKIVA INC",
+  "entity": "WK",
+  "factor": 1
+ },
+ "984332106": {
+  "issuer": "YAHOO INC",
+  "entity": null,
+  "factor": 1
+ },
+ "985817105": {
+  "issuer": "YELP INC",
+  "entity": "YELP",
+  "factor": 1
+ },
+ "98980L101": {
+  "issuer": "ZOOM VIDEO COMMUNICATIONS IN",
+  "entity": "ZM",
+  "factor": 1
+ },
+ "B639CJ108": {
+  "issuer": "Anheuser-Busch InBev SA",
+  "entity": "BUD",
+  "factor": 1
+ },
+ "F5333N100": {
+  "issuer": "JC Decaux SA ACT",
+  "entity": "JCDXF",
+  "factor": 1
+ },
+ "F72027109": {
+  "issuer": "Pernod Ricard",
+  "entity": "PRNDY",
+  "factor": 1
+ },
+ "G05320109": {
+  "issuer": "Ashtead Group PLC",
+  "entity": "ASHTY",
+  "factor": 1
+ },
+ "G1510J102": {
+  "issuer": "British American Tobacco PLC",
+  "entity": "BTI",
+  "factor": 1
+ },
+ "G25457105": {
+  "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+  "entity": "CRDO",
+  "factor": 1
+ },
+ "G27358103": {
+  "issuer": "DESPEGAR COM CORP",
+  "entity": null,
+  "factor": 1
+ },
+ "G3075P101": {
+  "issuer": "ENSTAR GROUP LIMITED",
+  "entity": null,
+  "factor": 1
+ },
+ "G3421J106": {
+  "issuer": "FERGUSON PLC NEW",
+  "entity": "FERG",
+  "factor": 1
+ },
+ "G42089113": {
+  "issuer": "Diageo PLC",
+  "entity": "DEO",
+  "factor": 1
+ },
+ "G47567105": {
+  "issuer": "IHS MARKIT LTD",
+  "entity": null,
+  "factor": 1
+ },
+ "G7709Q104": {
+  "issuer": "ROYALTY PHARMA PLC",
+  "entity": "RPRX",
+  "factor": 1
+ },
+ "G81477104": {
+  "issuer": "Sina Corp",
+  "entity": null,
+  "factor": 1
+ },
+ "H1467J104": {
+  "issuer": "CHUBB LIMITED",
+  "entity": "CB",
+  "factor": 1
+ },
+ "H25662182": {
+  "issuer": "Compagnie Financiere Richemont",
+  "entity": "CFRUY",
+  "factor": 1
+ },
+ "H83949141": {
+  "issuer": "The Swatch Group AG-BR",
+  "entity": "SWGAY",
+  "factor": 1
+ },
+ "L31839134": {
+  "issuer": "Eurofins Scientific",
+  "entity": "ERFSF",
+  "factor": 1
+ },
+ "M98068105": {
+  "issuer": "WIX COM LTD",
+  "entity": "WIX",
+  "factor": 1
+ },
+ "N00985106": {
+  "issuer": "AERCAP HOLDINGS NV",
+  "entity": "AER",
+  "factor": 1
+ },
+ "N07059210": {
+  "issuer": "ASML HOLDING N V",
+  "entity": "ASML",
+  "factor": 1
+ },
+ "N20146101": {
+  "issuer": "CIMPRESS N V",
+  "entity": "CMPR",
+  "factor": 1
+ },
+ "N3168P101": {
+  "issuer": "FERROVIAL SE",
+  "entity": "FER",
+  "factor": 1
+ },
+ "N39338194": {
+  "issuer": "Heineken Holding NV",
+  "entity": "HKHHY",
+  "factor": 1
+ }
+}
