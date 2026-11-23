@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23 22:29",
- "px_date": "2026-11-20",
+ "generated": "2026-11-23 23:03",
+ "px_date": "2026-11-23",
  "prices_stale": false,
  "rules": {
   "new_min_weight": 5.0,
@@ -27,10 +27,10 @@
    "divergence": [],
    "entry_date": "2026-11-17",
    "entry_px": 9.47,
-   "last_px": 8.91,
-   "ret": -0.0591,
-   "spy_ret": -0.0582,
-   "px_date": "2026-11-20",
+   "last_px": 8.97,
+   "ret": -0.0533,
+   "spy_ret": -0.016,
+   "px_date": "2026-11-23",
    "age_days": 6
   },
   {
@@ -49,10 +49,10 @@
    "divergence": [],
    "entry_date": "2026-11-17",
    "entry_px": 380.11,
-   "last_px": 345.82,
-   "ret": -0.0902,
-   "spy_ret": -0.0582,
-   "px_date": "2026-11-20",
+   "last_px": 388.23,
+   "ret": 0.0214,
+   "spy_ret": -0.016,
+   "px_date": "2026-11-23",
    "age_days": 6
   },
   {
@@ -71,10 +71,10 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 86.94,
-   "last_px": 83.68,
-   "ret": -0.0375,
-   "spy_ret": -0.105,
-   "px_date": "2026-11-20",
+   "last_px": 85.05,
+   "ret": -0.0217,
+   "spy_ret": -0.0649,
+   "px_date": "2026-11-23",
    "age_days": 98
   },
   {
@@ -93,10 +93,10 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 498.23,
-   "last_px": 570.0,
-   "ret": 0.144,
-   "spy_ret": -0.105,
-   "px_date": "2026-11-20",
+   "last_px": 571.62,
+   "ret": 0.1473,
+   "spy_ret": -0.0649,
+   "px_date": "2026-11-23",
    "age_days": 98
   },
   {
@@ -115,10 +115,10 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 63.57,
-   "last_px": 47.04,
-   "ret": -0.26,
-   "spy_ret": -0.105,
-   "px_date": "2026-11-20",
+   "last_px": 48.18,
+   "ret": -0.242,
+   "spy_ret": -0.0649,
+   "px_date": "2026-11-23",
    "age_days": 98
   },
   {
@@ -137,10 +137,10 @@
    "divergence": [],
    "entry_date": "2026-08-17",
    "entry_px": 86.94,
-   "last_px": 83.68,
-   "ret": -0.0375,
-   "spy_ret": -0.105,
-   "px_date": "2026-11-20",
+   "last_px": 85.05,
+   "ret": -0.0217,
+   "spy_ret": -0.0649,
+   "px_date": "2026-11-23",
    "age_days": 98
   },
   {
@@ -170,10 +170,10 @@
    ],
    "entry_date": "2026-08-17",
    "entry_px": 343.78,
-   "last_px": 265.29,
-   "ret": -0.2283,
-   "spy_ret": -0.105,
-   "px_date": "2026-11-20",
+   "last_px": 280.88,
+   "ret": -0.183,
+   "spy_ret": -0.0649,
+   "px_date": "2026-11-23",
    "age_days": 98
   },
   {
@@ -192,10 +192,10 @@
    "divergence": [],
    "entry_date": "2026-05-18",
    "entry_px": 97.0,
-   "last_px": 154.67,
-   "ret": 0.5945,
-   "spy_ret": -0.0614,
-   "px_date": "2026-11-20",
+   "last_px": 157.2,
+   "ret": 0.6206,
+   "spy_ret": -0.0193,
+   "px_date": "2026-11-23",
    "age_days": 189
   },
   {
@@ -225,10 +225,10 @@
    ],
    "entry_date": "2026-05-18",
    "entry_px": 396.45,
-   "last_px": 265.29,
-   "ret": -0.3308,
-   "spy_ret": -0.0614,
-   "px_date": "2026-11-20",
+   "last_px": 280.88,
+   "ret": -0.2915,
+   "spy_ret": -0.0193,
+   "px_date": "2026-11-23",
    "age_days": 189
   },
   {
@@ -247,10 +247,10 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 480.9,
-   "last_px": 570.0,
-   "ret": 0.1853,
-   "spy_ret": -0.0647,
-   "px_date": "2026-11-20",
+   "last_px": 571.62,
+   "ret": 0.1886,
+   "spy_ret": -0.0228,
+   "px_date": "2026-11-23",
    "age_days": 187
   },
   {
@@ -269,10 +269,10 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 222.96,
-   "last_px": 125.53,
-   "ret": -0.437,
-   "spy_ret": -0.0647,
-   "px_date": "2026-11-20",
+   "last_px": 166.38,
+   "ret": -0.2537,
+   "spy_ret": -0.0228,
+   "px_date": "2026-11-23",
    "age_days": 187
   },
   {
@@ -291,10 +291,10 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 98.15,
-   "last_px": 83.68,
-   "ret": -0.1474,
-   "spy_ret": -0.0647,
-   "px_date": "2026-11-20",
+   "last_px": 85.05,
+   "ret": -0.1335,
+   "spy_ret": -0.0228,
+   "px_date": "2026-11-23",
    "age_days": 187
   },
   {
@@ -313,10 +313,10 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 417.26,
-   "last_px": 345.82,
-   "ret": -0.1712,
-   "spy_ret": -0.0647,
-   "px_date": "2026-11-20",
+   "last_px": 388.23,
+   "ret": -0.0696,
+   "spy_ret": -0.0228,
+   "px_date": "2026-11-23",
    "age_days": 187
   },
   {
@@ -335,10 +335,10 @@
    "divergence": [],
    "entry_date": "2026-05-20",
    "entry_px": 388.43,
-   "last_px": 265.29,
-   "ret": -0.317,
-   "spy_ret": -0.0647,
-   "px_date": "2026-11-20",
+   "last_px": 280.88,
+   "ret": -0.2769,
+   "spy_ret": -0.0228,
+   "px_date": "2026-11-23",
    "age_days": 187
   },
   {
@@ -368,10 +368,10 @@
    ],
    "entry_date": "2026-05-18",
    "entry_px": 396.45,
-   "last_px": 265.29,
-   "ret": -0.3308,
-   "spy_ret": -0.0614,
-   "px_date": "2026-11-20",
+   "last_px": 280.88,
+   "ret": -0.2915,
+   "spy_ret": -0.0193,
+   "px_date": "2026-11-23",
    "age_days": 189
   },
   {
@@ -390,10 +390,10 @@
    "divergence": [],
    "entry_date": "2026-02-18",
    "entry_px": 499.07,
-   "last_px": 570.0,
-   "ret": 0.1421,
-   "spy_ret": 0.013,
-   "px_date": "2026-11-20",
+   "last_px": 571.62,
+   "ret": 0.1454,
+   "spy_ret": 0.0584,
+   "px_date": "2026-11-23",
    "age_days": 278
   },
   {
@@ -412,10 +412,10 @@
    "divergence": [],
    "entry_date": "2026-02-18",
    "entry_px": 187.54,
-   "last_px": 125.53,
-   "ret": -0.3307,
-   "spy_ret": 0.013,
-   "px_date": "2026-11-20",
+   "last_px": 166.38,
+   "ret": -0.1128,
+   "spy_ret": 0.0584,
+   "px_date": "2026-11-23",
    "age_days": 278
   },
   {
@@ -434,10 +434,10 @@
    "divergence": [],
    "entry_date": "2026-02-18",
    "entry_px": 102.92,
-   "last_px": 83.68,
-   "ret": -0.1869,
-   "spy_ret": 0.013,
-   "px_date": "2026-11-20",
+   "last_px": 85.05,
+   "ret": -0.1736,
+   "spy_ret": 0.0584,
+   "px_date": "2026-11-23",
    "age_days": 278
   },
   {
@@ -467,10 +467,10 @@
    ],
    "entry_date": "2026-02-18",
    "entry_px": 396.32,
-   "last_px": 484.52,
-   "ret": 0.2226,
-   "spy_ret": 0.013,
-   "px_date": "2026-11-20",
+   "last_px": 503.77,
+   "ret": 0.2711,
+   "spy_ret": 0.0584,
+   "px_date": "2026-11-23",
    "age_days": 278
   },
   {
@@ -489,10 +489,10 @@
    "divergence": [],
    "entry_date": "2026-02-18",
    "entry_px": 359.43,
-   "last_px": 318.71,
-   "ret": -0.1133,
-   "spy_ret": 0.013,
-   "px_date": "2026-11-20",
+   "last_px": 368.75,
+   "ret": 0.0259,
+   "spy_ret": 0.0584,
+   "px_date": "2026-11-23",
    "age_days": 278
   },
   {
@@ -517,10 +517,10 @@
    ],
    "entry_date": "2025-11-17",
    "entry_px": 323.21,
-   "last_px": 401.87,
-   "ret": 0.2434,
-   "spy_ret": 0.0474,
-   "px_date": "2026-11-20",
+   "last_px": 409.38,
+   "ret": 0.2666,
+   "spy_ret": 0.0944,
+   "px_date": "2026-11-23",
    "age_days": 371
   },
   {
@@ -539,10 +539,10 @@
    "divergence": [],
    "entry_date": "2025-11-17",
    "entry_px": 503.26,
-   "last_px": 570.0,
-   "ret": 0.1326,
-   "spy_ret": 0.0474,
-   "px_date": "2026-11-20",
+   "last_px": 571.62,
+   "ret": 0.1358,
+   "spy_ret": 0.0944,
+   "px_date": "2026-11-23",
    "age_days": 371
   },
   {
@@ -561,10 +561,10 @@
    "divergence": [],
    "entry_date": "2025-08-15",
    "entry_px": 118.95,
-   "last_px": 83.68,
-   "ret": -0.2965,
-   "spy_ret": 0.0866,
-   "px_date": "2026-11-20",
+   "last_px": 85.05,
+   "ret": -0.285,
+   "spy_ret": 0.1353,
+   "px_date": "2026-11-23",
    "age_days": 465
   },
   {
@@ -589,10 +589,10 @@
    ],
    "entry_date": "2025-08-15",
    "entry_px": 203.19,
-   "last_px": 265.29,
-   "ret": 0.3056,
-   "spy_ret": 0.0866,
-   "px_date": "2026-11-20",
+   "last_px": 280.88,
+   "ret": 0.3824,
+   "spy_ret": 0.1353,
+   "px_date": "2026-11-23",
    "age_days": 465
   },
   {
@@ -617,10 +617,10 @@
    ],
    "entry_date": "2025-05-16",
    "entry_px": 448.96,
-   "last_px": 484.52,
-   "ret": 0.0792,
-   "spy_ret": 0.1802,
-   "px_date": "2026-11-20",
+   "last_px": 503.77,
+   "ret": 0.1221,
+   "spy_ret": 0.233,
+   "px_date": "2026-11-23",
    "age_days": 556
   },
   {
@@ -639,10 +639,10 @@
    "divergence": [],
    "entry_date": "2025-02-18",
    "entry_px": 128.46,
-   "last_px": 83.68,
-   "ret": -0.3486,
-   "spy_ret": 0.1502,
-   "px_date": "2026-11-20",
+   "last_px": 85.05,
+   "ret": -0.3379,
+   "spy_ret": 0.2018,
+   "px_date": "2026-11-23",
    "age_days": 643
   },
   {
@@ -667,10 +667,10 @@
    ],
    "entry_date": "2025-02-18",
    "entry_px": 47.13,
-   "last_px": 53.9,
-   "ret": 0.1437,
-   "spy_ret": 0.1502,
-   "px_date": "2026-11-20",
+   "last_px": 53.99,
+   "ret": 0.1456,
+   "spy_ret": 0.2018,
+   "px_date": "2026-11-23",
    "age_days": 643
   }
  ],
@@ -788,7 +788,884 @@
      "chg": -0.103
     }
    ],
-   "exits": []
+   "exits": [],
+   "history": [
+    {
+     "quarter": "2026-09-30",
+     "filing_date": "2026-11-16",
+     "n_positions": 29,
+     "total_value": 304196581325,
+     "unchanged": 18,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BANK OF AMER CORP",
+       "chg": -0.057,
+       "before": 9.2,
+       "after": 8.16,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "DAL",
+       "entity": "DAL",
+       "issuer": "DELTA AIR LINES INC",
+       "chg": 0.124,
+       "before": 1.79,
+       "after": 1.77,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "DVA",
+       "entity": "DVA",
+       "issuer": "DAVITA INC",
+       "chg": -0.006,
+       "before": 2.15,
+       "after": 1.65,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?526057104",
+       "entity": null,
+       "issuer": "LENNAR CORP",
+       "chg": 0.986,
+       "before": 0.4,
+       "after": 0.7,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "KR",
+       "entity": "KR",
+       "issuer": "KROGER CO",
+       "chg": -0.103,
+       "before": 0.72,
+       "after": 0.67,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "VRSN",
+       "entity": "VRSN",
+       "issuer": "VERISIGN INC",
+       "chg": -0.341,
+       "before": 0.76,
+       "after": 0.55,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?T19377109",
+       "entity": null,
+       "issuer": "BENDING SPOONS SPA",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.23,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?670346105",
+       "entity": null,
+       "issuer": "NUCOR CORP",
+       "chg": -0.149,
+       "before": 0.14,
+       "after": 0.12,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?14040H105",
+       "entity": null,
+       "issuer": "CAPITAL ONE FINL CORP",
+       "chg": -0.617,
+       "before": 0.2,
+       "after": 0.07,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?55616P104",
+       "entity": null,
+       "issuer": "MACYS INC",
+       "chg": 0.026,
+       "before": 0.06,
+       "after": 0.06,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?526057302",
+       "entity": null,
+       "issuer": "LENNAR CORP",
+       "chg": 0.855,
+       "before": 0.01,
+       "after": 0.01,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-06-30",
+     "filing_date": "2026-08-14",
+     "n_positions": 28,
+     "total_value": 299253556246,
+     "unchanged": 15,
+     "rows": [
+      {
+       "kind": "add",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": 0.832,
+       "before": 6.32,
+       "after": 12.62,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BANK OF AMER CORP",
+       "chg": -0.059,
+       "before": 9.52,
+       "after": 9.2,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "DVA",
+       "entity": "DVA",
+       "issuer": "DAVITA INC",
+       "chg": -0.041,
+       "before": 1.76,
+       "after": 2.15,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "DAL",
+       "entity": "DAL",
+       "issuer": "DELTA AIR LINES INC",
+       "chg": 0.44,
+       "before": 1.01,
+       "after": 1.79,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "KR",
+       "entity": "KR",
+       "issuer": "KROGER CO",
+       "chg": -0.22,
+       "before": 1.38,
+       "after": 0.72,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?02005N100",
+       "entity": null,
+       "issuer": "ALLY FINL INC",
+       "chg": -0.069,
+       "before": 0.43,
+       "after": 0.41,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?526057104",
+       "entity": null,
+       "issuer": "LENNAR CORP",
+       "chg": 0.298,
+       "before": 0.33,
+       "after": 0.4,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?650111107",
+       "entity": null,
+       "issuer": "NEW YORK TIMES CO MTN BE",
+       "chg": 0.037,
+       "before": 0.48,
+       "after": 0.37,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?14040H105",
+       "entity": null,
+       "issuer": "CAPITAL ONE FINL CORP",
+       "chg": -0.58,
+       "before": 0.5,
+       "after": 0.2,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?670346105",
+       "entity": null,
+       "issuer": "NUCOR CORP",
+       "chg": -0.525,
+       "before": 0.25,
+       "after": 0.14,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?55616P104",
+       "entity": null,
+       "issuer": "MACYS INC",
+       "chg": 1.418,
+       "before": 0.02,
+       "after": 0.06,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?526057302",
+       "entity": null,
+       "issuer": "LENNAR CORP",
+       "chg": 0.254,
+       "before": 0.01,
+       "after": 0.01,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?23331A109",
+       "entity": null,
+       "issuer": "D R HORTON INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?21036P108",
+       "entity": null,
+       "issuer": "CONSTELLATION BRANDS INC",
+       "chg": -1.0,
+       "before": 0.04,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-03-31",
+     "filing_date": "2026-05-15",
+     "n_positions": 28,
+     "total_value": 263095703570,
+     "unchanged": 16,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BANK AMERICA CORP",
+       "chg": -0.007,
+       "before": 10.38,
+       "after": 9.52,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CVX",
+       "entity": "CVX",
+       "issuer": "CHEVRON CORPORATION",
+       "chg": -0.352,
+       "before": 7.24,
+       "after": 6.64,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": 2.241,
+       "before": 2.04,
+       "after": 6.32,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "DVA",
+       "entity": "DVA",
+       "issuer": "DAVITA INC",
+       "chg": -0.052,
+       "before": 1.32,
+       "after": 1.76,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "DAL",
+       "entity": "DAL",
+       "issuer": "DELTA AIR LINES INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.01,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?650111107",
+       "entity": null,
+       "issuer": "NEW YORK TIMES CO MTN BE",
+       "chg": 1.99,
+       "before": 0.13,
+       "after": 0.48,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?530909308",
+       "entity": null,
+       "issuer": "LIBERTY LIVE HOLDINGS INC",
+       "chg": -0.03,
+       "before": 0.33,
+       "after": 0.38,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?526057104",
+       "entity": null,
+       "issuer": "LENNAR CORP",
+       "chg": 0.432,
+       "before": 0.26,
+       "after": 0.33,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?670346105",
+       "entity": null,
+       "issuer": "NUCOR CORP",
+       "chg": -0.39,
+       "before": 0.38,
+       "after": 0.25,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?21036P108",
+       "entity": null,
+       "issuer": "CONSTELLATION BRANDS INC",
+       "chg": -0.951,
+       "before": 0.65,
+       "after": 0.04,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?55616P104",
+       "entity": null,
+       "issuer": "MACYS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.02,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?526057302",
+       "entity": null,
+       "issuer": "LENNAR CORP",
+       "chg": 0.313,
+       "before": 0.01,
+       "after": 0.01,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "V",
+       "entity": "V",
+       "issuer": "VISA INC",
+       "chg": -1.0,
+       "before": 1.06,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "MA",
+       "entity": "MA",
+       "issuer": "MASTERCARD INCORPORATED",
+       "chg": -1.0,
+       "before": 0.83,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "UNH",
+       "entity": "UNH",
+       "issuer": "UNITEDHEALTH GROUP INC",
+       "chg": -1.0,
+       "before": 0.61,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?25754A201",
+       "entity": null,
+       "issuer": "DOMINOS PIZZA INC",
+       "chg": -1.0,
+       "before": 0.51,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?G0403H108",
+       "entity": null,
+       "issuer": "AON PLC",
+       "chg": -1.0,
+       "before": 0.46,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?73278L105",
+       "entity": null,
+       "issuer": "POOL CORP",
+       "chg": -1.0,
+       "before": 0.26,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "AMZN",
+       "entity": "AMZN",
+       "issuer": "AMAZON COM INC",
+       "chg": -1.0,
+       "before": 0.19,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?422806208",
+       "entity": null,
+       "issuer": "HEICO CORP NEW",
+       "chg": -1.0,
+       "before": 0.12,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?531229755",
+       "entity": null,
+       "issuer": "LIBERTY MEDIA CORP DEL",
+       "chg": -1.0,
+       "before": 0.11,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "CHTR",
+       "entity": "CHTR",
+       "issuer": "CHARTER COMMUNICATIONS INC N",
+       "chg": -1.0,
+       "before": 0.08,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?512816109",
+       "entity": null,
+       "issuer": "LAMAR ADVERTISING CO NEW",
+       "chg": -1.0,
+       "before": 0.06,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?G0176J109",
+       "entity": null,
+       "issuer": "ALLEGION PLC",
+       "chg": -1.0,
+       "before": 0.05,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?25243Q205",
+       "entity": null,
+       "issuer": "DIAGEO PLC",
+       "chg": -1.0,
+       "before": 0.01,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?G9001E102",
+       "entity": null,
+       "issuer": "LIBERTY LATIN AMERICA LTD",
+       "chg": -1.0,
+       "before": 0.01,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?G9001E128",
+       "entity": null,
+       "issuer": "LIBERTY LATIN AMERICA LTD",
+       "chg": -1.0,
+       "before": 0.0,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?047726302",
+       "entity": null,
+       "issuer": "ATLANTA BRAVES HLDGS INC",
+       "chg": -1.0,
+       "before": 0.0,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-12-31",
+     "filing_date": "2026-02-17",
+     "n_positions": 42,
+     "total_value": 274160086701,
+     "unchanged": 26,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.043,
+       "before": 22.69,
+       "after": 22.6,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BANK AMERICA CORP",
+       "chg": -0.089,
+       "before": 10.96,
+       "after": 10.38,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "CVX",
+       "entity": "CVX",
+       "issuer": "CHEVRON CORP NEW",
+       "chg": 0.066,
+       "before": 7.09,
+       "after": 7.24,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "CB",
+       "entity": "CB",
+       "issuer": "CHUBB LIMITED",
+       "chg": 0.093,
+       "before": 3.31,
+       "after": 3.9,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "DVA",
+       "entity": "DVA",
+       "issuer": "DAVITA INC",
+       "chg": -0.012,
+       "before": 1.6,
+       "after": 1.32,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?21036P108",
+       "entity": null,
+       "issuer": "CONSTELLATION BRANDS INC",
+       "chg": -0.03,
+       "before": 0.68,
+       "after": 0.65,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?25754A201",
+       "entity": null,
+       "issuer": "DOMINOS PIZZA INC",
+       "chg": 0.123,
+       "before": 0.48,
+       "after": 0.51,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?G0403H108",
+       "entity": null,
+       "issuer": "AON PLC",
+       "chg": -0.121,
+       "before": 0.55,
+       "after": 0.46,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?530909308",
+       "entity": null,
+       "issuer": "LIBERTY LIVE HOLDINGS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.33,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?73278L105",
+       "entity": null,
+       "issuer": "POOL CORP",
+       "chg": -0.113,
+       "before": 0.4,
+       "after": 0.26,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "AMZN",
+       "entity": "AMZN",
+       "issuer": "AMAZON COM INC",
+       "chg": -0.772,
+       "before": 0.82,
+       "after": 0.19,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?530909100",
+       "entity": null,
+       "issuer": "LIBERTY LIVE HOLDINGS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.15,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?650111107",
+       "entity": null,
+       "issuer": "NEW YORK TIMES CO",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.13,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?531229755",
+       "entity": null,
+       "issuer": "LIBERTY MEDIA CORP DEL",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.11,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?G9001E102",
+       "entity": null,
+       "issuer": "LIBERTY LATIN AMERICA LTD",
+       "chg": -0.089,
+       "before": 0.01,
+       "after": 0.01,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?047726302",
+       "entity": null,
+       "issuer": "ATLANTA BRAVES HLDGS INC",
+       "chg": -0.484,
+       "before": 0.0,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?531229722",
+       "entity": null,
+       "issuer": "LIBERTY MEDIA CORP DEL",
+       "chg": -1.0,
+       "before": 0.4,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?531229748",
+       "entity": null,
+       "issuer": "LIBERTY MEDIA CORP DEL",
+       "chg": -1.0,
+       "before": 0.18,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?531229854",
+       "entity": null,
+       "issuer": "LIBERTY MEDIA CORP DEL",
+       "chg": -1.0,
+       "before": 0.12,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-09-30",
+     "filing_date": "2025-11-14",
+     "n_positions": 41,
+     "total_value": 267334501955,
+     "unchanged": 31,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.149,
+       "before": 22.31,
+       "after": 22.69,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BANK AMER CORP",
+       "chg": -0.061,
+       "before": 11.12,
+       "after": 10.96,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "CB",
+       "entity": "CB",
+       "issuer": "CHUBB LIMITED",
+       "chg": 0.159,
+       "before": 3.04,
+       "after": 3.31,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.62,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "DVA",
+       "entity": "DVA",
+       "issuer": "DAVITA INC",
+       "chg": -0.048,
+       "before": 1.87,
+       "after": 1.6,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "SIRI",
+       "entity": "SIRI",
+       "issuer": "SIRIUS XM HOLDINGS INC",
+       "chg": 0.042,
+       "before": 1.07,
+       "after": 1.09,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "VRSN",
+       "entity": "VRSN",
+       "issuer": "VERISIGN INC",
+       "chg": -0.324,
+       "before": 1.49,
+       "after": 0.94,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?25754A201",
+       "entity": null,
+       "issuer": "DOMINOS PIZZA INC",
+       "chg": 0.132,
+       "before": 0.46,
+       "after": 0.48,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?670346105",
+       "entity": null,
+       "issuer": "NUCOR CORP",
+       "chg": -0.031,
+       "before": 0.33,
+       "after": 0.32,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "?512816109",
+       "entity": null,
+       "issuer": "LAMAR ADVERTISING CO NEW",
+       "chg": 0.028,
+       "before": 0.06,
+       "after": 0.06,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?23331A109",
+       "entity": null,
+       "issuer": "D R HORTON INC",
+       "chg": -1.0,
+       "before": 0.07,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    }
+   ]
   },
   "Duan": {
    "quarter": "2026-09-30",
@@ -922,6 +1799,733 @@
      "entity": null,
      "weight": 0.0
     }
+   ],
+   "history": [
+    {
+     "quarter": "2026-09-30",
+     "filing_date": "2026-11-16",
+     "n_positions": 16,
+     "total_value": 17190742843,
+     "unchanged": 7,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.218,
+       "before": 41.05,
+       "after": 41.07,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "BRK-B",
+       "entity": "BRK-B",
+       "issuer": "BERKSHIRE HATHAWAY INC DEL",
+       "chg": -0.095,
+       "before": 24.18,
+       "after": 24.21,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": 0.119,
+       "before": 9.99,
+       "after": 12.69,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "TSLA",
+       "entity": "TSLA",
+       "issuer": "TESLA INC",
+       "chg": 0.207,
+       "before": 7.44,
+       "after": 8.42,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "NVDA",
+       "entity": "NVDA",
+       "issuer": "NVIDIA CORPORATION",
+       "chg": -0.631,
+       "before": 6.58,
+       "after": 3.08,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": -0.415,
+       "before": 3.64,
+       "after": 2.28,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": -0.08,
+       "before": 1.47,
+       "after": 2.07,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CRDO",
+       "entity": "CRDO",
+       "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+       "chg": -0.142,
+       "before": 1.0,
+       "after": 0.68,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?84615Q103",
+       "entity": null,
+       "issuer": "SPACE EXPLORATION TECHN CORP",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.18,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "BABA",
+       "entity": "BABA",
+       "issuer": "ALIBABA GROUP HLDG LTD",
+       "chg": -1.0,
+       "before": 0.15,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?172573107",
+       "entity": null,
+       "issuer": "CIRCLE INTERNET GROUP INC",
+       "chg": -1.0,
+       "before": 0.07,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?457642205",
+       "entity": null,
+       "issuer": "INNODATA INC",
+       "chg": -1.0,
+       "before": 0.0,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-06-30",
+     "filing_date": "2026-08-14",
+     "n_positions": 18,
+     "total_value": 19100584155,
+     "unchanged": 7,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.064,
+       "before": 36.72,
+       "after": 41.05,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "BRK-B",
+       "entity": "BRK-B",
+       "issuer": "BERKSHIRE HATHAWAY INC DEL",
+       "chg": 0.009,
+       "before": 21.91,
+       "after": 24.18,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": 0.267,
+       "before": 10.09,
+       "after": 9.99,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "TSLA",
+       "entity": "TSLA",
+       "issuer": "TESLA INC",
+       "chg": -0.008,
+       "before": 6.34,
+       "after": 7.44,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "NVDA",
+       "entity": "NVDA",
+       "issuer": "NVIDIA CORPORATION",
+       "chg": -0.546,
+       "before": 12.07,
+       "after": 6.58,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": -0.469,
+       "before": 5.31,
+       "after": 3.64,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": -0.258,
+       "before": 1.88,
+       "after": 1.47,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CRDO",
+       "entity": "CRDO",
+       "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+       "chg": -0.067,
+       "before": 0.35,
+       "after": 1.0,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "UNH",
+       "entity": "UNH",
+       "issuer": "UNITEDHEALTH GROUP INC",
+       "chg": -0.336,
+       "before": 0.81,
+       "after": 0.87,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "DIS",
+       "entity": "DIS",
+       "issuer": "DISNEY WALT CO",
+       "chg": 0.129,
+       "before": 0.73,
+       "after": 0.86,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "BABA",
+       "entity": "BABA",
+       "issuer": "ALIBABA GROUP HLDG LTD",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.15,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "TSM",
+       "entity": "TSM",
+       "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+       "chg": -1.0,
+       "before": 0.26,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?22788C105",
+       "entity": null,
+       "issuer": "CROWDSTRIKE HLDGS INC",
+       "chg": -1.0,
+       "before": 0.02,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-03-31",
+     "filing_date": "2026-05-19",
+     "n_positions": 19,
+     "total_value": 20003996234,
+     "unchanged": 0,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.105,
+       "before": 50.3,
+       "after": 36.72,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "BRK-B",
+       "entity": "BRK-B",
+       "issuer": "BERKSHIRE HATHAWAY INC DEL",
+       "chg": 0.275,
+       "before": 20.63,
+       "after": 21.91,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "NVDA",
+       "entity": "NVDA",
+       "issuer": "NVIDIA CORPORATION",
+       "chg": 0.913,
+       "before": 7.72,
+       "after": 12.07,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": 0.712,
+       "before": 7.48,
+       "after": 10.09,
+       "signal": true
+      },
+      {
+       "kind": "new",
+       "key": "TSLA",
+       "entity": "TSLA",
+       "issuer": "TESLA INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 6.34,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": 0.997,
+       "before": 3.33,
+       "after": 5.31,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "OXY",
+       "entity": "OXY",
+       "issuer": "OCCIDENTAL PETE CORP",
+       "chg": -0.221,
+       "before": 3.1,
+       "after": 3.33,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": 0.183,
+       "before": 2.38,
+       "after": 1.88,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "UNH",
+       "entity": "UNH",
+       "issuer": "UNITEDHEALTH GROUP INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.81,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "DIS",
+       "entity": "DIS",
+       "issuer": "DISNEY WALT CO",
+       "chg": 1.123,
+       "before": 0.46,
+       "after": 0.73,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "CRDO",
+       "entity": "CRDO",
+       "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+       "chg": 4.316,
+       "before": 0.12,
+       "after": 0.35,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "TSM",
+       "entity": "TSM",
+       "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+       "chg": -0.877,
+       "before": 2.13,
+       "after": 0.26,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?172573107",
+       "entity": null,
+       "issuer": "CIRCLE INTERNET GROUP INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.1,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?69608A108",
+       "entity": null,
+       "issuer": "PALANTIR TECHNOLOGIES INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.04,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?871607107",
+       "entity": null,
+       "issuer": "SYNOPSYS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.02,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?22788C105",
+       "entity": null,
+       "issuer": "CROWDSTRIKE HLDGS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.02,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "SNOW",
+       "entity": "SNOW",
+       "issuer": "SNOWFLAKE INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.01,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "?88023B103",
+       "entity": null,
+       "issuer": "TEMPUS AI INC",
+       "chg": -0.818,
+       "before": 0.04,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?457642205",
+       "entity": null,
+       "issuer": "INNODATA INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "BABA",
+       "entity": "BABA",
+       "issuer": "ALIBABA GROUP HLDG LTD",
+       "chg": -1.0,
+       "before": 2.15,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?21873S108",
+       "entity": null,
+       "issuer": "COREWEAVE INC",
+       "chg": -1.0,
+       "before": 0.12,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "ASML",
+       "entity": "ASML",
+       "issuer": "ASML HOLDING N V",
+       "chg": -1.0,
+       "before": 0.06,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-12-31",
+     "filing_date": "2026-02-17",
+     "n_positions": 14,
+     "total_value": 17488569921,
+     "unchanged": 0,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.071,
+       "before": 60.42,
+       "after": 50.3,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "BRK-B",
+       "entity": "BRK-B",
+       "issuer": "BERKSHIRE HATHAWAY INC DEL",
+       "chg": 0.382,
+       "before": 17.78,
+       "after": 20.63,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "NVDA",
+       "entity": "NVDA",
+       "issuer": "NVIDIA CORPORATION",
+       "chg": 11.106,
+       "before": 0.76,
+       "after": 7.72,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": 0.346,
+       "before": 7.72,
+       "after": 7.48,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": 0.025,
+       "before": 3.0,
+       "after": 3.33,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "OXY",
+       "entity": "OXY",
+       "issuer": "OCCIDENTAL PETE CORP",
+       "chg": -0.028,
+       "before": 4.36,
+       "after": 3.1,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": 2.077,
+       "before": 0.99,
+       "after": 2.38,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "BABA",
+       "entity": "BABA",
+       "issuer": "ALIBABA GROUP HLDG LTD",
+       "chg": -0.078,
+       "before": 3.38,
+       "after": 2.15,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "TSM",
+       "entity": "TSM",
+       "issuer": "TAIWAN SEMICONDUCTOR MFG LTD",
+       "chg": 3.709,
+       "before": 0.49,
+       "after": 2.13,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "DIS",
+       "entity": "DIS",
+       "issuer": "DISNEY WALT CO",
+       "chg": -0.015,
+       "before": 0.56,
+       "after": 0.46,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?21873S108",
+       "entity": null,
+       "issuer": "COREWEAVE INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.12,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "CRDO",
+       "entity": "CRDO",
+       "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.12,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "ASML",
+       "entity": "ASML",
+       "issuer": "ASML HOLDING N V",
+       "chg": -0.876,
+       "before": 0.53,
+       "after": 0.06,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?88023B103",
+       "entity": null,
+       "issuer": "TEMPUS AI INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.04,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-09-30",
+     "filing_date": "2025-11-14",
+     "n_positions": 11,
+     "total_value": 14678516884,
+     "unchanged": 4,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "AAPL",
+       "entity": "AAPL",
+       "issuer": "APPLE INC",
+       "chg": -0.008,
+       "before": 62.47,
+       "after": 60.42,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "BRK-B",
+       "entity": "BRK-B",
+       "issuer": "BERKSHIRE HATHAWAY INC DEL",
+       "chg": 0.535,
+       "before": 14.24,
+       "after": 17.78,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": -0.01,
+       "before": 7.86,
+       "after": 7.72,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "BABA",
+       "entity": "BABA",
+       "issuer": "ALIBABA GROUP HLDG LTD",
+       "chg": -0.259,
+       "before": 3.68,
+       "after": 3.38,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": -0.069,
+       "before": 2.99,
+       "after": 3.0,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "NVDA",
+       "entity": "NVDA",
+       "issuer": "NVIDIA CORPORATION",
+       "chg": -0.38,
+       "before": 1.32,
+       "after": 0.76,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "ASML",
+       "entity": "ASML",
+       "issuer": "ASML HOLDING N V",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.53,
+       "signal": false
+      }
+     ]
+    }
    ]
   },
   "LiLu": {
@@ -981,7 +2585,243 @@
      "chg": 0.0
     }
    ],
-   "exits": []
+   "exits": [],
+   "history": [
+    {
+     "quarter": "2026-09-30",
+     "filing_date": "2026-11-16",
+     "n_positions": 7,
+     "total_value": 3781431260,
+     "unchanged": 5,
+     "rows": [
+      {
+       "kind": "add",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": 0.093,
+       "before": 22.17,
+       "after": 24.24,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "TME",
+       "entity": "TME",
+       "issuer": "TENCENT MUSIC ENTERTAINM",
+       "chg": 1.249,
+       "before": 1.49,
+       "after": 3.11,
+       "signal": true
+      }
+     ]
+    },
+    {
+     "quarter": "2026-06-30",
+     "filing_date": "2026-08-14",
+     "n_positions": 7,
+     "total_value": 3702921099,
+     "unchanged": 5,
+     "rows": [
+      {
+       "kind": "add",
+       "key": "PDD",
+       "entity": "PDD",
+       "issuer": "PDD HOLDINGS INC",
+       "chg": 1.335,
+       "before": 14.71,
+       "after": 22.17,
+       "signal": true
+      },
+      {
+       "kind": "add",
+       "key": "BRK-B",
+       "entity": "BRK-B",
+       "issuer": "BERKSHIRE HATHAWAY INC DEL",
+       "chg": 0.235,
+       "before": 13.44,
+       "after": 14.98,
+       "signal": true
+      },
+      {
+       "kind": "exit",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BK OF AMERICA CORP",
+       "chg": -1.0,
+       "before": 4.57,
+       "after": 0.0,
+       "signal": true
+      },
+      {
+       "kind": "exit",
+       "key": "OXY",
+       "entity": "OXY",
+       "issuer": "OCCIDENTAL PETE CORP",
+       "chg": -1.0,
+       "before": 2.98,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "SPGI",
+       "entity": "SPGI",
+       "issuer": "S&P GLOBAL INC",
+       "chg": -1.0,
+       "before": 1.61,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "HRB",
+       "entity": "HRB",
+       "issuer": "BLOCK H & R INC",
+       "chg": -1.0,
+       "before": 1.61,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "MCO",
+       "entity": "MCO",
+       "issuer": "MOODYS CORP",
+       "chg": -1.0,
+       "before": 1.61,
+       "after": 0.0,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "?55354G100",
+       "entity": null,
+       "issuer": "MSCI INC",
+       "chg": -1.0,
+       "before": 0.32,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-03-31",
+     "filing_date": "2026-05-15",
+     "n_positions": 13,
+     "total_value": 3201226867,
+     "unchanged": 6,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "BAC",
+       "entity": "BAC",
+       "issuer": "BK OF AMERICA CORP",
+       "chg": -0.713,
+       "before": 16.08,
+       "after": 4.57,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "CROX",
+       "entity": "CROX",
+       "issuer": "CROCS INC",
+       "chg": 0.412,
+       "before": 1.51,
+       "after": 2.3,
+       "signal": true
+      },
+      {
+       "kind": "new",
+       "key": "TME",
+       "entity": "TME",
+       "issuer": "TENCENT MUSIC ENTMT GROUP",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.91,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "SPGI",
+       "entity": "SPGI",
+       "issuer": "S&P GLOBAL INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.61,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "HRB",
+       "entity": "HRB",
+       "issuer": "BLOCK H & R INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.61,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "MCO",
+       "entity": "MCO",
+       "issuer": "MOODYS CORP",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.61,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?55354G100",
+       "entity": null,
+       "issuer": "MSCI INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.32,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-12-31",
+     "filing_date": "2026-02-17",
+     "n_positions": 8,
+     "total_value": 3568876223,
+     "unchanged": 7,
+     "rows": [
+      {
+       "kind": "new",
+       "key": "CROX",
+       "entity": "CROX",
+       "issuer": "CROCS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.51,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "SOC",
+       "entity": "SOC",
+       "issuer": "SABLE OFFSHORE CORP",
+       "chg": -1.0,
+       "before": 0.73,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-09-30",
+     "filing_date": "2025-11-12",
+     "n_positions": 8,
+     "total_value": 3230264839,
+     "unchanged": 8,
+     "rows": []
+    }
+   ]
   },
   "Hohn": {
    "quarter": "2026-09-30",
@@ -1068,7 +2908,354 @@
      "chg": "new"
     }
    ],
-   "exits": []
+   "exits": [],
+   "history": [
+    {
+     "quarter": "2026-09-30",
+     "filing_date": "2026-11-16",
+     "n_positions": 11,
+     "total_value": 49583884496,
+     "unchanged": 6,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "SPGI",
+       "entity": "SPGI",
+       "issuer": "S&P GLOBAL INC",
+       "chg": -0.054,
+       "before": 10.87,
+       "after": 11.2,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CP",
+       "entity": "CP",
+       "issuer": "CANADIAN PACIFIC KANSAS CITY",
+       "chg": -0.019,
+       "before": 7.44,
+       "after": 7.64,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "MLM",
+       "entity": "MLM",
+       "issuer": "MARTIN MARIETTA MATLS INC",
+       "chg": 0.369,
+       "before": 1.44,
+       "after": 1.74,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "VMC",
+       "entity": "VMC",
+       "issuer": "VULCAN MATLS CO",
+       "chg": 0.135,
+       "before": 1.37,
+       "after": 1.37,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "?60744M106",
+       "entity": null,
+       "issuer": "MOBILITY GLOBAL INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 0.02,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-06-30",
+     "filing_date": "2026-08-14",
+     "n_positions": 10,
+     "total_value": 52769884406,
+     "unchanged": 4,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "CP",
+       "entity": "CP",
+       "issuer": "CANADIAN PACIFIC KANSAS CITY",
+       "chg": -0.026,
+       "before": 8.1,
+       "after": 7.44,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": 0.096,
+       "before": 7.19,
+       "after": 8.32,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "FER",
+       "entity": "FER",
+       "issuer": "FERROVIAL NV",
+       "chg": 0.01,
+       "before": 2.94,
+       "after": 2.72,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CNI",
+       "entity": "CNI",
+       "issuer": "CANADIAN NATL RY CO",
+       "chg": -0.042,
+       "before": 2.24,
+       "after": 2.13,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "MLM",
+       "entity": "MLM",
+       "issuer": "MARTIN MARIETTA MATLS INC",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.44,
+       "signal": false
+      },
+      {
+       "kind": "new",
+       "key": "VMC",
+       "entity": "VMC",
+       "issuer": "VULCAN MATLS CO",
+       "chg": null,
+       "before": 0.0,
+       "after": 1.37,
+       "signal": false
+      },
+      {
+       "kind": "exit",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": -1.0,
+       "before": 2.24,
+       "after": 0.0,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2026-03-31",
+     "filing_date": "2026-05-15",
+     "n_positions": 9,
+     "total_value": 45170870798,
+     "unchanged": 3,
+     "rows": [
+      {
+       "kind": "add",
+       "key": "V",
+       "entity": "V",
+       "issuer": "VISA INC",
+       "chg": 0.099,
+       "before": 18.12,
+       "after": 20.39,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "MCO",
+       "entity": "MCO",
+       "issuer": "MOODYS CORP",
+       "chg": 0.077,
+       "before": 12.67,
+       "after": 13.84,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "SPGI",
+       "entity": "SPGI",
+       "issuer": "S&P GLOBAL INC",
+       "chg": 0.19,
+       "before": 11.48,
+       "after": 13.22,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CP",
+       "entity": "CP",
+       "issuer": "CANADIAN PACIFIC KANSAS CITY",
+       "chg": -0.024,
+       "before": 6.54,
+       "after": 8.1,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": 0.489,
+       "before": 4.44,
+       "after": 7.19,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": -0.837,
+       "before": 15.13,
+       "after": 2.24,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-12-31",
+     "filing_date": "2026-02-17",
+     "n_positions": 9,
+     "total_value": 53648816254,
+     "unchanged": 3,
+     "rows": [
+      {
+       "kind": "trim",
+       "key": "V",
+       "entity": "V",
+       "issuer": "VISA INC",
+       "chg": -0.012,
+       "before": 18.18,
+       "after": 18.12,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": 0.011,
+       "before": 16.31,
+       "after": 15.13,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "SPGI",
+       "entity": "SPGI",
+       "issuer": "S&P GLOBAL INC",
+       "chg": 0.054,
+       "before": 10.33,
+       "after": 11.48,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CP",
+       "entity": "CP",
+       "issuer": "CANADIAN PACIFIC KANSAS CITY",
+       "chg": -0.044,
+       "before": 7.05,
+       "after": 6.54,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "FER",
+       "entity": "FER",
+       "issuer": "FERROVIAL SE",
+       "chg": 0.065,
+       "before": 2.11,
+       "after": 2.51,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CNI",
+       "entity": "CNI",
+       "issuer": "CANADIAN NATL RY CO",
+       "chg": -0.475,
+       "before": 3.36,
+       "after": 1.82,
+       "signal": false
+      }
+     ]
+    },
+    {
+     "quarter": "2025-09-30",
+     "filing_date": "2025-11-14",
+     "n_positions": 9,
+     "total_value": 52699548226,
+     "unchanged": 3,
+     "rows": [
+      {
+       "kind": "add",
+       "key": "V",
+       "entity": "V",
+       "issuer": "VISA INC",
+       "chg": 0.471,
+       "before": 13.35,
+       "after": 18.18,
+       "signal": true
+      },
+      {
+       "kind": "trim",
+       "key": "MSFT",
+       "entity": "MSFT",
+       "issuer": "MICROSOFT CORP",
+       "chg": -0.055,
+       "before": 17.23,
+       "after": 16.31,
+       "signal": false
+      },
+      {
+       "kind": "add",
+       "key": "SPGI",
+       "entity": "SPGI",
+       "issuer": "S&P GLOBAL INC",
+       "chg": 0.009,
+       "before": 11.53,
+       "after": 10.33,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CP",
+       "entity": "CP",
+       "issuer": "CANADIAN PACIFIC KANSAS CITY",
+       "chg": -0.056,
+       "before": 8.26,
+       "after": 7.05,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "GOOGL",
+       "entity": "GOOGL",
+       "issuer": "ALPHABET INC",
+       "chg": -0.529,
+       "before": 5.63,
+       "after": 3.51,
+       "signal": false
+      },
+      {
+       "kind": "trim",
+       "key": "CNI",
+       "entity": "CNI",
+       "issuer": "CANADIAN NATL RY CO",
+       "chg": -0.184,
+       "before": 4.72,
+       "after": 3.36,
+       "signal": false
+      }
+     ]
+    }
+   ]
   }
  }
 }

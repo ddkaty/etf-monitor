@@ -93,6 +93,9 @@ tr:last-child td{border-bottom:none}
 .fast .row:first-child{border-top:none;margin-top:0;padding-top:0}
 .wide table{min-width:520px}.wide td:first-child{min-width:9.5em}
 .def{font-size:14px;color:var(--muted);margin-top:2px}
+.sig{font-size:11px;font-weight:700;padding:1px 6px;border-radius:999px;background:var(--accent);color:#fff;white-space:nowrap}
+@media (prefers-color-scheme:dark){.sig{color:#0f1318}}
+.qnav{margin:8px 0 0}
 ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 """
@@ -124,6 +127,7 @@ def page(title, active, body, payload):
     nav = "".join(f'<a href="{href}"{" class=on" if key == active else ""}>{label}</a>'
                   for key, label, href in (("memo", "行动备忘录", "index.html"),
                                            ("investors", "四位持仓", "investors.html"),
+                                           ("changes", "历次变动", "changes.html"),
                                            ("evidence", "规则与依据", "evidence.html")))
     stale = "(行情更新失败,价格为上次数据)" if payload.get("prices_stale") else ""
     return f"""<!DOCTYPE html>
@@ -238,6 +242,51 @@ def render_investors(payload):
     return page("四位持仓", "investors", body, payload)
 
 
+def render_changes(payload):
+    """最近 5 期 13F 的逐只变动,按季度切换"""
+    inv = payload["investors"]
+    quarters = sorted({h["quarter"] for v in inv.values() for h in v.get("history", [])}, reverse=True)[:5]
+    order = {"new": 0, "add": 1, "trim": 2, "exit": 3}
+    label = {"new": ("新建仓", "up"), "add": ("加仓", "up"), "trim": ("减仓", "down"), "exit": ("清仓", "down")}
+    chips = "".join(f'<a href="#q{q}" data-q="{q}"{" class=on" if i == 0 else ""}>{quarter_name(q)}</a>'
+                    for i, q in enumerate(quarters))
+    body = (f'<div class="hint" style="margin-top:14px">选择季度,查看当期 13F 相对上一期的全部变动。'
+            f'带"信号"标记的是符合跟随规则的动作,其余仅供参考。</div><nav class="qnav">{chips}</nav>')
+    for i, q in enumerate(quarters):
+        sec = ""
+        for key, v in inv.items():
+            h = next((x for x in v.get("history", []) if x["quarter"] == q), None)
+            info = INVESTORS[key]
+            head = f'<h3>{escape(info["cn"])} <span class="muted" style="font-weight:400;font-size:13px">{escape(info["fund"])}</span></h3>'
+            if not h:
+                sec += f'<div class="card">{head}<div class="empty">本期没有 13F 数据</div></div>'
+                continue
+            rows = ""
+            for r in sorted(h["rows"], key=lambda r: (order[r["kind"]], -max(r["before"], r["after"]))):
+                name, cls = label[r["kind"]]
+                amount = "" if r["kind"] in ("new", "exit") else f' {abs(r["chg"]) * 100:.0f}%'
+                weight = (f'{r["after"]:.1f}%' if r["kind"] == "new" else f'原 {r["before"]:.1f}%' if r["kind"] == "exit"
+                          else f'{r["before"]:.1f}% → {r["after"]:.1f}%')
+                mark = ' <span class="sig">信号</span>' if r["signal"] else ""
+                rows += (f'<tr><td>{escape(name_of(r["entity"], r["issuer"]))}{mark}</td>'
+                         f'<td class="num"><span class="{cls}">{name}{amount}</span></td><td class="num">{weight}</td></tr>')
+            meta = (f'{h["filing_date"]} 披露 · {h["n_positions"]} 只持仓 · 合计 {money(h["total_value"])} · '
+                    f'{len(h["rows"])} 只有变动,{h["unchanged"]} 只未变')
+            table = (f'<div class="scroll"><table><tr><th>标的</th><th class="num">股数变动</th><th class="num">权重</th></tr>{rows}</table></div>'
+                     if rows else '<div class="empty">本期持仓没有任何变动</div>')
+            sec += f'<div class="card">{head}<div class="hint" style="margin:2px 0 6px">{meta}</div>{table}</div>'
+        body += f'<section class="quarter" id="q{q}" data-q="{q}"{"" if i == 0 else " hidden"}><h2>{quarter_name(q)}</h2>{sec}</section>'
+    body += """<script>
+(function(){
+  var chips=document.querySelectorAll('.qnav a'),secs=document.querySelectorAll('section.quarter');
+  function show(q){secs.forEach(function(s){s.hidden=s.dataset.q!==q});chips.forEach(function(c){c.classList.toggle('on',c.dataset.q===q)});}
+  chips.forEach(function(c){c.addEventListener('click',function(e){e.preventDefault();show(c.dataset.q);history.replaceState(null,'','#q'+c.dataset.q);});});
+  var h=location.hash.replace('#q','');if(h&&document.getElementById('q'+h))show(h);
+})();
+</script>"""
+    return page("历次变动", "changes", body, payload)
+
+
 def render_evidence(payload):
     path = os.path.join(HERE, "backtest", "results.json")
     r = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else None
@@ -294,7 +343,8 @@ def build(payload, memo, fast_log):
         if os.path.exists(p):
             os.remove(p)
     out = {os.path.join("assets", "style.css"): CSS, "index.html": render_memo(payload, memo, fast_log),
-           "investors.html": render_investors(payload), "evidence.html": render_evidence(payload)}
+           "investors.html": render_investors(payload), "changes.html": render_changes(payload),
+           "evidence.html": render_evidence(payload)}
     for name, content in out.items():
         with open(os.path.join(DOCS, name), "w", encoding="utf-8") as fh:
             fh.write(content)

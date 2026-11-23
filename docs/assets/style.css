@@ -39,5 +39,8 @@ tr:last-child td{border-bottom:none}
 .fast .row:first-child{border-top:none;margin-top:0;padding-top:0}
 .wide table{min-width:520px}.wide td:first-child{min-width:9.5em}
 .def{font-size:14px;color:var(--muted);margin-top:2px}
+.sig{font-size:11px;font-weight:700;padding:1px 6px;border-radius:999px;background:var(--accent);color:#fff;white-space:nowrap}
+@media (prefers-color-scheme:dark){.sig{color:#0f1318}}
+.qnav{margin:8px 0 0}
 ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
