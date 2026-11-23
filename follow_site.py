@@ -114,6 +114,12 @@ tr:last-child td{border-bottom:none}
 .tip{position:absolute;top:8px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12px;
 line-height:1.6;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap}
 @media (max-width:520px){.plot .tick{font-size:16px}.plot .endlabel{display:none}}
+.plan{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--soft)}
+.plan-h{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:6px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px 12px}
+.pl{font-size:11px;color:var(--muted)}.pv{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.ps{font-size:11px;color:var(--muted);line-height:1.4}
+.plan .perf{font-size:12px;margin-top:8px}.plan .perf.warn{color:var(--warn)}.plan .perf.down{color:var(--bad)}
 ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 """
@@ -133,6 +139,7 @@ GLOSSARY = [
     ("有效 / 大师已减仓 / 分歧", "信号发出后 12 个月内为有效。发出信号的投资者随后自己减仓 20% 以上或清仓,标为大师已减仓;回测显示这不足以构成卖出理由,所以只作提醒。另一位跟踪对象在同期或之后减仓 20% 以上,则标为有分歧。"),
     ("模拟组合", "按固定规则自动记账的纸面组合,用来检验这套信号在实际中是否有效。每条买入信号投入组合的 10%,持有 12 个月或触发止损后卖出,闲置资金放在标普 500。不是真实交易,不计成本和税。"),
     ("止损", "模拟组合中,某笔持仓的收盘价跌破买入价 25% 时卖出。回测显示这能把单笔最大亏损从约 68% 收窄到约 33%,平均收益基本不变。"),
+    ("交易计划", "备忘录每张卡片下方的一组数字,按模拟组合的规则机械算出:参考入场价是最近一条有效信号披露后首个交易日的收盘价;规则仓位是每条有效信号 10%、单只不超过 20%;止损价是参考价的 75%;到期日是参考入场日之后 12 个月。它描述的是规则会怎么做,不是针对个人的建议。"),
     ("补算与实盘", "补算是用历史数据倒推规则上线之前的表现,规则是看过结果后才定的,容易偏乐观。实盘是规则确定之后逐日累积的记录,更可信。"),
     ("信号回测", "用历史数据检验规则:找出过去每一次符合条件的情况,假设在披露后第一个交易日买入,看之后 12 个月相对标普 500 的表现,再把所有情况汇总。它只说明过去怎样,不保证将来。"),
     ("样本数", "回测区间内这种情况一共出现了多少次。次数越少,结论越不可靠。"),
@@ -177,6 +184,8 @@ def signal_row(s):
     extra = ""
     if s["status"] == "invalid":
         extra = f' <span class="warn">· 大师已减仓({escape(s["status_note"] or "")})</span>'
+    elif s.get("stop_date") and s["kind"] != "EXIT":
+        extra = f' <span class="down">· {s["stop_date"]} 触发止损</span>'
     elif s["status"] == "expired":
         extra = ' <span class="muted">· 已过 12 个月</span>'
     return (f'<div class="row"><span class="who">{escape(INVESTORS[s["investor"]]["cn"])}</span> '
@@ -184,6 +193,37 @@ def signal_row(s):
             f'<div class="perf{cls}">{perf_text(s)}'
             f'{" · 参考价 $" + format(s["entry_px"], ",.2f") + " → $" + format(s["last_px"], ",.2f") if s.get("entry_px") else ""}'
             f'</div></div>')
+
+
+def plan_block(p):
+    """交易计划:参考价、仓位、出场条件、关键日期"""
+    if p["pending"]:
+        return ('<div class="plan"><div class="plan-h">交易计划</div>'
+                '<div class="perf">参考价要等披露后第一个交易日收盘才能确定。</div></div>')
+    items = [("参考入场价", f'${p["ref_px"]:,.2f}',
+              f'{escape(INVESTORS[p["ref_investor"]]["cn"])} {p["ref_quarter"]} 信号,{p["ref_date"]} 收盘'),
+             ("现价", f'${p["last_px"]:,.2f}', f'比参考价 {pct(p["vs_ref"])}')]
+    if p.get("q_avg"):
+        items.append(("大师估算成本", f'${p["q_avg"]:,.2f}', f'当季区间 ${p["q_low"]:,.2f}–${p["q_high"]:,.2f}'))
+    paper = f'模拟组合现持有 {p["paper_weight"] * 100:.1f}%' if p.get("paper_weight") else "模拟组合未持有"
+    stopped = f'(另有 {p["n_stopped"]} 条已止损)' if p.get("n_stopped") else ""
+    items.append(("规则仓位", f'{p["size"] * 100:.0f}%', f'{p["n_signals"]} 条有效信号{stopped} · {paper}'))
+    if p["stopped"]:
+        items.append(("止损价", f'${p["stop_px"]:,.2f}', f'<span class="down">{p["stop_date"]} 已跌破</span>'))
+    else:
+        items.append(("止损价", f'${p["stop_px"]:,.2f}', f'距现价 {pct(p["to_stop"])}'))
+    items.append(("到期日", p["expiry"], f'还有 {p["days_left"]} 天' if p["days_left"] >= 0 else "已到期"))
+    items.append(("下次财报", p["earnings"] or "尚未公布", ""))
+    items.append(("下次 13F 截止", p["next_13f"], "届时复查大师是否继续持有"))
+    cells = "".join(f'<div class="pi"><div class="pl">{a}</div><div class="pv">{b}</div><div class="ps">{c}</div></div>'
+                    for a, b, c in items)
+    note = ""
+    if p["stopped"]:
+        note = '<div class="perf down">按规则这笔信号已在入场后触发止损,不再属于可入场状态。</div>'
+    elif p["late"]:
+        note = (f'<div class="perf warn">信号已发出 {p["age_days"]} 天。回测中超额收益主要出现在前 6 个月,'
+                '现在入场的预期优势已经减弱。</div>')
+    return f'<div class="plan"><div class="plan-h">交易计划</div><div class="pgrid">{cells}</div>{note}</div>'
 
 
 def group_card(g, show="buys"):
@@ -195,8 +235,9 @@ def group_card(g, show="buys"):
         txt = ";".join(f'{INVESTORS[d["investor"]]["cn"]} {d["quarter"]} {d["action"]}'
                        for d in sorted(g["divergence"], key=lambda d: d["quarter"]))
         note = f'<div class="note"><span class="warn">反向操作:</span>{escape(txt)}</div>'
+    plan = plan_block(g["plan"]) if show == "buys" and g.get("plan") else ""
     return (f'<div class="card"><h3>{escape(name_of(g["entity"], g["issuer"]))} {who}</h3>'
-            f'{"".join(signal_row(s) for s in rows)}{note}</div>')
+            f'{"".join(signal_row(s) for s in rows)}{note}{plan}</div>')
 
 
 def section(title, hint, groups, show="buys", empty="暂无"):
@@ -237,6 +278,14 @@ def render_memo(payload, memo, fast_log, portfolio=None):
     if portfolio:
         new += f'<div class="hint" style="margin-top:10px">{portfolio_line(portfolio)} <a href="portfolio.html">查看模拟组合</a></div>'
     body = new + '<div class="hint" style="margin-top:10px">加仓幅度、权重、参考价等用词的含义见 <a href="evidence.html#glossary">名词解释</a>。</div>'
+    ps = memo.get("plan_summary")
+    if ps and ps["n"]:
+        pp = ps["params"]
+        body += (f'<div class="hint" style="margin-top:10px">每张卡片下方的交易计划按模拟组合的同一套规则计算:'
+                 f'每条信号 {pp["per_signal"] * 100:.0f}%、单只上限 {pp["per_stock_cap"] * 100:.0f}%、'
+                 f'跌破参考价 {pp["stop_loss"] * 100:.0f}% 止损、持有 12 个月。'
+                 f'目前 {ps["n"]} 只股票的规则仓位合计 {ps["total_size"] * 100:.0f}%。'
+                 f'这是规则的机械输出,仓位比例请按自己的情况调整。</div>')
     body += section("优先研究", "有效的买入类信号,且没有其他跟踪对象反向操作。按跟进人数和时间排序。",
                     memo["priority"], empty="目前没有")
     body += section("有分歧", "有人买入,同时另一位跟踪对象在减仓或清仓。需要自己弄清原因。",
@@ -545,6 +594,12 @@ def email_html(payload, memo, fast_log, new_13f=None, new_fast=None, portfolio=N
                     continue
                 out += (f'<p style="margin:0 0 4px 14px;font-size:13px;line-height:1.6;color:#475467">'
                         f'{escape(INVESTORS[s["investor"]]["cn"])} {s["quarter_name"]} {action_text(s)} · {perf_text(s)}</p>')
+            p = g.get("plan") if show == "buys" else None
+            if p and not p["pending"]:
+                state = "已触发止损" if p["stopped"] else f'止损 ${p["stop_px"]:,.2f}'
+                out += (f'<p style="margin:0 0 4px 14px;font-size:13px;line-height:1.6;color:#0e7490">'
+                        f'计划:参考价 ${p["ref_px"]:,.2f} · 现价 ${p["last_px"]:,.2f} · {state} · '
+                        f'到期 {p["expiry"]} · 规则仓位 {p["size"] * 100:.0f}%</p>')
             if show == "buys" and g.get("divergence"):
                 txt = ";".join(f'{INVESTORS[d["investor"]]["cn"]} {d["quarter"]} {d["action"]}' for d in g["divergence"])
                 out += f'<p style="margin:0 0 8px 14px;font-size:13px;color:#b54708">反向操作:{escape(txt)}</p>'
