@@ -22,7 +22,7 @@ import json
 import time
 import urllib.request
 import urllib.error
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, timedelta, timezone
 from xml.etree import ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -528,6 +528,10 @@ def check_fast_filings(state, log=print):
 
 # ============ 主流程 ============
 
+def beijing_now():
+    return datetime.now(timezone(timedelta(hours=8)))
+
+
 def load_state():
     if os.path.exists(STATE_PATH):
         with open(STATE_PATH, encoding="utf-8") as fh:
@@ -542,7 +546,7 @@ def send_email(subject, html):
 
 def main():
     import follow_site
-    print(f"\n{'=' * 56}\n大师跟随系统 {datetime.now():%Y-%m-%d %H:%M}\n{'=' * 56}")
+    print(f"\n{'=' * 56}\n大师跟随系统 {beijing_now():%Y-%m-%d %H:%M} 北京时间\n{'=' * 56}")
     state = load_state()
 
     print("\n1) 检查 13F")
@@ -576,7 +580,7 @@ def main():
     signals = [s for s in signals if s["age_days"] <= 2 * RULES["active_days"]]
     memo = build_memo(signals, view)
     px_date = str(close.index[-1].date()) if close is not None else next((s["px_date"] for s in signals if s.get("px_date")), None)
-    payload = {"generated": datetime.now().isoformat(timespec="minutes"), "px_date": px_date,
+    payload = {"generated": beijing_now().strftime("%Y-%m-%d %H:%M"), "px_date": px_date,
                "prices_stale": close is None, "rules": RULES, "signals": signals, "investors": view}
     with open(SIGNALS_PATH, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=1)

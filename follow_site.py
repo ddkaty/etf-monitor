@@ -132,7 +132,7 @@ def page(title, active, body, payload):
 <title>{title} · 大师跟随</title><link rel="stylesheet" href="assets/style.css?v={CSS_VER}"></head>
 <body><div class="wrap">
 <header><div class="brand">大师跟随</div><h1>{title}</h1>
-<div class="sub">价格截至 {payload.get('px_date') or '—'}{stale} · 页面生成于 {payload['generated'].replace('T', ' ')}</div>
+<div class="sub">价格截至 {payload.get('px_date') or '—'}{stale} · 页面生成于 {payload['generated'].replace('T', ' ')} 北京时间</div>
 <nav>{nav}</nav></header>
 {body}
 <footer>数据来自 SEC EDGAR 与公开行情。13F 只披露美股多头持仓,且最晚在季度结束 45 天后公布。
