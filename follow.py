@@ -22,7 +22,7 @@ import json
 import time
 import urllib.request
 import urllib.error
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, timedelta, timezone
 from xml.etree import ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -290,7 +290,7 @@ def compute_signals(emap, close, splits, prev_signals=None):
     import pandas as pd
     today = date.today()
     prev_px = {(s["investor"], s["kind"], s["key"], s["quarter"]): s for s in (prev_signals or [])}
-    signals, changes, view = [], {}, {}
+    signals, changes, view, history = [], {}, {}, {}
 
     for key, info in INVESTORS.items():
         fs = load_filings(key)
@@ -304,6 +304,17 @@ def compute_signals(emap, close, splits, prev_signals=None):
             if (d1 - d0).days > 120:
                 continue
             ch = changes[key][b["report_date"]] = {}
+            rows = history.setdefault(key, {})[b["report_date"]] = {
+                "quarter": b["report_date"], "filing_date": b["filing_date"], "n_positions": len(pb),
+                "total_value": sum(p["value"] for p in pb.values()), "unchanged": 0, "rows": []}
+
+            def record(kind, k, p, chg, before, after):
+                signal = ((kind == "new" and after >= RULES["new_min_weight"])
+                          or (kind == "add" and chg >= RULES["add_min_chg"] and after >= RULES["add_min_weight"])
+                          or (kind == "exit" and before >= RULES["exit_min_weight"]))
+                rows["rows"].append({"kind": kind, "key": k, "entity": p["entity"], "issuer": p["issuer"],
+                                     "chg": None if chg is None else round(chg, 3),
+                                     "before": round(before, 2), "after": round(after, 2), "signal": signal})
 
             def emit(kind, k, p, chg=None):
                 signals.append({"investor": key, "kind": kind, "key": k, "entity": p["entity"],
@@ -314,17 +325,23 @@ def compute_signals(emap, close, splits, prev_signals=None):
             for k, p in pb.items():
                 if k not in pa:
                     ch[k] = None
+                    record("new", k, p, None, 0.0, p["weight"])
                     if p["weight"] >= RULES["new_min_weight"]:
                         emit("NEW", k, p)
                 else:
                     pu = pa[k]["units"] * (split_factor(splits, p["entity"], d0, d1) if p["entity"] else 1.0)
                     chg = p["units"] / pu - 1 if pu else 0.0
                     ch[k] = chg
+                    if abs(chg) < 0.005:
+                        rows["unchanged"] += 1
+                    else:
+                        record("add" if chg > 0 else "trim", k, p, chg, pa[k]["weight"], p["weight"])
                     if chg >= RULES["add_min_chg"] and p["weight"] >= RULES["add_min_weight"]:
                         emit("ADD", k, p, chg)
             for k, p in pa.items():
                 if k not in pb:
                     ch[k] = -1.0
+                    record("exit", k, p, -1.0, p["weight"], 0.0)
                     if p["weight"] >= RULES["exit_min_weight"]:
                         emit("EXIT", k, p)
 
@@ -343,6 +360,8 @@ def compute_signals(emap, close, splits, prev_signals=None):
             "exits": [{"key": k, "issuer": pos_list[-2][k]["issuer"], "entity": pos_list[-2][k]["entity"],
                        "weight": round(pos_list[-2][k]["weight"], 2)}
                       for k, c in lch.items() if c == -1.0 and len(pos_list) > 1],
+            # 最近 5 期 13F 的逐只变动
+            "history": [history[key][q] for q in sorted(history.get(key, {}), reverse=True)[:5]],
         }
 
     # 状态、分歧、价格
@@ -528,6 +547,10 @@ def check_fast_filings(state, log=print):
 
 # ============ 主流程 ============
 
+def beijing_now():
+    return datetime.now(timezone(timedelta(hours=8)))
+
+
 def load_state():
     if os.path.exists(STATE_PATH):
         with open(STATE_PATH, encoding="utf-8") as fh:
@@ -542,7 +565,7 @@ def send_email(subject, html):
 
 def main():
     import follow_site
-    print(f"\n{'=' * 56}\n大师跟随系统 {datetime.now():%Y-%m-%d %H:%M}\n{'=' * 56}")
+    print(f"\n{'=' * 56}\n大师跟随系统 {beijing_now():%Y-%m-%d %H:%M} 北京时间\n{'=' * 56}")
     state = load_state()
 
     print("\n1) 检查 13F")
@@ -576,7 +599,7 @@ def main():
     signals = [s for s in signals if s["age_days"] <= 2 * RULES["active_days"]]
     memo = build_memo(signals, view)
     px_date = str(close.index[-1].date()) if close is not None else next((s["px_date"] for s in signals if s.get("px_date")), None)
-    payload = {"generated": datetime.now().isoformat(timespec="minutes"), "px_date": px_date,
+    payload = {"generated": beijing_now().strftime("%Y-%m-%d %H:%M"), "px_date": px_date,
                "prices_stale": close is None, "rules": RULES, "signals": signals, "investors": view}
     with open(SIGNALS_PATH, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=1)
