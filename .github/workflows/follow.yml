@@ -2,8 +2,10 @@ name: 大师跟随
 
 on:
   schedule:
-    # 每个工作日美股收盘后运行(UTC 23:30)
+    # 每个工作日美股收盘后完整运行(UTC 23:30)
     - cron: '30 23 * * 1-5'
+    # 13F 披露高峰期(2/5/8/11 月 8–19 日)每小时快速检查,覆盖 SEC 收件时段(美东 6:00–22:00)
+    - cron: '15 11-23,0-3 8-19 2,5,8,11 *'
   workflow_dispatch:
 
 permissions:
@@ -31,7 +33,13 @@ jobs:
       - name: 检查披露、计算信号、重建看板、发邮件
         env:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-        run: python follow.py
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$SCHEDULE" = "15 11-23,0-3 8-19 2,5,8,11 *" ]; then
+            python follow.py --quick      # 没有新披露就直接结束
+          else
+            python follow.py
+          fi
 
       - name: 提交数据与看板
         run: |
