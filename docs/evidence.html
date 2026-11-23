@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>规则与依据 · 大师跟随</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><div class="wrap">
+<header><div class="brand">大师跟随</div><h1>规则与依据</h1>
+<div class="sub">价格截至 2026-11-20 · 页面生成于 2026-11-23 21:52</div>
+<nav><a href="index.html">行动备忘录</a><a href="investors.html">四位持仓</a><a href="evidence.html" class=on>规则与依据</a></nav></header>
+<h2>跟随规则</h2>
+<div class="card"><ul class="plain">
+<li><b>跟随:</b>新建仓且权重 ≥5%;单季加仓 ≥20% 且权重 ≥2%。</li>
+<li><b>复查:</b>清仓原权重 ≥3% 的仓位。</li>
+<li><b>忽略:</b>小仓位新建、小幅加仓、减仓。回测中它们没有信息量。</li>
+<li><b>失效:</b>同一位投资者随后减仓 ≥20% 或清仓。</li>
+<li><b>有效期:</b>披露后 12 个月。参考价是披露日之后第一个交易日的收盘价。</li>
+<li><b>不等回调:</b>回测中,披露后已跌破大师当季均价的标的后续表现最差,所以不设"等跌到成本价再买"的条件。</li>
+</ul></div><h2>信号回测</h2><div class="hint">披露后 12 个月相对标普 500 的表现。样本为七位投资者 2016 年底至 2026-11-20 的全部 13F。</div><div class="card scroll wide"><table><tr><th>动作</th><th class="num">样本数</th><th class="num">平均超额</th><th class="num">中位数</th><th class="num">跑赢比例</th></tr><tr><td>基线: 持有全部 ≥5% 仓位</td><td class="num">1449</td><td class="num">-1.3%</td><td class="num">-2.2%</td><td class="num">46%</td></tr><tr><td>新建仓且权重 ≥5%</td><td class="num">33</td><td class="num">+13.7%</td><td class="num">+16.8%</td><td class="num">58%</td></tr><tr><td>新建仓,权重 1%–5%</td><td class="num">40</td><td class="num">-12.4%</td><td class="num">-15.9%</td><td class="num">35%</td></tr><tr><td>单季加仓 ≥20%</td><td class="num">142</td><td class="num">+5.7%</td><td class="num">+3.0%</td><td class="num">56%</td></tr><tr><td>连续两季加仓 ≥10%</td><td class="num">100</td><td class="num">-0.1%</td><td class="num">-2.6%</td><td class="num">45%</td></tr><tr><td>≥2 人同季买入</td><td class="num">9</td><td class="num">-3.3%</td><td class="num">+2.6%</td><td class="num">67%</td></tr><tr><td>减仓 ≥20% (仍持有)</td><td class="num">97</td><td class="num">+0.1%</td><td class="num">-6.2%</td><td class="num">47%</td></tr><tr><td>清仓原 ≥3% 仓位</td><td class="num">30</td><td class="num">-3.1%</td><td class="num">-17.2%</td><td class="num">33%</td></tr></table></div><h2>照抄前五大持仓</h2><div class="hint">每次披露后等权买入前五大持仓并持有到下次披露。结论:照抄持仓没有稳定优势,所以本系统只跟动作,不跟持仓。</div><div class="card scroll wide"><table><tr><th>投资者</th><th class="num">年化</th><th class="num">同期标普</th><th class="num">超额</th><th class="num">最大回撤</th></tr><tr><td>巴菲特</td><td class="num">11.3%</td><td class="num">13.4%</td><td class="num">-2.1%</td><td class="num">-42%</td></tr><tr><td>段永平</td><td class="num">13.6%</td><td class="num">13.8%</td><td class="num">-0.3%</td><td class="num">-34%</td></tr><tr><td>李录</td><td class="num">12.2%</td><td class="num">13.4%</td><td class="num">-1.2%</td><td class="num">-60%</td></tr><tr><td>Chris Hohn</td><td class="num">14.0%</td><td class="num">13.4%</td><td class="num">+0.6%</td><td class="num">-30%</td></tr><tr><td>Chuck Akre</td><td class="num">14.3%</td><td class="num">13.5%</td><td class="num">+0.8%</td><td class="num">-36%</td></tr><tr><td>Pat Dorsey</td><td class="num">25.0%</td><td class="num">13.7%</td><td class="num">+11.3%</td><td class="num">-67%</td></tr><tr><td>Tom Russo</td><td class="num">10.6%</td><td class="num">13.5%</td><td class="num">-2.9%</td><td class="num">-30%</td></tr></table></div><h2>价格条件</h2><div class="hint">买入类信号按"披露时现价相对大师当季均价"分组后的 12 个月表现。</div><div class="card scroll wide"><table><tr><th>现价相对当季均价</th><th class="num">样本数</th><th class="num">平均超额</th><th class="num">跑赢比例</th></tr><tr><td>低于均价 5% 以上</td><td class="num">45</td><td class="num">-2.6%</td><td class="num">53%</td></tr><tr><td>均价 ±5% 内</td><td class="num">54</td><td class="num">+6.3%</td><td class="num">57%</td></tr><tr><td>高出 5%–15%</td><td class="num">59</td><td class="num">+2.3%</td><td class="num">42%</td></tr><tr><td>高出 15% 以上</td><td class="num">39</td><td class="num">+13.4%</td><td class="num">59%</td></tr></table></div><h2>这些结论的局限</h2>
+<div class="card"><ul class="plain">
+<li>样本小。大仓位新建仓只有 33 个完整样本,只能算有迹象,不算确证。</li>
+<li>回测的十年是美股大牛市,换一种市场环境结论可能不同。</li>
+<li>跟踪对象是因为已经成功才被选中的,结果偏乐观。</li>
+<li>已退市的股票缺少行情,被剔除在外。</li>
+<li>信号的优势体现在 12 个月的平均值上,单条信号的输赢接近各半。</li>
+</ul></div>
+<footer>数据来自 SEC EDGAR 与公开行情。13F 只披露美股多头持仓,且最晚在季度结束 45 天后公布。
+本页是按固定规则生成的研究清单,不构成投资建议。</footer>
+</div></body></html>

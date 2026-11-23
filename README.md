@@ -1,11 +1,11 @@
 # etf-monitor
 
-基于 GitHub Actions 的零成本自动化投研系统，聚焦 **AI / 半导体赛道**，把两件最容易拖延的事自动化：
+基于 GitHub Actions 的零成本自动化投研系统，做两件事：
 
-1. **回调择时** —— 盯盘 6 个半导体核心标的，达到预设回调档位时按纪律提醒分批建仓
-2. **价投跟踪** —— 季度抓取 5 位价值投资大师的 SEC 13F 持仓，diff 出新建/清仓/加减仓，找出多人共识标的，**同时自动生成可在线访问的看板网站**
+1. **回调择时**：盯 6 个半导体核心标的，跌到预设档位时按纪律提醒分批建仓。
+2. **大师跟随**：每天检查巴菲特、段永平、李录、Chris Hohn 的 SEC 披露，按回测验证过的规则筛出信号，生成行动备忘录（邮件 + [在线看板](https://ddkaty.github.io/etf-monitor/)）。
 
-无服务器、无数据库，纯 Python 脚本 + 定时 workflow，状态以 JSON 形式回写仓库持久化；静态网站经 GitHub Pages 发布，免运维零成本。
+无服务器、无数据库。Python 脚本加定时 workflow，数据以 JSON 回写仓库，看板经 GitHub Pages 发布。
 
 ---
 
@@ -13,28 +13,22 @@
 
 ```
 .
-├── monitor.py                       # 管线 1: ETF 回调监控 (yfinance)
-├── superinvestors_monitor.py        # 管线 2: 大师 13F 监控 (SEC EDGAR) + history 归档
-├── backfill_history.py              # 工具: 一次性回溯抓取过去 N 季 13F 建底库
-├── build_site.py                    # 工具: 读 history/ 生成 docs/ 静态站点
-├── alert_state.json                 # 管线 1 状态
-├── superinvestor_state.json         # 管线 2 状态
-├── history/                         # 13F 季度归档 (每位大师每季一个 JSON)
-│   ├── Buffett_2025Q1.json … Q4.json
-│   ├── Duan_*.json / LiLu_*.json / Marks_*.json / Pabrai_*.json
-├── docs/                            # GitHub Pages 静态站点 (自动生成)
-│   ├── index.html                   #   总览看板
-│   ├── consensus.html               #   共识标的全表
-│   ├── history.html                 #   季度横向矩阵
-│   ├── Buffett.html …               #   每位大师的详情页
-│   ├── assets/style.css             #   共用样式
-│   └── data/snapshot.json           #   完整数据快照
+├── monitor.py                 # 管线 1: ETF 回调监控
+├── follow.py                  # 管线 2: 大师跟随(披露检查、信号、邮件)
+├── follow_site.py             #         看板与邮件的页面生成
+├── alert_state.json           # 管线 1 状态
+├── follow_state.json          # 管线 2 状态(已见过的披露)
+├── data/
+│   ├── 13f/                   # 2016Q4 以来的 13F,按 CUSIP 合并后的持仓
+│   ├── entity_map.json        # CUSIP → 股票代码
+│   ├── signals.json           # 当前信号与四位的最新持仓
+│   └── fast_filings.json      # 近 180 天的 Form 4 / 13D / 13G
+├── backtest/                  # 规则的回测脚本与结果
+├── docs/                      # 看板(自动生成,勿手改)
 └── .github/workflows/
-    ├── monitor.yml                  # 工作日美东收盘后跑 ETF 监控
-    └── superinvestors.yml           # 跑 13F 监控 + 构建站点 + 回写归档与 docs/
+    ├── monitor.yml            # 工作日 UTC 22:30
+    └── follow.yml             # 工作日 UTC 23:30
 ```
-
-> 仓库根目录另有一份 `monitor.yml`，是早期版本的备份，**实际生效的是 `.github/workflows/` 下的两份**。
 
 ---
 
@@ -76,82 +70,64 @@ cron: '30 22 * * 1-5'   # 工作日 UTC 22:30 = 美东 17:30（夏令时收盘�
 
 ---
 
-## 管线 2：大师 13F 持仓监控
+## 管线 2：大师跟随
 
 ### 跟踪对象
 
-| 大师 | 机构 | CIK | 风格备注 |
-|------|------|------|----------|
-| Warren Buffett | Berkshire Hathaway | 0001067983 | 已卸任 CEO，继任 Greg Abel |
-| 段永平 | H&H International Investment | 0001759760 | 雪球: 大道无形我有型 |
-| 李录 | Himalaya Capital | 0001709323 | 芒格亲选接班人，极致集中 |
-| Howard Marks | Oaktree Capital | 0000949509 | 周期意识，信贷为主 |
-| Mohnish Pabrai | Dalal Street | 0001549575 | 克隆者，极致集中 |
+| 投资者 | 机构 | CIK |
+|---|---|---|
+| 巴菲特 | Berkshire Hathaway | 1067983 |
+| 段永平 | H&H International | 1759760 |
+| 李录 | Himalaya Capital | 1709323 |
+| Chris Hohn | TCI Fund | 1647251 |
 
-### 核心能力
+四位都是集中持仓、低换手、长期持有的风格，13F 对他们有代表性。
 
-- 直连 SEC EDGAR 官方 API（带 User-Agent，429 自动指数退避重试）
-- 解析 13F-HR XML 信息表（自动剥离 xmlns 命名空间）
-- **季度持仓 diff**：新建仓 / 清仓 / 加仓 / 减仓，按变动幅度排序
-- **共识标的**：自动找出 ≥2 位大师同时持有的标的，按共识强度打星
-- 金额自动标准化：兼容 SEC 在 2022 Q4 前的"千美元"口径切换
+### 规则
 
-### 邮件类型
+| 类别 | 条件 | 处理 |
+|---|---|---|
+| 跟随 | 新建仓且权重 ≥5% | 列入研究清单 |
+| 跟随 | 单季加仓 ≥20% 且权重 ≥2% | 列入研究清单 |
+| 复查 | 清仓原权重 ≥3% 的仓位 | 提醒持有者重新审视 |
+| 忽略 | 小仓位新建、小幅加仓、减仓 | 不提示 |
+| 失效 | 同一位投资者随后减仓 ≥20% 或清仓 | 信号作废 |
+| 分歧 | 另一位跟踪对象在同期或之后减仓 ≥20% | 单独标出 |
 
-- **新 13F 提醒**：任一大师提交新季度报告时立即发送，并附带与上季持仓的对比
-- **周一周报**：全景扫描 5 位大师持仓 + 共识标的榜单 + 下次 13F 公布倒计时
+信号有效期为披露后 12 个月，参考价取披露日之后第一个交易日的收盘价。
 
-### 运行节奏
+### 规则的依据
 
-`.github/workflows/superinvestors.yml`：
+规则来自对七位投资者 2016 年底以来 268 份 13F 的回测（[backtest/](backtest/)，结果见看板"规则与依据"页）：
 
-```yaml
-cron: '0 23 10-20 2,5,8,11 *'   # 13F 公布期(2/5/8/11月10-20日)每日检查
-cron: '0 23 * * 1'              # 其余时间仅周一
-```
+- 照抄前五大持仓没有稳定优势，所以只跟动作，不跟持仓。
+- 大仓位新建仓之后 12 个月平均跑赢标普 13.7%（33 个样本），大幅加仓平均跑赢 5.7%（142 个样本）。
+- 小仓位新建仓、连续加仓、减仓没有信息量；被清仓的股票约三分之二随后跑输。
+- 披露后已跌破大师当季均价的标的后续表现最差，所以不设"等回调再买"的条件。
 
-每次运行除了发邮件,还会自动归档新季度到 `history/` 并重建 `docs/` 静态站点。
+样本偏小，回测区间又是美股牛市，这些结论只算有迹象。
 
----
+### 每天做什么
 
-## 在线看板网站
+1. 检查四位是否有新的 13F；有就拉取、合并同一 CUSIP 的多行、剔除期权行。
+2. 检查 Form 4 与 13D/13G，这些在交易后几天内披露，比 13F 快。
+3. 更新行情，重算信号状态与披露后的涨跌。
+4. 重建看板并提交。
 
-每次 13F 监控运行后,会自动生成静态网站发布到 GitHub Pages,**无需登录邮箱也能随时查看**最新持仓、季度变化与跨大师共识。
+### 邮件
 
-启用后访问地址形如:
+- **行动备忘录**：任一位披露新 13F 时发送。
+- **快速披露提醒**：出现新的 Form 4 / 13D / 13G 时发送。
+- **周报**：每周一发送当前信号状态。
 
-```
-https://<你的GitHub用户名>.github.io/etf-monitor/
-```
-
-### 站点页面
-
-| 页面 | 内容 |
-|------|------|
-| **总览** (`index.html`) | 5 位大师 KPI 卡片、本季亮点(新共识/集体加注/集体退出/重注信号)、共识 Top 10、整体解读 |
-| **共识榜** (`consensus.html`) | 所有 ≥2 位大师同时持有的标的全表,强共识 (≥3 位) 单独高亮 |
-| **历史时间线** (`history.html`) | 跨季度 × 跨大师矩阵,每格显示当季 AUM、持仓数、顶仓、QoQ 变化 |
-| **大师单页** (`Buffett.html` / `Duan.html` / `LiLu.html` / `Marks.html` / `Pabrai.html`) | 风格标签、KPI(集中度/换手率)、Top 20 持仓、AUM 时间线柱状图、逐季演化卡片、风格解读 |
-
-### 启用 GitHub Pages
-
-1. 仓库 `Settings → Pages`
-2. **Source** 选 `Deploy from a branch`
-3. **Branch** 选 `main` + `/docs` 目录
-4. 保存后等 1-2 分钟,刷新即可访问
-
-### 首次建底库 (本地一次)
-
-新仓库 fork 后 `history/` 还是空的,需要先回溯抓取建底库:
+### 重跑回测
 
 ```bash
-python backfill_history.py 4      # 回溯 4 个季度 (默认)
-python backfill_history.py 8      # 回溯 8 个季度
-python build_site.py              # 生成 docs/
-git add history/ docs/ && git commit -m "Initial history backfill" && git push
+pip install yfinance pandas numpy
+python backtest/fetch_13f.py      # 补齐 13F
+python backtest/prices.py         # 下载行情到 backtest/cache/
+python backtest/run_backtest.py   # 输出 backtest/results.json 与 events.csv
 ```
-
-之后每周 / 每个 13F 公布日的自动 workflow 会持续追加新季度。
 
 ---
 
@@ -175,17 +151,17 @@ git add history/ docs/ && git commit -m "Initial history backfill" && git push
 
 ### 4. 修改收发件邮箱
 
-在 `monitor.py` 和 `superinvestors_monitor.py` 的 `CONFIG["email"]` 中：
+在 `monitor.py` 的 `CONFIG["email"]` 中（大师跟随复用同一份发信配置）：
 
 ```python
 "sender":    "your_email@gmail.com",   # 你的 Gmail
 "recipient": "your_email@gmail.com",   # 收件邮箱（可与发件相同）
 ```
 
-同时把 `superinvestors_monitor.py` 顶部的 `user_agent` 改成你自己的邮箱（SEC 要求）：
+同时把 `follow.py` 顶部的 `USER_AGENT` 改成你自己的联系方式（SEC 要求）：
 
 ```python
-"user_agent": "SuperinvestorMonitor your_email@gmail.com",
+USER_AGENT = "SuperinvestorMonitor your_email@gmail.com"
 ```
 
 ### 5. 启用 Actions
@@ -194,7 +170,7 @@ Fork 后 Actions 默认是禁用的。进入 `Actions` 标签页点击 `I unders
 
 ### 6. 手动跑一次
 
-在 `Actions → ETF 回调监控 v3 / 大师持仓监控 → Run workflow` 触发一次，确认邮件能正常收到。
+在 `Actions → ETF 回调监控 v3 / 大师跟随 → Run workflow` 触发一次，确认邮件能正常收到。
 
 ---
 
@@ -230,9 +206,11 @@ Fork 后 Actions 默认是禁用的。进入 `Actions` 标签页点击 `I unders
 
 `类型` 字段控制邮件中徽章颜色，可选 `财报` / `数据` / `会议`。
 
-### 增减大师（管线 2）
+### 增减跟踪对象（管线 2）
 
-编辑 [`superinvestors_monitor.py`](superinvestors_monitor.py) 中的 `CONFIG["investors"]`。CIK 号可在 [SEC EDGAR 搜索](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany) 中查到，必须填写包含前导零的 10 位完整 CIK。
+编辑 [`follow.py`](follow.py) 中的 `INVESTORS`，CIK 可在 [SEC EDGAR](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany) 查到。新增对象后先跑一次 `python backtest/fetch_13f.py` 补齐历史，并建议重跑回测确认此人的 13F 值得跟。
+
+信号阈值在同一文件的 `RULES` 中。改阈值前请先用 `backtest/run_backtest.py` 验证。
 
 ### 调整冷却时间 / 周报日 / 强制建仓阈值
 
@@ -246,44 +224,31 @@ Fork 后 Actions 默认是禁用的。进入 `Actions` 标签页点击 `I unders
 
 ## 状态持久化
 
-GitHub Actions 跑完后，workflow 会自动用 `[skip ci]` commit 把以下文件回写主分支：
+workflow 跑完后用 `[skip ci]` commit 把以下内容回写主分支：
 
-- `alert_state.json` —— 管线 1 状态：每个 ticker_档位 的最后警报时间、上次周报时间、首次运行日期
-- `superinvestor_state.json` —— 管线 2 状态：每位大师的最近 accession 号、上次周报时间
-- `history/*.json` —— 13F 季度归档，每位大师每季一份完整持仓快照
-- `docs/**` —— 重新构建的静态站点
-
-**不要手动编辑 `*_state.json`**，除非要重置状态。`history/` 是季度对比与网站的数据底库，按需可手动添加/修复历史 JSON。
+- `alert_state.json`：管线 1 的警报冷却与周报时间
+- `follow_state.json`：管线 2 已见过的 13F 与快速披露
+- `data/`、`docs/`：持仓数据、信号与看板
 
 ---
 
 ## 本地开发
 
 ```bash
-# 管线 1 (ETF 监控) 需要 yfinance/pandas/numpy
 pip install yfinance pandas numpy
-
-# 管线 2 (大师监控 + 站点构建) 纯标准库,无需额外依赖
-
-export SMTP_PASSWORD="your_app_password"
-python monitor.py                        # 跑 ETF 监控
-python superinvestors_monitor.py         # 跑大师监控 (含 history 归档)
-python backfill_history.py 4             # 回溯 4 季度建底库 (首次部署时)
-python build_site.py                     # 重新生成 docs/
-
-# 本地预览站点
-python -m http.server 8000 --directory docs
-# 浏览器打开 http://localhost:8000
+export SMTP_PASSWORD="your_app_password"   # 留空则只计算不发信
+python monitor.py
+python follow.py
+python -m http.server 8000 --directory docs   # 预览看板
 ```
-
-只想看输出不发邮件？把 `SMTP_PASSWORD` 留空，脚本会跑完所有分析并打印结果，邮件发送步骤会自动跳过。
 
 ---
 
 ## 数据来源与限制
 
-- **管线 1**：[yfinance](https://github.com/ranaroussi/yfinance)，免费的 Yahoo Finance 非官方包装。偶有 rate limit / 数据缺失，脚本对单 ticker 失败有容错
-- **管线 2**：[SEC EDGAR REST API](https://www.sec.gov/edgar/sec-api-documentation)，官方权威。**13F 数据有 45 天滞后**（季末后第 45 天才公布），无法用作短线择时
+- **行情**：[yfinance](https://github.com/ranaroussi/yfinance)，偶有限流或缺数据；下载失败时看板沿用上次价格并注明。
+- **持仓与披露**：[SEC EDGAR](https://www.sec.gov/edgar/sec-api-documentation)。13F 只含美股多头，最晚在季度结束 45 天后公布。
+- **代码映射**：[OpenFIGI](https://www.openfigi.com/api)。已退市的股票通常匹配不到，没有行情。
 
 ---
 
