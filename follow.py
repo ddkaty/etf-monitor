@@ -1,7 +1,7 @@
 """
 大师跟随系统 —— 把四位长期投资者的 SEC 披露变成可操作的研究清单
 
-每天运行一次:
+每个工作日收盘后完整运行一次;13F 披露高峰期另外每小时快速检查一次(--quick):
   1. 检查新的 13F(季度持仓)与快速披露(Form 4 / 13D / 13G)
   2. 按回测验证过的规则计算信号(规则与证据见 backtest/ 与看板"依据"页)
   3. 更新价格、重建看板 docs/
@@ -670,7 +670,9 @@ def send_email(subject, html):
 
 def main():
     import follow_site
-    print(f"\n{'=' * 56}\n大师跟随系统 {beijing_now():%Y-%m-%d %H:%M} 北京时间\n{'=' * 56}")
+    # --quick: 披露高峰期每小时运行。只查有没有新披露,没有就立刻结束,有才走完整流程
+    quick = "--quick" in sys.argv
+    print(f"\n{'=' * 56}\n大师跟随系统 {beijing_now():%Y-%m-%d %H:%M} 北京时间{' · 快速检查' if quick else ''}\n{'=' * 56}")
     state = load_state()
 
     print("\n1) 检查 13F")
@@ -685,6 +687,12 @@ def main():
 
     print("\n2) 检查快速披露")
     new_fast, fast_log = check_fast_filings(state)
+
+    if quick and not new_13f and not new_fast and not state.get("pending_memo"):
+        with open(STATE_PATH, "w", encoding="utf-8") as fh:
+            json.dump(state, fh, ensure_ascii=False, indent=1)
+        print("\n没有新披露,结束\n")
+        return
 
     print("\n3) 代码映射与行情")
     emap = load_entity_map()
