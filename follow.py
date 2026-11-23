@@ -11,8 +11,9 @@
   跟随  新建仓且权重 ≥5%;单季加仓 ≥20% 且权重 ≥2%
   复查  清仓原权重 ≥3% 的仓位
   忽略  小仓位新建、小幅加仓、减仓
-  失效  同一位投资者随后减仓 ≥20% 或清仓
+  提醒  同一位投资者随后减仓 ≥20% 或清仓(回测显示这不足以构成卖出理由,只作标注)
   有效期 披露后 12 个月
+  模拟组合 按上述信号纸面交易,规则见 paper.py
 """
 
 import os
@@ -32,6 +33,7 @@ EMAP_PATH = os.path.join(DATA, "entity_map.json")
 SIGNALS_PATH = os.path.join(DATA, "signals.json")
 FAST_PATH = os.path.join(DATA, "fast_filings.json")
 STATE_PATH = os.path.join(HERE, "follow_state.json")
+PORTFOLIO_PATH = os.path.join(DATA, "portfolio.json")
 
 USER_AGENT = "SuperinvestorMonitor your_email@gmail.com"   # SEC 要求带联系方式,可改成自己的
 START = "2016-12-31"
@@ -256,7 +258,7 @@ def load_prices(tickers, log=print):
     前者用于算涨跌幅,后者用于展示当时的实际价格水平"""
     try:
         import yfinance as yf
-        start = (date.today() - timedelta(days=900)).isoformat()
+        start = min((date.today() - timedelta(days=900)).isoformat(), "2025-06-01")   # 覆盖模拟组合起点
         df = yf.download(sorted(set(tickers) | {"SPY"}), start=start, auto_adjust=False,
                          actions=True, progress=False, threads=True)
         close = df["Adj Close"].dropna(how="all").ffill()
@@ -607,7 +609,8 @@ def main():
     emap = load_entity_map()
     needed = {}
     for key in INVESTORS:
-        for f in load_filings(key)[-7:]:      # 覆盖"历次变动"页用到的全部持仓
+        fs = load_filings(key)
+        for f in [f for f in fs if f["report_date"] >= "2025-06-30"] or fs[-7:]:   # 历次变动页与模拟组合用到的全部持仓
             for h in f["holdings"]:
                 needed.setdefault(h["cusip"], h["issuer"])
     resolve_cusips(emap, needed)
@@ -617,6 +620,13 @@ def main():
     print("\n4) 计算信号")
     old = json.load(open(SIGNALS_PATH, encoding="utf-8")) if os.path.exists(SIGNALS_PATH) else {}
     signals, view = compute_signals(emap, close, splits, old.get("signals"), raw, old.get("investors"))
+    import paper
+    portfolio = paper.simulate(signals, close, raw) if close is not None else None
+    if portfolio:
+        with open(PORTFOLIO_PATH, "w", encoding="utf-8") as fh:
+            json.dump(portfolio, fh, ensure_ascii=False)
+    elif os.path.exists(PORTFOLIO_PATH):      # 行情失败时沿用上次结果
+        portfolio = json.load(open(PORTFOLIO_PATH, encoding="utf-8"))
     signals = [s for s in signals if s["age_days"] <= 2 * RULES["active_days"]]
     memo = build_memo(signals, view)
     px_date = str(close.index[-1].date()) if close is not None else next((s["px_date"] for s in signals if s.get("px_date")), None)
@@ -625,10 +635,13 @@ def main():
     with open(SIGNALS_PATH, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=1)
     print(f"   优先研究 {len(memo['priority'])} · 有分歧 {len(memo['divergent'])} · "
-          f"已失效 {len(memo['invalid'])} · 持仓复查 {len(memo['review'])}")
+          f"大师已减仓 {len(memo['invalid'])} · 持仓复查 {len(memo['review'])}")
+    if portfolio:
+        st = portfolio["stats"]
+        print(f"   模拟组合 {st['ret'] * 100:+.1f}% · 标普 {st['spy_ret'] * 100:+.1f}% · 持有 {st['n_names']} 只")
 
     print("\n5) 重建看板")
-    follow_site.build(payload, memo, fast_log)
+    follow_site.build(payload, memo, fast_log, portfolio)
 
     print("\n6) 邮件")
     today = date.today()
@@ -638,14 +651,14 @@ def main():
         who = "、".join(INVESTORS[k]["cn"] for k in new_13f)
         q = quarter_name(max(new_13f.values()))
         sent = send_email(f"📋 行动备忘录 · {q} · {who} 披露新 13F",
-                          follow_site.email_html(payload, memo, fast_log, new_13f=new_13f, new_fast=new_fast))
+                          follow_site.email_html(payload, memo, fast_log, new_13f=new_13f, new_fast=new_fast, portfolio=portfolio))
         state["pending_memo"] = {} if sent else new_13f
     elif new_fast:
         names = "、".join(sorted({x.get("issuer") or "未知标的" for x in new_fast}))
         sent = send_email(f"⚡ 快速披露 · {names}",
-                          follow_site.email_html(payload, memo, fast_log, new_fast=new_fast))
+                          follow_site.email_html(payload, memo, fast_log, new_fast=new_fast, portfolio=portfolio))
     elif today.weekday() == 0 and state.get("last_weekly") != today.isoformat():
-        sent = send_email(f"📊 跟随周报 · {today:%Y-%m-%d}", follow_site.email_html(payload, memo, fast_log))
+        sent = send_email(f"📊 跟随周报 · {today:%Y-%m-%d}", follow_site.email_html(payload, memo, fast_log, portfolio=portfolio))
         if sent:
             state["last_weekly"] = today.isoformat()
     else:
