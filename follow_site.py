@@ -7,6 +7,7 @@ docs/evidence.html   规则与回测依据
 
 import os
 import json
+import hashlib
 from html import escape
 
 from follow import HERE, INVESTORS, RULES, CN_NAMES, quarter_name
@@ -95,6 +96,8 @@ ul.plain{margin:6px 0 0 18px;font-size:14px}ul.plain li{margin:4px 0}
 footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 """
 
+CSS_VER = hashlib.md5(CSS.encode()).hexdigest()[:8]      # 样式变了就换地址,避免浏览器用旧缓存
+
 
 def page(title, active, body, payload):
     nav = "".join(f'<a href="{href}"{" class=on" if key == active else ""}>{label}</a>'
@@ -105,7 +108,7 @@ def page(title, active, body, payload):
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title} · 大师跟随</title><link rel="stylesheet" href="assets/style.css"></head>
+<title>{title} · 大师跟随</title><link rel="stylesheet" href="assets/style.css?v={CSS_VER}"></head>
 <body><div class="wrap">
 <header><div class="brand">大师跟随</div><h1>{title}</h1>
 <div class="sub">价格截至 {payload.get('px_date') or '—'}{stale} · 页面生成于 {payload['generated'].replace('T', ' ')}</div>
