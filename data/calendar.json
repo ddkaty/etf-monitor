@@ -1,26 +1,26 @@
 {
  "BRK-B": {
-  "checked": "2026-11-23",
+  "checked": "2026-11-27",
   "date": null
  },
  "CROX": {
-  "checked": "2026-11-23",
-  "date": null
+  "checked": "2026-11-27",
+  "date": "2027-02-11"
  },
  "GOOGL": {
-  "checked": "2026-11-23",
-  "date": null
+  "checked": "2026-11-27",
+  "date": "2027-02-03"
  },
  "PDD": {
-  "checked": "2026-11-23",
+  "checked": "2026-11-27",
   "date": null
  },
  "TME": {
-  "checked": "2026-11-23",
+  "checked": "2026-11-27",
   "date": null
  },
  "TSLA": {
-  "checked": "2026-11-23",
-  "date": "2027-01-28"
+  "checked": "2026-11-27",
+  "date": "2027-01-27"
  }
 }

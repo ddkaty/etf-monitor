@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 13:16",
+ "generated": "2026-11-27 13:13",
  "px_date": "2026-11-25",
  "prices_stale": false,
  "rules": {
@@ -32,7 +32,7 @@
    "spy_ret": -0.0215,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 9
+   "age_days": 10
   },
   {
    "investor": "Duan",
@@ -55,7 +55,7 @@
    "spy_ret": -0.0215,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 9
+   "age_days": 10
   },
   {
    "investor": "LiLu",
@@ -78,7 +78,7 @@
    "spy_ret": -0.0701,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 101
+   "age_days": 102
   },
   {
    "investor": "LiLu",
@@ -101,7 +101,7 @@
    "spy_ret": -0.0701,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 101
+   "age_days": 102
   },
   {
    "investor": "LiLu",
@@ -124,7 +124,7 @@
    "spy_ret": -0.0701,
    "px_date": "2026-11-25",
    "stop_date": "2026-11-20",
-   "age_days": 101
+   "age_days": 102
   },
   {
    "investor": "Duan",
@@ -147,7 +147,7 @@
    "spy_ret": -0.0701,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 101
+   "age_days": 102
   },
   {
    "investor": "Buffett",
@@ -181,7 +181,7 @@
    "spy_ret": -0.0701,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 101
+   "age_days": 102
   },
   {
    "investor": "LiLu",
@@ -204,7 +204,7 @@
    "spy_ret": -0.0248,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 192
+   "age_days": 193
   },
   {
    "investor": "Hohn",
@@ -238,7 +238,7 @@
    "spy_ret": -0.0248,
    "px_date": "2026-11-25",
    "stop_date": "2026-10-29",
-   "age_days": 192
+   "age_days": 193
   },
   {
    "investor": "Duan",
@@ -261,7 +261,7 @@
    "spy_ret": -0.0282,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 190
+   "age_days": 191
   },
   {
    "investor": "Duan",
@@ -284,7 +284,7 @@
    "spy_ret": -0.0282,
    "px_date": "2026-11-25",
    "stop_date": "2026-11-12",
-   "age_days": 190
+   "age_days": 191
   },
   {
    "investor": "Duan",
@@ -307,7 +307,7 @@
    "spy_ret": -0.0282,
    "px_date": "2026-11-25",
    "stop_date": "2026-06-25",
-   "age_days": 190
+   "age_days": 191
   },
   {
    "investor": "Duan",
@@ -330,7 +330,7 @@
    "spy_ret": -0.0282,
    "px_date": "2026-11-25",
    "stop_date": "2026-07-27",
-   "age_days": 190
+   "age_days": 191
   },
   {
    "investor": "Duan",
@@ -353,7 +353,7 @@
    "spy_ret": -0.0282,
    "px_date": "2026-11-25",
    "stop_date": "2026-10-29",
-   "age_days": 190
+   "age_days": 191
   },
   {
    "investor": "Buffett",
@@ -387,7 +387,7 @@
    "spy_ret": -0.0248,
    "px_date": "2026-11-25",
    "stop_date": "2026-10-29",
-   "age_days": 192
+   "age_days": 193
   },
   {
    "investor": "Duan",
@@ -410,7 +410,7 @@
    "spy_ret": 0.0525,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 281
+   "age_days": 282
   },
   {
    "investor": "Duan",
@@ -433,7 +433,7 @@
    "spy_ret": 0.0525,
    "px_date": "2026-11-25",
    "stop_date": "2026-11-20",
-   "age_days": 281
+   "age_days": 282
   },
   {
    "investor": "Duan",
@@ -456,7 +456,7 @@
    "spy_ret": 0.0525,
    "px_date": "2026-11-25",
    "stop_date": "2026-06-23",
-   "age_days": 281
+   "age_days": 282
   },
   {
    "investor": "Duan",
@@ -490,7 +490,7 @@
    "spy_ret": 0.0525,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 281
+   "age_days": 282
   },
   {
    "investor": "Duan",
@@ -513,7 +513,7 @@
    "spy_ret": 0.0525,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 281
+   "age_days": 282
   },
   {
    "investor": "Hohn",
@@ -542,7 +542,7 @@
    "spy_ret": 0.0883,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 374
+   "age_days": 375
   },
   {
    "investor": "Duan",
@@ -565,7 +565,7 @@
    "spy_ret": 0.0883,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 374
+   "age_days": 375
   },
   {
    "investor": "LiLu",
@@ -588,7 +588,7 @@
    "spy_ret": 0.129,
    "px_date": "2026-11-25",
    "stop_date": "2026-05-27",
-   "age_days": 468
+   "age_days": 469
   },
   {
    "investor": "Duan",
@@ -617,7 +617,7 @@
    "spy_ret": 0.129,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 468
+   "age_days": 469
   },
   {
    "investor": "Hohn",
@@ -646,7 +646,7 @@
    "spy_ret": 0.2262,
    "px_date": "2026-11-25",
    "stop_date": null,
-   "age_days": 559
+   "age_days": 560
   },
   {
    "investor": "Duan",
@@ -669,7 +669,7 @@
    "spy_ret": 0.1951,
    "px_date": "2026-11-25",
    "stop_date": "2025-04-08",
-   "age_days": 646
+   "age_days": 647
   },
   {
    "investor": "Duan",
@@ -698,7 +698,7 @@
    "spy_ret": 0.1951,
    "px_date": "2026-11-25",
    "stop_date": "2025-04-08",
-   "age_days": 646
+   "age_days": 647
   }
  ],
  "investors": {
